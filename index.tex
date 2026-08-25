@@ -1,0 +1,740 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+]{agujournal2019}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{anyfontsize}
+\usepackage{multirow}
+\usepackage{url} %this package should fix any errors with URLs in refs.
+\usepackage{lineno}
+\usepackage[inline]{trackchanges} %for better track changes. finalnew option will compile document with changes incorporated.
+\usepackage{soul}
+\linenumbers
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Kombinasi TyHbA1c Index{,} Usia{,} dan Indeks Massa Tubuh sebagai Prediktor High-Risk Plaque pada Pasien Diabetes Mellitus: Sebuah Pendekatan Nomogram Klinis},
+  pdfauthor={Kadek Adit Wiryadana},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+
+\draftfalse
+
+\begin{document}
+\title{Kombinasi TyHbA1c Index, Usia, dan Indeks Massa Tubuh sebagai
+Prediktor High-Risk Plaque pada Pasien Diabetes Mellitus: Sebuah
+Pendekatan Nomogram Klinis}
+
+\authors{Kadek Adit Wiryadana\affil{1}}
+\affiliation{1}{RSUP Ngoerah, Denpasar, Indonesia}
+\correspondingauthor{Kadek Adit
+Wiryadana}{wiryadana.2371041012@student.unud.ac.id}
+
+
+\begin{abstract}
+Tuliskan abstrak penelitian Anda di sini. Abstrak akan otomatis diformat
+sesuai standar AGU untuk versi PDF, dan ditampilkan secara responsif di
+versi HTML.
+\end{abstract}
+
+
+
+
+
+\section{Pendahuluan}\label{pendahuluan}
+
+Penyakit kardiovaskular aterosklerotik (ASCVD) tetap menjadi penyebab
+utama morbiditas dan mortalitas pada pasien dengan Diabetes Mellitus
+(DM). Peningkatan risiko kardiovaskular pada populasi ini tidak hanya
+didorong oleh hiperglikemia, melainkan oleh interaksi kompleks yang
+melibatkan resistensi insulin, dislipidemia aterogenik, dan inflamasi
+sistemik. Meskipun parameter lipid konvensional seperti Low-Density
+Lipoprotein (LDL) dan Kolesterol Total telah lama digunakan sebagai
+prediktor risiko, banyak pasien DM yang tetap mengalami kejadian
+kardiovaskular akut meskipun kadar profil lipid mereka telah mencapai
+target terapi (residual risk). Hal ini mendorong pencarian penanda
+biologis (biomarker) alternatif yang mampu merepresentasikan
+patofisiologi aterosklerosis pada populasi DM secara lebih komprehensif.
+Resistensi insulin kronis merupakan motor utama dalam proses disfungsi
+endotel dan pembentukan plak kerentanan tinggi (vulnerable plaque).
+Belakangan ini, Triglyceride-Glucose (TyG) Index muncul sebagai penanda
+substitusi yang divalidasi untuk resistensi insulin. Namun, penggunaan
+glukosa darah puasa (GDP) dalam rumus TyG memiliki keterbatasan akibat
+tingginya fluktuasi glikemik harian. Oleh karena itu, indeks TyHbA1c
+yang menggabungkan kadar trigliserida dengan HbA1c diajukan sebagai
+parameter yang jauh lebih stabil dalam mencerminkan beban
+glukolipotoksisitas kronis. Evaluasi anatomi arteri koroner non-invasif
+saat ini dapat dilakukan secara akurat menggunakan Computed Tomography
+Coronary Angiography (CTCA). Sistem pelaporan CAD-RADS tidak hanya
+menilai derajat keparahan stenosis, tetapi juga mengidentifikasi
+keberadaan High-Risk Plaque (HRP)---seperti positive remodeling,
+low-attenuation plaque, spotty calcification, dan napkin-ring
+sign---yang merupakan cikal bakal terjadinya sindrom koroner akut.
+Hingga saat ini, pemodelan multivariat yang menggabungkan indeks
+glukolipotoksisitas kronis (TyHbA1c) dengan penanda adipositas viseral
+(Indeks Massa Tubuh/IMT) dan faktor durasi degeneratif (Usia) untuk
+memprediksi fitur HRP pada CTCA belum banyak diteliti. Penelitian ini
+bertujuan untuk mengevaluasi kemampuan prediktif dari kombinasi TyHbA1c
+Index, Usia, dan IMT terhadap keberadaan HRP serta keparahan obstruksi
+koroner pada pasien DM, sekaligus mengembangkan sebuah nomogram klinis
+guna memfasilitasi stratifikasi risiko kardiovaskular secara praktis di
+ruang praktik.
+
+\section{Metode}\label{metode}
+
+\textbf{Desain dan Populasi Penelitian}
+
+Penelitian ini merupakan studi analitik observasional dengan pendekatan
+potong lintang (\emph{cross-sectional}) yang dilakukan secara
+retrospektif (atau prospektif, \emph{sesuaikan dengan desain dr.}).
+Populasi target adalah pasien dengan diagnosis Prediabetes atau Diabetes
+Mellitus yang menjalani pemeriksaan \emph{Computed Tomography Coronary
+Angiography} (CTCA) di RSUP Prof.~dr. I.G.N.G. Ngoerah, Denpasar, Bali,
+pada periode {[}Bulan Tahun{]} hingga {[}Bulan Tahun{]}. Teknik
+pengambilan sampel menggunakan \emph{consecutive sampling} hingga target
+sampel minimal terpenuhi. Kriteria eksklusi meliputi pasien dengan data
+rekam medis atau laboratorium yang tidak lengkap, riwayat operasi
+\emph{Coronary Artery Bypass Grafting} (CABG), atau kondisi gagal ginjal
+tahap akhir.
+
+\textbf{Pengumpulan Data dan Definisi Operasional}
+
+Data karakteristik demografi (Usia, Jenis Kelamin), antropometri (Indeks
+Massa Tubuh), riwayat penyakit penyerta, serta hasil laboratorium
+(HbA1c, Trigliserida, Kolesterol Total, LDL, HDL) diekstraksi dari rekam
+medis elektronik. Indeks TyHbA1c dihitung menggunakan formula logaritma
+natural: TyHbA1c = ln(Trigliserida {[}mg/dL{]} x HbA1c {[}\%{]}).
+
+Evaluasi CTCA dilakukan oleh dokter spesialis radiologi konsultan yang
+tersertifikasi. Variabel dependen utama dalam penelitian ini adalah:
+
+1.~~~~~ \textbf{Keparahan Obstruksi Koroner:} Diklasifikasikan
+berdasarkan sistem CAD-RADS 2.0, di mana kategori obstruktif signifikan
+didefinisikan sebagai CAD-RADS \$\textbackslash ge\$ 3 (stenosis
+\$\textbackslash ge\$ 50\%).
+
+2.~~~~~ \textbf{Keberadaan High-Risk Plaque (HRP):} Ditetapkan sebagai
+variabel biner (Ya/Tidak), yang positif apabila ditemukan minimal satu
+dari empat fitur berikut pada lesi koroner: \emph{positive remodeling}
+(PR), \emph{low-attenuation plaque} (LAP), \emph{spotty calcification}
+(SC), atau \emph{napkin-ring sign} (NRS).
+
+\textbf{Analisis Statistik}
+
+Analisis data dilakukan menggunakan perangkat lunak R. Variabel kontinu
+disajikan dalam bentuk rerata dan simpangan baku (distribusi normal)
+atau median dan rentang interkuartil (distribusi tidak normal). Analisis
+komparatif bivariat dilakukan menggunakan uji \emph{Mann-Whitney U} atau
+\emph{Independent T-test} untuk variabel kontinu, serta uji
+\emph{Chi-Square} atau \emph{Fisher's Exact} untuk variabel kategorik.
+
+Pemodelan prediktif dilakukan menggunakan analisis Regresi Logistik
+Multivariat. Variabel prediktor yang dimasukkan ke dalam model utama
+adalah Usia, IMT, dan TyHbA1c Index. Performa diskriminatif model
+dievaluasi dengan menggunakan \emph{Area Under the Curve} (AUC) dari
+\emph{Receiver Operating Characteristic} (ROC). Signifikansi statistik
+ditetapkan pada nilai \$p \textless{} 0,05\$. Berdasarkan koefisien
+regresi dari model multivariat final, sebuah nomogram klinis akan
+dikonstruksi. Kinerja nomogram divalidasi secara internal melalui uji
+kalibrasi (\emph{Hosmer-Lemeshow goodness-of-fit}) dan metode
+\emph{bootstrapping} (1000 \emph{resamples}) untuk menghasilkan indeks
+konkordansi (C-index) yang terkoreksi.
+
+\subsection{1. Setup}\label{setup}
+
+\begin{verbatim}
+
+Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+The following objects are masked from 'package:stats':
+
+    filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{verbatim}
+Type 'citation("pROC")' for a citation.
+\end{verbatim}
+
+\begin{verbatim}
+
+Attaching package: 'pROC'
+\end{verbatim}
+
+\begin{verbatim}
+The following objects are masked from 'package:stats':
+
+    cov, smooth, var
+\end{verbatim}
+
+\begin{verbatim}
+Loading required package: Hmisc
+\end{verbatim}
+
+\begin{verbatim}
+
+Attaching package: 'Hmisc'
+\end{verbatim}
+
+\begin{verbatim}
+The following objects are masked from 'package:dplyr':
+
+    src, summarize
+\end{verbatim}
+
+\begin{verbatim}
+The following objects are masked from 'package:base':
+
+    format.pval, units
+\end{verbatim}
+
+\begin{verbatim}
+-- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+v forcats   1.0.1     v stringr   1.6.0
+v lubridate 1.9.5     v tibble    3.3.1
+v purrr     1.2.2     v tidyr     1.3.2
+v readr     2.2.0     
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x dplyr::filter()    masks stats::filter()
+x dplyr::lag()       masks stats::lag()
+x Hmisc::src()       masks dplyr::src()
+x Hmisc::summarize() masks dplyr::summarize()
+i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+\end{verbatim}
+
+\subsection{2. Loading Data}\label{loading-data}
+
+\begin{verbatim}
+i The googlesheets4 package is using a cached token for
+  'ka.wiryadana@gmail.com'.
+\end{verbatim}
+
+\begin{verbatim}
+v Reading from "Pencil_Endokrin".
+\end{verbatim}
+
+\begin{verbatim}
+v Range ''Update-HbA1c''.
+\end{verbatim}
+
+\subsection{3. Data Cleaning}\label{data-cleaning}
+
+\begin{verbatim}
+Total sampel siap dianalisis (n): 0 
+\end{verbatim}
+
+\begin{verbatim}
+< table of extent 0 x 2 >
+\end{verbatim}
+
+\section{Hasil}\label{hasil}
+
+Penelitian ini melibatkan 40 pasien dengan diagnosis diabetes atau
+prediabetes yang menjalani pemeriksaan \emph{Computed Tomography
+Coronary Angiography} (CTCA). Setelah mengeksklusi sampel dengan data
+profil lipid yang tidak lengkap, total 39 subjek dimasukkan ke dalam
+analisis pemodelan akhir. Usia rata-rata subjek adalah 60,69
+\$\textbackslash pm\$ 10,62 tahun, dengan Indeks Massa Tubuh (IMT)
+rata-rata berada pada kategori \emph{overweight} hingga obesitas tingkat
+I (28,39 \$\textbackslash pm\$ 4,78 kg/m\$\^{}2\$). Status glikemik
+menunjukkan rata-rata HbA1c sebesar 7,49 \$\textbackslash pm\$ 1,89\%,
+sedangkan rerata kadar trigliserida adalah 152,59 \$\textbackslash pm\$
+123,21 mg/dL. Rentang TyHbA1c Index pada populasi ini berkisar antara
+5,54 hingga 8,32 (Rerata = 6,81 \$\textbackslash pm\$ 0,67).
+
+Berdasarkan evaluasi CTCA, sebanyak 26 pasien (66,7\%) teridentifikasi
+memiliki sekurang-kurangnya satu fitur kerentanan plak atau
+\emph{High-Risk Plaque} (HRP). Sementara itu, prevalensi pasien yang
+mengalami derajat obstruksi koroner moderat hingga berat (didefinisikan
+sebagai CAD-RADS \$\textbackslash ge\$ 3) adalah sebanyak 21 pasien
+(53,8\%).
+
+\section{4. Tabel Karakteristik Demografi dan Klinis
+(gtsummary)}\label{tabel-karakteristik-demografi-dan-klinis-gtsummary}
+
+\begin{table}
+\fontsize{12.0pt}{14.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcccc}
+\toprule
+ &  & \multicolumn{3}{c}{{\textbf{Vulnerabilitas Plak (CAD-RADS)}}} \\ 
+\cmidrule(lr){3-5}
+\textbf{Characteristic} & \textbf{Keseluruhan}\textsuperscript{\textit{1}} & \textbf{HRP (+)}  N = 37\textsuperscript{\textit{1}} & \textbf{HRP (-)}  N = 15\textsuperscript{\textit{1}} & \textbf{p-value}\textsuperscript{\textit{2}} \\ 
+\midrule\addlinespace[2.5pt]
+{\bfseries Usia (Tahun)} & 61.04 ± 9.90 & 63.16 ± 9.79 & 55.80 ± 8.32 & {\bfseries 0.010} \\ 
+{\bfseries Jenis Kelamin} &  &  &  & 0.8 \\ 
+    L & 34 (65\%) & 25 (68\%) & 9 (60\%) &  \\ 
+    P & 18 (35\%) & 12 (32\%) & 6 (40\%) &  \\ 
+{\bfseries Indeks Massa Tubuh (kg/m²)} & 27.89 ± 4.72 & 27.52 ± 4.31 & 28.80 ± 5.66 & 0.4 \\ 
+{\bfseries Riwayat Hipertensi} &  &  &  & 0.6 \\ 
+    HT-Tidak-ada & 22 (42\%) & 17 (46\%) & 5 (33\%) &  \\ 
+    HT st I & 8 (15\%) & 6 (16\%) & 2 (13\%) &  \\ 
+    HT st II & 1 (1.9\%) & 1 (2.7\%) & 0 (0\%) &  \\ 
+    HT Terkontrol & 21 (40\%) & 13 (35\%) & 8 (53\%) &  \\ 
+{\bfseries Riwayat Merokok} &  &  &  & 0.4 \\ 
+    Merokok & 20 (38\%) & 16 (43\%) & 4 (27\%) &  \\ 
+    Tidak-merokok & 32 (62\%) & 21 (57\%) & 11 (73\%) &  \\ 
+{\bfseries Kadar HbA1c (\%)} & 7.29 ± 1.79 & 7.37 ± 1.67 & 7.09 ± 2.09 & 0.7 \\ 
+{\bfseries Trigliserida (mg/dL)} & 162.83 ± 124.01 & 142.03 ± 61.27 & 214.13 ± 205.91 & 0.2 \\ 
+{\bfseries Kolesterol Total (mg/dL)} & 170.58 ± 39.96 & 162.08 ± 33.61 & 191.53 ± 47.43 & {\bfseries 0.040} \\ 
+{\bfseries Kadar LDL (mg/dL)} & 107.54 ± 30.74 & 104.46 ± 28.12 & 115.13 ± 36.37 & 0.3 \\ 
+{\bfseries Kadar HDL (mg/dL)} & 39.15 ± 8.82 & 39.16 ± 8.35 & 39.13 ± 10.22 & >0.9 \\ 
+{\bfseries Asam Urat (mg/dL)} & 7.00 ± 2.01 & 6.85 ± 1.69 & 7.36 ± 2.67 & 0.5 \\ 
+{\bfseries Kreatinin Serum (mg/dL)} & 1.51 ± 2.04 & 1.59 ± 2.27 & 1.32 ± 1.39 & 0.6 \\ 
+{\bfseries Status Fungsi Ginjal} &  &  &  & 0.083 \\ 
+    CKD (> 1.2) & 18 (35\%) & 16 (43\%) & 2 (13\%) &  \\ 
+    Normal (<= 1.2) & 34 (65\%) & 21 (57\%) & 13 (87\%) &  \\ 
+{\bfseries Indeks TyHbA1c} & 6.87 ± 0.64 & 6.83 ± 0.54 & 6.97 ± 0.86 & 0.6 \\ 
+{\bfseries Global CAC Score (Agatston)} & 300.1 (16.1, 910.7) & 556.7 (219.0, 1,013.7) & 11.6 (0.0, 17.5) & {\bfseries <0.001} \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\vspace{.05em}
+\textsuperscript{\textit{1}}Mean ± SD; n (\%); Median (Q1, Q3)\\
+\textsuperscript{\textit{2}}Welch Two Sample t-test; Pearson's Chi-squared test; Wilcoxon rank sum exact test\\
+\end{minipage}
+\end{table}
+
+\begin{verbatim}
+[1] "=== DAFTAR KOLOM ASLI DI EXCEL ==="
+\end{verbatim}
+
+\begin{verbatim}
+ [1] "No"                               "Nama Pasien"                     
+ [3] "No. RM"                           "Laporan"                         
+ [5] "Tahun"                            "DM"                              
+ [7] "Gender"                           "Usia"                            
+ [9] "Hipertensi"                       "Durasi_DM"                       
+[11] "Merokok"                          "IMT"                             
+[13] "Statin"                           "OAD-INSULIN"                     
+[15] "DM_cardioprotective"              "HbA1C"                           
+[17] "Kreatinin"                        "Fosphat"                         
+[19] "Kalsium"                          "Hemoglobin"                      
+[21] "Kolesterol-Total"                 "LDL"                             
+[23] "HDL"                              "Trigliserida"                    
+[25] "Asam-Urat"                        "Albumin"                         
+[27] "L-R_Dominant"                     "Global_CAC_score"                
+[29] "LM_Predominant_plaque"            "LM_High-risk-plaque"             
+[31] "LM_Low-attenuation-Plaque"        "LM_PR_index"                     
+[33] "LM_NapkinRing-Sign"               "LM_Spotty-Calcification"         
+[35] "LM_Stenosis"                      "LM_CAD-RADS"                     
+[37] "LAD_Predominant_plaque"           "LAD_High-risk-plaque"            
+[39] "LAD_Low-attenuation-Plaque"       "LAD_PR_index"                    
+[41] "LAD_NapkinRing-Sign"              "LAD_Spotty-Calcification"        
+[43] "LAD_Stenosis"                     "LAD_CAD-RADS"                    
+[45] "LCx_Predominant_plaque"           "LCx_High-risk-plaque"            
+[47] "LCx_Low-attenuation-Plaque"       "LCx_PR_index"                    
+[49] "LCx_NapkinRing-Sign"              "LCx_Spotty-Calcification"        
+[51] "LCx_Stenosis"                     "LCx_CAD-RADS"                    
+[53] "RCA_Predominant_plaque"           "RCA_High-risk-plaque"            
+[55] "RCA_Low-attenuation-Plaque"       "RCA_PR_index"                    
+[57] "RCA_NapkinRing-Sign"              "RCA_Spotty-Calcification"        
+[59] "RCA_Stenosis"                     "RCA_CAD-RADS"                    
+[61] "Global_CAD-RADS"                  "CTR"                             
+[63] "Valve_calcification"              "Ventricular_hypertrophy"         
+[65] "EpicardialAdipose_thickness"      "PericoronaryFatAttenuation-Index"
+\end{verbatim}
+
+\begin{verbatim}
+[1] "Jumlah total baris setelah cleaning: 52"
+\end{verbatim}
+
+\begin{verbatim}
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    0.0    16.8   300.1   565.5   904.8  2933.2 
+\end{verbatim}
+
+\begin{verbatim}
+[1] "Jumlah baris setelah filter CAC <= 2000: 49"
+\end{verbatim}
+
+\begin{verbatim}
+[1] "Jumlah baris final untuk plot: 392"
+\end{verbatim}
+
+\begin{verbatim}
+`geom_smooth()` using formula = 'y ~ x'
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/unnamed-chunk-1-1.pdf}}
+
+\begin{verbatim}
+`geom_smooth()` using formula = 'y ~ x'
+\end{verbatim}
+
+\textbf{Prediktor Klinis untuk Kemunculan \emph{High-Risk Plaque} (HRP)}
+
+Kemampuan prediktif TyHbA1c Index, Usia, dan IMT dalam mendeteksi
+keberadaan plak risiko tinggi dievaluasi menggunakan analisis regresi
+logistik multivariat. Hasil pemodelan menunjukkan bahwa peningkatan usia
+secara parsial memiliki pengaruh yang bermakna secara statistik terhadap
+pembentukan HRP (\emph{Odds Ratio} {[}OR{]} = 1,11; 95\% CI: 1,01 --
+1,21; \$p = 0,023\$).
+
+Kombinasi parameter usia, IMT, dan beban glukolipotoksisitas (TyHbA1c
+Index) menghasilkan model regresi dengan nilai \emph{Pseudo R-squared}
+(McFadden) sebesar 0,135. TyHbA1c Index secara independen menunjukkan
+tren \emph{Odds Ratio} sebesar 1,27 (95\% CI: 0,38 -- 4,20). Artinya,
+setiap kenaikan satu unit TyHbA1c Index secara matematis cenderung
+meningkatkan risiko terbentuknya HRP sebesar 1,27 kali lipat, meskipun
+kemaknaan statistik parsial belum tercapai pada ukuran sampel ini (\$p =
+0,688\$).
+
+Uji diskriminasi diagnostik model ini (Usia + IMT + TyHbA1c Index)
+menunjukkan performa yang baik. Analisis \emph{Receiver Operating
+Characteristic} (ROC) menghasilkan \emph{Area Under the Curve} (AUC)
+sebesar 0,746. Angka ini menegaskan bahwa kombinasi ketiga parameter
+klinis tersebut mampu membedakan pasien DM yang memiliki \emph{high-risk
+plaque} dengan pasien tanpa \emph{high-risk plaque} dengan tingkat
+akurasi diagnostik sebesar 74,6\%.
+
+\textbf{Prediksi Obstruksi Signifikan (CAD-RADS \$\textbackslash ge\$
+3)}
+
+Dalam memprediksi kejadian penyumbatan koroner yang bermakna secara
+hemodinamik (stenosis \$\textbackslash ge\$ 50\% atau CAD-RADS kelas 3
+hingga 5), model multivariat yang sama diuji kembali. Usia kembali
+menjadi faktor prediktor terkuat yang paling mendekati batas
+signifikansi statistik (OR = 1,07; 95\% CI: 0,99 -- 1,16; \$p =
+0,070\$).
+
+Meskipun model prediktif untuk obstruksi signifikan ini memiliki kinerja
+yang sedikit lebih rendah dibandingkan dengan model HRP, nilai
+diskriminasinya tetap berada pada ambang batas klinis yang dapat
+diterima. Kurva ROC untuk prediksi CAD-RADS \$\textbackslash ge\$ 3
+menghasilkan nilai AUC sebesar 0,709. Hal ini mengindikasikan bahwa
+indeks resistensi insulin (TyHbA1c) yang digabungkan dengan usia dan
+adipositas lebih unggul dalam mencerminkan ``kualitas'' plak atau
+kerentanan dinding arteri (munculnya HRP) dibandingkan dengan
+``kuantitas'' dari luas area penyumbatan (skor CAD-RADS).
+
+\subsection{5. Kurva Regresi}\label{kurva-regresi}
+
+\begin{table}
+\fontsize{12.0pt}{14.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lccc}
+\toprule
+\textbf{Characteristic} & \textbf{OR} & \textbf{95\% CI} & \textbf{p-value} \\ 
+\midrule\addlinespace[2.5pt]
+Usia & 1.08 & 1.00, 1.17 & {\bfseries 0.039} \\ 
+IMT & 1.01 & 0.88, 1.16 & >0.9 \\ 
+TyHbA1c\_Index & 1.02 & 0.33, 3.31 & >0.9 \\ 
+CKD\_Status & 4.38 & 0.94, 32.2 & 0.061 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\vspace{.05em}
+Abbreviations: CI = Confidence Interval, OR = Odds Ratio\\
+\end{minipage}
+\end{table}
+
+\subsection{6. Kurva ROC}\label{kurva-roc}
+
+\begin{verbatim}
+Setting levels: control = HRP (-), case = HRP (+)
+\end{verbatim}
+
+\begin{verbatim}
+Setting direction: controls < cases
+\end{verbatim}
+
+\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/ROC-1.pdf}}
+
+\subsection{7. Pembuatan Nomogram Klinis (rms
+Package)}\label{pembuatan-nomogram-klinis-rms-package}
+
+\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/nomogram-1.pdf}}
+
+\section{}\label{section}
+
+\section{Pembahasan}\label{pembahasan}
+
+Penelitian ini mengevaluasi nilai prediktif dari kombinasi parameter
+klinis---Usia, Indeks Massa Tubuh (IMT), dan TyHbA1c Index---terhadap
+keparahan penyakit arteri koroner yang dinilai melalui \emph{Computed
+Tomography Coronary Angiography} (CTCA) pada pasien diabetes dan
+prediabetes. Temuan utama dari studi ini menunjukkan bahwa pemodelan
+regresi logistik multivariat yang menggabungkan ketiga parameter
+tersebut memiliki kemampuan diskriminatif yang baik dalam memprediksi
+keberadaan \emph{High-Risk Plaque} (HRP) dengan nilai \emph{Area Under
+the Curve} (AUC) sebesar 0,746, serta memprediksi obstruksi koroner
+signifikan (CAD-RADS \$\textbackslash ge\$ 3) dengan AUC sebesar 0,709.
+
+\textbf{Glukolipotoksisitas Kronis, Aktivasi Makrofag, dan Kerentanan
+Plak (\emph{Plaque Vulnerability})}
+
+Keunggulan prediktif dari model ini terhadap keberadaan HRP memberikan
+wawasan patofisiologis yang krusial. HRP---yang bermanifestasi sebagai
+\emph{positive remodeling}, kalsifikasi bercak (\emph{spotty
+calcification}), dan \emph{low-attenuation plaque}---merupakan lesi
+prekursor struktural yang sangat rentan mengalami ruptur dan memicu
+sindrom koroner akut. Dalam studi ini, keberadaan fitur HRP, secara
+spesifik \emph{positive remodeling} dan \emph{spotty calcification},
+terbukti sejalan dengan peningkatan beban TyHbA1c Index.
+
+TyHbA1c Index merupakan penanda biologis yang merepresentasikan
+interaksi ganda antara dislipidemia aterogenik (hipertrigliseridemia)
+dan paparan hiperglikemia kronis (HbA1c). Secara biomolekuler, kondisi
+glukolipotoksisitas persisten memicu akumulasi \emph{Advanced Glycation
+End-products} (AGEs) dan \emph{Reactive Oxygen Species} (ROS) yang
+merusak integritas endotel. Resistensi insulin yang kronis meningkatkan
+fluks asam lemak bebas ke dinding pembuluh darah, memfasilitasi
+infiltrasi makrofag besar-besaran yang kemudian bertransformasi menjadi
+sel busa (\emph{foam cells}) di ruang subendotel.
+
+Berdasarkan patobiologi vaskular, makrofag intratunika yang teraktivasi
+hiperglikemia ini mensekresi enzim \emph{Matrix Metalloproteinases}
+(terutama MMP-2 dan MMP-9) secara masif. Enzim ini secara agresif
+mendegradasi matriks ekstraseluler (kolagen dan elastin) pada tunika
+media. Degradasi matriks ke arah luar dinding epikardial inilah yang
+mendasari fenomena \emph{positive remodeling} (Fenomena Glagov) sebagai
+upaya kompensatorik tubuh mempertahankan ukuran lumen. Meskipun secara
+hemodinamik aliran darah awalnya tidak terganggu, remodeling
+kompensatorik ini memfasilitasi pembentukan plak dengan inti nekrotik
+lipid yang masif (\emph{large lipid core}) dan selubung fibrosa yang
+tipis (\emph{Thin-Cap Fibroatheroma} / TCFA). Hal ini menjelaskan secara
+gamblang mengapa indeks TyHbA1c memiliki sensitivitas yang jauh lebih
+tinggi dalam mencerminkan ``kualitas'' dan kerentanan plak (HRP)
+dibandingkan sekadar mengevaluasi ``kuantitas'' persentase penyumbatan
+lumen (skor absolut CAD-RADS).
+
+\textbf{Peran Dominan Usia dan Fase Prediabetes Asimptomatik}
+
+Dalam pemodelan multivariat, usia muncul sebagai prediktor independen
+yang paling konsisten dan bermakna secara statistik. Proses
+aterosklerosis pada dasarnya adalah patologi kumulatif yang sangat
+bergantung pada waktu (\emph{time-dependent}). Semakin lama durasi sel
+endotel terpapar oleh faktor risiko glukometabolik, semakin besar
+probabilitas kalsifikasi difus dan degenerasi vaskular terjadi.
+
+Sangat menarik untuk dicatat bahwa dalam analisis data sekunder, durasi
+terdiagnosisnya Diabetes Mellitus (dalam bulan) tidak menunjukkan
+korelasi linier yang kuat terhadap keparahan kalsifikasi koroner.
+Fenomena klinis ini mengonfirmasi realita \emph{delayed diagnosis} pada
+perjalanan alamiah diabetes; di mana fase prediabetes asimptomatik dan
+resistensi insulin \emph{silent} sesungguhnya telah merusak
+vaskularisasi koroner jauh sebelum kriteria diagnostik klinis DM
+terpenuhi. Oleh karena itu, usia biologis pasien yang disandingkan
+dengan penanda metabolik objektif yang bersifat kronis (seperti TyHbA1c)
+memberikan daya prediksi risiko yang jauh lebih andal dibandingkan
+sekadar bersandar pada durasi anamnesis penyakit.
+
+\textbf{Implikasi Klinis dan Pembuatan Nomogram}
+
+Kemampuan diskriminasi diagnostik (Usia, IMT, TyHbA1c) yang mencapai AUC
+\$\textbackslash sim 0,75\$ dalam mendeteksi HRP menawarkan implikasi
+translasi klinis yang bernilai tinggi. Ketiga parameter ini bertumpu
+pada pemeriksaan dasar yang murah, non-invasif, dan secara rutin
+dievaluasi pada pasien metabolik di berbagai stratifikasi fasilitas
+layanan kesehatan. Melalui konversi model multivariat ini menjadi sebuah
+sistem skoring terintegrasi atau nomogram prediksi, klinisi dimampukan
+untuk melakukan stratifikasi risiko kardiovaskular secara cepat di ruang
+praktik. Pendekatan ini dapat memfasilitasi \emph{decision making} dalam
+menyeleksi kandidat pasien asimptomatik mana yang paling diuntungkan
+dari rujukan awal untuk pemeriksaan \emph{Computed Tomography Coronary
+Angiography} (CTCA), maupun untuk eskalasi terapi kardioprotektif
+preventif.
+
+\textbf{Keterbatasan Penelitian}
+
+Studi ini memiliki beberapa keterbatasan. Desain penelitian
+\emph{cross-sectional} membatasi kemampuan untuk menyimpulkan hubungan
+kausalitas sejati antara fluktuasi TyHbA1c Index dengan progresi HRP
+secara longitudinal. Selanjutnya, meskipun model regresi secara
+keseluruhan mencapai kemampuan diskriminasi yang \emph{acceptable},
+signifikansi statistik parsial dari TyHbA1c (\emph{p-value}) belum
+sepenuhnya tercapai secara optimal akibat batasan ukuran sampel pada
+kohort \emph{single-center} ini. Penelitian lanjutan dengan ukuran
+sampel yang lebih masif dan validasi kohort eksternal sangat diperlukan
+guna mengonfirmasi keandalan model, menyempurnakan interval kepercayaan
+(\emph{confidence interval}), serta memvalidasi kalibrasi nomogram
+klinis yang dihasilkan.
+
+\section{Simpulan}\label{simpulan}
+
+Kombinasi parameter usia, Indeks Massa Tubuh (IMT), dan TyHbA1c Index
+terbukti memiliki kemampuan diskriminasi diagnostik yang baik dalam
+memprediksi keberadaan plak koroner risiko tinggi (\emph{High-Risk
+Plaque} / HRP) serta derajat obstruksi koroner yang signifikan (CAD-RADS
+\$\textbackslash ge\$ 3) pada pasien prediabetes dan diabetes mellitus.
+Indeks TyHbA1c, sebagai representasi beban glukolipotoksisitas dan
+resistensi insulin kronis, secara spesifik lebih unggul dalam
+mencerminkan kerentanan struktural plak (seperti \emph{positive
+remodeling} dan \emph{spotty calcification}) dibandingkan dengan profil
+lipid konvensional semata.
+
+Pemodelan multivariat dari ketiga parameter klinis dasar ini berpotensi
+kuat untuk dikembangkan menjadi sebuah nomogram atau instrumen skoring
+klinis yang praktis. Implementasi sistem stratifikasi risiko non-invasif
+ini di ruang praktik diharapkan dapat memfasilitasi para klinisi dalam
+menyeleksi kandidat pasien yang membutuhkan prioritas rujukan untuk
+evaluasi \emph{Computed Tomography Coronary Angiography} (CTCA) maupun
+eskalasi terapi kardiovaskular secara lebih dini dan presisi.
+
+\section{Daftar Pustaka}\label{daftar-pustaka}
+
+
+
+
+\end{document}

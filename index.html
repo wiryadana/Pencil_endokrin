@@ -1,0 +1,2432 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Kadek Adit Wiryadana">
+
+<title>Kombinasi TyHbA1c Index, Usia, dan Indeks Massa Tubuh sebagai Prediktor High-Risk Plaque pada Pasien Diabetes Mellitus: Sebuah Pendekatan Nomogram Klinis</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-293cc809d15782442e9b1098eedb6797.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-dark-7b2b20282c8da1075b52e56187ace71c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="index_files/libs/bootstrap/bootstrap-293cc809d15782442e9b1098eedb6797.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="quarto-light"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = false;
+    const darkModeDefault = authorPrefersDark;
+      document.querySelector('link#quarto-text-highlighting-styles.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+      document.querySelector('link#quarto-bootstrap.quarto-color-scheme-extra').rel = 'disabled-stylesheet';
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#pendahuluan" id="toc-pendahuluan" class="nav-link active" data-scroll-target="#pendahuluan"><span class="header-section-number">1</span> Pendahuluan</a></li>
+  <li><a href="#metode" id="toc-metode" class="nav-link" data-scroll-target="#metode"><span class="header-section-number">2</span> Metode</a>
+  <ul class="collapse">
+  <li><a href="#setup" id="toc-setup" class="nav-link" data-scroll-target="#setup"><span class="header-section-number">2.1</span> 1. Setup</a></li>
+  <li><a href="#loading-data" id="toc-loading-data" class="nav-link" data-scroll-target="#loading-data"><span class="header-section-number">2.2</span> 2. Loading Data</a></li>
+  <li><a href="#data-cleaning" id="toc-data-cleaning" class="nav-link" data-scroll-target="#data-cleaning"><span class="header-section-number">2.3</span> 3. Data Cleaning</a></li>
+  </ul></li>
+  <li><a href="#hasil" id="toc-hasil" class="nav-link" data-scroll-target="#hasil"><span class="header-section-number">3</span> Hasil</a></li>
+  <li><a href="#tabel-karakteristik-demografi-dan-klinis-gtsummary" id="toc-tabel-karakteristik-demografi-dan-klinis-gtsummary" class="nav-link" data-scroll-target="#tabel-karakteristik-demografi-dan-klinis-gtsummary"><span class="header-section-number">4</span> 4. Tabel Karakteristik Demografi dan Klinis (gtsummary)</a>
+  <ul class="collapse">
+  <li><a href="#kurva-regresi" id="toc-kurva-regresi" class="nav-link" data-scroll-target="#kurva-regresi"><span class="header-section-number">4.1</span> 5. Kurva Regresi</a></li>
+  <li><a href="#kurva-roc" id="toc-kurva-roc" class="nav-link" data-scroll-target="#kurva-roc"><span class="header-section-number">4.2</span> 6. Kurva ROC</a></li>
+  <li><a href="#pembuatan-nomogram-klinis-rms-package" id="toc-pembuatan-nomogram-klinis-rms-package" class="nav-link" data-scroll-target="#pembuatan-nomogram-klinis-rms-package"><span class="header-section-number">4.3</span> 7. Pembuatan Nomogram Klinis (rms Package)</a></li>
+  </ul></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">5</span> </a></li>
+  <li><a href="#pembahasan" id="toc-pembahasan" class="nav-link" data-scroll-target="#pembahasan"><span class="header-section-number">6</span> Pembahasan</a></li>
+  <li><a href="#simpulan" id="toc-simpulan" class="nav-link" data-scroll-target="#simpulan"><span class="header-section-number">7</span> Simpulan</a></li>
+  <li><a href="#daftar-pustaka" id="toc-daftar-pustaka" class="nav-link" data-scroll-target="#daftar-pustaka"><span class="header-section-number">8</span> Daftar Pustaka</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF (agu)</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Kombinasi TyHbA1c Index, Usia, dan Indeks Massa Tubuh sebagai Prediktor High-Risk Plaque pada Pasien Diabetes Mellitus: Sebuah Pendekatan Nomogram Klinis</h1>
+</div>
+
+
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author">Kadek Adit Wiryadana <a href="mailto:wiryadana.2371041012@student.unud.ac.id" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            RSUP Ngoerah
+          </p>
+      </div>
+  </div>
+
+<div class="quarto-title-meta">
+
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">25 August 2026, 22:16</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    <p>Tuliskan abstrak penelitian Anda di sini. Abstrak akan otomatis diformat sesuai standar AGU untuk versi PDF, dan ditampilkan secara responsif di versi HTML.</p>
+  </div>
+</div>
+
+
+</header>
+
+
+<section id="pendahuluan" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="pendahuluan"><span class="header-section-number">1</span> Pendahuluan</h2>
+<p>Penyakit kardiovaskular aterosklerotik (ASCVD) tetap menjadi penyebab utama morbiditas dan mortalitas pada pasien dengan Diabetes Mellitus (DM). Peningkatan risiko kardiovaskular pada populasi ini tidak hanya didorong oleh hiperglikemia, melainkan oleh interaksi kompleks yang melibatkan resistensi insulin, dislipidemia aterogenik, dan inflamasi sistemik. Meskipun parameter lipid konvensional seperti Low-Density Lipoprotein (LDL) dan Kolesterol Total telah lama digunakan sebagai prediktor risiko, banyak pasien DM yang tetap mengalami kejadian kardiovaskular akut meskipun kadar profil lipid mereka telah mencapai target terapi (residual risk). Hal ini mendorong pencarian penanda biologis (biomarker) alternatif yang mampu merepresentasikan patofisiologi aterosklerosis pada populasi DM secara lebih komprehensif. Resistensi insulin kronis merupakan motor utama dalam proses disfungsi endotel dan pembentukan plak kerentanan tinggi (vulnerable plaque). Belakangan ini, Triglyceride-Glucose (TyG) Index muncul sebagai penanda substitusi yang divalidasi untuk resistensi insulin. Namun, penggunaan glukosa darah puasa (GDP) dalam rumus TyG memiliki keterbatasan akibat tingginya fluktuasi glikemik harian. Oleh karena itu, indeks TyHbA1c yang menggabungkan kadar trigliserida dengan HbA1c diajukan sebagai parameter yang jauh lebih stabil dalam mencerminkan beban glukolipotoksisitas kronis. Evaluasi anatomi arteri koroner non-invasif saat ini dapat dilakukan secara akurat menggunakan Computed Tomography Coronary Angiography (CTCA). Sistem pelaporan CAD-RADS tidak hanya menilai derajat keparahan stenosis, tetapi juga mengidentifikasi keberadaan High-Risk Plaque (HRP)—seperti positive remodeling, low-attenuation plaque, spotty calcification, dan napkin-ring sign—yang merupakan cikal bakal terjadinya sindrom koroner akut. Hingga saat ini, pemodelan multivariat yang menggabungkan indeks glukolipotoksisitas kronis (TyHbA1c) dengan penanda adipositas viseral (Indeks Massa Tubuh/IMT) dan faktor durasi degeneratif (Usia) untuk memprediksi fitur HRP pada CTCA belum banyak diteliti. Penelitian ini bertujuan untuk mengevaluasi kemampuan prediktif dari kombinasi TyHbA1c Index, Usia, dan IMT terhadap keberadaan HRP serta keparahan obstruksi koroner pada pasien DM, sekaligus mengembangkan sebuah nomogram klinis guna memfasilitasi stratifikasi risiko kardiovaskular secara praktis di ruang praktik.</p>
+</section>
+<section id="metode" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="metode"><span class="header-section-number">2</span> Metode</h2>
+<p><strong>Desain dan Populasi Penelitian</strong></p>
+<p>Penelitian ini merupakan studi analitik observasional dengan pendekatan potong lintang (<em>cross-sectional</em>) yang dilakukan secara retrospektif (atau prospektif, <em>sesuaikan dengan desain dr.</em>). Populasi target adalah pasien dengan diagnosis Prediabetes atau Diabetes Mellitus yang menjalani pemeriksaan <em>Computed Tomography Coronary Angiography</em> (CTCA) di RSUP Prof.&nbsp;dr. I.G.N.G. Ngoerah, Denpasar, Bali, pada periode [Bulan Tahun] hingga [Bulan Tahun]. Teknik pengambilan sampel menggunakan <em>consecutive sampling</em> hingga target sampel minimal terpenuhi. Kriteria eksklusi meliputi pasien dengan data rekam medis atau laboratorium yang tidak lengkap, riwayat operasi <em>Coronary Artery Bypass Grafting</em> (CABG), atau kondisi gagal ginjal tahap akhir.</p>
+<p><strong>Pengumpulan Data dan Definisi Operasional</strong></p>
+<p>Data karakteristik demografi (Usia, Jenis Kelamin), antropometri (Indeks Massa Tubuh), riwayat penyakit penyerta, serta hasil laboratorium (HbA1c, Trigliserida, Kolesterol Total, LDL, HDL) diekstraksi dari rekam medis elektronik. Indeks TyHbA1c dihitung menggunakan formula logaritma natural: TyHbA1c = ln(Trigliserida [mg/dL] x HbA1c [%]).</p>
+<p>Evaluasi CTCA dilakukan oleh dokter spesialis radiologi konsultan yang tersertifikasi. Variabel dependen utama dalam penelitian ini adalah:</p>
+<p>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Keparahan Obstruksi Koroner:</strong> Diklasifikasikan berdasarkan sistem CAD-RADS 2.0, di mana kategori obstruktif signifikan didefinisikan sebagai CAD-RADS $\ge$ 3 (stenosis $\ge$ 50%).</p>
+<p>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Keberadaan High-Risk Plaque (HRP):</strong> Ditetapkan sebagai variabel biner (Ya/Tidak), yang positif apabila ditemukan minimal satu dari empat fitur berikut pada lesi koroner: <em>positive remodeling</em> (PR), <em>low-attenuation plaque</em> (LAP), <em>spotty calcification</em> (SC), atau <em>napkin-ring sign</em> (NRS).</p>
+<p><strong>Analisis Statistik</strong></p>
+<p>Analisis data dilakukan menggunakan perangkat lunak R. Variabel kontinu disajikan dalam bentuk rerata dan simpangan baku (distribusi normal) atau median dan rentang interkuartil (distribusi tidak normal). Analisis komparatif bivariat dilakukan menggunakan uji <em>Mann-Whitney U</em> atau <em>Independent T-test</em> untuk variabel kontinu, serta uji <em>Chi-Square</em> atau <em>Fisher’s Exact</em> untuk variabel kategorik.</p>
+<p>Pemodelan prediktif dilakukan menggunakan analisis Regresi Logistik Multivariat. Variabel prediktor yang dimasukkan ke dalam model utama adalah Usia, IMT, dan TyHbA1c Index. Performa diskriminatif model dievaluasi dengan menggunakan <em>Area Under the Curve</em> (AUC) dari <em>Receiver Operating Characteristic</em> (ROC). Signifikansi statistik ditetapkan pada nilai $p &lt; 0,05$. Berdasarkan koefisien regresi dari model multivariat final, sebuah nomogram klinis akan dikonstruksi. Kinerja nomogram divalidasi secara internal melalui uji kalibrasi (<em>Hosmer-Lemeshow goodness-of-fit</em>) dan metode <em>bootstrapping</em> (1000 <em>resamples</em>) untuk menghasilkan indeks konkordansi (C-index) yang terkoreksi.</p>
+<section id="setup" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="setup"><span class="header-section-number">2.1</span> 1. Setup</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install packages jika belum ada (hapus tanda # jika perlu install)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages(c("googlesheets4", "dplyr", "pROC", "rms", "ggplot2", "gtsummary"))</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(googlesheets4) <span class="co"># Untuk mengambil data dari Google Sheets</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)         <span class="co"># Untuk manipulasi data</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pROC)          <span class="co"># Untuk analisis kurva ROC dan AUC</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rms)           <span class="co"># Untuk regresi dan pembuatan Nomogram</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)       <span class="co"># Untuk visualisasi data</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gtsummary)     <span class="co"># Untuk membuat tabel hasil klinis yang rapi</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="loading-data" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="loading-data"><span class="header-section-number">2.2</span> 2. Loading Data</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Otorisasi Google Sheets (Pilih '0' atau login sesuai petunjuk di console R)</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gs4_auth</span>(<span class="at">email =</span> <span class="cn">TRUE</span>) </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Tautan Google Sheets</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>sheet_url <span class="ot">&lt;-</span> <span class="st">"[https://docs.google.com/spreadsheets/d/18yyL48LTB-njD6iGNwiuYiiG4uCG1edVn6d3TYQnpE8/edit?gid=288598852#gid=288598852](https://docs.google.com/spreadsheets/d/18yyL48LTB-njD6iGNwiuYiiG4uCG1edVn6d3TYQnpE8/edit?gid=288598852#gid=288598852)"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Membaca data</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>df_raw <span class="ot">&lt;-</span> <span class="fu">read_sheet</span>(sheet_url, <span class="at">sheet =</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="data-cleaning" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="data-cleaning"><span class="header-section-number">2.3</span> 3. Data Cleaning</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df_clean <span class="ot">&lt;-</span> df_raw <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Filter pasien yang memiliki No. RM</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">No. RM</span><span class="st">`</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Konversi tipe data karakter ke numerik (mengganti koma dengan titik)</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(Usia, IMT, HbA1C, Trigliserida, Kreatinin, <span class="st">`</span><span class="at">Kolesterol-Total</span><span class="st">`</span>, LDL, HDL, <span class="st">`</span><span class="at">Asam-Urat</span><span class="st">`</span>), </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">"."</span>, <span class="fu">as.character</span>(.x))))) <span class="sc">%&gt;%</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Membuat variabel baru</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. TyHbA1c Index (Logaritma Natural dari Trigliserida * HbA1c)</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">TyHbA1c_Index =</span> <span class="fu">log</span>(Trigliserida <span class="sc">*</span> HbA1C),</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Status HRP (1 = Ada HRP, 0 = Tidak ada HRP)</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">HRP_Status =</span> <span class="fu">ifelse</span>(<span class="fu">grepl</span>(<span class="st">"HRP"</span>, <span class="st">`</span><span class="at">Global_CAD-RADS</span><span class="st">`</span>, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>), <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">HRP_Status =</span> <span class="fu">factor</span>(HRP_Status, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"HRP (-)"</span>, <span class="st">"HRP (+)"</span>)),</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Status CKD (1 = Kreatinin &gt; 1.2, 0 = Kreatinin &lt;= 1.2)</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">CKD_Status =</span> <span class="fu">ifelse</span>(Kreatinin <span class="sc">&gt;</span> <span class="fl">1.2</span>, <span class="dv">1</span>, </span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">ifelse</span>(Kreatinin <span class="sc">&lt;=</span> <span class="fl">1.2</span>, <span class="dv">0</span>, <span class="cn">NA</span>))</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Membuang missing values hanya pada variabel yang akan dianalisis</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Usia), <span class="sc">!</span><span class="fu">is.na</span>(IMT), <span class="sc">!</span><span class="fu">is.na</span>(TyHbA1c_Index), </span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a>         <span class="sc">!</span><span class="fu">is.na</span>(CKD_Status), <span class="sc">!</span><span class="fu">is.na</span>(HRP_Status))</span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan ringkasan sampel final</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Total sampel siap dianalisis (n):"</span>, <span class="fu">nrow</span>(df_clean), <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Total sampel siap dianalisis (n): 0 </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="at">Status_Ginjal =</span> df_clean<span class="sc">$</span>CKD_Status, <span class="at">Status_HRP =</span> df_clean<span class="sc">$</span>HRP_Status)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt; table of extent 0 x 2 &gt;</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="hasil" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="hasil"><span class="header-section-number">3</span> Hasil</h2>
+<p>Penelitian ini melibatkan 40 pasien dengan diagnosis diabetes atau prediabetes yang menjalani pemeriksaan <em>Computed Tomography Coronary Angiography</em> (CTCA). Setelah mengeksklusi sampel dengan data profil lipid yang tidak lengkap, total 39 subjek dimasukkan ke dalam analisis pemodelan akhir. Usia rata-rata subjek adalah 60,69 $\pm$ 10,62 tahun, dengan Indeks Massa Tubuh (IMT) rata-rata berada pada kategori <em>overweight</em> hingga obesitas tingkat I (28,39 $\pm$ 4,78 kg/m$^2$). Status glikemik menunjukkan rata-rata HbA1c sebesar 7,49 $\pm$ 1,89%, sedangkan rerata kadar trigliserida adalah 152,59 $\pm$ 123,21 mg/dL. Rentang TyHbA1c Index pada populasi ini berkisar antara 5,54 hingga 8,32 (Rerata = 6,81 $\pm$ 0,67).</p>
+<p>Berdasarkan evaluasi CTCA, sebanyak 26 pasien (66,7%) teridentifikasi memiliki sekurang-kurangnya satu fitur kerentanan plak atau <em>High-Risk Plaque</em> (HRP). Sementara itu, prevalensi pasien yang mengalami derajat obstruksi koroner moderat hingga berat (didefinisikan sebagai CAD-RADS $\ge$ 3) adalah sebanyak 21 pasien (53,8%).</p>
+</section>
+<section id="tabel-karakteristik-demografi-dan-klinis-gtsummary" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="tabel-karakteristik-demografi-dan-klinis-gtsummary"><span class="header-section-number">4</span> 4. Tabel Karakteristik Demografi dan Klinis (gtsummary)</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Menyiapkan dataset khusus untuk Tabel Karakteristik</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df_table <span class="ot">&lt;-</span> df_raw <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">No. RM</span><span class="st">`</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Membersihkan format angka dasar (koma ke titik)</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(Usia, IMT, HbA1C, Trigliserida, <span class="st">`</span><span class="at">Kolesterol-Total</span><span class="st">`</span>, </span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>                  LDL, HDL, <span class="st">`</span><span class="at">Asam-Urat</span><span class="st">`</span>, Kreatinin, LDL, HDL, Albumin), </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>                <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">"."</span>, <span class="fu">as.character</span>(.x))))) <span class="sc">%&gt;%</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Membersihkan Global CAC Score secara spesifik agar menjadi angka murni</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">Global_CAC_score =</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">"."</span>, <span class="fu">gsub</span>(<span class="st">"[^0-9,.-]"</span>, <span class="st">""</span>, <span class="fu">as.character</span>(Global_CAC_score)))),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">TyHbA1c_Index =</span> <span class="fu">log</span>(Trigliserida <span class="sc">*</span> HbA1C),</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">HRP_Status =</span> <span class="fu">ifelse</span>(<span class="fu">grepl</span>(<span class="st">"HRP"</span>, <span class="st">`</span><span class="at">Global_CAD-RADS</span><span class="st">`</span>, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>), <span class="st">"HRP (+)"</span>, <span class="st">"HRP (-)"</span>),</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">CKD_Status =</span> <span class="fu">ifelse</span>(Kreatinin <span class="sc">&gt;</span> <span class="fl">1.2</span>, <span class="st">"CKD (&gt; 1.2)"</span>, <span class="st">"Normal (&lt;= 1.2)"</span>),</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">Gender =</span> <span class="fu">as.factor</span>(Gender),</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">Hipertensi =</span> <span class="fu">as.factor</span>(Hipertensi),</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">Merokok =</span> <span class="fu">as.factor</span>(Merokok)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(HRP_Status, Usia, Gender, IMT, Hipertensi, Merokok, </span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>         HbA1C, Trigliserida, <span class="st">`</span><span class="at">Kolesterol-Total</span><span class="st">`</span>, LDL, HDL, </span>
+<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Asam-Urat</span><span class="st">`</span>, Kreatinin, CKD_Status, TyHbA1c_Index, Global_CAC_score)</span>
+<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a>label_variabel <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a>  Usia <span class="sc">~</span> <span class="st">"Usia (Tahun)"</span>,</span>
+<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>  Gender <span class="sc">~</span> <span class="st">"Jenis Kelamin"</span>,</span>
+<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>  IMT <span class="sc">~</span> <span class="st">"Indeks Massa Tubuh (kg/m²)"</span>,</span>
+<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a>  Hipertensi <span class="sc">~</span> <span class="st">"Riwayat Hipertensi"</span>,</span>
+<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a>  Merokok <span class="sc">~</span> <span class="st">"Riwayat Merokok"</span>,</span>
+<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a>  HbA1C <span class="sc">~</span> <span class="st">"Kadar HbA1c (%)"</span>,</span>
+<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a>  Trigliserida <span class="sc">~</span> <span class="st">"Trigliserida (mg/dL)"</span>,</span>
+<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Kolesterol-Total</span><span class="st">`</span> <span class="sc">~</span> <span class="st">"Kolesterol Total (mg/dL)"</span>,</span>
+<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a>  LDL <span class="sc">~</span> <span class="st">"Kadar LDL (mg/dL)"</span>,</span>
+<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>  HDL <span class="sc">~</span> <span class="st">"Kadar HDL (mg/dL)"</span>,</span>
+<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Asam-Urat</span><span class="st">`</span> <span class="sc">~</span> <span class="st">"Asam Urat (mg/dL)"</span>,</span>
+<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a>  Kreatinin <span class="sc">~</span> <span class="st">"Kreatinin Serum (mg/dL)"</span>,</span>
+<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a>  CKD_Status <span class="sc">~</span> <span class="st">"Status Fungsi Ginjal"</span>,</span>
+<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>  TyHbA1c_Index <span class="sc">~</span> <span class="st">"Indeks TyHbA1c"</span>,</span>
+<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a>  Global_CAC_score <span class="sc">~</span> <span class="st">"Global CAC Score (Agatston)"</span></span>
+<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. MEMBUAT TABEL A: KESELURUHAN</span></span>
+<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>tabel_keseluruhan <span class="ot">&lt;-</span> df_table <span class="sc">%&gt;%</span></span>
+<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>HRP_Status) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_summary</span>(</span>
+<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">statistic =</span> <span class="fu">list</span>(</span>
+<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a>      <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">"{mean} \u00b1 {sd}"</span>,</span>
+<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>      Global_CAC_score <span class="sc">~</span> <span class="st">"{median} ({p25}, {p75})"</span> <span class="co"># CAC menggunakan Median dan IQR</span></span>
+<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">digits =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="dv">2</span>, Global_CAC_score <span class="sc">~</span> <span class="dv">1</span>),</span>
+<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> label_variabel,</span>
+<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">missing =</span> <span class="st">"no"</span></span>
+<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_header</span>(stat_0 <span class="sc">~</span> <span class="st">"**Keseluruhan**"</span>)</span>
+<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. MEMBUAT TABEL B: HRP(+) DAN HRP(-)</span></span>
+<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a>tabel_hrp <span class="ot">&lt;-</span> df_table <span class="sc">%&gt;%</span></span>
+<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl_summary</span>(</span>
+<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a>    <span class="at">by =</span> HRP_Status, </span>
+<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a>    <span class="at">statistic =</span> <span class="fu">list</span>(</span>
+<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>      <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">"{mean} \u00b1 {sd}"</span>,</span>
+<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a>      Global_CAC_score <span class="sc">~</span> <span class="st">"{median} ({p25}, {p75})"</span> <span class="co"># CAC menggunakan Median dan IQR</span></span>
+<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>    <span class="at">digits =</span> <span class="fu">list</span>(<span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="dv">2</span>, Global_CAC_score <span class="sc">~</span> <span class="dv">1</span>),</span>
+<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span> label_variabel,</span>
+<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a>    <span class="at">missing =</span> <span class="st">"no"</span></span>
+<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_p</span>(</span>
+<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">test =</span> <span class="fu">list</span>(</span>
+<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a>      <span class="fu">all_continuous</span>() <span class="sc">~</span> <span class="st">"t.test"</span>,      </span>
+<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a>      <span class="fu">all_categorical</span>() <span class="sc">~</span> <span class="st">"chisq.test"</span>,</span>
+<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>      Global_CAC_score <span class="sc">~</span> <span class="st">"wilcox.test"</span> <span class="co"># Uji Mann-Whitney untuk CAC non-parametrik</span></span>
+<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_p</span>(<span class="at">t =</span> <span class="fl">0.05</span>)</span>
+<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. MENGGABUNGKAN KEDUA TABEL</span></span>
+<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a>tabel_final <span class="ot">&lt;-</span> <span class="fu">tbl_merge</span>(</span>
+<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a>  <span class="at">tbls =</span> <span class="fu">list</span>(tabel_keseluruhan, tabel_hrp),</span>
+<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a>  <span class="at">tab_spanner =</span> <span class="fu">c</span>(<span class="cn">NA</span>, <span class="st">"**Vulnerabilitas Plak (CAD-RADS)**"</span>) </span>
+<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_caption</span>(<span class="st">"**Tabel 1. Karakteristik Dasar, Profil Klinis, dan Skor CAC Subjek Penelitian**"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_labels</span>()</span>
+<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a><span class="co"># Tampilkan hasil</span></span>
+<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>tabel_final</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="njtanjzebj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#njtanjzebj table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#njtanjzebj thead, #njtanjzebj tbody, #njtanjzebj tfoot, #njtanjzebj tr, #njtanjzebj td, #njtanjzebj th {
+  border-style: none;
+}
+
+#njtanjzebj p {
+  margin: 0;
+  padding: 0;
+}
+
+#njtanjzebj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#njtanjzebj .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#njtanjzebj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#njtanjzebj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#njtanjzebj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#njtanjzebj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#njtanjzebj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#njtanjzebj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#njtanjzebj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#njtanjzebj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#njtanjzebj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#njtanjzebj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#njtanjzebj .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#njtanjzebj .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#njtanjzebj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#njtanjzebj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#njtanjzebj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#njtanjzebj .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#njtanjzebj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#njtanjzebj .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#njtanjzebj .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#njtanjzebj .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#njtanjzebj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#njtanjzebj .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#njtanjzebj .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#njtanjzebj .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#njtanjzebj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#njtanjzebj .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#njtanjzebj .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#njtanjzebj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#njtanjzebj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#njtanjzebj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#njtanjzebj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#njtanjzebj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#njtanjzebj .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#njtanjzebj .gt_left {
+  text-align: left;
+}
+
+#njtanjzebj .gt_center {
+  text-align: center;
+}
+
+#njtanjzebj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#njtanjzebj .gt_font_normal {
+  font-weight: normal;
+}
+
+#njtanjzebj .gt_font_bold {
+  font-weight: bold;
+}
+
+#njtanjzebj .gt_font_italic {
+  font-style: italic;
+}
+
+#njtanjzebj .gt_super {
+  font-size: 65%;
+}
+
+#njtanjzebj .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#njtanjzebj .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#njtanjzebj .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#njtanjzebj .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#njtanjzebj .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#njtanjzebj .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#njtanjzebj .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#njtanjzebj .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#njtanjzebj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<caption><strong>Tabel 1. Karakteristik Dasar, Profil Klinis, dan Skor CAC Subjek Penelitian</strong></caption>
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings gt_spanner_row header">
+<th rowspan="2" id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th rowspan="2" id="stat_0_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>Keseluruhan</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th colspan="3" id="level 1; stat_2_2" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+<strong>Vulnerabilitas Plak (CAD-RADS)</strong>
+</div></th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="stat_2_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>HRP (+)</strong><br>
+N = 37<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="stat_1_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>HRP (-)</strong><br>
+N = 15<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span></th>
+<th id="p.value_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Usia (Tahun)</td>
+<td class="gt_row gt_center" headers="stat_0_1">61.04 ± 9.90</td>
+<td class="gt_row gt_center" headers="stat_2_2">63.16 ± 9.79</td>
+<td class="gt_row gt_center" headers="stat_1_2">55.80 ± 8.32</td>
+<td class="gt_row gt_center" headers="p.value_2" style="font-weight: bold">0.010</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Jenis Kelamin</td>
+<td class="gt_row gt_center" headers="stat_0_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_1_2"><br>
+</td>
+<td class="gt_row gt_center" headers="p.value_2">0.8</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;L</td>
+<td class="gt_row gt_center" headers="stat_0_1">34 (65%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">25 (68%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">9 (60%)</td>
+<td class="gt_row gt_center" headers="p.value_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;P</td>
+<td class="gt_row gt_center" headers="stat_0_1">18 (35%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">12 (32%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">6 (40%)</td>
+<td class="gt_row gt_center" headers="p.value_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Indeks Massa Tubuh (kg/m²)</td>
+<td class="gt_row gt_center" headers="stat_0_1">27.89 ± 4.72</td>
+<td class="gt_row gt_center" headers="stat_2_2">27.52 ± 4.31</td>
+<td class="gt_row gt_center" headers="stat_1_2">28.80 ± 5.66</td>
+<td class="gt_row gt_center" headers="p.value_2">0.4</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Riwayat Hipertensi</td>
+<td class="gt_row gt_center" headers="stat_0_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_1_2"><br>
+</td>
+<td class="gt_row gt_center" headers="p.value_2">0.6</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;HT-Tidak-ada</td>
+<td class="gt_row gt_center" headers="stat_0_1">22 (42%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">17 (46%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">5 (33%)</td>
+<td class="gt_row gt_center" headers="p.value_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;HT st I</td>
+<td class="gt_row gt_center" headers="stat_0_1">8 (15%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">6 (16%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">2 (13%)</td>
+<td class="gt_row gt_center" headers="p.value_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;HT st II</td>
+<td class="gt_row gt_center" headers="stat_0_1">1 (1.9%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">1 (2.7%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">0 (0%)</td>
+<td class="gt_row gt_center" headers="p.value_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;HT Terkontrol</td>
+<td class="gt_row gt_center" headers="stat_0_1">21 (40%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">13 (35%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">8 (53%)</td>
+<td class="gt_row gt_center" headers="p.value_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Riwayat Merokok</td>
+<td class="gt_row gt_center" headers="stat_0_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_1_2"><br>
+</td>
+<td class="gt_row gt_center" headers="p.value_2">0.4</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Merokok</td>
+<td class="gt_row gt_center" headers="stat_0_1">20 (38%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">16 (43%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">4 (27%)</td>
+<td class="gt_row gt_center" headers="p.value_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Tidak-merokok</td>
+<td class="gt_row gt_center" headers="stat_0_1">32 (62%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">21 (57%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">11 (73%)</td>
+<td class="gt_row gt_center" headers="p.value_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Kadar HbA1c (%)</td>
+<td class="gt_row gt_center" headers="stat_0_1">7.29 ± 1.79</td>
+<td class="gt_row gt_center" headers="stat_2_2">7.37 ± 1.67</td>
+<td class="gt_row gt_center" headers="stat_1_2">7.09 ± 2.09</td>
+<td class="gt_row gt_center" headers="p.value_2">0.7</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Trigliserida (mg/dL)</td>
+<td class="gt_row gt_center" headers="stat_0_1">162.83 ± 124.01</td>
+<td class="gt_row gt_center" headers="stat_2_2">142.03 ± 61.27</td>
+<td class="gt_row gt_center" headers="stat_1_2">214.13 ± 205.91</td>
+<td class="gt_row gt_center" headers="p.value_2">0.2</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Kolesterol Total (mg/dL)</td>
+<td class="gt_row gt_center" headers="stat_0_1">170.58 ± 39.96</td>
+<td class="gt_row gt_center" headers="stat_2_2">162.08 ± 33.61</td>
+<td class="gt_row gt_center" headers="stat_1_2">191.53 ± 47.43</td>
+<td class="gt_row gt_center" headers="p.value_2" style="font-weight: bold">0.040</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Kadar LDL (mg/dL)</td>
+<td class="gt_row gt_center" headers="stat_0_1">107.54 ± 30.74</td>
+<td class="gt_row gt_center" headers="stat_2_2">104.46 ± 28.12</td>
+<td class="gt_row gt_center" headers="stat_1_2">115.13 ± 36.37</td>
+<td class="gt_row gt_center" headers="p.value_2">0.3</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Kadar HDL (mg/dL)</td>
+<td class="gt_row gt_center" headers="stat_0_1">39.15 ± 8.82</td>
+<td class="gt_row gt_center" headers="stat_2_2">39.16 ± 8.35</td>
+<td class="gt_row gt_center" headers="stat_1_2">39.13 ± 10.22</td>
+<td class="gt_row gt_center" headers="p.value_2">&gt;0.9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Asam Urat (mg/dL)</td>
+<td class="gt_row gt_center" headers="stat_0_1">7.00 ± 2.01</td>
+<td class="gt_row gt_center" headers="stat_2_2">6.85 ± 1.69</td>
+<td class="gt_row gt_center" headers="stat_1_2">7.36 ± 2.67</td>
+<td class="gt_row gt_center" headers="p.value_2">0.5</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Kreatinin Serum (mg/dL)</td>
+<td class="gt_row gt_center" headers="stat_0_1">1.51 ± 2.04</td>
+<td class="gt_row gt_center" headers="stat_2_2">1.59 ± 2.27</td>
+<td class="gt_row gt_center" headers="stat_1_2">1.32 ± 1.39</td>
+<td class="gt_row gt_center" headers="p.value_2">0.6</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Status Fungsi Ginjal</td>
+<td class="gt_row gt_center" headers="stat_0_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_1_2"><br>
+</td>
+<td class="gt_row gt_center" headers="p.value_2">0.083</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;CKD (&gt; 1.2)</td>
+<td class="gt_row gt_center" headers="stat_0_1">18 (35%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">16 (43%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">2 (13%)</td>
+<td class="gt_row gt_center" headers="p.value_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Normal (&lt;= 1.2)</td>
+<td class="gt_row gt_center" headers="stat_0_1">34 (65%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">21 (57%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">13 (87%)</td>
+<td class="gt_row gt_center" headers="p.value_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Indeks TyHbA1c</td>
+<td class="gt_row gt_center" headers="stat_0_1">6.87 ± 0.64</td>
+<td class="gt_row gt_center" headers="stat_2_2">6.83 ± 0.54</td>
+<td class="gt_row gt_center" headers="stat_1_2">6.97 ± 0.86</td>
+<td class="gt_row gt_center" headers="p.value_2">0.6</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label" style="font-weight: bold">Global CAC Score (Agatston)</td>
+<td class="gt_row gt_center" headers="stat_0_1">300.1 (16.1, 910.7)</td>
+<td class="gt_row gt_center" headers="stat_2_2">556.7 (219.0, 1,013.7)</td>
+<td class="gt_row gt_center" headers="stat_1_2">11.6 (0.0, 17.5)</td>
+<td class="gt_row gt_center" headers="p.value_2" style="font-weight: bold">&lt;0.001</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_footnotes odd">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>1</sup></span> Mean ± SD; n (%); Median (Q1, Q3)</td>
+</tr>
+<tr class="gt_footnotes even">
+<td colspan="5" class="gt_footnote"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;line-height:0;"><sup>2</sup></span> Welch Two Sample t-test; Pearson’s Chi-squared test; Wilcoxon rank sum exact test</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Load dan Bersihkan Data</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>file_path <span class="ot">&lt;-</span> <span class="st">"Pencil_Endokrin - Update-HbA1c.xlsx"</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Cek nama kolom asli yang terbaca oleh R</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"=== DAFTAR KOLOM ASLI DI EXCEL ==="</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "=== DAFTAR KOLOM ASLI DI EXCEL ==="</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">names</span>(df_raw))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "No"                               "Nama Pasien"                     
+ [3] "No. RM"                           "Laporan"                         
+ [5] "Tahun"                            "DM"                              
+ [7] "Gender"                           "Usia"                            
+ [9] "Hipertensi"                       "Durasi_DM"                       
+[11] "Merokok"                          "IMT"                             
+[13] "Statin"                           "OAD-INSULIN"                     
+[15] "DM_cardioprotective"              "HbA1C"                           
+[17] "Kreatinin"                        "Fosphat"                         
+[19] "Kalsium"                          "Hemoglobin"                      
+[21] "Kolesterol-Total"                 "LDL"                             
+[23] "HDL"                              "Trigliserida"                    
+[25] "Asam-Urat"                        "Albumin"                         
+[27] "L-R_Dominant"                     "Global_CAC_score"                
+[29] "LM_Predominant_plaque"            "LM_High-risk-plaque"             
+[31] "LM_Low-attenuation-Plaque"        "LM_PR_index"                     
+[33] "LM_NapkinRing-Sign"               "LM_Spotty-Calcification"         
+[35] "LM_Stenosis"                      "LM_CAD-RADS"                     
+[37] "LAD_Predominant_plaque"           "LAD_High-risk-plaque"            
+[39] "LAD_Low-attenuation-Plaque"       "LAD_PR_index"                    
+[41] "LAD_NapkinRing-Sign"              "LAD_Spotty-Calcification"        
+[43] "LAD_Stenosis"                     "LAD_CAD-RADS"                    
+[45] "LCx_Predominant_plaque"           "LCx_High-risk-plaque"            
+[47] "LCx_Low-attenuation-Plaque"       "LCx_PR_index"                    
+[49] "LCx_NapkinRing-Sign"              "LCx_Spotty-Calcification"        
+[51] "LCx_Stenosis"                     "LCx_CAD-RADS"                    
+[53] "RCA_Predominant_plaque"           "RCA_High-risk-plaque"            
+[55] "RCA_Low-attenuation-Plaque"       "RCA_PR_index"                    
+[57] "RCA_NapkinRing-Sign"              "RCA_Spotty-Calcification"        
+[59] "RCA_Stenosis"                     "RCA_CAD-RADS"                    
+[61] "Global_CAD-RADS"                  "CTR"                             
+[63] "Valve_calcification"              "Ventricular_hypertrophy"         
+[65] "EpicardialAdipose_thickness"      "PericoronaryFatAttenuation-Index"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df_clean <span class="ot">&lt;-</span> df_raw <span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(<span class="st">`</span><span class="at">No. RM</span><span class="st">`</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">any_of</span>(<span class="fu">c</span>(<span class="st">"Usia"</span>, <span class="st">"IMT"</span>, <span class="st">"HbA1C"</span>, <span class="st">"Trigliserida"</span>, <span class="st">"Kolesterol-Total"</span>, </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                         <span class="st">"LDL"</span>, <span class="st">"HDL"</span>, <span class="st">"Asam-Urat"</span>, <span class="st">"Kreatinin"</span>, <span class="st">"Global_CAC_score"</span>)), </span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>                <span class="sc">~</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">"."</span>, <span class="fu">as.character</span>(.x))))) <span class="sc">%&gt;%</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Membersihkan Global CAC Score dengan aman</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">Global_CAC_score =</span> <span class="fu">as.numeric</span>(<span class="fu">gsub</span>(<span class="st">","</span>, <span class="st">"."</span>, <span class="fu">gsub</span>(<span class="st">"[^0-9,.-]"</span>, <span class="st">""</span>, <span class="fu">as.character</span>(Global_CAC_score)))),</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">HRP_Status =</span> <span class="fu">ifelse</span>(<span class="fu">grepl</span>(<span class="st">"HRP"</span>, <span class="st">`</span><span class="at">Global_CAD-RADS</span><span class="st">`</span>, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>), <span class="st">"HRP (+)"</span>, <span class="st">"HRP (-)"</span>),</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">HRP_Status =</span> <span class="fu">factor</span>(HRP_Status, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"HRP (-)"</span>, <span class="st">"HRP (+)"</span>)),</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a> <span class="co"># 1. TyHbA1c Index (Logaritma Natural dari Trigliserida * HbA1c)</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">TyHbA1c_Index =</span> <span class="fu">log</span>(Trigliserida <span class="sc">*</span> HbA1C),</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Status CKD (1 = Kreatinin &gt; 1.2, 0 = Kreatinin &lt;= 1.2)</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">CKD_Status =</span> <span class="fu">ifelse</span>(Kreatinin <span class="sc">&gt;</span> <span class="fl">1.2</span>, <span class="dv">1</span>, </span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">ifelse</span>(Kreatinin <span class="sc">&lt;=</span> <span class="fl">1.2</span>, <span class="dv">0</span>, <span class="cn">NA</span>))</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Jumlah total baris setelah cleaning:"</span>, <span class="fu">nrow</span>(df_clean)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Jumlah total baris setelah cleaning: 52"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">summary</span>(df_clean<span class="sc">$</span>Global_CAC_score))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+    0.0    16.8   300.1   565.5   904.8  2933.2 </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Transformasi Data Menjadi Format Long dengan any_of() agar tidak error jika ada typo</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df_long <span class="ot">&lt;-</span> df_clean <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Global_CAC_score), Global_CAC_score <span class="sc">&lt;=</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(HRP_Status, Global_CAC_score, <span class="fu">any_of</span>(<span class="fu">c</span>(<span class="st">"Usia"</span>, <span class="st">"IMT"</span>, <span class="st">"Trigliserida"</span>, <span class="st">"HbA1C"</span>, <span class="st">"Kolesterol-Total"</span>, <span class="st">"LDL"</span>, <span class="st">"HDL"</span>, <span class="st">"Asam-Urat"</span>)))</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Jumlah baris setelah filter CAC &lt;= 2000:"</span>, <span class="fu">nrow</span>(df_long)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Jumlah baris setelah filter CAC &lt;= 2000: 49"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Lanjutkan pivoting jika data tidak kosong</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="fu">nrow</span>(df_long) <span class="sc">&gt;</span> <span class="dv">0</span>) {</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  df_long <span class="ot">&lt;-</span> df_long <span class="sc">%&gt;%</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pivot_longer</span>(</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(HRP_Status, Global_CAC_score),</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">names_to =</span> <span class="st">"Variabel_Prediktor"</span>,</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">values_to =</span> <span class="st">"Nilai_Prediktor"</span></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>      <span class="at">Variabel_Prediktor =</span> <span class="fu">case_when</span>(</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>        Variabel_Prediktor <span class="sc">==</span> <span class="st">"Usia"</span> <span class="sc">~</span> <span class="st">"Usia (Tahun)"</span>,</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>        Variabel_Prediktor <span class="sc">==</span> <span class="st">"IMT"</span> <span class="sc">~</span> <span class="st">"Indeks Massa Tubuh (IMT)"</span>,</span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>        Variabel_Prediktor <span class="sc">==</span> <span class="st">"Trigliserida"</span> <span class="sc">~</span> <span class="st">"Trigliserida (TG)"</span>,</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>        Variabel_Prediktor <span class="sc">==</span> <span class="st">"HbA1C"</span> <span class="sc">~</span> <span class="st">"Kadar HbA1c (%)"</span>,</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>        Variabel_Prediktor <span class="sc">==</span> <span class="st">"Kolesterol-Total"</span> <span class="sc">~</span> <span class="st">"Kolesterol Total (mg/dL)"</span>,</span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>        Variabel_Prediktor <span class="sc">==</span> <span class="st">"LDL"</span> <span class="sc">~</span> <span class="st">"LDL (mg/dL)"</span>,</span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>        Variabel_Prediktor <span class="sc">==</span> <span class="st">"HDL"</span> <span class="sc">~</span> <span class="st">"HDL (mg/dL)"</span>,</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>        Variabel_Prediktor <span class="sc">==</span> <span class="st">"Asam-Urat"</span> <span class="sc">~</span> <span class="st">"Asam Urat (mg/dL)"</span>,</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a>        <span class="cn">TRUE</span> <span class="sc">~</span> Variabel_Prediktor</span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>      ),</span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">Variabel_Prediktor =</span> <span class="fu">factor</span>(Variabel_Prediktor, <span class="at">levels =</span> <span class="fu">c</span>(</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Usia (Tahun)"</span>, <span class="st">"Indeks Massa Tubuh (IMT)"</span>, <span class="st">"Trigliserida (TG)"</span>, </span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Kadar HbA1c (%)"</span>, <span class="st">"Kolesterol Total (mg/dL)"</span>, <span class="st">"LDL (mg/dL)"</span>, </span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"HDL (mg/dL)"</span>, <span class="st">"Asam Urat (mg/dL)"</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>      ))</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Jumlah baris final untuk plot:"</span>, <span class="fu">nrow</span>(df_long)))</span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># 3. Membuat Multi-Panel Scatter Plot dengan ggplot2 &amp; facet_wrap</span></span>
+<span id="cb18-31"><a href="#cb18-31" aria-hidden="true" tabindex="-1"></a>  p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(df_long, <span class="fu">aes</span>(<span class="at">x =</span> Nilai_Prediktor, <span class="at">y =</span> Global_CAC_score, <span class="at">color =</span> HRP_Status, <span class="at">fill =</span> HRP_Status)) <span class="sc">+</span></span>
+<span id="cb18-32"><a href="#cb18-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">2.3</span>, <span class="at">alpha =</span> <span class="fl">0.8</span>, <span class="at">stroke =</span> <span class="fl">0.3</span>, <span class="at">shape =</span> <span class="dv">21</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb18-33"><a href="#cb18-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb18-34"><a href="#cb18-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_wrap</span>(<span class="sc">~</span> Variabel_Prediktor, <span class="at">scales =</span> <span class="st">"free_x"</span>, <span class="at">ncol =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb18-35"><a href="#cb18-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"HRP (-)"</span> <span class="ot">=</span> <span class="st">"#1f77b4"</span>, <span class="st">"HRP (+)"</span> <span class="ot">=</span> <span class="st">"#d62728"</span>)) <span class="sc">+</span></span>
+<span id="cb18-36"><a href="#cb18-36" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"HRP (-)"</span> <span class="ot">=</span> <span class="st">"#1f77b4"</span>, <span class="st">"HRP (+)"</span> <span class="ot">=</span> <span class="st">"#d62728"</span>)) <span class="sc">+</span></span>
+<span id="cb18-37"><a href="#cb18-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(</span>
+<span id="cb18-38"><a href="#cb18-38" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="st">"Hubungan Variabel Klinis &amp; Metabolik terhadap Global CAC Score"</span>,</span>
+<span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a>      <span class="at">subtitle =</span> <span class="st">"Dikelompokkan berdasarkan status Vulnerabilitas Plak (HRP)"</span>,</span>
+<span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> <span class="st">"Nilai Parameter Prediktor"</span>,</span>
+<span id="cb18-41"><a href="#cb18-41" aria-hidden="true" tabindex="-1"></a>      <span class="at">y =</span> <span class="st">"Global CAC Score Aktual (Agatston)"</span>,</span>
+<span id="cb18-42"><a href="#cb18-42" aria-hidden="true" tabindex="-1"></a>      <span class="at">fill =</span> <span class="st">"Status Plak"</span>,</span>
+<span id="cb18-43"><a href="#cb18-43" aria-hidden="true" tabindex="-1"></a>      <span class="at">color =</span> <span class="st">"Status Plak"</span></span>
+<span id="cb18-44"><a href="#cb18-44" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb18-45"><a href="#cb18-45" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>(<span class="at">base_size =</span> <span class="dv">11</span>) <span class="sc">+</span></span>
+<span id="cb18-46"><a href="#cb18-46" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(</span>
+<span id="cb18-47"><a href="#cb18-47" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">12</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb18-48"><a href="#cb18-48" aria-hidden="true" tabindex="-1"></a>      <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">color =</span> <span class="st">"gray30"</span>),</span>
+<span id="cb18-49"><a href="#cb18-49" aria-hidden="true" tabindex="-1"></a>      <span class="at">strip.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"whitesmoke"</span>, <span class="at">color =</span> <span class="st">"black"</span>),</span>
+<span id="cb18-50"><a href="#cb18-50" aria-hidden="true" tabindex="-1"></a>      <span class="at">strip.text =</span> <span class="fu">element_text</span>(<span class="at">face =</span> <span class="st">"bold"</span>, <span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb18-51"><a href="#cb18-51" aria-hidden="true" tabindex="-1"></a>      <span class="at">legend.position =</span> <span class="st">"bottom"</span>,</span>
+<span id="cb18-52"><a href="#cb18-52" aria-hidden="true" tabindex="-1"></a>      <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>()</span>
+<span id="cb18-53"><a href="#cb18-53" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb18-54"><a href="#cb18-54" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-55"><a href="#cb18-55" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Tampilkan grafik</span></span>
+<span id="cb18-56"><a href="#cb18-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(p)</span>
+<span id="cb18-57"><a href="#cb18-57" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb18-58"><a href="#cb18-58" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb18-59"><a href="#cb18-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">"PERHATIAN: Data df_long kosong (0 baris). Kemungkinan nilai Global_CAC_score semuanya NA atau tersaring habis."</span>)</span>
+<span id="cb18-60"><a href="#cb18-60" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Jumlah baris final untuk plot: 392"</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Menyimpan otomatis ke komputer dengan ukuran proporsional untuk Tesis</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">filename =</span> <span class="st">"Multi_Panel_Korelasi_CAC.png"</span>, </span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">plot =</span> p, </span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">width =</span> <span class="dv">12</span>, </span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">height =</span> <span class="dv">9</span>, </span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">dpi =</span> <span class="dv">300</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<p><strong>Prediktor Klinis untuk Kemunculan <em>High-Risk Plaque</em> (HRP)</strong></p>
+<p>Kemampuan prediktif TyHbA1c Index, Usia, dan IMT dalam mendeteksi keberadaan plak risiko tinggi dievaluasi menggunakan analisis regresi logistik multivariat. Hasil pemodelan menunjukkan bahwa peningkatan usia secara parsial memiliki pengaruh yang bermakna secara statistik terhadap pembentukan HRP (<em>Odds Ratio</em> [OR] = 1,11; 95% CI: 1,01 – 1,21; $p = 0,023$).</p>
+<p>Kombinasi parameter usia, IMT, dan beban glukolipotoksisitas (TyHbA1c Index) menghasilkan model regresi dengan nilai <em>Pseudo R-squared</em> (McFadden) sebesar 0,135. TyHbA1c Index secara independen menunjukkan tren <em>Odds Ratio</em> sebesar 1,27 (95% CI: 0,38 – 4,20). Artinya, setiap kenaikan satu unit TyHbA1c Index secara matematis cenderung meningkatkan risiko terbentuknya HRP sebesar 1,27 kali lipat, meskipun kemaknaan statistik parsial belum tercapai pada ukuran sampel ini ($p = 0,688$).</p>
+<p>Uji diskriminasi diagnostik model ini (Usia + IMT + TyHbA1c Index) menunjukkan performa yang baik. Analisis <em>Receiver Operating Characteristic</em> (ROC) menghasilkan <em>Area Under the Curve</em> (AUC) sebesar 0,746. Angka ini menegaskan bahwa kombinasi ketiga parameter klinis tersebut mampu membedakan pasien DM yang memiliki <em>high-risk plaque</em> dengan pasien tanpa <em>high-risk plaque</em> dengan tingkat akurasi diagnostik sebesar 74,6%.</p>
+<p><strong>Prediksi Obstruksi Signifikan (CAD-RADS $\ge$ 3)</strong></p>
+<p>Dalam memprediksi kejadian penyumbatan koroner yang bermakna secara hemodinamik (stenosis $\ge$ 50% atau CAD-RADS kelas 3 hingga 5), model multivariat yang sama diuji kembali. Usia kembali menjadi faktor prediktor terkuat yang paling mendekati batas signifikansi statistik (OR = 1,07; 95% CI: 0,99 – 1,16; $p = 0,070$).</p>
+<p>Meskipun model prediktif untuk obstruksi signifikan ini memiliki kinerja yang sedikit lebih rendah dibandingkan dengan model HRP, nilai diskriminasinya tetap berada pada ambang batas klinis yang dapat diterima. Kurva ROC untuk prediksi CAD-RADS $\ge$ 3 menghasilkan nilai AUC sebesar 0,709. Hal ini mengindikasikan bahwa indeks resistensi insulin (TyHbA1c) yang digabungkan dengan usia dan adipositas lebih unggul dalam mencerminkan “kualitas” plak atau kerentanan dinding arteri (munculnya HRP) dibandingkan dengan “kuantitas” dari luas area penyumbatan (skor CAD-RADS).</p>
+<section id="kurva-regresi" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="kurva-regresi"><span class="header-section-number">4.1</span> 5. Kurva Regresi</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat model Generalized Linear Model (GLM)</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>model_glm <span class="ot">&lt;-</span> <span class="fu">glm</span>(HRP_Status <span class="sc">~</span> Usia <span class="sc">+</span> IMT <span class="sc">+</span> TyHbA1c_Index <span class="sc">+</span> CKD_Status, </span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>                 <span class="at">data =</span> df_clean, </span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>                 <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">"logit"</span>))</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Menampilkan ringkasan model menggunakan format gtsummary untuk jurnal</span></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl_regression</span>(model_glm, <span class="at">exponentiate =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bold_p</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_global_p</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">modify_caption</span>(<span class="st">"**Tabel 1. Analisis Multivariat Prediktor High-Risk Plaque (HRP)**"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div id="euqlfamnqn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#euqlfamnqn table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#euqlfamnqn thead, #euqlfamnqn tbody, #euqlfamnqn tfoot, #euqlfamnqn tr, #euqlfamnqn td, #euqlfamnqn th {
+  border-style: none;
+}
+
+#euqlfamnqn p {
+  margin: 0;
+  padding: 0;
+}
+
+#euqlfamnqn .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#euqlfamnqn .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#euqlfamnqn .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#euqlfamnqn .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#euqlfamnqn .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#euqlfamnqn .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#euqlfamnqn .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#euqlfamnqn .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#euqlfamnqn .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#euqlfamnqn .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#euqlfamnqn .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#euqlfamnqn .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#euqlfamnqn .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#euqlfamnqn .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#euqlfamnqn .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#euqlfamnqn .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#euqlfamnqn .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#euqlfamnqn .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#euqlfamnqn .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#euqlfamnqn .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#euqlfamnqn .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#euqlfamnqn .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#euqlfamnqn .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#euqlfamnqn .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#euqlfamnqn .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#euqlfamnqn .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#euqlfamnqn .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#euqlfamnqn .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#euqlfamnqn .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#euqlfamnqn .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#euqlfamnqn .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#euqlfamnqn .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#euqlfamnqn .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#euqlfamnqn .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#euqlfamnqn .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#euqlfamnqn .gt_left {
+  text-align: left;
+}
+
+#euqlfamnqn .gt_center {
+  text-align: center;
+}
+
+#euqlfamnqn .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#euqlfamnqn .gt_font_normal {
+  font-weight: normal;
+}
+
+#euqlfamnqn .gt_font_bold {
+  font-weight: bold;
+}
+
+#euqlfamnqn .gt_font_italic {
+  font-style: italic;
+}
+
+#euqlfamnqn .gt_super {
+  font-size: 65%;
+}
+
+#euqlfamnqn .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#euqlfamnqn .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#euqlfamnqn .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#euqlfamnqn .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#euqlfamnqn .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#euqlfamnqn .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#euqlfamnqn .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#euqlfamnqn .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#euqlfamnqn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<caption><strong>Tabel 1. Analisis Multivariat Prediktor High-Risk Plaque (HRP)</strong></caption>
+<thead>
+<tr class="gt_col_headings header">
+<th id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="estimate" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>OR</strong></th>
+<th id="conf.low" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>95% CI</strong></th>
+<th id="p.value" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>p-value</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Usia</td>
+<td class="gt_row gt_center" headers="estimate">1.08</td>
+<td class="gt_row gt_center" headers="conf.low">1.00, 1.17</td>
+<td class="gt_row gt_center" headers="p.value" style="font-weight: bold">0.039</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">IMT</td>
+<td class="gt_row gt_center" headers="estimate">1.01</td>
+<td class="gt_row gt_center" headers="conf.low">0.88, 1.16</td>
+<td class="gt_row gt_center" headers="p.value">&gt;0.9</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">TyHbA1c_Index</td>
+<td class="gt_row gt_center" headers="estimate">1.02</td>
+<td class="gt_row gt_center" headers="conf.low">0.33, 3.31</td>
+<td class="gt_row gt_center" headers="p.value">&gt;0.9</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">CKD_Status</td>
+<td class="gt_row gt_center" headers="estimate">4.38</td>
+<td class="gt_row gt_center" headers="conf.low">0.94, 32.2</td>
+<td class="gt_row gt_center" headers="p.value">0.061</td>
+</tr>
+</tbody><tfoot>
+<tr class="gt_sourcenotes odd">
+<td colspan="4" class="gt_sourcenote">Abbreviations: CI = Confidence Interval, OR = Odds Ratio</td>
+</tr>
+</tfoot>
+
+</table>
+
+</div>
+</div>
+</div>
+</section>
+<section id="kurva-roc" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="kurva-roc"><span class="header-section-number">4.2</span> 6. Kurva ROC</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Menghitung probabilitas prediksi</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>df_clean<span class="sc">$</span>pred_prob <span class="ot">&lt;-</span> <span class="fu">predict</span>(model_glm, <span class="at">type =</span> <span class="st">"response"</span>)</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Membuat objek ROC</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>roc_obj <span class="ot">&lt;-</span> <span class="fu">roc</span>(df_clean<span class="sc">$</span>HRP_Status, df_clean<span class="sc">$</span>pred_prob)</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotting Kurva ROC</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(roc_obj, </span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="fu">paste</span>(<span class="st">"Kurva ROC: Model Prediksi HRP</span><span class="sc">\n</span><span class="st">(AUC ="</span>, <span class="fu">round</span>(<span class="fu">auc</span>(roc_obj), <span class="dv">3</span>), <span class="st">")"</span>),</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"darkred"</span>, </span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">lwd =</span> <span class="dv">2</span>, </span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">legacy.axes =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"False Positive Rate (1 - Specificity)"</span>, </span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"True Positive Rate (Sensitivity)"</span>)</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Mengarsir area di bawah kurva (opsional)</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="fu">polygon</span>(<span class="fu">c</span>(<span class="dv">1</span>, roc_obj<span class="sc">$</span>specificities, <span class="dv">0</span>), <span class="fu">c</span>(<span class="dv">0</span>, roc_obj<span class="sc">$</span>sensitivities, <span class="dv">0</span>), </span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>        <span class="at">col =</span> <span class="fu">rgb</span>(<span class="fl">0.55</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="at">alpha =</span> <span class="fl">0.1</span>), <span class="at">border =</span> <span class="cn">NA</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/ROC-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="pembuatan-nomogram-klinis-rms-package" class="level3" data-number="4.3">
+<h3 data-number="4.3" class="anchored" data-anchor-id="pembuatan-nomogram-klinis-rms-package"><span class="header-section-number">4.3</span> 7. Pembuatan Nomogram Klinis (rms Package)</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- FAIL-SAFE: Memaksa semua kolom menjadi vektor atomic (angka murni) ---</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df_nom <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">HRP_Status    =</span> <span class="fu">as.numeric</span>(<span class="fu">unlist</span>(df_clean<span class="sc">$</span>HRP_Status)),</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Usia          =</span> <span class="fu">as.numeric</span>(<span class="fu">unlist</span>(df_clean<span class="sc">$</span>Usia)),</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">IMT           =</span> <span class="fu">as.numeric</span>(<span class="fu">unlist</span>(df_clean<span class="sc">$</span>IMT)),</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">TyHbA1c_Index =</span> <span class="fu">as.numeric</span>(<span class="fu">unlist</span>(df_clean<span class="sc">$</span>TyHbA1c_Index)),</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">CKD_Status    =</span> <span class="fu">as.numeric</span>(<span class="fu">unlist</span>(df_clean<span class="sc">$</span>CKD_Status))</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Memastikan tidak ada sisa NA</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>df_nom <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(df_nom)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Mengatur distribusi data untuk package rms menggunakan data yang sudah murni</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>dd <span class="ot">&lt;-</span> <span class="fu">datadist</span>(df_nom)</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">datadist =</span> <span class="st">"dd"</span>)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Membuat model ulang menggunakan fungsi lrm() dari package rms</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>model_lrm <span class="ot">&lt;-</span> <span class="fu">lrm</span>(HRP_Status <span class="sc">~</span> Usia <span class="sc">+</span> IMT <span class="sc">+</span> TyHbA1c_Index <span class="sc">+</span> CKD_Status, <span class="at">data =</span> df_nom)</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Membangun Nomogram</span></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>nom <span class="ot">&lt;-</span> <span class="fu">nomogram</span>(model_lrm, </span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>                <span class="at">fun =</span> plogis, <span class="co"># Mengonversi hasil sumbu log-odds menjadi probabilitas (0-100%)</span></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>                <span class="at">funlabel =</span> <span class="st">"Probabilitas High-Risk Plaque"</span>,</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>                <span class="at">lp =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Plot Nomogram</span></span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(nom, <span class="at">col.grid =</span> <span class="fu">gray</span>(<span class="fu">c</span>(<span class="fl">0.85</span>, <span class="fl">0.95</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/nomogram-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="section" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="section"><span class="header-section-number">5</span> </h2>
+</section>
+<section id="pembahasan" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="pembahasan"><span class="header-section-number">6</span> Pembahasan</h2>
+<p>Penelitian ini mengevaluasi nilai prediktif dari kombinasi parameter klinis—Usia, Indeks Massa Tubuh (IMT), dan TyHbA1c Index—terhadap keparahan penyakit arteri koroner yang dinilai melalui <em>Computed Tomography Coronary Angiography</em> (CTCA) pada pasien diabetes dan prediabetes. Temuan utama dari studi ini menunjukkan bahwa pemodelan regresi logistik multivariat yang menggabungkan ketiga parameter tersebut memiliki kemampuan diskriminatif yang baik dalam memprediksi keberadaan <em>High-Risk Plaque</em> (HRP) dengan nilai <em>Area Under the Curve</em> (AUC) sebesar 0,746, serta memprediksi obstruksi koroner signifikan (CAD-RADS $\ge$ 3) dengan AUC sebesar 0,709.</p>
+<p><strong>Glukolipotoksisitas Kronis, Aktivasi Makrofag, dan Kerentanan Plak (<em>Plaque Vulnerability</em>)</strong></p>
+<p>Keunggulan prediktif dari model ini terhadap keberadaan HRP memberikan wawasan patofisiologis yang krusial. HRP—yang bermanifestasi sebagai <em>positive remodeling</em>, kalsifikasi bercak (<em>spotty calcification</em>), dan <em>low-attenuation plaque</em>—merupakan lesi prekursor struktural yang sangat rentan mengalami ruptur dan memicu sindrom koroner akut. Dalam studi ini, keberadaan fitur HRP, secara spesifik <em>positive remodeling</em> dan <em>spotty calcification</em>, terbukti sejalan dengan peningkatan beban TyHbA1c Index.</p>
+<p>TyHbA1c Index merupakan penanda biologis yang merepresentasikan interaksi ganda antara dislipidemia aterogenik (hipertrigliseridemia) dan paparan hiperglikemia kronis (HbA1c). Secara biomolekuler, kondisi glukolipotoksisitas persisten memicu akumulasi <em>Advanced Glycation End-products</em> (AGEs) dan <em>Reactive Oxygen Species</em> (ROS) yang merusak integritas endotel. Resistensi insulin yang kronis meningkatkan fluks asam lemak bebas ke dinding pembuluh darah, memfasilitasi infiltrasi makrofag besar-besaran yang kemudian bertransformasi menjadi sel busa (<em>foam cells</em>) di ruang subendotel.</p>
+<p>Berdasarkan patobiologi vaskular, makrofag intratunika yang teraktivasi hiperglikemia ini mensekresi enzim <em>Matrix Metalloproteinases</em> (terutama MMP-2 dan MMP-9) secara masif. Enzim ini secara agresif mendegradasi matriks ekstraseluler (kolagen dan elastin) pada tunika media. Degradasi matriks ke arah luar dinding epikardial inilah yang mendasari fenomena <em>positive remodeling</em> (Fenomena Glagov) sebagai upaya kompensatorik tubuh mempertahankan ukuran lumen. Meskipun secara hemodinamik aliran darah awalnya tidak terganggu, remodeling kompensatorik ini memfasilitasi pembentukan plak dengan inti nekrotik lipid yang masif (<em>large lipid core</em>) dan selubung fibrosa yang tipis (<em>Thin-Cap Fibroatheroma</em> / TCFA). Hal ini menjelaskan secara gamblang mengapa indeks TyHbA1c memiliki sensitivitas yang jauh lebih tinggi dalam mencerminkan “kualitas” dan kerentanan plak (HRP) dibandingkan sekadar mengevaluasi “kuantitas” persentase penyumbatan lumen (skor absolut CAD-RADS).</p>
+<p><strong>Peran Dominan Usia dan Fase Prediabetes Asimptomatik</strong></p>
+<p>Dalam pemodelan multivariat, usia muncul sebagai prediktor independen yang paling konsisten dan bermakna secara statistik. Proses aterosklerosis pada dasarnya adalah patologi kumulatif yang sangat bergantung pada waktu (<em>time-dependent</em>). Semakin lama durasi sel endotel terpapar oleh faktor risiko glukometabolik, semakin besar probabilitas kalsifikasi difus dan degenerasi vaskular terjadi.</p>
+<p>Sangat menarik untuk dicatat bahwa dalam analisis data sekunder, durasi terdiagnosisnya Diabetes Mellitus (dalam bulan) tidak menunjukkan korelasi linier yang kuat terhadap keparahan kalsifikasi koroner. Fenomena klinis ini mengonfirmasi realita <em>delayed diagnosis</em> pada perjalanan alamiah diabetes; di mana fase prediabetes asimptomatik dan resistensi insulin <em>silent</em> sesungguhnya telah merusak vaskularisasi koroner jauh sebelum kriteria diagnostik klinis DM terpenuhi. Oleh karena itu, usia biologis pasien yang disandingkan dengan penanda metabolik objektif yang bersifat kronis (seperti TyHbA1c) memberikan daya prediksi risiko yang jauh lebih andal dibandingkan sekadar bersandar pada durasi anamnesis penyakit.</p>
+<p><strong>Implikasi Klinis dan Pembuatan Nomogram</strong></p>
+<p>Kemampuan diskriminasi diagnostik (Usia, IMT, TyHbA1c) yang mencapai AUC $\sim 0,75$ dalam mendeteksi HRP menawarkan implikasi translasi klinis yang bernilai tinggi. Ketiga parameter ini bertumpu pada pemeriksaan dasar yang murah, non-invasif, dan secara rutin dievaluasi pada pasien metabolik di berbagai stratifikasi fasilitas layanan kesehatan. Melalui konversi model multivariat ini menjadi sebuah sistem skoring terintegrasi atau nomogram prediksi, klinisi dimampukan untuk melakukan stratifikasi risiko kardiovaskular secara cepat di ruang praktik. Pendekatan ini dapat memfasilitasi <em>decision making</em> dalam menyeleksi kandidat pasien asimptomatik mana yang paling diuntungkan dari rujukan awal untuk pemeriksaan <em>Computed Tomography Coronary Angiography</em> (CTCA), maupun untuk eskalasi terapi kardioprotektif preventif.</p>
+<p><strong>Keterbatasan Penelitian</strong></p>
+<p>Studi ini memiliki beberapa keterbatasan. Desain penelitian <em>cross-sectional</em> membatasi kemampuan untuk menyimpulkan hubungan kausalitas sejati antara fluktuasi TyHbA1c Index dengan progresi HRP secara longitudinal. Selanjutnya, meskipun model regresi secara keseluruhan mencapai kemampuan diskriminasi yang <em>acceptable</em>, signifikansi statistik parsial dari TyHbA1c (<em>p-value</em>) belum sepenuhnya tercapai secara optimal akibat batasan ukuran sampel pada kohort <em>single-center</em> ini. Penelitian lanjutan dengan ukuran sampel yang lebih masif dan validasi kohort eksternal sangat diperlukan guna mengonfirmasi keandalan model, menyempurnakan interval kepercayaan (<em>confidence interval</em>), serta memvalidasi kalibrasi nomogram klinis yang dihasilkan.</p>
+</section>
+<section id="simpulan" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="simpulan"><span class="header-section-number">7</span> Simpulan</h2>
+<p>Kombinasi parameter usia, Indeks Massa Tubuh (IMT), dan TyHbA1c Index terbukti memiliki kemampuan diskriminasi diagnostik yang baik dalam memprediksi keberadaan plak koroner risiko tinggi (<em>High-Risk Plaque</em> / HRP) serta derajat obstruksi koroner yang signifikan (CAD-RADS $\ge$ 3) pada pasien prediabetes dan diabetes mellitus. Indeks TyHbA1c, sebagai representasi beban glukolipotoksisitas dan resistensi insulin kronis, secara spesifik lebih unggul dalam mencerminkan kerentanan struktural plak (seperti <em>positive remodeling</em> dan <em>spotty calcification</em>) dibandingkan dengan profil lipid konvensional semata.</p>
+<p>Pemodelan multivariat dari ketiga parameter klinis dasar ini berpotensi kuat untuk dikembangkan menjadi sebuah nomogram atau instrumen skoring klinis yang praktis. Implementasi sistem stratifikasi risiko non-invasif ini di ruang praktik diharapkan dapat memfasilitasi para klinisi dalam menyeleksi kandidat pasien yang membutuhkan prioritas rujukan untuk evaluasi <em>Computed Tomography Coronary Angiography</em> (CTCA) maupun eskalasi terapi kardiovaskular secara lebih dini dan presisi.</p>
+</section>
+<section id="daftar-pustaka" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="daftar-pustaka"><span class="header-section-number">8</span> Daftar Pustaka</h2>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
