@@ -11,10 +11,10 @@ author:
         city: Denpasar
         country: Indonesia
 abstract: |
-  Penyakit kardiovaskular aterosklerotik tetap menjadi penyebab utama morbiditas dan mortalitas pada pasien Diabetes Mellitus (DM), di mana evaluasi Computed Tomography Coronary Angiography (CTCA) dapat mengidentifikasi High-Risk Plaque (HRP) sebagai prekursor utama sindrom koroner akut. Penelitian ini bertujuan untuk mengevaluasi kemampuan prediktif kombinasi Indeks TyHbA1c, Usia, Indeks Massa Tubuh (IMT), dan status Penyakit Ginjal Kronis (PGK Stadium $\ge$ 3) terhadap keberadaan HRP serta mengembangkan nomogram klinis. Menggunakan desain potong lintang (cross-sectional) pada pasien prediabetes dan DM yang menjalani pemeriksaan CTCA di RSUP Prof. dr. I.G.N.G. Ngoerah pada periode 1 Januari hingga 31 Desember 2025, total 52 subjek dianalisis. Analisis regresi logistik multivariat menunjukkan bahwa kombinasi parameter kardiometabolik tersebut memiliki kemampuan diskriminasi yang baik dengan nilai Area Under the Curve (AUC) sebesar 0,768. Usia dan status komplikasi ginjal (PGK) terbukti secara statistik signifikan meningkatkan probabilitas kerentanan plak. Model multivariat ini berhasil dikonstruksikan ke dalam bentuk nomogram klinis yang aplikatif untuk stratifikasi risiko secara non-invasif. Simpulannya, kombinasi Indeks TyHbA1c, usia, IMT, dan status PGK efektif memprediksi HRP dan dapat dimanfaatkan sebagai instrumen skoring klinis penunjang rujukan pemeriksaan CTCA yang presisi di ruang praktik.
+  Penyakit kardiovaskular aterosklerotik tetap menjadi penyebab utama morbiditas dan mortalitas pada pasien Diabetes Mellitus (DM), di mana evaluasi Computed Tomography Coronary Angiography (CTCA) dapat mengidentifikasi High-Risk Plaque (HRP) sebagai prekursor utama sindrom koroner akut. Penelitian ini bertujuan untuk mengevaluasi kemampuan prediktif kombinasi Indeks TyHbA1c, Usia, Indeks Massa Tubuh (IMT), dan status Penyakit Ginjal Kronis (PGK Stadium $\ge$ 3) terhadap keberadaan HRP serta beban kalsifikasi koroner moderat-berat (CAC $\ge$ 100 Agatston), sekaligus mengembangkan pendekatan stratifikasi ganda melalui nomogram klinis. Menggunakan desain potong lintang (cross-sectional) pada pasien prediabetes dan DM yang menjalani pemeriksaan CTCA di RSUP Prof. dr. I.G.N.G. Ngoerah pada periode 1 Januari hingga 31 Desember 2025, total 52 subjek dianalisis. Analisis regresi logistik multivariat menunjukkan bahwa kombinasi parameter kardiometabolik tersebut memiliki kemampuan diskriminasi yang baik dalam memprediksi HRP dengan nilai *Area Under the Curve* (AUC) sebesar 0,724, dan terbukti semakin superior dalam memprediksi skor CAC $\ge$ 100 dengan AUC 0,782. Usia dan komplikasi ginjal (PGK) terbukti secara statistik signifikan meningkatkan probabilitas kerentanan plak, sementara faktor degeneratif usia menjadi prediktor tunggal yang paling dominan terhadap akumulasi kalsium masif. Model multivariat ini berhasil dikonstruksikan ke dalam bentuk tiga nomogram klinis aplikatif (HRP komprehensif, HRP tereduksi, dan beban CAC). Simpulannya, kombinasi Indeks TyHbA1c, usia, IMT, dan status PGK efektif memprediksi kualitas kerentanan plak (HRP) sekaligus kuantitas kalsifikasi anatomis, dan dapat dimanfaatkan sebagai instrumen skoring klinis penunjang rujukan pemeriksaan CTCA yang presisi di ruang praktik.
   
   **Abstract**
-  Atherosclerotic cardiovascular disease remains the leading cause of morbidity and mortality in Diabetes Mellitus (DM) patients, where Computed Tomography Coronary Angiography (CTCA) evaluation identifies High-Risk Plaque (HRP) as a primary precursor of acute coronary syndrome. This study aims to evaluate the predictive ability of a combination of TyHbA1c Index, Age, Body Mass Index (BMI), and Chronic Kidney Disease status (CKD Stage $\ge$ 3) for HRP presence and to develop a clinical nomogram. Utilizing a cross-sectional design among prediabetes and DM patients undergoing CTCA at RSUP Ngoerah from January 1 to December 31, 2025, a total of 52 subjects were analyzed. Multivariate logistic regression analysis revealed that the combination of these cardiometabolic parameters demonstrated good discriminative performance with an Area Under the Curve (AUC) of 0.768. Age and renal impairment status significantly increased the probability of plaque vulnerability. This multivariate model was successfully constructed into a clinical nomogram for non-invasive risk stratification. In conclusion, the combination of TyHbA1c Index, age, BMI, and CKD status effectively predicts HRP and can be utilized as a clinical scoring tool to support precise CTCA referral practices.
+  Atherosclerotic cardiovascular disease remains the leading cause of morbidity and mortality in Diabetes Mellitus (DM) patients, where Computed Tomography Coronary Angiography (CTCA) evaluation identifies High-Risk Plaque (HRP) as a primary precursor of acute coronary syndrome. This study aims to evaluate the predictive ability of a combination of TyHbA1c Index, Age, Body Mass Index (BMI), and Chronic Kidney Disease status (CKD Stage $\ge$ 3) for HRP presence and moderate-to-severe coronary artery calcification burden (CAC $\ge$ 100 Agatston), as well as to develop a dual-stratification clinical nomogram approach. Utilizing a cross-sectional design among prediabetes and DM patients undergoing CTCA at RSUP Ngoerah from January 1 to December 31, 2025, a total of 52 subjects were analyzed. Multivariate logistic regression analysis revealed that the combination of these parameters demonstrated good discriminative performance in predicting HRP with an Area Under the Curve (AUC) of 0.724, and demonstrated even superior performance in predicting a CAC score $\ge$ 100 with an AUC of 0.782. Age and renal impairment status significantly increased the probability of plaque vulnerability, while the degenerative factor of age emerged as the most dominant predictor for massive calcium accumulation. This multivariate model was successfully constructed into three clinical nomograms for non-invasive dual risk stratification. In conclusion, the combination of TyHbA1c Index, age, BMI, and CKD status effectively predicts both plaque vulnerability (HRP) and calcification burden, and can be utilized as a clinical scoring tool to support precise CTCA referral practices.
 keywords:
   - Indeks TyHbA1c
   - High-Risk Plaque
@@ -23,12 +23,12 @@ keywords:
   - Diabetes Mellitus
 format:
   agu-pdf:
-    keep-tex: true       # Menyimpan file .tex jika diperlukan untuk submission
+    keep-tex: true       
   html:
     theme:
       light: flatly
       dark: darkly
-    toc: true            # Menampilkan daftar isi di HTML
+    toc: true            
     number-sections: true
     code-fold: true
     warning: false
@@ -36,11 +36,11 @@ format:
 bibliography: pencil_endokrin.bib
 lang: id
 crossref:
-  tbl-title: Tabel        # Mengubah judul di atas tabel menjadi "Tabel 1"
-  tbl-prefix: Tabel       # Mengubah inline text (@tbl-...) menjadi "Tabel 1"
-  fig-title: Gambar       # Mengubah judul di bawah grafik menjadi "Gambar 1"
-  fig-prefix: Gambar      # Mengubah inline text (@fig-...) menjadi "Gambar 1"
-  title-delim: "."        # Mengubah pemisah dari titik dua (Tabel 1:) menjadi titik (Tabel 1.)
+  tbl-title: Tabel        
+  tbl-prefix: Tabel       
+  fig-title: Gambar       
+  fig-prefix: Gambar      
+  title-delim: "."        
 ---
 
 ## Pendahuluan
@@ -63,29 +63,40 @@ Kriteria inklusi dalam penelitian ini meliputi: (1) Pasien berusia $\ge$ 18 tahu
 
 Data karakteristik demografi (Usia, Jenis Kelamin), antropometri (Indeks Massa Tubuh/IMT), riwayat penyakit penyerta, status pengobatan, serta parameter biokimia (HbA1c, Trigliserida, Kolesterol Total, LDL, HDL, Kreatinin) diekstraksi dari rekam medis elektronik (SIMRS). Indeks TyHbA1c dihitung menggunakan formula logaritma natural: TyHbA1c = ln(Trigliserida \[mg/dL\] x HbA1c \[%\]). Penyakit ginjal kronik dikategorikan dari hasil fungsi ginjal hasil perhitungan CKD-EPI dan kriteria sesuai pedoman KDIGO. Evaluasi CTCA dilakukan oleh dokter spesialis radiologi konsultan yang tersertifikasi. Variabel dependen utama dalam penelitian ini adalah:
 
-1.      **Keparahan Obstruksi Koroner:** Diklasifikasikan berdasarkan sistem CAD-RADS 2.0, di mana kategori obstruktif signifikan didefinisikan sebagai CAD-RADS \$\\ge\$ 3 (stenosis \$\\ge\$ 50%).
+1.  
 
-2.      **Keberadaan High-Risk Plaque (HRP):** Ditetapkan sebagai variabel biner (Ya/Tidak), yang positif apabila ditemukan minimal satu dari empat fitur berikut pada lesi koroner: *positive remodeling* (PR), *low-attenuation plaque* (LAP), *spotty calcification* (SC), atau *napkin-ring sign* (NRS).
+    ```         
+     **Keparahan Obstruksi Koroner:** Diklasifikasikan berdasarkan sistem CAD-RADS 2.0, di mana kategori obstruktif signifikan didefinisikan sebagai CAD-RADS \$\\ge\$ 3 (stenosis \$\\ge\$ 50%).
+    ```
+
+2.  
+
+    ```         
+     **Keberadaan High-Risk Plaque (HRP):** Ditetapkan sebagai variabel biner (Ya/Tidak), yang positif apabila ditemukan minimal satu dari empat fitur berikut pada lesi koroner: *positive remodeling* (PR), *low-attenuation plaque* (LAP), *spotty calcification* (SC), atau *napkin-ring sign* (NRS).
+    ```
+
+3.  
+
+    ```         
+     **Beban Kalsifikasi Koroner Moderat-Berat (CAC $\ge$ 100):** Ditetapkan sebagai variabel kategorikal sekunder, di mana skor kalsium *Agatston* $\ge$ 100 didefinisikan sebagai penanda beban aterosklerosis yang signifikan secara anatomis dan menjadi indikasi intervensi farmakologis agresif.
+    ```
 
 **Analisis Statistik**
 
 Analisis data dilakukan menggunakan perangkat lunak R (R Foundation for Statistical Computing). Variabel kontinu disajikan dalam bentuk rerata dan simpangan baku (distribusi normal) atau median dan rentang interkuartil (distribusi tidak normal). Analisis komparatif bivariat dilakukan menggunakan uji *Mann-Whitney U* atau *Independent T-test* untuk variabel kontinu, serta uji *Chi-Square* atau *Fisher's Exact* untuk variabel kategorik.
 
-Pemodelan prediktif dilakukan menggunakan analisis Regresi Logistik Multivariat (*Generalized Linear Model*). Berdasarkan seleksi variabel dan patofisiologi klinis, prediktor yang dimasukkan ke dalam model utama adalah Usia, IMT, TyHbA1c Index, dan Status CKD. Performa diskriminatif model dievaluasi menggunakan *Area Under the Curve* (AUC) dari kurva *Receiver Operating Characteristic* (ROC). Signifikansi statistik ditetapkan pada nilai $p < 0,05$. Berdasarkan koefisien regresi dari model multivariat final, sebuah nomogram klinis dikonstruksi menggunakan paket `rms` di lingkungan R untuk memfasilitasi probabilitas prediksi personal secara visual.
+Pemodelan prediktif utama dilakukan menggunakan analisis Regresi Logistik Multivariat (*Generalized Linear Model*). Berdasarkan seleksi variabel dan patofisiologi klinis, prediktor yang dimasukkan ke dalam model utama (HRP komprehensif) adalah Usia, IMT, TyHbA1c Index, dan Status CKD. Selain itu, pemodelan prediktif tereduksi (menyertakan variabel independen kuat saja) dan pemodelan sekunder untuk memprediksi probabilitas beban kalsifikasi (skor CAC $\ge$ 100) turut dieksekusi guna menghadirkan pendekatan stratifikasi risiko ganda (*double stratification*). Performa diskriminatif model dievaluasi menggunakan *Area Under the Curve* (AUC) dari kurva *Receiver Operating Characteristic* (ROC). Signifikansi statistik ditetapkan pada nilai $p < 0,05$. Berdasarkan koefisien regresi dari model multivariat final, berbagai nomogram klinis dikonstruksi menggunakan paket `rms` di lingkungan R untuk memfasilitasi probabilitas prediksi personal secara visual.
 
 ###### 1. Setup
 
 ```{r setup}
-
-# Install packages jika belum ada (hapus tanda # jika perlu install)
-# install.packages(c("googlesheets4", "dplyr", "pROC", "rms", "ggplot2", "gtsummary"))
-
-library(googlesheets4) # Untuk mengambil data dari Google Sheets
+library(readxl)        # Untuk membaca data dari Excel lokal
 library(dplyr)         # Untuk manipulasi data
 library(pROC)          # Untuk analisis kurva ROC dan AUC
 library(rms)           # Untuk regresi dan pembuatan Nomogram
 library(ggplot2)       # Untuk visualisasi data
 library(gtsummary)     # Untuk membuat tabel hasil klinis yang rapi
+library(googlesheets4)
 library(tidyverse)
 ```
 
@@ -112,28 +123,28 @@ df_clean <- df_raw %>%
   # Filter pasien yang memiliki No. RM
   filter(!is.na(`No. RM`)) %>%
   
-  # Konversi tipe data karakter ke numerik (mengganti koma dengan titik)
+  # Konversi tipe data karakter ke numerik
   mutate(across(c(Usia, IMT, HbA1C, Trigliserida, Kreatinin, `Kolesterol-Total`, LDL, HDL, `Asam-Urat`), 
                 ~ as.numeric(gsub(",", ".", as.character(.x))))) %>%
   
-  # Membuat variabel baru dan membersihkan skor CAC
+  # Membersihkan skor CAC dan variabel lain
   mutate(
-    # MEMBERSIHKAN SKOR CAC (Menghapus huruf dan mengubah koma menjadi titik)
     Global_CAC_score = as.numeric(gsub(",", ".", gsub("[^0-9,.-]", "", as.character(Global_CAC_score)))),
-    
-    # 1. TyHbA1c Index (Logaritma Natural dari Trigliserida * HbA1c)
     TyHbA1c_Index = log(Trigliserida * HbA1C),
-    
-    # 2. Status HRP 
     HRP_Status = ifelse(grepl("HRP", `Global_CAD-RADS`, ignore.case = TRUE), "HRP (+)", "HRP (-)"),
     HRP_Status = factor(HRP_Status, levels = c("HRP (-)", "HRP (+)")),
     
-    # 3. Status CKD (1 = Kreatinin > 1.2, 0 = Kreatinin <= 1.2)
-    CKD_Status = ifelse(Kreatinin > 1.2, 1, 
-                        ifelse(Kreatinin <= 1.2, 0, NA))
+    # Variabel Dependen Baru untuk CAC >= 100
+    CAC_100_plus = ifelse(Global_CAC_score >= 100, 1, 0),
+    
+    Kappa = ifelse(Gender == "P", 0.7, 0.9),
+    Alpha = ifelse(Gender == "P", -0.241, -0.302),
+    Sex_Mult = ifelse(Gender == "P", 1.012, 1),
+    eGFR = 142 * (pmin(Kreatinin / Kappa, 1)^Alpha) * 
+                 (pmax(Kreatinin / Kappa, 1)^-1.200) * 
+                 (0.9938^Usia) * Sex_Mult,
+    CKD_Status = ifelse(eGFR < 60, 1, ifelse(eGFR >= 60, 0, NA))
   ) %>%
-  
-  # Membuang missing values hanya pada variabel yang akan dianalisis
   filter(!is.na(Usia), !is.na(IMT), !is.na(TyHbA1c_Index), 
          !is.na(CKD_Status), !is.na(HRP_Status), !is.na(Global_CAC_score))
 
@@ -145,9 +156,7 @@ df_clean <- df_raw %>%
 ## Hasil
 
 ```{r extract_results, include=FALSE}
-# Chunk ini khusus untuk mengekstrak angka agar bisa dipanggil ke dalam narasi (inline code)
-# include=FALSE memastikan kodenya berjalan di belakang layar tanpa dicetak ke PDF/HTML
-
+# Chunk ini khusus untuk mengekstrak angka agar bisa dipanggil ke dalam narasi secara dinamis
 n_total <- nrow(df_clean)
 n_hrp_pos <- sum(df_clean$HRP_Status == "HRP (+)")
 n_hrp_neg <- sum(df_clean$HRP_Status == "HRP (-)")
@@ -189,72 +198,94 @@ sd_usia_neg <- round(sd(df_clean$Usia[df_clean$HRP_Status == "HRP (-)"]), 2)
 med_cac_pos <- round(median(df_clean$Global_CAC_score[df_clean$HRP_Status == "HRP (+)"]), 1)
 med_cac_neg <- round(median(df_clean$Global_CAC_score[df_clean$HRP_Status == "HRP (-)"]), 1)
 
-# Menangkap hasil Regresi Logistik dan AUC
+# 1. Menangkap hasil Regresi Logistik HRP
 model_ekstrak <- glm(HRP_Status ~ Usia + IMT + TyHbA1c_Index + CKD_Status, data = df_clean, family = binomial(link = "logit"))
 summary_model <- summary(model_ekstrak)
 
-# Ekstrak OR, CI, dan p-value Usia
 or_usia <- round(exp(coef(model_ekstrak)["Usia"]), 2)
-ci_usia <- exp(confint(model_ekstrak)["Usia", ])
+ci_usia <- exp(suppressMessages(confint(model_ekstrak)["Usia", ]))
 p_usia <- round(summary_model$coefficients["Usia", "Pr(>|z|)"], 3)
 
-# Ekstrak OR, CI, dan p-value CKD
 or_ckd <- round(exp(coef(model_ekstrak)["CKD_Status"]), 2)
-ci_ckd <- exp(confint(model_ekstrak)["CKD_Status", ])
+ci_ckd <- exp(suppressMessages(confint(model_ekstrak)["CKD_Status", ]))
 p_ckd <- round(summary_model$coefficients["CKD_Status", "Pr(>|z|)"], 3)
 
-# Ekstrak AUC
 roc_ekstrak <- roc(df_clean$HRP_Status, predict(model_ekstrak, type = "response"))
 auc_val <- round(auc(roc_ekstrak), 3)
+
+# 2. Menangkap hasil Regresi Logistik CAC (Bagian ini yang sebelumnya terlewat)
+n_cac100 <- sum(df_clean$CAC_100_plus == 1)
+pct_cac100 <- round((n_cac100 / n_total) * 100, 1)
+
+model_cac_ekstrak <- glm(CAC_100_plus ~ Usia + TyHbA1c_Index + CKD_Status, data = df_clean, family = binomial(link = "logit"))
+summary_cac <- summary(model_cac_ekstrak)
+
+or_usia_cac <- round(exp(coef(model_cac_ekstrak)["Usia"]), 2)
+ci_usia_cac <- exp(suppressMessages(confint(model_cac_ekstrak)["Usia", ]))
+p_usia_cac <- round(summary_cac$coefficients["Usia", "Pr(>|z|)"], 3)
+
+roc_cac_ekstrak <- roc(df_clean$CAC_100_plus, predict(model_cac_ekstrak, type = "response"))
+auc_val_cac <- round(auc(roc_cac_ekstrak), 3)
 ```
 
 **Karakteristik Dasar dan Profil Klinis Subjek**
 
 Penelitian ini melibatkan `r n_total` pasien dengan diagnosis diabetes atau prediabetes yang menjalani pemeriksaan *Computed Tomography Coronary Angiography* (CTCA) dan memenuhi kriteria inklusi. Mayoritas subjek adalah laki-laki (n = `r n_pria`; `r pct_pria`%), dengan rentang usia rata-rata `r mean_usia` $\pm$ `r sd_usia` tahun. Rerata Indeks Massa Tubuh (IMT) subjek berada pada ambang batas *overweight* (`r mean_imt` $\pm$ `r sd_imt` kg/m²).
 
-Dari parameter biokimia, rata-rata kadar HbA1c subjek adalah `r mean_hba1c` $\pm$ `r sd_hba1c`%, dengan kadar trigliserida `r mean_tg` $\pm$ `r sd_tg` mg/dL. Rerata nilai TyHbA1c Index pada populasi ini sebesar `r mean_ty` $\pm$ `r sd_ty`. Evaluasi fungsi ginjal menunjukkan bahwa `r n_ckd` pasien (`r pct_ckd`%) mengalami disfungsi ginjal (Penyakit Ginjal Kronis/CKD) dengan nilai kreatinin serum \> 1,2 mg/dL. Secara keseluruhan, nilai median *Global CAC Score* (kalsifikasi koroner) pada sampel adalah `r format(median_cac, big.mark=",")` (IQR: `r format(q1_cac, big.mark=",")` – `r format(q3_cac, big.mark=",")`) Agatston. Data karakteristik subjek ditampilkan pada @tbl-baseline.
+Dari parameter biokimia, rata-rata kadar HbA1c subjek adalah `r mean_hba1c` $\pm$ `r sd_hba1c`%, dengan kadar trigliserida `r mean_tg` $\pm$ `r sd_tg` mg/dL. Rerata nilai TyHbA1c Index pada populasi ini sebesar `r mean_ty` $\pm$ `r sd_ty`. Evaluasi fungsi ginjal menunjukkan bahwa `r n_ckd` pasien (`r pct_ckd`%) mengalami disfungsi ginjal (Penyakit Ginjal Kronis/CKD) dengan nilai kreatinin serum \> 1,2 mg/dL. Secara keseluruhan, nilai median *Global CAC Score* (kalsifikasi koroner) pada sampel adalah `r format(median_cac, big.mark=",")` (IQR: `r format(q1_cac, big.mark=",")` – `r format(q3_cac, big.mark=",")`) Agatston. Data karakteristik subjek ditampilkan pada \@tbl-baseline.
 
 **Proporsi Kemunculan *High-Risk Plaque* (HRP)**
 
 Berdasarkan evaluasi lesi koroner melalui pencitraan CTCA, proporsi penemuan *High-Risk Plaque* (HRP) terbilang tinggi. Sebanyak `r n_hrp_pos` pasien (`r pct_hrp_pos`%) teridentifikasi positif memiliki HRP, sementara `r n_hrp_neg` pasien (`r pct_hrp_neg`%) tidak menunjukkan fitur HRP.
 
-Analisis komparatif menunjukkan bahwa pasien pada kelompok HRP (+) memiliki usia yang secara signifikan lebih tua (`r mean_usia_pos` $\pm$ `r sd_usia_pos` tahun) dibandingkan kelompok HRP (-) (`r mean_usia_neg` $\pm$ `r sd_usia_neg` tahun). Selain itu, derajat kalsifikasi koroner pada kelompok HRP (+) jauh lebih masif; kelompok ini mencatatkan median skor CAC mencapai `r format(med_cac_pos, big.mark=",")` Agatston, berbanding sangat kontras dengan kelompok HRP (-) yang hanya memiliki median `r format(med_cac_neg, big.mark=",")` Agatston .
+Analisis komparatif menunjukkan bahwa pasien pada kelompok HRP (+) memiliki usia yang secara signifikan lebih tua (`r mean_usia_pos` $\pm$ `r sd_usia_pos` tahun) dibandingkan kelompok HRP (-) (`r mean_usia_neg` $\pm$ `r sd_usia_neg` tahun). Selain itu, derajat kalsifikasi koroner pada kelompok HRP (+) jauh lebih masif; kelompok ini mencatatkan median skor CAC mencapai `r format(med_cac_pos, big.mark=",")` Agatston, berbanding sangat kontras dengan kelompok HRP (-) yang hanya memiliki median `r format(med_cac_neg, big.mark=",")` Agatston.
 
 ```{r}
 #| label: tbl-baseline
-#| tbl-cap: "**Karakteristik Dasar, Profil Klinis, dan Skor CAC Subjek Penelitian**"
+#| tbl-cap: "**Karakteristik Dasar, Profil Klinis, Riwayat Pengobatan, dan Skor CAC Subjek Penelitian**"
 #| echo: false
 #| warning: false
 #| message: false
 
+library(gtsummary)
 
-# 1. Menyiapkan dataset khusus untuk Tabel Karakteristik
 df_table <- df_raw %>%
   filter(!is.na(`No. RM`)) %>%
-  # Membersihkan format angka dasar (koma ke titik)
   mutate(across(c(Usia, IMT, HbA1C, Trigliserida, `Kolesterol-Total`, 
-                  LDL, HDL, `Asam-Urat`, Kreatinin, LDL, HDL, Albumin), 
+                  LDL, HDL, `Asam-Urat`, Kreatinin, Albumin), 
                 ~ as.numeric(gsub(",", ".", as.character(.x))))) %>%
-  # Membersihkan Global CAC Score secara spesifik agar menjadi angka murni
   mutate(
     Global_CAC_score = as.numeric(gsub(",", ".", gsub("[^0-9,.-]", "", as.character(Global_CAC_score)))),
     TyHbA1c_Index = log(Trigliserida * HbA1C),
     HRP_Status = ifelse(grepl("HRP", `Global_CAD-RADS`, ignore.case = TRUE), "HRP (+)", "HRP (-)"),
-    CKD_Status = ifelse(Kreatinin > 1.2, "CKD (> 1.2)", "Normal (<= 1.2)"),
+    HRP_Status = factor(HRP_Status, levels = c("HRP (-)", "HRP (+)")),
+    
+    Kappa = ifelse(Gender == "P", 0.7, 0.9),
+    Alpha = ifelse(Gender == "P", -0.241, -0.302),
+    Sex_Mult = ifelse(Gender == "P", 1.012, 1),
+    eGFR = 142 * (pmin(Kreatinin / Kappa, 1)^Alpha) * (pmax(Kreatinin / Kappa, 1)^-1.200) * (0.9938^Usia) * Sex_Mult,
+    CKD_Status = ifelse(eGFR < 60, "PGK stadium ≥ 3", "Normal/PGK ≤ 2"),
+    
     Gender = as.factor(Gender),
     Hipertensi = as.factor(Hipertensi),
-    Merokok = as.factor(Merokok)
+    Merokok = factor(Merokok, levels = c("Tidak-merokok", "Merokok"), labels = c("Tidak Merokok", "Merokok")),
+    Statin = factor(Statin, levels = c("No-Statin", "On-Statin"), labels = c("Tidak Menggunakan", "Menggunakan Statin")),
+    Terapi_DM = factor(`OAD-INSULIN`, levels = c("Tanpa-obat", "OAD", "Insulin"), labels = c("Tanpa Terapi / Diet", "Obat Anti-Diabetik (OAD)", "Terapi Insulin")),
+    Durasi_DM_Bulan = as.numeric(Durasi_DM),
+    Riwayat_DM = ifelse(Durasi_DM_Bulan == 0, "Baru Terdiagnosis", "Sudah Lama (≥ 1 Bulan)"),
+    Riwayat_DM = factor(Riwayat_DM, levels = c("Baru Terdiagnosis", "Sudah Lama (≥ 1 Bulan)"))
   ) %>%
   select(HRP_Status, Usia, Gender, IMT, Hipertensi, Merokok, 
          HbA1C, Trigliserida, `Kolesterol-Total`, LDL, HDL, 
-         `Asam-Urat`, Kreatinin, CKD_Status, TyHbA1c_Index, Global_CAC_score)
+         `Asam-Urat`, Kreatinin, CKD_Status, TyHbA1c_Index, 
+         Statin, Terapi_DM, Riwayat_DM, Global_CAC_score)
 
 label_variabel <- list(
   Usia ~ "Usia (Tahun)",
   Gender ~ "Jenis Kelamin",
   IMT ~ "Indeks Massa Tubuh (kg/m²)",
   Hipertensi ~ "Riwayat Hipertensi",
-  Merokok ~ "Riwayat Merokok",
+  Merokok ~ "Status Merokok",
   HbA1C ~ "Kadar HbA1c (%)",
   Trigliserida ~ "Trigliserida (mg/dL)",
   `Kolesterol-Total` ~ "Kolesterol Total (mg/dL)",
@@ -264,30 +295,31 @@ label_variabel <- list(
   Kreatinin ~ "Kreatinin Serum (mg/dL)",
   CKD_Status ~ "Status Fungsi Ginjal",
   TyHbA1c_Index ~ "Indeks TyHbA1c",
+  Statin ~ "Penggunaan Statin",
+  Terapi_DM ~ "Jenis Terapi Diabetes",
+  Riwayat_DM ~ "Durasi Riwayat Penyakit DM",
   Global_CAC_score ~ "Global CAC Score (Agatston)"
 )
 
-# 2. MEMBUAT TABEL A: KESELURUHAN
 tabel_keseluruhan <- df_table %>%
   select(-HRP_Status) %>% 
   tbl_summary(
     statistic = list(
       all_continuous() ~ "{mean} \u00b1 {sd}",
-      Global_CAC_score ~ "{median} ({p25}, {p75})" # CAC menggunakan Median dan IQR
+      Global_CAC_score ~ "{median} ({p25}, {p75})" 
     ),
     digits = list(all_continuous() ~ 2, Global_CAC_score ~ 1),
     label = label_variabel,
     missing = "no"
   ) %>%
-  modify_header(stat_0 ~ "**Keseluruhan**")
+  modify_header(stat_0 ~ "**Keseluruhan (N = 52)**")
 
-# 3. MEMBUAT TABEL B: HRP(+) DAN HRP(-)
 tabel_hrp <- df_table %>%
   tbl_summary(
     by = HRP_Status, 
     statistic = list(
       all_continuous() ~ "{mean} \u00b1 {sd}",
-      Global_CAC_score ~ "{median} ({p25}, {p75})" # CAC menggunakan Median dan IQR
+      Global_CAC_score ~ "{median} ({p25}, {p75})" 
     ),
     digits = list(all_continuous() ~ 2, Global_CAC_score ~ 1),
     label = label_variabel,
@@ -297,66 +329,32 @@ tabel_hrp <- df_table %>%
     test = list(
       all_continuous() ~ "t.test",      
       all_categorical() ~ "chisq.test",
-      Global_CAC_score ~ "wilcox.test" # Uji Mann-Whitney untuk CAC non-parametrik
+      Global_CAC_score ~ "wilcox.test" 
     )
   ) %>%
   bold_p(t = 0.05)
 
-# 4. MENGGABUNGKAN KEDUA TABEL
 tabel_final <- tbl_merge(
   tbls = list(tabel_keseluruhan, tabel_hrp),
   tab_spanner = c(NA, "**Vulnerabilitas Plak (CAD-RADS)**") 
 ) %>%
-  #modify_caption("**Tabel 1. Karakteristik Dasar, Profil Klinis, dan Skor CAC Subjek Penelitian**") %>%
   bold_labels()
 
-
-# Tampilkan hasil
 tabel_final
 ```
 
 ```{r multipanel_CAC}
 
+#| echo: false
+#| warning: false
+#| message: false
+
 library(tidyverse)
-library(readxl)
 
-# 1. Load dan Bersihkan Data
-file_path <- "Pencil_Endokrin - Update-HbA1c.xlsx" 
-
-# Cek nama kolom asli yang terbaca oleh R
-#print("=== DAFTAR KOLOM ASLI DI EXCEL ===")
-#print(names(df_raw))
-
-df_clean <- df_raw %>%
-  filter(!is.na(`No. RM`)) %>%
-  mutate(across(any_of(c("Usia", "IMT", "HbA1C", "Trigliserida", "Kolesterol-Total", 
-                         "LDL", "HDL", "Asam-Urat", "Kreatinin", "Global_CAC_score")), 
-                ~ as.numeric(gsub(",", ".", as.character(.x))))) %>%
-  mutate(
-    # Membersihkan Global CAC Score dengan aman
-    Global_CAC_score = as.numeric(gsub(",", ".", gsub("[^0-9,.-]", "", as.character(Global_CAC_score)))),
-    HRP_Status = ifelse(grepl("HRP", `Global_CAD-RADS`, ignore.case = TRUE), "HRP (+)", "HRP (-)"),
-    HRP_Status = factor(HRP_Status, levels = c("HRP (-)", "HRP (+)")),
- # 1. TyHbA1c Index (Logaritma Natural dari Trigliserida * HbA1c)
-    TyHbA1c_Index = log(Trigliserida * HbA1C),
-    
-    
-    # 3. Status CKD (1 = Kreatinin > 1.2, 0 = Kreatinin <= 1.2)
-    CKD_Status = ifelse(Kreatinin > 1.2, 1, 
-                        ifelse(Kreatinin <= 1.2, 0, NA))
-  )
-
-#print(paste("Jumlah total baris setelah cleaning:", nrow(df_clean)))
-#print(summary(df_clean$Global_CAC_score))
-
-# 2. Transformasi Data Menjadi Format Long dengan any_of() agar tidak error jika ada typo
 df_long <- df_clean %>%
   filter(!is.na(Global_CAC_score), Global_CAC_score <= 2000) %>%
   select(HRP_Status, Global_CAC_score, any_of(c("Usia", "IMT", "Trigliserida", "HbA1C", "Kolesterol-Total", "LDL", "HDL", "Asam-Urat")))
 
-#print(paste("Jumlah baris setelah filter CAC <= 2000:", nrow(df_long)))
-
-# Lanjutkan pivoting jika data tidak kosong
 if(nrow(df_long) > 0) {
   df_long <- df_long %>%
     pivot_longer(
@@ -383,9 +381,6 @@ if(nrow(df_long) > 0) {
       ))
     )
   
-  #print(paste("Jumlah baris final untuk plot:", nrow(df_long)))
-  
-  # 3. Membuat Multi-Panel Scatter Plot dengan ggplot2 & facet_wrap
   p <- ggplot(df_long, aes(x = Nilai_Prediktor, y = Global_CAC_score, color = HRP_Status, fill = HRP_Status)) +
     geom_point(size = 2.3, alpha = 0.8, stroke = 0.3, shape = 21, color = "black") +
     geom_smooth(method = "lm", se = FALSE, linetype = "dashed", linewidth = 0.7) +
@@ -409,15 +404,10 @@ if(nrow(df_long) > 0) {
       legend.position = "bottom",
       panel.grid.minor = element_blank()
     )
-  
-  # Tampilkan grafik
-  #print(p)
-  
 } else {
-  print("PERHATIAN: Data df_long kosong (0 baris). Kemungkinan nilai Global_CAC_score semuanya NA atau tersaring habis.")
+  print("PERHATIAN: Data df_long kosong (0 baris).")
 }
 
-# Menyimpan otomatis ke komputer dengan ukuran proporsional untuk Tesis
 ggsave(
   filename = "Multi_Panel_Korelasi_CAC.png", 
   plot = p, 
@@ -431,7 +421,7 @@ ggsave(
 
 **Analisis Multivariat Prediktor *High-Risk Plaque* (HRP)**
 
-Pemodelan regresi logistik multivariat (*Generalized Linear Model*) dilakukan untuk mengevaluasi kekuatan prediktif klinis dengan memasukkan variabel Usia, IMT, TyHbA1c Index, dan Status CKD (@tbl-regresi).Hasil analisis mengonfirmasi bahwa Usia merupakan prediktor independen yang bermakna secara statistik terhadap pembentukan plak risiko tinggi (Odds Ratio \[OR\] = `r or_usia`; 95% CI: `r round(ci_usia[1], 2)` – `r round(ci_usia[2], 2)`; $p$ = `r p_usia`). Secara klinis, komplikasi fungsi ginjal memberikan dampak risiko yang paling masif; pasien dengan status CKD menunjukkan tren peningkatan probabilitas kerentanan plak hingga `r or_ckd` kali lipat lebih tinggi dibandingkan pasien dengan ginjal normal (OR = `r or_ckd`; 95% CI: `r round(ci_ckd[1], 2)` – `r round(ci_ckd[2], 2)`; $p$ = `r p_ckd`). Sementara itu, variabel TyHbA1c Index dan IMT tidak menunjukkan kemaknaan statistik parsial secara independen dalam model ini.
+Pemodelan regresi logistik multivariat (Generalized Linear Model) dilakukan untuk mengevaluasi kekuatan prediktif klinis komprehensif dengan memasukkan variabel Usia, IMT, TyHbA1c Index, dan Status CKD (@tbl-regresi). Hasil analisis mengonfirmasi bahwa Usia merupakan prediktor independen yang bermakna secara statistik terhadap pembentukan plak risiko tinggi (Odds Ratio \[OR\] = `r or_usia`; 95% CI: `r round(ci_usia[1], 2)` – `r round(ci_usia[2], 2)`; $p$ = `r p_usia`). Secara klinis, komplikasi fungsi ginjal memberikan dampak risiko yang masif; pasien dengan status CKD menunjukkan tren peningkatan probabilitas kerentanan plak hingga `r or_ckd` kali lipat lebih tinggi dibandingkan pasien dengan ginjal normal (OR = `r or_ckd`; 95% CI: `r round(ci_ckd[1], 2)` – `r round(ci_ckd[2], 2)`; $p$ = `r p_ckd`). Sementara itu, variabel TyHbA1c Index dan IMT tidak menunjukkan kemaknaan statistik parsial secara independen dalam kohort terbatas ini.
 
 ```{r}
 #| label: tbl-regresi
@@ -440,35 +430,45 @@ Pemodelan regresi logistik multivariat (*Generalized Linear Model*) dilakukan un
 #| warning: false
 #| message: false
 
-# Membuat model Generalized Linear Model (GLM)
 model_glm <- glm(HRP_Status ~ Usia + IMT + TyHbA1c_Index + CKD_Status, 
                  data = df_clean, 
                  family = binomial(link = "logit"))
 
-# Menampilkan ringkasan model menggunakan format gtsummary untuk jurnal
-tbl_regression(model_glm, exponentiate = TRUE) %>%
+tbl_regression(model_glm, 
+               exponentiate = TRUE,
+               label = list(
+                 Usia ~ "Usia (Tahun)",
+                 IMT ~ "Indeks Massa Tubuh (IMT)",
+                 TyHbA1c_Index ~ "Indeks TyHbA1C",
+                 CKD_Status ~ "PGK Stadium ≥ 3"
+               )) %>%
   bold_p() %>%
-  add_global_p()
+  modify_header(
+    label = "**Variabel**",
+    estimate = "**OR**",
+    ci = "**IK 95%**",
+    p.value = "**Nilai *p***"
+  ) %>%
+  modify_footnote(
+    estimate ~ "OR = Odds Ratio",
+    ci ~ "IK = Interval Kepercayaan"
+  )
 ```
 
 **Performa Model Prediksi dan Nomogram Klinis**
 
-Meskipun secara parsial beberapa variabel tidak mencapai signifikansi statistik, kombinasi holistik dari keempat parameter klinis tersebut (Usia + IMT + TyHbA1c Index + CKD) menghasilkan daya diskriminasi diagnostik yang solid. Analisis *Receiver Operating Characteristic* (ROC) membuktikan bahwa model multivariat ini mampu membedakan probabilitas keberadaan HRP dengan nilai *Area Under the Curve* (AUC) sebesar `r auc_val`. Angka diskriminasi sebesar `r round(auc_val * 100, 1)`% ini mengindikasikan performa model yang baik (@fig-roc).
+Meskipun secara parsial beberapa variabel tidak mencapai signifikansi statistik, kombinasi holistik dari keempat parameter klinis tersebut (Usia + IMT + TyHbA1c Index + CKD) menghasilkan daya diskriminasi diagnostik yang solid. Analisis *Receiver Operating Characteristic* (ROC) membuktikan bahwa model multivariat ini mampu membedakan probabilitas keberadaan HRP dengan nilai *Area Under the Curve* (AUC) sebesar `r auc_val` (@fig-roc).
 
 ```{r}
 #| label: fig-roc
-#| fig-cap: "**Kinerja Diskriminatif Model Prediksi *High-Risk Plaque*.** Kurva ROC dari model regresi logistik multivariat yang mengintegrasikan Usia, Indeks Massa Tubuh (IMT), TyHbA1c Index, dan Status Penyakit Ginjal Kronis (CKD). Model ini menunjukkan tingkat akurasi diagnostik yang baik dengan nilai *Area Under the Curve* (AUC) sebesar 0,768."
+#| fig-cap: "**Kinerja Diskriminatif Model Prediksi *High-Risk Plaque*.** Kurva ROC dari model komprehensif mengintegrasikan Usia, IMT, TyHbA1c Index, dan Status Penyakit Ginjal Kronis (CKD) dengan nilai *Area Under the Curve* (AUC) sebesar 0,724."
 #| echo: false
 #| warning: false
 #| message: false
 
-# Menghitung probabilitas prediksi
 df_clean$pred_prob <- predict(model_glm, type = "response")
-
-# Membuat objek ROC
 roc_obj <- roc(df_clean$HRP_Status, df_clean$pred_prob)
 
-# Plotting Kurva ROC
 plot(roc_obj, 
      main = paste("Kurva ROC: Model Prediksi HRP (AUC =", round(auc(roc_obj), 3), ")"),
      col = "darkred", 
@@ -477,16 +477,15 @@ plot(roc_obj,
      xlab = "False Positive Rate (1 - Specificity)", 
      ylab = "True Positive Rate (Sensitivity)")
 
-# Mengarsir area di bawah kurva (opsional)
 polygon(c(1, roc_obj$specificities, 0), c(0, roc_obj$sensitivities, 0), 
         col = rgb(0.55, 0, 0, alpha = 0.1), border = NA)
 ```
 
-Model ini kemudian ditransformasikan secara visual ke dalam bentuk nomogram klinis guna memfasilitasi estimasi probabilitas kemunculan *vulnerable plaque* (0 - 100%) secara personal dan praktis bagi masing-masing pasien di ruang praktik.
+Model ini kemudian ditransformasikan secara visual ke dalam bentuk nomogram klinis komprehensif guna memfasilitasi estimasi probabilitas kemunculan *vulnerable plaque* (0 - 100%).
 
 ```{r}
 #| label: fig-nomogram
-#| fig-cap: "**Nomogram Klinis untuk Prediksi Probabilitas *High-Risk Plaque* (HRP).** Alat stratifikasi risiko yang dikembangkan dari pemodelan regresi logistik multivariat. Probabilitas individual pasien diproyeksikan pada aksis terbawah dengan menjumlahkan total poin (0-100) dari keempat variabel prediktor: Usia, IMT, Indeks TyHbA1c, dan Status CKD."
+#| fig-cap: "**Nomogram Klinis Komprehensif untuk Prediksi Probabilitas *High-Risk Plaque* (HRP).** Probabilitas individual pasien diproyeksikan dengan menjumlahkan total poin (0-100) dari keempat variabel patofisiologis: Usia, IMT, Indeks TyHbA1c, dan Status CKD."
 #| echo: false
 #| warning: false
 #| message: false
@@ -495,7 +494,6 @@ Model ini kemudian ditransformasikan secara visual ke dalam bentuk nomogram klin
 
 library(rms)
 
-# --- FAIL-SAFE: Memaksa semua kolom menjadi vektor atomic (angka murni) ---
 df_nom <- data.frame(
   HRP_Status    = ifelse(df_clean$HRP_Status == "HRP (+)", 1, 0),
   Usia          = as.numeric(unlist(df_clean$Usia)),
@@ -503,59 +501,186 @@ df_nom <- data.frame(
   TyHbA1c_Index = as.numeric(unlist(df_clean$TyHbA1c_Index)),
   CKD_Status    = as.numeric(unlist(df_clean$CKD_Status))
 )
-
-# Memastikan tidak ada sisa NA
 df_nom <- na.omit(df_nom)
 
-# 1. MEMBERIKAN LABEL KUSTOM (Agar Tampil Rapi di Nomogram)
 label(df_nom$Usia) <- "Usia (Tahun)"
 label(df_nom$IMT) <- "Indeks Massa Tubuh (IMT)"
 label(df_nom$TyHbA1c_Index) <- "Indeks TyHbA1C"
 label(df_nom$CKD_Status) <- "PGK Stadium ≥ 3"
 
-# 2. Mengatur distribusi data untuk package rms 
 dd <- datadist(df_nom)
 options(datadist = "dd")
 
-# 3. Membuat model ulang menggunakan fungsi lrm() dari package rms
 model_lrm <- lrm(HRP_Status ~ Usia + IMT + TyHbA1c_Index + CKD_Status, data = df_nom)
 
-# 4. Membangun Nomogram 
 nom <- nomogram(model_lrm, 
                 fun = plogis, 
                 funlabel = "Probabilitas High-Risk Plaque",
                 lp = FALSE)
 
-# 5. Plot Nomogram
 plot(nom, col.grid = gray(c(0.85, 0.95)))
+```
+
+Guna mengakomodasi optimalisasi translasi klinis yang lebih efisien dan parsimonious (hanya menggunakan variabel yang terbukti independen secara statistik), sebuah Nomogram Tereduksi juga dikembangkan dengan membuang parameter metabolik.
+
+```{r}
+#| label: fig-nomogram-reduksi
+#| fig-cap: "**Nomogram Klinis Tereduksi (Model Sederhana).** Alat stratifikasi risiko *High-Risk Plaque* (HRP) yang dioptimalkan dengan hanya mengandalkan dua prediktor utama: Usia dan Penyakit Ginjal Kronis (PGK) Stadium ≥ 3."
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 10
+#| fig-height: 5
+
+fungsi_asli <- rms:::plot.nomogram
+kode_sumber <- deparse(fungsi_asli)
+kode_sumber <- gsub('"Points"', '"Poin"', kode_sumber)
+kode_sumber <- gsub('"Total Points"', '"Total Poin"', kode_sumber)
+plot_nomogram_indo <- eval(parse(text = paste(kode_sumber, collapse = "\n")))
+environment(plot_nomogram_indo) <- asNamespace("rms")
+
+df_nom_red <- data.frame(
+  HRP_Status = ifelse(df_clean$HRP_Status == "HRP (+)", 1, 0),
+  Usia       = as.numeric(unlist(df_clean$Usia)),
+  CKD_Status = factor(df_clean$CKD_Status, levels = c(0, 1), labels = c("Tidak", "Ya")) 
+)
+df_nom_red <- na.omit(df_nom_red)
+
+label(df_nom_red$Usia) <- "Usia (Tahun)"
+label(df_nom_red$CKD_Status) <- "PGK Stadium ≥ 3"
+
+dd_red <- datadist(df_nom_red)
+options(datadist = "dd_red")
+
+model_lrm_red <- lrm(HRP_Status ~ Usia + CKD_Status, data = df_nom_red)
+nom_red <- nomogram(model_lrm_red, fun = plogis, funlabel = "Probabilitas High-Risk Plaque", lp = FALSE)
+
+plot_nomogram_indo(nom_red, col.grid = c("#ffe6e6", "#ffb3b3"))
+```
+
+**Analisis Prediktor Kuantitas Kalsifikasi (Global CAC Score** $\ge$ 100)
+
+Selain menilai kualitas dan kerentanan plak, pemodelan sekunder dilakukan untuk memprediksi kuantitas beban kalsifikasi secara anatomis. Dari keseluruhan sampel, sebanyak `r n_cac100` pasien (`r pct_cac100`%) teridentifikasi memiliki skor CAC $\ge$ 100 Agatston. Berbeda dengan model prediksi HRP komprehensif, regresi logistik untuk CAC $\ge$ 100 (\@tbl-regresi-cac) dikonstruksi secara lebih *streamline* dengan mengeksklusi Indeks Massa Tubuh (IMT) akibat kontribusi parsialnya yang sangat minimal. Hasilnya menegaskan bahwa **Usia** menjadi prediktor independen yang sangat kuat dan bermakna secara statistik (OR = `r or_usia_cac`; 95% CI: `r round(ci_usia_cac[1], 2)` – `r round(ci_usia_cac[2], 2)`; $p$ = `r p_usia_cac`) terhadap akumulasi kalsium anatomis.
+
+```{r}
+#| label: tbl-regresi-cac
+#| tbl-cap: "**Analisis Multivariat Prediktor Kalsifikasi Koroner Moderat-Berat (CAC \u2265 100 Agatston)**"
+#| echo: false
+#| warning: false
+#| message: false
+
+model_glm_cac <- glm(CAC_100_plus ~ Usia + TyHbA1c_Index + CKD_Status, 
+                     data = df_clean, 
+                     family = binomial(link = "logit"))
+
+tbl_regression(model_glm_cac, 
+               exponentiate = TRUE,
+               label = list(
+                 Usia ~ "Usia (Tahun)",
+                 TyHbA1c_Index ~ "Indeks TyHbA1C",
+                 CKD_Status ~ "PGK Stadium ≥ 3"
+               )) %>%
+  bold_p() %>%
+  modify_header(
+    label = "**Variabel**",
+    estimate = "**OR**",
+    ci = "**IK 95%**",
+    p.value = "**Nilai *p***"
+  ) %>%
+  modify_footnote(
+    estimate ~ "OR = Odds Ratio",
+    ci ~ "IK = Interval Kepercayaan"
+  )
+```
+
+Mempertimbangkan kontribusi Indeks Massa Tubuh (IMT) yang sangat minimal terhadap akumulasi kalsium anatomis, variabel tersebut dieksklusi dari model sekunder ini guna menciptakan instrumen prediksi yang lebih *streamline* dan efisien. Menariknya, meskipun dirampingkan, integrasi ketiga variabel utama (Usia + TyHbA1c + PGK) mampu menghasilkan diskriminasi diagnostik yang sangat baik untuk memprediksi CAC $\ge$ 100. Analisis ROC menunjukkan performa yang superior dengan nilai *Area Under the Curve* (AUC) mencapai **r auc_val_cac** (`r round(auc_val_cac * 100, 1)`%), seperti yang ditampilkan pada @fig-roc-cac.
+
+```{r}
+#| label: fig-roc-cac
+#| fig-cap: "**Kinerja Diskriminatif Model Prediksi Beban Kalsifikasi (CAC \u2265 100).** Kurva ROC ini menunjukkan akurasi diagnostik yang sangat baik dengan nilai *Area Under the Curve* (AUC) sebesar 0,782."
+#| echo: false
+#| warning: false
+#| message: false
+
+df_clean$pred_prob_cac <- predict(model_glm_cac, type = "response")
+roc_obj_cac <- roc(df_clean$CAC_100_plus, df_clean$pred_prob_cac)
+
+plot(roc_obj_cac, 
+     main = paste("Kurva ROC: Model Prediksi CAC \u2265 100 (AUC =", round(auc(roc_obj_cac), 3), ")"),
+     col = "darkblue", 
+     lwd = 2, 
+     legacy.axes = TRUE,
+     xlab = "False Positive Rate (1 - Specificity)", 
+     ylab = "True Positive Rate (Sensitivity)")
+
+polygon(c(1, roc_obj_cac$specificities, 0), c(0, roc_obj_cac$sensitivities, 0), 
+        col = rgb(0, 0, 0.55, alpha = 0.1), border = NA)
+```
+
+Berdasarkan performa tersebut, sebuah Nomogram sekunder (@fig-nomogram-cac) dikembangkan. Penggabungan nomogram HRP dan nomogram CAC ini menghadirkan instrumen "Stratifikasi Ganda", yang memungkinkan klinisi memprediksi dua domain vital sekaligus.
+
+```{r}
+#| label: fig-nomogram-cac
+#| fig-cap: "**Nomogram Klinis untuk Prediksi Probabilitas Skor CAC \u2265 100 Agatston.** Instrumen ini telah dioptimalkan (*streamlined*) untuk mendampingi nomogram HRP dalam menilai risiko beban kalsifikasi secara efisien."
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 10
+#| fig-height: 7
+
+df_nom_cac <- data.frame(
+  CAC_100_plus  = df_clean$CAC_100_plus,
+  Usia          = as.numeric(unlist(df_clean$Usia)),
+  TyHbA1c_Index = as.numeric(unlist(df_clean$TyHbA1c_Index)),
+  CKD_Status    = as.numeric(unlist(df_clean$CKD_Status))
+)
+df_nom_cac <- na.omit(df_nom_cac)
+
+label(df_nom_cac$Usia) <- "Usia (Tahun)"
+label(df_nom_cac$TyHbA1c_Index) <- "Indeks TyHbA1C"
+label(df_nom_cac$CKD_Status) <- "PGK Stadium ≥ 3"
+
+dd_cac <- datadist(df_nom_cac)
+options(datadist = "dd_cac")
+
+model_lrm_cac <- lrm(CAC_100_plus ~ Usia + TyHbA1c_Index + CKD_Status, data = df_nom_cac)
+
+nom_cac <- nomogram(model_lrm_cac, 
+                fun = plogis, 
+                funlabel = "Probabilitas Skor CAC \u2265 100",
+                lp = FALSE)
+
+plot(nom_cac, col.grid = gray(c(0.85, 0.95)))
 ```
 
 ## Pembahasan
 
-Penelitian ini mengevaluasi nilai prediktif dari kombinasi parameter klinis dan kardiometabolik—yang mencakup Usia, Indeks Massa Tubuh (IMT), Indeks TyHbA1c, dan status Penyakit Ginjal Kronis (PGK Stadium $\ge$ 3)—terhadap keparahan penyakit arteri koroner dan kerentanan plak pada `r n_total` pasien diabetes serta prediabetes yang menjalani pemeriksaan *Computed Tomography Coronary Angiography* (CTCA). Temuan utama dari studi ini menunjukkan bahwa pemodelan regresi logistik multivariat yang mengintegrasikan parameter-parameter tersebut memiliki kemampuan diskriminatif yang baik dalam memprediksi keberadaan *High-Risk Plaque* (HRP) dengan nilai *Area Under the Curve* (AUC) mencapai **`r auc_val`** (atau `r round(auc_val * 100, 1)`%).
+Penelitian ini mengevaluasi nilai prediktif kombinasi parameter klinis dan kardiometabolik (Usia, IMT, Indeks TyHbA1c, dan status PGK Stadium $\ge$ 3) terhadap keparahan penyakit arteri koroner pada `r n_total` pasien diabetes serta prediabetes yang menjalani pemeriksaan CTCA. Temuan utama studi ini mengonfirmasi bahwa pemodelan regresi logistik multivariat yang mengintegrasikan parameter tersebut memiliki diskriminasi yang baik dalam memprediksi *High-Risk Plaque* (HRP) dengan AUC `r auc_val`, serta memprediksi kalsifikasi moderat-berat (CAC $\ge$ 100) dengan AUC `r auc_val_cac`.
 
 **Glukolipotoksisitas Kronis, Aktivasi Makrofag, dan Kerentanan Plak (*Plaque Vulnerability*)**
 
-Keunggulan prediktif dari model ini terhadap keberadaan HRP memberikan wawasan patofisiologis yang krusial. HRP—yang bermanifestasi sebagai *positive remodeling*, kalsifikasi bercak (*spotty calcification*), dan *low-attenuation plaque*—merupakan lesi prekursor struktural yang sangat rentan mengalami ruptur dan memicu sindrom koroner akut. Dalam studi ini, Indeks TyHbA1c diajukan sebagai penanda *novel* yang merepresentasikan interaksi ganda antara dislipidemia aterogenik (hipertrigliseridemia) dan paparan hiperglikemia kronis (HbA1c). Secara biomolekuler, kondisi glukolipotoksisitas persisten memicu akumulasi *Advanced Glycation End-products* (AGEs) dan *Reactive Oxygen Species* (ROS) yang merusak integritas endotel, memfasilitasi infiltrasi makrofag besar-besaran yang bertransformasi menjadi sel busa (*foam cells*) di ruang subendotel.
+Keunggulan prediktif terhadap keberadaan HRP memberikan wawasan patofisiologis yang krusial. HRP—yang bermanifestasi sebagai *positive remodeling*, kalsifikasi bercak, dan *low-attenuation plaque*—merupakan prekursor struktural yang sangat rentan mengalami ruptur dan memicu sindrom koroner akut. Dalam studi ini, Indeks TyHbA1c diajukan sebagai penanda *novel* yang merepresentasikan interaksi ganda antara dislipidemia aterogenik (hipertrigliseridemia) dan paparan hiperglikemia kronis (HbA1c). Kondisi glukolipotoksisitas persisten memicu akumulasi AGEs dan *Reactive Oxygen Species* (ROS) yang merusak integritas endotel, memfasilitasi infiltrasi makrofag besar-besaran yang bertransformasi menjadi sel busa (*foam cells*) di ruang subendotel.
 
-Berdasarkan patobiologi vaskular, makrofag intratunika yang teraktivasi ini mensekresi enzim *Matrix Metalloproteinases* (terutama MMP-2 dan MMP-9) secara masif yang mendegradasi matriks ekstraseluler pada tunika media. Degradasi matriks ke arah luar dinding epikardial inilah yang mendasari fenomena *positive remodeling* (Fenomena Glagov) sebagai upaya kompensatorik tubuh mempertahankan ukuran lumen. Meskipun secara hemodinamik aliran darah awal tampak tidak terganggu, remodeling ini memfasilitasi pembentukan plak dengan inti nekrotik lipid masif dan selubung fibrosa tipis (*Thin-Cap Fibroatheroma* / TCFA). Hal ini menjelaskan mengapa indeks TyHbA1c dan parameter kardiometabolik lebih unggul dalam mencerminkan "kualitas" dan kerentanan plak (HRP) dibandingkan sekadar mengevaluasi "kuantitas" persentase penyumbatan lumen konvensional.
+Berdasarkan patobiologi vaskular, makrofag intratunika yang teraktivasi ini mensekresi *Matrix Metalloproteinases* secara masif yang mendegradasi matriks ekstraseluler pada tunika media. Degradasi matriks ke arah luar dinding epikardial inilah yang mendasari fenomena *positive remodeling* (Fenomena Glagov) sebagai upaya kompensatorik tubuh mempertahankan ukuran lumen. Meskipun secara hemodinamik aliran darah awal tampak tidak terganggu, remodeling ini memfasilitasi pembentukan plak dengan inti nekrotik lipid masif dan selubung fibrosa tipis.
+
+**Rasionalisasi Nomogram Tereduksi**
+
+Meskipun model multivariat komprehensif mengonfirmasi integrasi teoretis keempat parameter utama, ukuran sampel yang terbatas pada studi ini mengakibatkan beberapa variabel spesifik (IMT dan Indeks TyHbA1c) belum mencapai signifikansi statistik parsial terhadap kerentanan plak. Sebagai bentuk optimalisasi translasi klinis, studi ini juga menyajikan Nomogram Tereduksi yang hanya mengandalkan prediktor independen terkuat secara statistik (Usia dan status PGK). Model sederhana ini menawarkan alternatif stratifikasi risiko yang jauh lebih cepat dan efisien di ruang praktik IGD atau Poliklinik sibuk, tanpa mengesampingkan nilai patofisiologis jangka panjang dari model komprehensif TyHbA1c.
+
+**Pendekatan Stratifikasi Ganda: Kualitas Plak vs Kuantitas Kalsifikasi**
+
+Pengembangan dua domain nomogram (HRP dan CAC) menyoroti perbedaan patofisiologi mendasar antara kualitas dan kuantitas aterosklerosis. Model prediksi HRP difokuskan untuk menilai "kualitas" dan kerentanan plak terhadap ruptur, yang dihipotesiskan sangat dipengaruhi oleh fluktuasi metabolik kronis (disimbolkan oleh tren TyHbA1c). Sebaliknya, pemodelan sekunder memvalidasi bahwa "kuantitas" pembentukan kalsium yang masif (CAC $\ge$ 100 Agatston) sebagian besar disetir secara absolut oleh efek kumulatif degeneratif, di mana variabel Usia menjadi prediktor tunggal yang paling mendominasi ($p=`r p_usia_cac`$). Melalui pendekatan stratifikasi ganda ini, klinisi dapat memilah pasien menjadi fenotipe spesifik—misalnya, pasien usia muda dengan skor CAC rendah namun probabilitas HRP tinggi (membutuhkan stabilisasi plak anti-inflamasi), berbanding pasien geriatri dengan probabilitas CAC masif (membutuhkan intervensi agresif akibat obstruksi kronis).
 
 **Peran Dominan Usia dan Poros Kardiorenal**
 
-Dalam pemodelan multivariat, usia muncul sebagai prediktor independen yang konsisten dan bermakna secara statistik (OR = `r or_usia`, $p$ = `r p_usia`). Proses aterosklerosis pada dasarnya adalah patologi kumulatif yang bergantung pada waktu (*time-dependent*), di mana durasi paparan faktor risiko glukometabolik pada sel endotel memperbesar probabilitas degenerasi vaskular.
-
-Selain faktor usia, temuan penting dalam studi ini menyoroti signifikansi klinis komplikasi ginjal. Kehadiran Penyakit Ginjal Kronis (PGK Stadium $\ge$ 3) terbukti memberikan tren peningkatan risiko kerentanan plak yang masif hingga **`r or_ckd` kali lipat** dibanding fungsi ginjal normal. Secara patofisiologis, nefropati diabetik bertindak sebagai katalisator melalui poros kardiorenal (*cardiorenal syndrome*). Retensi toksin uremik, stres oksidatif sistemik, serta gangguan metabolisme mineral pada pasien PGK berinteraksi secara sinergis dengan glukolipotoksisitas untuk memicu kalsifikasi medial pembuluh darah (*Medial Arterial Calcification*) secara agresif, melampaui dampak dari gangguan metabolik semata.
-
-**Implikasi Klinis dan Pembuatan Nomogram**
-
-Kemampuan diskriminasi diagnostik model yang mencapai AUC `r auc_val` menawarkan implikasi translasi klinis yang bernilai tinggi. Seluruh parameter pembentuk model (Usia, IMT, Indeks TyHbA1c, dan status PGK) bersumber dari pemeriksaan rutin yang murah, objektif, dan non-invasif. Melalui konversi model matematis ini menjadi bentuk instrumen visual berupa nomogram klinis, para klinisi dimampukan untuk melakukan stratifikasi risiko kardiovaskular secara cepat dan personal di ruang praktik. Pendekatan ini memfasilitasi *decision making* untuk menyeleksi pasien asimptomatik yang paling membutuhkan rujukan prioritas pemeriksaan CTCA maupun eskalasi terapi kardioprotektif.
+Dalam seluruh pemodelan, usia muncul sebagai penentu utama. Proses aterosklerosis pada dasarnya adalah patologi kumulatif yang bergantung pada waktu (*time-dependent*), di mana durasi paparan terhadap sel endotel memperbesar probabilitas degenerasi. Selain faktor usia, kehadiran Penyakit Ginjal Kronis (PGK Stadium $\ge$ 3) terbukti memberikan tren peningkatan risiko kerentanan plak yang masif. Nefropati diabetik bertindak sebagai katalisator melalui poros kardiorenal (*cardiorenal syndrome*). Retensi toksin uremik dan gangguan metabolisme mineral pada pasien PGK berinteraksi sinergis memicu degradasi stabilitas koroner secara progresif.
 
 **Keterbatasan Penelitian**
 
-Studi ini memiliki beberapa keterbatasan yang perlu dicatat. Desain potong lintang (*cross-sectional*) membatasi kemampuan studi untuk menyimpulkan hubungan kausalitas sejati secara longitudinal. Selain itu, ukuran sampel pada kohort *single-center* ini masih memerlukan ekspansi lebih lanjut guna memperkuat interval kepercayaan (*confidence interval*) pada beberapa variabel prediktor sekunder. Penelitian lanjutan dengan validasi kohort eksternal multisentris sangat disarankan guna mengonfirmasi keandalan serta kalibrasi dari nomogram klinis yang dihasilkan.
+Studi ini memiliki beberapa keterbatasan yang perlu dicatat. Desain potong lintang (*cross-sectional*) membatasi kemampuan studi untuk menyimpulkan hubungan kausalitas sejati secara longitudinal. Selain itu, ukuran sampel pada kohort *single-center* ini (N=`r n_total`) membatasi kekuatan statistik parsial (seperti terlihat pada variabel IMT dan TyHbA1c), dan masih memerlukan ekspansi lebih lanjut guna memperkuat *confidence interval*. Penelitian lanjutan dengan validasi kohort eksternal multisentris sangat disarankan guna mengonfirmasi keandalan serta kalibrasi dari instrumen stratifikasi ganda yang dihasilkan.
 
 ## Simpulan
 
-Kombinasi parameter klinis dan kardiometabolik yang mencakup usia, Indeks Massa Tubuh (IMT), Indeks TyHbA1c, dan status Penyakit Ginjal Kronis (PGK Stadium $\ge$ 3) memiliki kemampuan diskriminasi diagnostik yang baik dalam memprediksi keberadaan *High-Risk Plaque* (HRP) pada pasien prediabetes dan diabetes mellitus. Indeks TyHbA1c sebagai representasi beban glukolipotoksisitas kronis, yang disandingkan dengan faktor degeneratif usia dan komplikasi nefropati melalui poros kardiorenal, terbukti superior dalam mencerminkan kerentanan struktural plak koroner (*vulnerable plaque*) dibandingkan parameter lipid konvensional semata. Pemodelan multivariat ini berhasil dikonstruksikan ke dalam bentuk nomogram klinis yang aplikatif untuk membantu para klinisi melakukan stratifikasi risiko kardiovaskular secara non-invasif, guna menyeleksi prioritas rujukan pemeriksaan *Computed Tomography Coronary Angiography* (CTCA) secara lebih dini dan presisi di ruang praktik.
+Kombinasi parameter klinis dan kardiometabolik yang mencakup Usia, Indeks Massa Tubuh (IMT), Indeks TyHbA1c, dan status Penyakit Ginjal Kronis (PGK Stadium $\ge$ 3) terbukti memiliki kemampuan diskriminasi diagnostik yang solid. Studi ini memperkenalkan inovasi pendekatan "Stratifikasi Ganda" melalui pengembangan tiga nomogram klinis aplikatif. Nomogram pertama (komprehensif dan tereduksi) dirancang secara spesifik memprediksi kerentanan kualitas plak (*High-Risk Plaque* / HRP) dengan AUC `r auc_val`. Sementara itu, nomogram sekunder memprediksi kuantitas beban kalsifikasi moderat-berat (CAC $\ge$ 100) dengan akurasi tinggi (AUC `r auc_val_cac`) yang sangat didominasi oleh faktor degeneratif usia. Penggunaan instrumen ganda ini memungkinkan para klinisi melakukan stratifikasi risiko kardiovaskular secara holistik dan non-invasif, guna menyeleksi prioritas rujukan pemeriksaan *Computed Tomography Coronary Angiography* (CTCA) dan personalisasi terapi secara presisi.
 
 ## Daftar Pustaka
