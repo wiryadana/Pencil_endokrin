@@ -93,39 +93,6 @@
 \makeatother
 
 
-% definitions for citeproc citations
-\NewDocumentCommand\citeproctext{}{}
-\NewDocumentCommand\citeproc{mm}{%
-  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
-\makeatletter
- % allow citations to break across lines
- \let\@cite@ofmt\@firstofone
- % avoid brackets around text for \cite:
- \def\@biblabel#1{}
- \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
-\makeatother
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
- {\begin{list}{}{%
-  \setlength{\itemindent}{0pt}
-  \setlength{\leftmargin}{0pt}
-  \setlength{\parsep}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-   \setlength{\leftmargin}{\cslhangindent}
-   \setlength{\itemindent}{-1\cslhangindent}
-  \fi
-  % set entry spacing
-  \setlength{\itemsep}{#2\baselineskip}}}
- {\end{list}}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 \ifLuaTeX
 \usepackage[bidi=basic,shorthands=off,provide=*]{babel}
@@ -390,23 +357,18 @@ utama dalam penelitian ini adalah:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
-  \textbf{Keparahan Obstruksi Koroner:} Diklasifikasikan berdasarkan
-  sistem CAD-RADS 2.0, di mana kategori obstruktif signifikan
-  didefinisikan sebagai CAD-RADS \(\ge\) 3 (stenosis \(\ge\) 50\%).
+\begin{verbatim}
+ **Keparahan Obstruksi Koroner:** Diklasifikasikan berdasarkan sistem CAD-RADS 2.0, di mana kategori obstruktif signifikan didefinisikan sebagai CAD-RADS \$\\ge\$ 3 (stenosis \$\\ge\$ 50%).
+\end{verbatim}
 \item
-  \textbf{Keberadaan High-Risk Plaque (HRP):} Ditetapkan sebagai
-  variabel biner (Ya/Tidak), yang positif apabila ditemukan minimal satu
-  dari empat fitur berikut pada lesi koroner: \emph{positive remodeling}
-  (PR), \emph{low-attenuation plaque} (LAP), \emph{spotty calcification}
-  (SC), atau \emph{napkin-ring sign} (NRS).
+\begin{verbatim}
+ **Keberadaan High-Risk Plaque (HRP):** Ditetapkan sebagai variabel biner (Ya/Tidak), yang positif apabila ditemukan minimal satu dari empat fitur berikut pada lesi koroner: *positive remodeling* (PR), *low-attenuation plaque* (LAP), *spotty calcification* (SC), atau *napkin-ring sign* (NRS).
+\end{verbatim}
 \item
-  \textbf{Beban Kalsifikasi Koroner Moderat-Berat (CAC} \(\ge\) 100):
-  Ditetapkan sebagai variabel kategorikal sekunder, di mana skor kalsium
-  \emph{Agatston} \(\ge\) 100 didefinisikan sebagai penanda beban
-  aterosklerosis yang signifikan secara anatomis dan menjadi indikasi
-  intervensi farmakologis agresif.
+\begin{verbatim}
+ **Beban Kalsifikasi Koroner Moderat-Berat (CAC $\ge$ 100):** Ditetapkan sebagai variabel kategorikal sekunder, di mana skor kalsium *Agatston* $\ge$ 100 didefinisikan sebagai penanda beban aterosklerosis yang signifikan secara anatomis dan menjadi indikasi intervensi farmakologis agresif.
+\end{verbatim}
 \end{enumerate}
 
 \textbf{Analisis Statistik}
@@ -445,6 +407,73 @@ kontinu (transformasi logaritma), guna meminimalkan hilangnya informasi
 statistik akibat dikotomisasi pada ambang CAC \(\ge\) 100.
 
 \subparagraph{1. Setup}\label{setup}
+
+\begin{verbatim}
+
+Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+The following objects are masked from 'package:stats':
+
+    filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{verbatim}
+Type 'citation("pROC")' for a citation.
+\end{verbatim}
+
+\begin{verbatim}
+
+Attaching package: 'pROC'
+\end{verbatim}
+
+\begin{verbatim}
+The following objects are masked from 'package:stats':
+
+    cov, smooth, var
+\end{verbatim}
+
+\begin{verbatim}
+Loading required package: Hmisc
+\end{verbatim}
+
+\begin{verbatim}
+
+Attaching package: 'Hmisc'
+\end{verbatim}
+
+\begin{verbatim}
+The following objects are masked from 'package:dplyr':
+
+    src, summarize
+\end{verbatim}
+
+\begin{verbatim}
+The following objects are masked from 'package:base':
+
+    format.pval, units
+\end{verbatim}
+
+\begin{verbatim}
+-- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+v forcats   1.0.1     v stringr   1.6.0
+v lubridate 1.9.5     v tibble    3.3.1
+v purrr     1.2.2     v tidyr     1.3.2
+v readr     2.2.0     
+-- Conflicts ------------------------------------------ tidyverse_conflicts() --
+x dplyr::filter()    masks stats::filter()
+x dplyr::lag()       masks stats::lag()
+x Hmisc::src()       masks dplyr::src()
+x Hmisc::summarize() masks dplyr::summarize()
+i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+\end{verbatim}
 
 \subparagraph{2. Loading Data}\label{loading-data}
 
@@ -485,39 +514,6 @@ itu, derajat kalsifikasi koroner pada kelompok HRP (+) jauh lebih masif;
 kelompok ini mencatatkan median skor CAC mencapai 556.7 Agatston,
 berbanding sangat kontras dengan kelompok HRP (-) yang hanya memiliki
 median 11.6 Agatston.
-
-\textbf{Evaluasi Terapi Statin terhadap Karakteristik Plak}
-
-Mengingat mayoritas pasien dalam kohort ini (37 pasien, 71.2\%) telah
-menggunakan terapi statin saat dirujuk untuk pemeriksaan CTCA, analisis
-komparatif dilakukan untuk melihat efek terapi terhadap arsitektur plak.
-Pasien yang menerima statin (\emph{On-Statin}) mencatatkan median skor
-kalsifikasi yang lebih tinggi (302.3 Agatston) dibandingkan kelompok
-\emph{No-Statin} (209.8 Agatston), kendati secara statistik tidak
-bermakna (\(p\) = 0.468). Terkait kerentanan plak, kelompok
-\emph{On-Statin} justru mencatatkan proporsi penemuan HRP yang sedikit
-lebih tinggi (75.7\%) dibandingkan kelompok \emph{No-Statin} (60\%),
-meskipun perbedaan ini juga tidak signifikan secara statistik (\(p\) =
-0.428).
-
-\textbf{Evaluasi Modalitas Terapi dan Durasi Penyakit}
-
-Analisis lebih lanjut dilakukan terhadap efek jenis terapi penurun
-glukosa dan durasi penyakit terhadap karakteristik plak. Pasien yang
-mendapat terapi OAD mencatatkan median kalsifikasi (CAC) tertinggi
-(860.9 Agatston) dibandingkan pengguna Insulin (219 Agatston) dan pasien
-tanpa terapi spesifik/diet (214.7 Agatston), meskipun secara statistik
-tidak berbeda bermakna (\(p\) = 0.435). Sebaliknya, proporsi HRP justru
-ditemukan paling tinggi pada kelompok tanpa terapi spesifik (77.8\%)
-dibandingkan kelompok Insulin (70.6\%) maupun OAD (64.7\%) (\(p\) =
-0.694).
-
-Terkait durasi penyakit, pasien yang telah lama terdiagnosis DM
-menunjukkan beban kalsifikasi yang jauh lebih masif (398.1 Agatston)
-dibandingkan pasien yang baru terdiagnosis (147.8 Agatston), kendati
-belum bermakna secara statistik pada sampel ini (\(p\) = 0.194).
-Menariknya, proporsi kerentanan plak (HRP) antara pasien lama (72.2\%)
-dan baru terdiagnosis (68.8\%) tampak sangat serupa (\(p\) = 1).
 
 \begin{table}
 
@@ -597,19 +593,19 @@ Global CAC Score Berdasarkan Status HRP}
 
 \textbf{Analisis Multivariat Prediktor \emph{High-Risk Plaque} (HRP)}
 
-Pemodelan regresi logistik multivariat (\emph{Generalized Linear Model})
+Pemodelan regresi logistik multivariat (Generalized Linear Model)
 dilakukan untuk mengevaluasi kekuatan prediktif klinis komprehensif
 dengan memasukkan variabel Usia, IMT, TyHbA1c Index, dan Status CKD
-(@tbl-regresi). Hasil analisis mengonfirmasi bahwa Usia merupakan
-prediktor independen yang bermakna secara statistik terhadap pembentukan
-plak risiko tinggi (Odds Ratio {[}OR{]} = 1.08; 95\% CI: 1 -- 1.18;
-\(p\) = 0.05). Secara klinis, komplikasi fungsi ginjal memberikan dampak
-risiko yang masif; pasien dengan status CKD menunjukkan tren peningkatan
-probabilitas kerentanan plak hingga 2.24 kali lipat lebih tinggi
-dibandingkan pasien dengan ginjal normal (OR = 2.24; 95\% CI: 0.43 --
-17.16; \(p\) = 0.368). Sementara itu, variabel TyHbA1c Index dan IMT
-tidak menunjukkan kemaknaan statistik parsial secara independen dalam
-kohort terbatas ini.
+(Tabel~\ref{tbl-regresi}). Hasil analisis mengonfirmasi bahwa Usia
+merupakan prediktor independen yang bermakna secara statistik terhadap
+pembentukan plak risiko tinggi (Odds Ratio {[}OR{]} = 1.08; 95\% CI: 1
+-- 1.18; \(p\) = 0.05). Secara klinis, komplikasi fungsi ginjal
+memberikan dampak risiko yang masif; pasien dengan status CKD
+menunjukkan tren peningkatan probabilitas kerentanan plak hingga 2.24
+kali lipat lebih tinggi dibandingkan pasien dengan ginjal normal (OR =
+2.24; 95\% CI: 0.43 -- 17.16; \(p\) = 0.368). Sementara itu, variabel
+TyHbA1c Index dan IMT tidak menunjukkan kemaknaan statistik parsial
+secara independen dalam kohort terbatas ini.
 
 \begin{table}
 
@@ -654,7 +650,7 @@ probabilitas keberadaan HRP dengan nilai \emph{Area Under the Curve}
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-roc-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{index_revised_files/figure-pdf/fig-roc-1.pdf}}
 
 }
 
@@ -674,7 +670,7 @@ kemunculan \emph{vulnerable plaque} (0 - 100\%).
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-nomogram-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{index_revised_files/figure-pdf/fig-nomogram-1.pdf}}
 
 }
 
@@ -695,7 +691,7 @@ parameter metabolik.
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-nomogram-reduksi-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{index_revised_files/figure-pdf/fig-nomogram-reduksi-1.pdf}}
 
 }
 
@@ -714,7 +710,7 @@ sampel terbatas (N = 52), validasi internal menggunakan teknik
 performa diskriminatif yang sesungguhnya (\emph{optimism-corrected
 C-index}).
 
-Berdasarkan hasil perhitungan validasi terdapat \textbf{Model
+Berdasarkan hasil perhitungan validasi ditemukan \textbf{Model
 Komprehensif (4 Variabel)} Menunjukkan nilai \emph{C-index apparent}
 (kemampuan diskriminasi pada data latih) sebesar 0.724. Namun, setelah
 dikoreksi terhadap optimisme model (0.082), performa aktualnya turun
@@ -733,28 +729,6 @@ model yang bermakna secara statistik (\(p\) = 0.993). Visualisasi
 kesesuaian antara probabilitas prediksi dengan observasi aktual untuk
 model komprehensif ditunjukkan pada kurva kalibrasi di bawah ini
 (@fig-kalibrasi-hrp).
-
-\begin{verbatim}
-
-n=52   Mean absolute error=0.049   Mean squared error=0.00295
-0.9 Quantile of absolute error=0.068
-\end{verbatim}
-
-\begin{figure}
-
-\centering{
-
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-kalibrasi-hrp-1.pdf}}
-
-}
-
-\caption{\label{fig-kalibrasi-hrp}\textbf{Kurva Kalibrasi Model HRP
-Komprehensif (Bootstrap-Corrected, B = 200).} Garis diagonal putus-putus
-merepresentasikan kalibrasi sempurna (probabilitas prediksi =
-probabilitas observasi); garis biru merepresentasikan performa aktual
-model setelah koreksi optimisme.}
-
-\end{figure}%
 
 \textbf{Analisis Prediktor Kuantitas Kalsifikasi (Global CAC Score}
 \(\ge\) 100)
@@ -813,7 +787,7 @@ Gambar~\ref{fig-roc-cac}.
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-roc-cac-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{index_revised_files/figure-pdf/fig-roc-cac-1.pdf}}
 
 }
 
@@ -833,7 +807,7 @@ memungkinkan klinisi memprediksi dua domain vital sekaligus.
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-nomogram-cac-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{index_revised_files/figure-pdf/fig-nomogram-cac-1.pdf}}
 
 }
 
@@ -847,8 +821,8 @@ beban kalsifikasi secara efisien.}
 \textbf{Validasi Internal Model CAC (Bootstrap Resampling)}
 
 Sama halnya dengan pemodelan HRP, model prediksi kuantitas kalsifikasi
-(CAC \(\ge\) 100) juga divalidasi secara internal menggunakan
-\emph{bootstrap resampling} (B = 200).
+(CAC \$\textbackslash ge\$ 100) juga divalidasi secara internal
+menggunakan *bootstrap resampling* (B = 200).
 
 Hasil evaluasi menunjukkan bahwa model ini memiliki \emph{C-index
 apparent} sebesar 0.782 (95\% CI: 0.645--0.918). Setelah dilakukan
@@ -862,7 +836,7 @@ metabolik tersebut tidak memperbaiki \emph{goodness-of-fit} pemodelan
 kalsifikasi secara signifikan (\(p\) = 0.173). Kesesuaian performa
 prediksi model kalsifikasi terhadap observasi klinis aktual
 divisualisasikan secara grafis melalui kurva kalibrasi
-(Gambar~\ref{fig-kalibrasi-cac}).
+(@fig-kalibrasi-cac).
 
 \begin{verbatim}
 
@@ -874,7 +848,7 @@ n=52   Mean absolute error=0.071   Mean squared error=0.0072
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-kalibrasi-cac-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{index_revised_files/figure-pdf/fig-kalibrasi-cac-1.pdf}}
 
 }
 
@@ -884,6 +858,12 @@ merepresentasikan kalibrasi sempurna; garis biru merepresentasikan
 performa aktual model setelah koreksi optimisme.}
 
 \end{figure}%
+
+Estimasi \emph{C-index} terkoreksi-optimisme untuk model CAC (0.74)
+dibandingkan dengan nilai \emph{apparent} (0.782; 95\% CI 0.645--0.918)
+memberikan estimasi performa yang lebih konservatif dan realistis. Uji
+rasio kemungkinan antara model dasar (Usia + PGK) dan model dengan
+tambahan Indeks TyHbA1c menghasilkan nilai \(p\) = 0.173.
 
 \textbf{Analisis Sensitivitas: Indeks TyHbA1c terhadap CAC sebagai
 Variabel Kontinu}
@@ -895,19 +875,83 @@ koroner turut dievaluasi menggunakan skor CAC sebagai variabel kontinu
 (ditransformasi logaritma natural, \(\ln(\text{CAC}+1)\), mengingat
 distribusinya yang sangat menjulur ke kanan).
 
+\begin{verbatim}
+
+    Shapiro-Wilk normality test
+
+data:  df_cac_cont$TyHbA1c_Index
+W = 0.9815, p-value = 0.5917
+\end{verbatim}
+
+\begin{verbatim}
+
+    Shapiro-Wilk normality test
+
+data:  df_cac_cont$log_CAC
+W = 0.8707, p-value = 4.339e-05
+\end{verbatim}
+
+\begin{verbatim}
+
+    Spearman's rank correlation rho
+
+data:  df_cac_cont$TyHbA1c_Index and df_cac_cont$Global_CAC_score
+S = 26204, p-value = 0.4025
+alternative hypothesis: true rho is not equal to 0
+sample estimates:
+       rho 
+-0.1185706 
+\end{verbatim}
+
+\begin{verbatim}
+
+    Pearson's product-moment correlation
+
+data:  df_cac_cont$TyHbA1c_Index and df_cac_cont$log_CAC
+t = -1.8051, df = 50, p-value = 0.07708
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.48735499  0.02739734
+sample estimates:
+       cor 
+-0.2473524 
+\end{verbatim}
+
+\begin{verbatim}
+
+Call:
+lm(formula = log_CAC ~ TyHbA1c_Index + Usia + CKD_Status, data = df_cac_cont)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-5.4511 -1.1802  0.2324  1.4132  4.4581 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)  
+(Intercept)    3.30318    4.73096   0.698    0.488  
+TyHbA1c_Index -0.54455    0.52694  -1.033    0.307  
+Usia           0.08336    0.03522   2.367    0.022 *
+CKD_Status     0.68712    0.74094   0.927    0.358  
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 2.298 on 48 degrees of freedom
+Multiple R-squared:  0.1951,    Adjusted R-squared:  0.1448 
+F-statistic: 3.879 on 3 and 48 DF,  p-value: 0.0146
+\end{verbatim}
+
 \begin{figure}
 
 \centering{
 
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-scatter-tyhba1c-cac-1.pdf}}
+\pandocbounded{\includegraphics[keepaspectratio]{index_revised_files/figure-pdf/fig-scatter-tyhba1c-cac-1.pdf}}
 
 }
 
 \caption{\label{fig-scatter-tyhba1c-cac}\textbf{Hubungan Indeks TyHbA1c
 dengan Global CAC Score (skala logaritmik).} Setiap titik
 merepresentasikan satu subjek; garis biru adalah garis regresi linear
-dengan pita 95\% CI. Ringkasan uji normalitas dan korelasi dicantumkan
-di dalam grafik.}
+dengan pita 95\% CI.}
 
 \end{figure}%
 
@@ -921,63 +965,6 @@ didiskusikan secara eksplisit: apabila kedua pendekatan sama-sama
 menunjukkan hasil non-signifikan, hal ini memperkuat kesimpulan bahwa
 Indeks TyHbA1c tidak memiliki hubungan independen yang kuat dengan beban
 kalsifikasi pada kohort ini --- bukan sekadar artefak dikotomisasi.
-
-\textbf{Analisis Jalur (\emph{Path Analysis}): Efek Mediasi Poros
-Kardiorenal}
-
-Untuk menguji hipotesis patofisiologis mengenai poros kardiorenal,
-\emph{path analysis} dieksekusi secara paralel pada kedua luaran utama
-studi ini (HRP dan CAC \(\ge\) 100) menggunakan pendekatan
-\emph{Structural Equation Modeling} (SEM) (Kline, 2015). Usia ditetapkan
-sebagai variabel independen, status PGK sebagai mediator, dan luaran
-aterosklerotik sebagai variabel dependen.
-
-Hasil analisis jalur pada domain kualitas plak mengonfirmasi bahwa Usia
-memiliki efek langsung yang bermakna secara statistik terhadap
-kemunculan HRP (Jalur C, \(p\) = 0.077). Terkait efek mediasi, penuaan
-menunjukkan tren korelasi positif terhadap penurunan fungsi ginjal/PGK
-(Jalur A, \(p\) = 0.057), namun efek lanjutan dari PGK menuju HRP pada
-model ini tidak mencapai signifikansi statistik (Jalur B, \(p\) =
-0.308). Secara keseluruhan, efek tidak langsung (\emph{indirect effect})
-dari Usia \(\rightarrow\) PGK \(\rightarrow\) HRP belum terbukti
-bermakna (\(p\) = 0.363).
-
-Pola yang lebih ekstrem terlihat pada domain kuantitas kalsifikasi (CAC
-\(\ge\) 100). Dominansi Usia sebagai prediktor langsung kalsifikasi
-koroner tampak sangat absolut (\(p\) = 0.004), sedangkan jalur mediasi
-dari komplikasi PGK menuju pembentukan kalsium sama sekali tidak
-bermakna (\(p\) = 0.704), mengonfirmasi ketiadaan efek mediasi tidak
-langsung pada ekuasi ini (\(p\) = 0.71). Visualisasi diagram struktural
-untuk kedua model disajikan pada @fig-path-diagram dan
-@fig-path-diagram-cac.
-
-\begin{figure}
-
-\centering{
-
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-path-diagram-1.pdf}}
-
-}
-
-\caption{\label{fig-path-diagram}\textbf{Diagram Analisis Jalur untuk
-\emph{High-Risk Plaque} (HRP).} Angka pada garis panah merepresentasikan
-nilai estimasi koefisien jalur.}
-
-\end{figure}%
-
-\begin{figure}
-
-\centering{
-
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-path-diagram-cac-1.pdf}}
-
-}
-
-\caption{\label{fig-path-diagram-cac}\textbf{Diagram Analisis Jalur
-untuk Kalsifikasi Koroner (CAC \(\ge\) 100).} Bukti visual dominansi
-Usia secara langsung terhadap skor kalsifikasi absolut.}
-
-\end{figure}%
 
 \section{Pembahasan}\label{pembahasan}
 
@@ -1048,57 +1035,38 @@ namun probabilitas HRP tinggi (membutuhkan stabilisasi plak
 anti-inflamasi), berbanding pasien geriatri dengan probabilitas CAC
 masif (membutuhkan intervensi agresif akibat obstruksi kronis).
 
-\textbf{Peran Dominan Penuaan, Durasi Paparan, dan Poros Kardiorenal}
+\textbf{Peran Dominan Usia dan Poros Kardiorenal}
 
 Dalam seluruh pemodelan, usia muncul sebagai penentu utama. Proses
 aterosklerosis pada dasarnya adalah patologi kumulatif yang bergantung
-pada waktu (\emph{time-dependent}). Dominansi efek penuaan dan paparan
-ini diperkuat oleh temuan analisis durasi penyakit, di mana pasien yang
-telah lama terdiagnosis DM mencatatkan kalsifikasi anatomis nyaris tiga
-kali lipat lebih tebal dibandingkan pasien \emph{newly diagnosed}.
+pada waktu (\emph{time-dependent}), di mana durasi paparan terhadap sel
+endotel memperbesar probabilitas degenerasi. Selain faktor usia,
+kehadiran Penyakit Ginjal Kronis (PGK Stadium \(\ge\) 3) terbukti
+memberikan tren peningkatan risiko kerentanan plak yang masif. Nefropati
+diabetik bertindak sebagai katalisator melalui poros kardiorenal
+(\emph{cardiorenal syndrome}). Retensi toksin uremik dan gangguan
+metabolisme mineral pada pasien PGK berinteraksi sinergis memicu
+degradasi stabilitas koroner secara progresif.
 
-Menariknya, proporsi plak rentan (HRP) pada pasien baru terdiagnosis pun
-sudah sangat tinggi. Hal ini secara fundamental menyoroti konsep memori
-metabolik (\emph{metabolic memory}), di mana \emph{atherosclerotic
-remodeling} yang mengancam jiwa sejatinya telah berlangsung secara
-diam-diam sejak fase prediabetes, jauh sebelum diagnosis klinis DM
-ditegakkan.
-
-Secara patofisiologis, kehadiran komplikasi Penyakit Ginjal Kronis (PGK
-Stadium \(\ge\) 3) dihipotesiskan bertindak sebagai katalisator tambahan
-melalui poros kardiorenal (\emph{cardiorenal syndrome}), di mana retensi
-toksin uremik berinteraksi sinergis memicu degradasi stabilitas koroner.
-Namun, meskipun konsep poros kardiorenal ini sangat kokoh secara
-teoretis, analisis jalur (\emph{path analysis}) pada studi ini belum
-dapat membuktikan efek mediasi PGK secara statistik. Efek langsung
-(\emph{direct effect}) dari penuaan terhadap kerusakan vaskular tampak
-terlalu absolut dan dominan, sehingga efek tidak langsung
-(\emph{indirect effect}) melalui perantara PGK menjadi tersamar
-(\emph{diluted}) akibat keterbatasan \emph{power} statistik dari ukuran
-sampel kohort ini.
-
-\textbf{Paradoks Kalsifikasi dan Indikasi Bias Modalitas Terapi}
+\textbf{Paradoks Kalsifikasi dan Pengaruh Terapi Statin}
 
 Analisis sensitivitas pada studi ini mengungkap tren korelasi yang
 berbanding terbalik (negatif) antara Indeks TyHbA1c dan skor CAC absolut
-(Spearman \(\rho\) = -0.119; koefisien OLS = -0.545). Fenomena ini dapat
+(Spearman \(\rho\) = -0.119; koefisien OLS = -0.545), meskipun tidak
+mencapai signifikansi statistik. Secara klinis, fenomena ini dapat
 dijelaskan melalui morfologi plak: lesi dengan kerentanan tinggi (HRP)
-yang dipicu oleh badai glukolipotoksisitas didominasi oleh inti lipid
-nekrotik masif (\emph{low-attenuation plaque}) yang tidak terdeteksi
-kuat oleh perangkat lunak skoring Agatston konvensional.
-
-Lebih lanjut, pertimbangan \emph{indication bias} tidak dapat dihindari,
-di mana mayoritas pasien (71.2\%) telah menggunakan terapi statin.
-Terapi statin jangka panjang diketahui menginduksi stabilisasi plak
-melalui proses makrokalsifikasi, yang terlihat dari tingginya
-kecenderungan skor CAC pada pengguna statin dibanding kelompok tanpa
-terapi statin. Pola serupa terlihat pada modalitas terapi DM: pengguna
-OAD menunjukkan skor kalsifikasi tertinggi, sedangkan proporsi plak
-rentan (HRP) justru memuncak pada kelompok asimptomatik tanpa intervensi
-farmakologis (hanya diet). Hal ini mengindikasikan bahwa pasien
-asimptomatik yang belum terpapar efek stabilisasi pleiotropik dari
-medikasi konvensional seringkali masih berada pada fase inflamasi
-vaskular yang sangat aktif (HRP tinggi).
+yang dipicu oleh badai glukolipotoksisitas seringkali didominasi oleh
+inti lipid nekrotik masif (\emph{low-attenuation plaque}) dan
+kalsifikasi tipe bercak (\emph{spotty calcification}) yang tidak
+terdeteksi kuat oleh perangkat lunak skoring Agatston konvensional.
+Lebih lanjut, mayoritas pasien (71.2\%) dalam kohort ini memiliki
+riwayat penggunaan statin. Terapi statin jangka panjang diketahui
+menginduksi stabilisasi plak melalui makrokalsifikasi. Hal ini dapat
+bertindak sebagai perancu patofisiologis (\emph{confounder}), di mana
+pasien dengan faktor risiko tinggi yang diobati secara agresif justru
+akan menampilkan skor CAC yang memburuk, sehingga berpotensi mendilusi
+nilai prediktif murni dari parameter metabolik seperti TyHbA1c terhadap
+kuantitas kalsium.
 
 \textbf{Keterbatasan Penelitian}
 
@@ -1131,16 +1099,7 @@ non-invasif, dengan menyadari bahwa glukolipotoksisitas menggerakkan
 kerentanan struktural plak, sedangkan usia dan durasi penyakit menyetir
 beban kalsifikasi anatomis.
 
-\section*{Daftar Pustaka}\label{daftar-pustaka}
-\addcontentsline{toc}{section}{Daftar Pustaka}
-
-\protect\phantomsection\label{refs}
-\begin{CSLReferences}{1}{0}
-\bibitem[\citeproctext]{ref-kline2015principles}
-Kline, R. B. (2015). \emph{Principles and practice of structural
-equation modeling} (Fourth). Guilford publications.
-
-\end{CSLReferences}
+\section{Daftar Pustaka}\label{daftar-pustaka}
 
 
 

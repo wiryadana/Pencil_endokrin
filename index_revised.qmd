@@ -64,9 +64,23 @@ Kriteria inklusi dalam penelitian ini meliputi: (1) Pasien berusia $\ge$ 18 tahu
 
 Data karakteristik demografi (Usia, Jenis Kelamin), antropometri (Indeks Massa Tubuh/IMT), riwayat penyakit penyerta, status pengobatan, serta parameter biokimia (HbA1c, Trigliserida, Kolesterol Total, LDL, HDL, Kreatinin) diekstraksi dari rekam medis elektronik (SIMRS). Indeks TyHbA1c dihitung menggunakan formula logaritma natural: TyHbA1c = ln(Trigliserida \[mg/dL\] x HbA1c \[%\]). Penyakit ginjal kronik dikategorikan dari hasil fungsi ginjal hasil perhitungan CKD-EPI dan kriteria sesuai pedoman KDIGO. Evaluasi CTCA dilakukan oleh dokter spesialis radiologi konsultan yang tersertifikasi. Variabel dependen utama dalam penelitian ini adalah:
 
-1.  **Keparahan Obstruksi Koroner:** Diklasifikasikan berdasarkan sistem CAD-RADS 2.0, di mana kategori obstruktif signifikan didefinisikan sebagai CAD-RADS $\ge$ 3 (stenosis $\ge$ 50%).
-2.  **Keberadaan High-Risk Plaque (HRP):** Ditetapkan sebagai variabel biner (Ya/Tidak), yang positif apabila ditemukan minimal satu dari empat fitur berikut pada lesi koroner: *positive remodeling* (PR), *low-attenuation plaque* (LAP), *spotty calcification* (SC), atau *napkin-ring sign* (NRS).
-3.  **Beban Kalsifikasi Koroner Moderat-Berat (CAC** $\ge$ 100): Ditetapkan sebagai variabel kategorikal sekunder, di mana skor kalsium *Agatston* $\ge$ 100 didefinisikan sebagai penanda beban aterosklerosis yang signifikan secara anatomis dan menjadi indikasi intervensi farmakologis agresif.
+1.  
+
+    ```         
+     **Keparahan Obstruksi Koroner:** Diklasifikasikan berdasarkan sistem CAD-RADS 2.0, di mana kategori obstruktif signifikan didefinisikan sebagai CAD-RADS \$\\ge\$ 3 (stenosis \$\\ge\$ 50%).
+    ```
+
+2.  
+
+    ```         
+     **Keberadaan High-Risk Plaque (HRP):** Ditetapkan sebagai variabel biner (Ya/Tidak), yang positif apabila ditemukan minimal satu dari empat fitur berikut pada lesi koroner: *positive remodeling* (PR), *low-attenuation plaque* (LAP), *spotty calcification* (SC), atau *napkin-ring sign* (NRS).
+    ```
+
+3.  
+
+    ```         
+     **Beban Kalsifikasi Koroner Moderat-Berat (CAC $\ge$ 100):** Ditetapkan sebagai variabel kategorikal sekunder, di mana skor kalsium *Agatston* $\ge$ 100 didefinisikan sebagai penanda beban aterosklerosis yang signifikan secara anatomis dan menjadi indikasi intervensi farmakologis agresif.
+    ```
 
 **Analisis Statistik**
 
@@ -77,9 +91,6 @@ Pemodelan prediktif utama dilakukan menggunakan analisis Regresi Logistik Multiv
 ###### 1. Setup
 
 ```{r setup}
-#| message: false
-#| warning: false
-
 library(readxl)        # Untuk membaca data dari Excel lokal
 library(dplyr)         # Untuk manipulasi data
 library(pROC)          # Untuk analisis kurva ROC dan AUC
@@ -88,8 +99,6 @@ library(ggplot2)       # Untuk visualisasi data
 library(gtsummary)     # Untuk membuat tabel hasil klinis yang rapi
 library(googlesheets4)
 library(tidyverse)
-library(lavaan)        # Untuk Path Analysis / SEM
-library(semPlot)       # TAMBAHAN: Untuk menggambar Path Diagram
 ```
 
 ###### 2. Loading Data
@@ -111,33 +120,38 @@ df_raw <- read_sheet(sheet_url, sheet = 1)
 ###### 3. Data Cleaning
 
 ```{r data_cleaning}
-#| message: false
-#| warning: false
-
 df_clean <- df_raw %>%
+  # Filter pasien yang memiliki No. RM
   filter(!is.na(`No. RM`)) %>%
+  
+  # Konversi tipe data karakter ke numerik
   mutate(across(c(Usia, IMT, HbA1C, Trigliserida, Kreatinin, `Kolesterol-Total`, LDL, HDL, `Asam-Urat`), 
                 ~ as.numeric(gsub(",", ".", as.character(.x))))) %>%
+  
+  # Membersihkan skor CAC dan variabel lain
   mutate(
     Global_CAC_score = as.numeric(gsub(",", ".", gsub("[^0-9,.-]", "", as.character(Global_CAC_score)))),
     TyHbA1c_Index = log(Trigliserida * HbA1C),
     HRP_Status = ifelse(grepl("HRP", `Global_CAD-RADS`, ignore.case = TRUE), "HRP (+)", "HRP (-)"),
     HRP_Status = factor(HRP_Status, levels = c("HRP (-)", "HRP (+)")),
-    CAC_100_plus = ifelse(Global_CAC_score >= 100, 1, 0),
     
-    # TAMBAHAN: Variabel Terapi dan Durasi DM
-    Terapi_DM = factor(`OAD-INSULIN`, levels = c("Tanpa-obat", "OAD", "Insulin"), labels = c("Tanpa Terapi/Diet", "OAD", "Insulin")),
-    Durasi_DM_Bulan = as.numeric(Durasi_DM),
-    Riwayat_DM = ifelse(is.na(Durasi_DM_Bulan), NA, ifelse(Durasi_DM_Bulan == 0, "Baru Terdiagnosis", "Sudah Lama")),
+    # Variabel Dependen Baru untuk CAC >= 100
+    CAC_100_plus = ifelse(Global_CAC_score >= 100, 1, 0),
     
     Kappa = ifelse(Gender == "P", 0.7, 0.9),
     Alpha = ifelse(Gender == "P", -0.241, -0.302),
     Sex_Mult = ifelse(Gender == "P", 1.012, 1),
-    eGFR = 142 * (pmin(Kreatinin / Kappa, 1)^Alpha) * (pmax(Kreatinin / Kappa, 1)^-1.200) * (0.9938^Usia) * Sex_Mult,
+    eGFR = 142 * (pmin(Kreatinin / Kappa, 1)^Alpha) * 
+                 (pmax(Kreatinin / Kappa, 1)^-1.200) * 
+                 (0.9938^Usia) * Sex_Mult,
     CKD_Status = ifelse(eGFR < 60, 1, ifelse(eGFR >= 60, 0, NA))
   ) %>%
   filter(!is.na(Usia), !is.na(IMT), !is.na(TyHbA1c_Index), 
          !is.na(CKD_Status), !is.na(HRP_Status), !is.na(Global_CAC_score))
+
+# Menampilkan ringkasan sampel final
+#cat("Total sampel siap dianalisis (n):", nrow(df_clean), "\n")
+#table(Status_Ginjal = df_clean$CKD_Status, Status_HRP = df_clean$HRP_Status)
 ```
 
 ## Hasil
@@ -152,88 +166,67 @@ pct_hrp_neg <- round((n_hrp_neg / n_total) * 100, 1)
 
 n_pria <- sum(df_clean$Gender == "L")
 pct_pria <- round((n_pria / n_total) * 100, 1)
+
 mean_usia <- round(mean(df_clean$Usia), 2)
 sd_usia <- round(sd(df_clean$Usia), 2)
+
 mean_imt <- round(mean(df_clean$IMT), 2)
 sd_imt <- round(sd(df_clean$IMT), 2)
+
 mean_hba1c <- round(mean(df_clean$HbA1C), 2)
 sd_hba1c <- round(sd(df_clean$HbA1C), 2)
+
 mean_tg <- round(mean(df_clean$Trigliserida), 2)
 sd_tg <- round(sd(df_clean$Trigliserida), 2)
+
 mean_ty <- round(mean(df_clean$TyHbA1c_Index), 2)
 sd_ty <- round(sd(df_clean$TyHbA1c_Index), 2)
 
 n_ckd <- sum(df_clean$CKD_Status == 1)
 pct_ckd <- round((n_ckd / n_total) * 100, 1)
+
 median_cac <- round(median(df_clean$Global_CAC_score), 1)
 q1_cac <- round(quantile(df_clean$Global_CAC_score, 0.25), 1)
 q3_cac <- round(quantile(df_clean$Global_CAC_score, 0.75), 1)
 
+# Usia berdasarkan HRP
 mean_usia_pos <- round(mean(df_clean$Usia[df_clean$HRP_Status == "HRP (+)"]), 2)
 sd_usia_pos <- round(sd(df_clean$Usia[df_clean$HRP_Status == "HRP (+)"]), 2)
 mean_usia_neg <- round(mean(df_clean$Usia[df_clean$HRP_Status == "HRP (-)"]), 2)
 sd_usia_neg <- round(sd(df_clean$Usia[df_clean$HRP_Status == "HRP (-)"]), 2)
+
+# CAC berdasarkan HRP
 med_cac_pos <- round(median(df_clean$Global_CAC_score[df_clean$HRP_Status == "HRP (+)"]), 1)
 med_cac_neg <- round(median(df_clean$Global_CAC_score[df_clean$HRP_Status == "HRP (-)"]), 1)
 
-# 1. Regresi Logistik HRP
+# 1. Menangkap hasil Regresi Logistik HRP
 model_ekstrak <- glm(HRP_Status ~ Usia + IMT + TyHbA1c_Index + CKD_Status, data = df_clean, family = binomial(link = "logit"))
 summary_model <- summary(model_ekstrak)
+
 or_usia <- round(exp(coef(model_ekstrak)["Usia"]), 2)
 ci_usia <- exp(suppressMessages(confint(model_ekstrak)["Usia", ]))
 p_usia <- round(summary_model$coefficients["Usia", "Pr(>|z|)"], 3)
+
 or_ckd <- round(exp(coef(model_ekstrak)["CKD_Status"]), 2)
 ci_ckd <- exp(suppressMessages(confint(model_ekstrak)["CKD_Status", ]))
 p_ckd <- round(summary_model$coefficients["CKD_Status", "Pr(>|z|)"], 3)
+
 roc_ekstrak <- roc(df_clean$HRP_Status, predict(model_ekstrak, type = "response"))
 auc_val <- round(auc(roc_ekstrak), 3)
 
-# 2. Regresi Logistik CAC
+# 2. Menangkap hasil Regresi Logistik CAC (Bagian ini yang sebelumnya terlewat)
 n_cac100 <- sum(df_clean$CAC_100_plus == 1)
 pct_cac100 <- round((n_cac100 / n_total) * 100, 1)
+
 model_cac_ekstrak <- glm(CAC_100_plus ~ Usia + TyHbA1c_Index + CKD_Status, data = df_clean, family = binomial(link = "logit"))
 summary_cac <- summary(model_cac_ekstrak)
+
 or_usia_cac <- round(exp(coef(model_cac_ekstrak)["Usia"]), 2)
 ci_usia_cac <- exp(suppressMessages(confint(model_cac_ekstrak)["Usia", ]))
 p_usia_cac <- round(summary_cac$coefficients["Usia", "Pr(>|z|)"], 3)
+
 roc_cac_ekstrak <- roc(df_clean$CAC_100_plus, predict(model_cac_ekstrak, type = "response"))
 auc_val_cac <- round(auc(roc_cac_ekstrak), 3)
-
-# 3. Statistik Statin
-n_statin <- sum(df_clean$Statin == "On-Statin", na.rm=TRUE)
-pct_statin <- round((n_statin / n_total) * 100, 1)
-med_cac_statin <- round(median(df_clean$Global_CAC_score[df_clean$Statin == "On-Statin"], na.rm=TRUE), 1)
-med_cac_nostatin <- round(median(df_clean$Global_CAC_score[df_clean$Statin == "No-Statin"], na.rm=TRUE), 1)
-n_hrp_statin <- sum(df_clean$Statin == "On-Statin" & df_clean$HRP_Status == "HRP (+)", na.rm=TRUE)
-pct_hrp_statin <- round((n_hrp_statin / n_statin) * 100, 1)
-n_nostatin <- sum(df_clean$Statin == "No-Statin", na.rm=TRUE)
-n_hrp_nostatin <- sum(df_clean$Statin == "No-Statin" & df_clean$HRP_Status == "HRP (+)", na.rm=TRUE)
-pct_hrp_nostatin <- round((n_hrp_nostatin / n_nostatin) * 100, 1)
-p_cac_statin <- round(wilcox.test(df_clean$Global_CAC_score ~ df_clean$Statin)$p.value, 3)
-p_hrp_statin <- round(chisq.test(table(df_clean$Statin, df_clean$HRP_Status))$p.value, 3)
-
-# 4. Statistik Terapi DM
-n_diet <- sum(df_clean$Terapi_DM == "Tanpa Terapi/Diet", na.rm=TRUE)
-n_oad <- sum(df_clean$Terapi_DM == "OAD", na.rm=TRUE)
-n_ins <- sum(df_clean$Terapi_DM == "Insulin", na.rm=TRUE)
-med_cac_diet <- round(median(df_clean$Global_CAC_score[df_clean$Terapi_DM == "Tanpa Terapi/Diet"], na.rm=TRUE), 1)
-med_cac_oad <- round(median(df_clean$Global_CAC_score[df_clean$Terapi_DM == "OAD"], na.rm=TRUE), 1)
-med_cac_ins <- round(median(df_clean$Global_CAC_score[df_clean$Terapi_DM == "Insulin"], na.rm=TRUE), 1)
-pct_hrp_diet <- round((sum(df_clean$Terapi_DM == "Tanpa Terapi/Diet" & df_clean$HRP_Status == "HRP (+)", na.rm=TRUE) / n_diet) * 100, 1)
-pct_hrp_oad <- round((sum(df_clean$Terapi_DM == "OAD" & df_clean$HRP_Status == "HRP (+)", na.rm=TRUE) / n_oad) * 100, 1)
-pct_hrp_ins <- round((sum(df_clean$Terapi_DM == "Insulin" & df_clean$HRP_Status == "HRP (+)", na.rm=TRUE) / n_ins) * 100, 1)
-p_cac_terapi <- round(kruskal.test(Global_CAC_score ~ Terapi_DM, data = df_clean[!is.na(df_clean$Terapi_DM), ])$p.value, 3)
-p_hrp_terapi <- round(chisq.test(table(df_clean$Terapi_DM, df_clean$HRP_Status))$p.value, 3)
-
-# 5. Statistik Riwayat DM
-n_baru <- sum(df_clean$Riwayat_DM == "Baru Terdiagnosis", na.rm=TRUE)
-n_lama <- sum(df_clean$Riwayat_DM == "Sudah Lama", na.rm=TRUE)
-med_cac_baru <- round(median(df_clean$Global_CAC_score[df_clean$Riwayat_DM == "Baru Terdiagnosis"], na.rm=TRUE), 1)
-med_cac_lama <- round(median(df_clean$Global_CAC_score[df_clean$Riwayat_DM == "Sudah Lama"], na.rm=TRUE), 1)
-pct_hrp_baru <- round((sum(df_clean$Riwayat_DM == "Baru Terdiagnosis" & df_clean$HRP_Status == "HRP (+)", na.rm=TRUE) / n_baru) * 100, 1)
-pct_hrp_lama <- round((sum(df_clean$Riwayat_DM == "Sudah Lama" & df_clean$HRP_Status == "HRP (+)", na.rm=TRUE) / n_lama) * 100, 1)
-p_cac_lama <- round(wilcox.test(Global_CAC_score ~ Riwayat_DM, data = df_clean[!is.na(df_clean$Riwayat_DM), ])$p.value, 3)
-p_hrp_lama <- round(fisher.test(table(df_clean$Riwayat_DM, df_clean$HRP_Status))$p.value, 3)
 ```
 
 **Karakteristik Dasar dan Profil Klinis Subjek**
@@ -247,16 +240,6 @@ Dari parameter biokimia, rata-rata kadar HbA1c subjek adalah `r mean_hba1c` $\pm
 Berdasarkan evaluasi lesi koroner melalui pencitraan CTCA, proporsi penemuan *High-Risk Plaque* (HRP) terbilang tinggi. Sebanyak `r n_hrp_pos` pasien (`r pct_hrp_pos`%) teridentifikasi positif memiliki HRP, sementara `r n_hrp_neg` pasien (`r pct_hrp_neg`%) tidak menunjukkan fitur HRP.
 
 Analisis komparatif menunjukkan bahwa pasien pada kelompok HRP (+) memiliki usia yang secara signifikan lebih tua (`r mean_usia_pos` $\pm$ `r sd_usia_pos` tahun) dibandingkan kelompok HRP (-) (`r mean_usia_neg` $\pm$ `r sd_usia_neg` tahun). Selain itu, derajat kalsifikasi koroner pada kelompok HRP (+) jauh lebih masif; kelompok ini mencatatkan median skor CAC mencapai `r format(med_cac_pos, big.mark=",")` Agatston, berbanding sangat kontras dengan kelompok HRP (-) yang hanya memiliki median `r format(med_cac_neg, big.mark=",")` Agatston.
-
-**Evaluasi Terapi Statin terhadap Karakteristik Plak**
-
-Mengingat mayoritas pasien dalam kohort ini (`r n_statin` pasien, `r pct_statin`%) telah menggunakan terapi statin saat dirujuk untuk pemeriksaan CTCA, analisis komparatif dilakukan untuk melihat efek terapi terhadap arsitektur plak. Pasien yang menerima statin (*On-Statin*) mencatatkan median skor kalsifikasi yang lebih tinggi (`r med_cac_statin` Agatston) dibandingkan kelompok *No-Statin* (`r med_cac_nostatin` Agatston), kendati secara statistik tidak bermakna ($p$ = `r p_cac_statin`). Terkait kerentanan plak, kelompok *On-Statin* justru mencatatkan proporsi penemuan HRP yang sedikit lebih tinggi (`r pct_hrp_statin`%) dibandingkan kelompok *No-Statin* (`r pct_hrp_nostatin`%), meskipun perbedaan ini juga tidak signifikan secara statistik ($p$ = `r p_hrp_statin`).
-
-**Evaluasi Modalitas Terapi dan Durasi Penyakit**
-
-Analisis lebih lanjut dilakukan terhadap efek jenis terapi penurun glukosa dan durasi penyakit terhadap karakteristik plak. Pasien yang mendapat terapi OAD mencatatkan median kalsifikasi (CAC) tertinggi (`r med_cac_oad` Agatston) dibandingkan pengguna Insulin (`r med_cac_ins` Agatston) dan pasien tanpa terapi spesifik/diet (`r med_cac_diet` Agatston), meskipun secara statistik tidak berbeda bermakna ($p$ = `r p_cac_terapi`). Sebaliknya, proporsi HRP justru ditemukan paling tinggi pada kelompok tanpa terapi spesifik (`r pct_hrp_diet`%) dibandingkan kelompok Insulin (`r pct_hrp_ins`%) maupun OAD (`r pct_hrp_oad`%) ($p$ = `r p_hrp_terapi`).
-
-Terkait durasi penyakit, pasien yang telah lama terdiagnosis DM menunjukkan beban kalsifikasi yang jauh lebih masif (`r med_cac_lama` Agatston) dibandingkan pasien yang baru terdiagnosis (`r med_cac_baru` Agatston), kendati belum bermakna secara statistik pada sampel ini ($p$ = `r p_cac_lama`). Menariknya, proporsi kerentanan plak (HRP) antara pasien lama (`r pct_hrp_lama`%) dan baru terdiagnosis (`r pct_hrp_baru`%) tampak sangat serupa ($p$ = `r p_hrp_lama`).
 
 ```{r}
 #| label: tbl-baseline
@@ -439,7 +422,7 @@ ggsave(
 
 **Analisis Multivariat Prediktor *High-Risk Plaque* (HRP)**
 
-Pemodelan regresi logistik multivariat (*Generalized Linear Model*) dilakukan untuk mengevaluasi kekuatan prediktif klinis komprehensif dengan memasukkan variabel Usia, IMT, TyHbA1c Index, dan Status CKD (\@tbl-regresi). Hasil analisis mengonfirmasi bahwa Usia merupakan prediktor independen yang bermakna secara statistik terhadap pembentukan plak risiko tinggi (Odds Ratio \[OR\] = `r or_usia`; 95% CI: `r round(ci_usia[1], 2)` – `r round(ci_usia[2], 2)`; $p$ = `r p_usia`). Secara klinis, komplikasi fungsi ginjal memberikan dampak risiko yang masif; pasien dengan status CKD menunjukkan tren peningkatan probabilitas kerentanan plak hingga `r or_ckd` kali lipat lebih tinggi dibandingkan pasien dengan ginjal normal (OR = `r or_ckd`; 95% CI: `r round(ci_ckd[1], 2)` – `r round(ci_ckd[2], 2)`; $p$ = `r p_ckd`). Sementara itu, variabel TyHbA1c Index dan IMT tidak menunjukkan kemaknaan statistik parsial secara independen dalam kohort terbatas ini.
+Pemodelan regresi logistik multivariat (Generalized Linear Model) dilakukan untuk mengevaluasi kekuatan prediktif klinis komprehensif dengan memasukkan variabel Usia, IMT, TyHbA1c Index, dan Status CKD (@tbl-regresi). Hasil analisis mengonfirmasi bahwa Usia merupakan prediktor independen yang bermakna secara statistik terhadap pembentukan plak risiko tinggi (Odds Ratio \[OR\] = `r or_usia`; 95% CI: `r round(ci_usia[1], 2)` – `r round(ci_usia[2], 2)`; $p$ = `r p_usia`). Secara klinis, komplikasi fungsi ginjal memberikan dampak risiko yang masif; pasien dengan status CKD menunjukkan tren peningkatan probabilitas kerentanan plak hingga `r or_ckd` kali lipat lebih tinggi dibandingkan pasien dengan ginjal normal (OR = `r or_ckd`; 95% CI: `r round(ci_ckd[1], 2)` – `r round(ci_ckd[2], 2)`; $p$ = `r p_ckd`). Sementara itu, variabel TyHbA1c Index dan IMT tidak menunjukkan kemaknaan statistik parsial secara independen dalam kohort terbatas ini.
 
 ```{r}
 #| label: tbl-regresi
@@ -623,18 +606,14 @@ lrt_hrp <- anova(model_reduced_hrp_glm, model_full_hrp_glm, test = "LRT")
 p_lrt_hrp <- lrt_hrp[2, "Pr(>Chi)"]
 ```
 
-Berdasarkan hasil perhitungan validasi terdapat **Model Komprehensif (4 Variabel)** Menunjukkan nilai *C-index apparent* (kemampuan diskriminasi pada data latih) sebesar `r round(c_index_hrp_apparent, 3)`. Namun, setelah dikoreksi terhadap optimisme model (`r round(optimism_hrp, 3)`), performa aktualnya turun menjadi **`r round(c_index_hrp_corrected, 3)`**. **Model Tereduksi (Usia + PGK):** Menunjukkan nilai *C-index apparent* sebesar `r round(c_index_red_apparent, 3)`, dan terkoreksi menjadi **`r round(c_index_red_corrected, 3)`**. Tingkat optimisme pada model ini jauh lebih rendah (hanya `r round(optimism_red, 3)`).
-
-Penurunan performa (*optimisme*) yang jauh lebih kecil pada model tereduksi membuktikan bahwa model yang lebih *streamline* ini lebih stabil dan lebih tangguh (*robust*) saat diaplikasikan pada populasi baru. Lebih lanjut, Uji Rasio Kemungkinan (*Likelihood Ratio Test* / LRT) memvalidasi bahwa penambahan IMT dan Indeks TyHbA1c ke dalam model dasar (Usia + PGK) tidak memberikan perbaikan akurasi model yang bermakna secara statistik ($p$ = `r round(p_lrt_hrp, 3)`). Visualisasi kesesuaian antara probabilitas prediksi dengan observasi aktual untuk model komprehensif ditunjukkan pada kurva kalibrasi di bawah ini (\@fig-kalibrasi-hrp).
-
 ```{r}
 #| label: fig-kalibrasi-hrp
-#| fig-cap: "**Kurva Kalibrasi Model HRP Komprehensif (Bootstrap-Corrected, B = 200).** Garis diagonal putus-putus merepresentasikan kalibrasi sempurna (probabilitas prediksi = probabilitas observasi); garis biru merepresentasikan performa aktual model setelah koreksi optimisme."
-#| echo: false
-#| warning: false
 #| message: false
-#| fig-width: 7
+#| warning: false
+#| fig-cap: "**Kurva Kalibrasi Model HRP Komprehensif (Bootstrap-Corrected, B = 200).** Garis diagonal putus-putus merepresentasikan kalibrasi sempurna (probabilitas prediksi = probabilitas observasi); garis biru merepresentasikan performa aktual model setelah koreksi optimisme."
 #| fig-height: 7
+#| fig-width: 7
+#| include: false
 
 set.seed(123)
 options(datadist = "dd")
@@ -644,6 +623,10 @@ plot(kal_hrp,
      ylab = "Probabilitas Observasi (Bias-Corrected)",
      main = "Kalibrasi Model HRP Komprehensif")
 ```
+
+Berdasarkan hasil perhitungan validasi ditemukan **Model Komprehensif (4 Variabel)** Menunjukkan nilai *C-index apparent* (kemampuan diskriminasi pada data latih) sebesar `r round(c_index_hrp_apparent, 3)`. Namun, setelah dikoreksi terhadap optimisme model (`r round(optimism_hrp, 3)`), performa aktualnya turun menjadi **`r round(c_index_hrp_corrected, 3)`**. **Model Tereduksi (Usia + PGK):** Menunjukkan nilai *C-index apparent* sebesar `r round(c_index_red_apparent, 3)`, dan terkoreksi menjadi **`r round(c_index_red_corrected, 3)`**. Tingkat optimisme pada model ini jauh lebih rendah (hanya `r round(optimism_red, 3)`).
+
+Penurunan performa (*optimisme*) yang jauh lebih kecil pada model tereduksi membuktikan bahwa model yang lebih *streamline* ini lebih stabil dan lebih tangguh (*robust*) saat diaplikasikan pada populasi baru. Lebih lanjut, Uji Rasio Kemungkinan (*Likelihood Ratio Test* / LRT) memvalidasi bahwa penambahan IMT dan Indeks TyHbA1c ke dalam model dasar (Usia + PGK) tidak memberikan perbaikan akurasi model yang bermakna secara statistik ($p$ = `r round(p_lrt_hrp, 3)`). Visualisasi kesesuaian antara probabilitas prediksi dengan observasi aktual untuk model komprehensif ditunjukkan pada kurva kalibrasi di bawah ini (\@fig-kalibrasi-hrp).
 
 **Analisis Prediktor Kuantitas Kalsifikasi (Global CAC Score** $\ge$ 100)
 
@@ -733,16 +716,16 @@ options(datadist = "dd_cac")
 model_lrm_cac <- lrm(CAC_100_plus ~ Usia + TyHbA1c_Index + CKD_Status, data = df_nom_cac, x = TRUE, y = TRUE)
 
 nom_cac <- nomogram(model_lrm_cac, 
-                    fun = plogis, 
-                    funlabel = "Probabilitas Skor CAC \u2265 100",
-                    lp = FALSE)
+                fun = plogis, 
+                funlabel = "Probabilitas Skor CAC \u2265 100",
+                lp = FALSE)
 
 plot_nomogram_ekg(nom_cac, col.grid = c("#D32F2F", "#D32F2F"))
 ```
 
 **Validasi Internal Model CAC (Bootstrap Resampling)**
 
-Sama halnya dengan pemodelan HRP, model prediksi kuantitas kalsifikasi (CAC $\ge$ 100) juga divalidasi secara internal menggunakan *bootstrap resampling* (B = 200).
+Sama halnya dengan pemodelan HRP, model prediksi kuantitas kalsifikasi (CAC \$\\ge\$ 100) juga divalidasi secara internal menggunakan \*bootstrap resampling\* (B = 200).
 
 ```{r}
 #| label: validasi-bootstrap-cac
@@ -770,7 +753,7 @@ p_lrt_cac <- lrt_cac[2, "Pr(>Chi)"]
 
 Hasil evaluasi menunjukkan bahwa model ini memiliki *C-index apparent* sebesar `r round(c_index_cac_apparent, 3)` (95% CI: `r round(ci_auc_cac[1], 3)`–`r round(ci_auc_cac[3], 3)`). Setelah dilakukan iterasi *bootstrap*, performa diskriminatif model ini terkoreksi secara realistis menjadi **`r round(c_index_cac_corrected, 3)`** dengan tingkat optimisme yang tergolong kecil (`r round(optimism_cac, 3)`).
 
-Uji Rasio Kemungkinan (LRT) antara model dasar (Usia + PGK) dengan model yang ditambah Indeks TyHbA1c menunjukkan bahwa penambahan parameter metabolik tersebut tidak memperbaiki *goodness-of-fit* pemodelan kalsifikasi secara signifikan ($p$ = `r round(p_lrt_cac, 3)`). Kesesuaian performa prediksi model kalsifikasi terhadap observasi klinis aktual divisualisasikan secara grafis melalui kurva kalibrasi (@fig-kalibrasi-cac).
+Uji Rasio Kemungkinan (LRT) antara model dasar (Usia + PGK) dengan model yang ditambah Indeks TyHbA1c menunjukkan bahwa penambahan parameter metabolik tersebut tidak memperbaiki *goodness-of-fit* pemodelan kalsifikasi secara signifikan ($p$ = `r round(p_lrt_cac, 3)`). Kesesuaian performa prediksi model kalsifikasi terhadap observasi klinis aktual divisualisasikan secara grafis melalui kurva kalibrasi (\@fig-kalibrasi-cac).
 
 ```{r}
 #| label: fig-kalibrasi-cac
@@ -790,6 +773,8 @@ plot(kal_cac,
      main = "Kalibrasi Model CAC \u2265 100")
 ```
 
+Estimasi *C-index* terkoreksi-optimisme untuk model CAC (`r round(c_index_cac_corrected, 3)`) dibandingkan dengan nilai *apparent* (`r round(auc_val_cac, 3)`; 95% CI `r round(ci_auc_cac[1], 3)`–`r round(ci_auc_cac[3], 3)`) memberikan estimasi performa yang lebih konservatif dan realistis. Uji rasio kemungkinan antara model dasar (Usia + PGK) dan model dengan tambahan Indeks TyHbA1c menghasilkan nilai $p$ = `r round(lrt_cac[2, "Pr(>Chi)"], 3)`.
+
 **Analisis Sensitivitas: Indeks TyHbA1c terhadap CAC sebagai Variabel Kontinu**
 
 Dikotomisasi skor CAC pada ambang $\ge$ 100 berpotensi menghilangkan informasi statistik, khususnya pada ukuran sampel yang terbatas. Sebagai analisis sensitivitas, hubungan Indeks TyHbA1c dengan beban kalsifikasi koroner turut dievaluasi menggunakan skor CAC sebagai variabel kontinu (ditransformasi logaritma natural, $\ln(\text{CAC}+1)$, mengingat distribusinya yang sangat menjulur ke kanan).
@@ -799,7 +784,6 @@ Dikotomisasi skor CAC pada ambang $\ge$ 100 berpotensi menghilangkan informasi s
 #| echo: false
 #| warning: false
 #| message: false
-#| results: hide
 
 df_cac_cont <- df_clean %>%
   filter(!is.na(Global_CAC_score), !is.na(TyHbA1c_Index),
@@ -809,49 +793,38 @@ df_cac_cont <- df_clean %>%
 # Uji normalitas distribusi (menentukan pilihan uji korelasi yang tepat)
 shapiro_ty     <- shapiro.test(df_cac_cont$TyHbA1c_Index)
 shapiro_logcac <- shapiro.test(df_cac_cont$log_CAC)
+shapiro_ty
+shapiro_logcac
 
 # Korelasi Spearman (non-parametrik, robust terhadap outlier/non-normalitas)
 cor_spearman_cac <- cor.test(df_cac_cont$TyHbA1c_Index,
                               df_cac_cont$Global_CAC_score,
                               method = "spearman")
+cor_spearman_cac
 
 # Korelasi Pearson pada skala log-log
 cor_pearson_logcac <- cor.test(df_cac_cont$TyHbA1c_Index,
                                 df_cac_cont$log_CAC,
                                 method = "pearson")
+cor_pearson_logcac
 
 # Regresi linear berganda: log(CAC+1) ~ TyHbA1c, disesuaikan Usia & status PGK
 model_lm_cac_cont <- lm(log_CAC ~ TyHbA1c_Index + Usia + CKD_Status, data = df_cac_cont)
+summary(model_lm_cac_cont)
 ```
 
 ```{r}
 #| label: fig-scatter-tyhba1c-cac
-#| fig-cap: "**Hubungan Indeks TyHbA1c dengan Global CAC Score (skala logaritmik).** Setiap titik merepresentasikan satu subjek; garis biru adalah garis regresi linear dengan pita 95% CI. Ringkasan uji normalitas dan korelasi dicantumkan di dalam grafik."
+#| fig-cap: "**Hubungan Indeks TyHbA1c dengan Global CAC Score (skala logaritmik).** Setiap titik merepresentasikan satu subjek; garis biru adalah garis regresi linear dengan pita 95% CI."
 #| echo: false
 #| warning: false
 #| message: false
 #| fig-width: 7
 #| fig-height: 5
 
-# Memformat angka p-value agar rapi (misal: jika < 0.001 tidak ditulis 0.000)
-p_shap_ty <- ifelse(shapiro_ty$p.value < 0.001, "< 0.001", paste0("= ", round(shapiro_ty$p.value, 3)))
-p_shap_cac <- ifelse(shapiro_logcac$p.value < 0.001, "< 0.001", paste0("= ", round(shapiro_logcac$p.value, 3)))
-
-# Merangkai teks anotasi yang akan ditempel ke dalam grafik
-teks_anotasi <- paste0(
-  "Uji Normalitas (Shapiro-Wilk):\n",
-  "- Indeks TyHbA1c: p ", p_shap_ty, "\n",
-  "- ln(CAC+1): p ", p_shap_cac, "\n\n",
-  "Korelasi (Spearman):\n",
-  "- rho = ", round(cor_spearman_cac$estimate, 3), "  (p = ", round(cor_spearman_cac$p.value, 3), ")"
-)
-
 ggplot(df_cac_cont, aes(x = TyHbA1c_Index, y = log_CAC)) +
   geom_point(size = 2.3, alpha = 0.75, color = "#2c3e50") +
   geom_smooth(method = "lm", se = TRUE, color = "#2980b9", fill = "#a9cce3") +
-  # Menambahkan teks anotasi di pojok kanan atas grafik
-  annotate("text", x = Inf, y = Inf, label = teks_anotasi, 
-           hjust = 1.05, vjust = 1.1, size = 3.5, color = "#333333") +
   labs(
     title = "Indeks TyHbA1c vs. Global CAC Score",
     x = "Indeks TyHbA1c",
@@ -861,106 +834,6 @@ ggplot(df_cac_cont, aes(x = TyHbA1c_Index, y = log_CAC)) +
 ```
 
 Hasil korelasi Spearman antara Indeks TyHbA1c dan skor CAC kontinu menunjukkan koefisien $\rho$ = `r round(cor_spearman_cac$estimate, 3)` ($p$ = `r round(cor_spearman_cac$p.value, 3)`). Pada model regresi linear yang disesuaikan terhadap Usia dan status PGK, koefisien Indeks TyHbA1c terhadap $\ln(\text{CAC}+1)$ adalah `r round(coef(model_lm_cac_cont)["TyHbA1c_Index"], 3)` ($p$ = `r round(summary(model_lm_cac_cont)$coefficients["TyHbA1c_Index", "Pr(>|t|)"], 3)`). Konsistensi (atau inkonsistensi) arah dan kemaknaan hasil ini dengan model regresi logistik biner pada CAC $\ge$ 100 perlu didiskusikan secara eksplisit: apabila kedua pendekatan sama-sama menunjukkan hasil non-signifikan, hal ini memperkuat kesimpulan bahwa Indeks TyHbA1c tidak memiliki hubungan independen yang kuat dengan beban kalsifikasi pada kohort ini — bukan sekadar artefak dikotomisasi.
-
-**Analisis Jalur (*Path Analysis*): Efek Mediasi Poros Kardiorenal**
-
-Untuk menguji hipotesis patofisiologis mengenai poros kardiorenal, *path analysis* dieksekusi secara paralel pada kedua luaran utama studi ini (HRP dan CAC $\ge$ 100) menggunakan pendekatan *Structural Equation Modeling* (SEM) [@kline2015principles]. Usia ditetapkan sebagai variabel independen, status PGK sebagai mediator, dan luaran aterosklerotik sebagai variabel dependen.
-
-```{r path_analysis}
-#| echo: false
-#| warning: false
-#| message: false
-
-# 1. Model Mediasi untuk HRP
-model_med_hrp <- '
-  CKD_Status ~ a * Usia
-  HRP_Status ~ b * CKD_Status + c * Usia
-  indirect_effect := a * b
-  total_effect := c + (a * b)
-'
-fit_med_hrp <- sem(model_med_hrp, data = df_clean, ordered = c("CKD_Status", "HRP_Status"))
-summary_med_hrp <- parameterEstimates(fit_med_hrp)
-
-p_path_a <- round(summary_med_hrp$pvalue[summary_med_hrp$label == "a"], 3)
-p_path_b <- round(summary_med_hrp$pvalue[summary_med_hrp$label == "b"], 3)
-p_path_c <- round(summary_med_hrp$pvalue[summary_med_hrp$label == "c"], 3)
-p_indirect <- round(summary_med_hrp$pvalue[summary_med_hrp$label == "indirect_effect"], 3)
-
-# 2. Model Mediasi untuk CAC >= 100
-model_med_cac <- '
-  CKD_Status ~ a2 * Usia
-  CAC_100_plus ~ b2 * CKD_Status + c2 * Usia
-  indirect_effect2 := a2 * b2
-  total_effect2 := c2 + (a2 * b2)
-'
-fit_med_cac <- sem(model_med_cac, data = df_clean, ordered = c("CKD_Status", "CAC_100_plus"))
-summary_med_cac <- parameterEstimates(fit_med_cac)
-
-p_path_a2 <- round(summary_med_cac$pvalue[summary_med_cac$label == "a2"], 3)
-p_path_b2 <- round(summary_med_cac$pvalue[summary_med_cac$label == "b2"], 3)
-p_path_c2 <- round(summary_med_cac$pvalue[summary_med_cac$label == "c2"], 3)
-p_indirect2 <- round(summary_med_cac$pvalue[summary_med_cac$label == "indirect_effect2"], 3)
-```
-
-Hasil analisis jalur pada domain kualitas plak mengonfirmasi bahwa Usia memiliki efek langsung yang bermakna secara statistik terhadap kemunculan HRP (Jalur C, $p$ = `r p_path_c`). Terkait efek mediasi, penuaan menunjukkan tren korelasi positif terhadap penurunan fungsi ginjal/PGK (Jalur A, $p$ = `r p_path_a`), namun efek lanjutan dari PGK menuju HRP pada model ini tidak mencapai signifikansi statistik (Jalur B, $p$ = `r p_path_b`). Secara keseluruhan, efek tidak langsung (*indirect effect*) dari Usia $\rightarrow$ PGK $\rightarrow$ HRP belum terbukti bermakna ($p$ = `r p_indirect`).
-
-Pola yang lebih ekstrem terlihat pada domain kuantitas kalsifikasi (CAC $\ge$ 100). Dominansi Usia sebagai prediktor langsung kalsifikasi koroner tampak sangat absolut ($p$ = `r p_path_c2`), sedangkan jalur mediasi dari komplikasi PGK menuju pembentukan kalsium sama sekali tidak bermakna ($p$ = `r p_path_b2`), mengonfirmasi ketiadaan efek mediasi tidak langsung pada ekuasi ini ($p$ = `r p_indirect2`). Visualisasi diagram struktural untuk kedua model disajikan pada \@fig-path-diagram dan \@fig-path-diagram-cac.
-
-```{r}
-#| label: fig-path-diagram
-#| fig-cap: "**Diagram Analisis Jalur untuk *High-Risk Plaque* (HRP).** Angka pada garis panah merepresentasikan nilai estimasi koefisien jalur."
-#| echo: false
-#| warning: false
-#| message: false
-#| fig-width: 7
-#| fig-height: 4
-
-semPaths(fit_med_hrp, 
-         what = "paths", 
-         whatLabels = "est",        
-         layout = "tree",           
-         rotation = 2, 
-         nCharNodes = 0,            # Mencegah nama variabel disingkat (Usi -> Usia)
-         intercepts = FALSE,        # Menghilangkan panah segitiga yang mengganggu
-         residuals = FALSE,         # Menghilangkan panah melingkar putus-putus
-         sizeMan = 12,              # Menyesuaikan lebar kotak
-         sizeMan2 = 6,              # Menyesuaikan tinggi kotak
-         edge.label.cex = 1.1,      
-         edge.label.position = 0.5, # Memastikan angka tepat di tengah garis panah
-         color = "#FFE0E0",         
-         edge.color = "#D32F2F",    
-         label.cex = 1.2,           
-         fade = FALSE,              
-         edge.width = 1.5)
-```
-
-```{r}
-#| label: fig-path-diagram-cac
-#| fig-cap: "**Diagram Analisis Jalur untuk Kalsifikasi Koroner (CAC $\\ge$ 100).** Bukti visual dominansi Usia secara langsung terhadap skor kalsifikasi absolut."
-#| echo: false
-#| warning: false
-#| message: false
-#| fig-width: 7
-#| fig-height: 4
-
-semPaths(fit_med_cac, 
-         what = "paths", 
-         whatLabels = "est",        
-         layout = "tree",           
-         rotation = 2,              
-         nCharNodes = 0,            # Mencegah nama variabel disingkat
-         intercepts = FALSE,        # Menghilangkan panah segitiga
-         residuals = FALSE,         # Menghilangkan panah melingkar
-         sizeMan = 12,              
-         sizeMan2 = 6,              
-         edge.label.cex = 1.1,      
-         edge.label.position = 0.5, 
-         color = "#E0F7FA",         
-         edge.color = "#0288D1",    
-         label.cex = 1.2,           
-         fade = FALSE,              
-         edge.width = 1.5)
-```
 
 ## Pembahasan
 
@@ -980,19 +853,13 @@ Meskipun model multivariat komprehensif mengonfirmasi integrasi teoretis keempat
 
 Pengembangan dua domain nomogram (HRP dan CAC) menyoroti perbedaan patofisiologi mendasar antara kualitas dan kuantitas aterosklerosis. Model prediksi HRP difokuskan untuk menilai "kualitas" dan kerentanan plak terhadap ruptur, yang dihipotesiskan sangat dipengaruhi oleh fluktuasi metabolik kronis (disimbolkan oleh tren TyHbA1c). Sebaliknya, pemodelan sekunder memvalidasi bahwa "kuantitas" pembentukan kalsium yang masif (CAC $\ge$ 100 Agatston) sebagian besar disetir secara absolut oleh efek kumulatif degeneratif, di mana variabel Usia menjadi prediktor tunggal yang paling mendominasi ($p=`r p_usia_cac`$). Melalui pendekatan stratifikasi ganda ini, klinisi dapat memilah pasien menjadi fenotipe spesifik—misalnya, pasien usia muda dengan skor CAC rendah namun probabilitas HRP tinggi (membutuhkan stabilisasi plak anti-inflamasi), berbanding pasien geriatri dengan probabilitas CAC masif (membutuhkan intervensi agresif akibat obstruksi kronis).
 
-**Peran Dominan Penuaan, Durasi Paparan, dan Poros Kardiorenal**
+**Peran Dominan Usia dan Poros Kardiorenal**
 
-Dalam seluruh pemodelan, usia muncul sebagai penentu utama. Proses aterosklerosis pada dasarnya adalah patologi kumulatif yang bergantung pada waktu (*time-dependent*). Dominansi efek penuaan dan paparan ini diperkuat oleh temuan analisis durasi penyakit, di mana pasien yang telah lama terdiagnosis DM mencatatkan kalsifikasi anatomis nyaris tiga kali lipat lebih tebal dibandingkan pasien *newly diagnosed*.
+Dalam seluruh pemodelan, usia muncul sebagai penentu utama. Proses aterosklerosis pada dasarnya adalah patologi kumulatif yang bergantung pada waktu (*time-dependent*), di mana durasi paparan terhadap sel endotel memperbesar probabilitas degenerasi. Selain faktor usia, kehadiran Penyakit Ginjal Kronis (PGK Stadium $\ge$ 3) terbukti memberikan tren peningkatan risiko kerentanan plak yang masif. Nefropati diabetik bertindak sebagai katalisator melalui poros kardiorenal (*cardiorenal syndrome*). Retensi toksin uremik dan gangguan metabolisme mineral pada pasien PGK berinteraksi sinergis memicu degradasi stabilitas koroner secara progresif.
 
-Menariknya, proporsi plak rentan (HRP) pada pasien baru terdiagnosis pun sudah sangat tinggi. Hal ini secara fundamental menyoroti konsep memori metabolik (*metabolic memory*), di mana *atherosclerotic remodeling* yang mengancam jiwa sejatinya telah berlangsung secara diam-diam sejak fase prediabetes, jauh sebelum diagnosis klinis DM ditegakkan.
+**Paradoks Kalsifikasi dan Pengaruh Terapi Statin**
 
-Secara patofisiologis, kehadiran komplikasi Penyakit Ginjal Kronis (PGK Stadium $\ge$ 3) dihipotesiskan bertindak sebagai katalisator tambahan melalui poros kardiorenal (*cardiorenal syndrome*), di mana retensi toksin uremik berinteraksi sinergis memicu degradasi stabilitas koroner. Namun, meskipun konsep poros kardiorenal ini sangat kokoh secara teoretis, analisis jalur (*path analysis*) pada studi ini belum dapat membuktikan efek mediasi PGK secara statistik. Efek langsung (*direct effect*) dari penuaan terhadap kerusakan vaskular tampak terlalu absolut dan dominan, sehingga efek tidak langsung (*indirect effect*) melalui perantara PGK menjadi tersamar (*diluted*) akibat keterbatasan *power* statistik dari ukuran sampel kohort ini.
-
-**Paradoks Kalsifikasi dan Indikasi Bias Modalitas Terapi**
-
-Analisis sensitivitas pada studi ini mengungkap tren korelasi yang berbanding terbalik (negatif) antara Indeks TyHbA1c dan skor CAC absolut (Spearman $\rho$ = `r round(cor_spearman_cac$estimate, 3)`; koefisien OLS = `r round(coef(model_lm_cac_cont)["TyHbA1c_Index"], 3)`). Fenomena ini dapat dijelaskan melalui morfologi plak: lesi dengan kerentanan tinggi (HRP) yang dipicu oleh badai glukolipotoksisitas didominasi oleh inti lipid nekrotik masif (*low-attenuation plaque*) yang tidak terdeteksi kuat oleh perangkat lunak skoring Agatston konvensional.
-
-Lebih lanjut, pertimbangan *indication bias* tidak dapat dihindari, di mana mayoritas pasien (`r pct_statin`%) telah menggunakan terapi statin. Terapi statin jangka panjang diketahui menginduksi stabilisasi plak melalui proses makrokalsifikasi, yang terlihat dari tingginya kecenderungan skor CAC pada pengguna statin dibanding kelompok tanpa terapi statin. Pola serupa terlihat pada modalitas terapi DM: pengguna OAD menunjukkan skor kalsifikasi tertinggi, sedangkan proporsi plak rentan (HRP) justru memuncak pada kelompok asimptomatik tanpa intervensi farmakologis (hanya diet). Hal ini mengindikasikan bahwa pasien asimptomatik yang belum terpapar efek stabilisasi pleiotropik dari medikasi konvensional seringkali masih berada pada fase inflamasi vaskular yang sangat aktif (HRP tinggi).
+Analisis sensitivitas pada studi ini mengungkap tren korelasi yang berbanding terbalik (negatif) antara Indeks TyHbA1c dan skor CAC absolut (Spearman $\rho$ = `r round(cor_spearman_cac$estimate, 3)`; koefisien OLS = `r round(coef(model_lm_cac_cont)["TyHbA1c_Index"], 3)`), meskipun tidak mencapai signifikansi statistik. Secara klinis, fenomena ini dapat dijelaskan melalui morfologi plak: lesi dengan kerentanan tinggi (HRP) yang dipicu oleh badai glukolipotoksisitas seringkali didominasi oleh inti lipid nekrotik masif (*low-attenuation plaque*) dan kalsifikasi tipe bercak (*spotty calcification*) yang tidak terdeteksi kuat oleh perangkat lunak skoring Agatston konvensional. Lebih lanjut, mayoritas pasien (`r round((sum(df_clean$Statin == "On-Statin", na.rm = TRUE) / nrow(df_clean)) * 100, 1)`%) dalam kohort ini memiliki riwayat penggunaan statin. Terapi statin jangka panjang diketahui menginduksi stabilisasi plak melalui makrokalsifikasi. Hal ini dapat bertindak sebagai perancu patofisiologis (*confounder*), di mana pasien dengan faktor risiko tinggi yang diobati secara agresif justru akan menampilkan skor CAC yang memburuk, sehingga berpotensi mendilusi nilai prediktif murni dari parameter metabolik seperti TyHbA1c terhadap kuantitas kalsium.
 
 **Keterbatasan Penelitian**
 
