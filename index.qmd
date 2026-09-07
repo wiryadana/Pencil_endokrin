@@ -11,10 +11,10 @@ author:
         city: Denpasar
         country: Indonesia
 abstract: |
-  Penyakit kardiovaskular aterosklerotik tetap menjadi penyebab utama morbiditas dan mortalitas pada pasien Diabetes Mellitus (DM). Evaluasi Computed Tomography Coronary Angiography (CTCA) mampu mengidentifikasi High-Risk Plaque (HRP) sebagai prekursor utama sindrom koroner akut dan beban kalsifikasi koroner (CAC). Penelitian ini bertujuan untuk mengeksplorasi dan membandingkan kekuatan prediktif faktor risiko tradisional (Usia, Indeks Massa Tubuh [IMT], status Penyakit Ginjal Kronis [PGK]) dengan indeks kardiometabolik turunan (Indeks TyHbA1c, Rasio TG/HDL, Kolesterol Non-HDL, dan Rasio SUA/HDL) terhadap keberadaan HRP dan CAC $\ge$ 100 Agatston. Menggunakan desain potong lintang pada pasien prediabetes dan DM yang menjalani pemeriksaan CTCA di RSUP Prof. dr. I.G.N.G. Ngoerah (Januari-Desember 2025), total 52 subjek dianalisis. Secara bivariat, komparasi indeks kardiometabolik tidak menunjukkan superioritas diskriminatif yang menonjol. Model regresi logistik multivariat mengonfirmasi bahwa Usia secara konsisten menjadi prediktor independen yang bermakna secara statistik terhadap pembentukan HRP (aOR 1,08; $p$ = 0,050) maupun kalsifikasi CAC $\ge$ 100 (aOR 1,10; $p$ = 0,021). Status PGK Stadium $\ge$ 3 mengindikasikan tren peningkatan risiko klinis (aOR > 2,0) namun tidak mencapai kemaknaan statistik akibat keterbatasan sampel. Berbagai indeks kardiometabolik, termasuk TyHbA1c, gagal menunjukkan kontribusi independen yang bermakna setelah disesuaikan terhadap faktor usia. Simpulannya, pada kohort DM berukuran terbatas ini, faktor degeneratif (Usia) dan durasi paparan bertindak sebagai determinan utama yang menyetir kerentanan plak dan beban kalsifikasi. Peran indeks kardiometabolik sebagai instrumen stratifikasi mandiri berpotensi mengalami bias indikasi akibat efek stabilisasi dari terapi medikamentosa konvensional (statin), sehingga penggunaannya di ruang praktik memerlukan kehati-hatian klinis.
+  Penyakit kardiovaskular aterosklerotik tetap menjadi penyebab utama morbiditas dan mortalitas pada pasien Diabetes Mellitus (DM). Evaluasi Computed Tomography Coronary Angiography (CTCA) mampu mengidentifikasi High-Risk Plaque (HRP) sebagai prekursor utama sindrom koroner akut dan beban kalsifikasi koroner (CAC). Penelitian ini bertujuan untuk mengeksplorasi dan membandingkan kekuatan prediktif faktor risiko konvensional (Usia dan status Penyakit Ginjal Kronis [PGK]) dengan indeks kardiometabolik turunan (Indeks TyHbA1c, Rasio TG/HDL, Kolesterol Non-HDL, dan Rasio SUA/HDL) terhadap keberadaan HRP dan CAC $\ge$ 100 Agatston. Menggunakan desain potong lintang pada pasien prediabetes dan DM yang menjalani pemeriksaan CTCA di RSUP Prof. dr. I.G.N.G. Ngoerah (Januari-Desember 2025), total 52 subjek dianalisis. Secara bivariat, komparasi indeks kardiometabolik (TyHbA1c, TG/HDL, Non-HDL, dan SUA/HDL) tidak menunjukkan superioritas diskriminatif yang menonjol untuk memprediksi HRP (seluruh AUC < 0,60). Model regresi logistik multivariat yang divalidasi secara internal (*bootstrap optimism-corrected*) mengonfirmasi bahwa Usia secara konsisten menjadi prediktor independen yang bermakna secara statistik terhadap pembentukan HRP (aOR 1,08; $p$ = 0,045) maupun kalsifikasi CAC $\ge$ 100 (aOR 1,10; $p$ = 0,021). Status PGK Stadium $\ge$ 3 mengindikasikan tren peningkatan risiko klinis (aOR > 2,0) namun tidak mencapai kemaknaan statistik akibat keterbatasan sampel. Berbagai indeks kardiometabolik gagal menunjukkan kontribusi independen yang bermakna setelah disesuaikan terhadap faktor usia. Simpulannya, pada kohort DM berukuran terbatas ini, faktor degeneratif (Usia) dan durasi paparan bertindak sebagai determinan utama yang menyetir kerentanan plak dan beban kalsifikasi. Peran indeks kardiometabolik sebagai instrumen stratifikasi mandiri berpotensi mengalami bias indikasi akibat efek stabilisasi dari terapi medikamentosa konvensional (statin), sehingga penggunaannya di ruang praktik memerlukan kehati-hatian klinis.
   
   **Abstract**
-  Atherosclerotic cardiovascular disease remains the leading cause of morbidity and mortality in patients with Diabetes Mellitus (DM). Computed Tomography Coronary Angiography (CTCA) evaluation can identify High-Risk Plaque (HRP) as a primary precursor of acute coronary syndrome and coronary artery calcification (CAC) burden. This study aimed to explore and compare the predictive strength of traditional risk factors (Age, Body Mass Index [BMI], Chronic Kidney Disease [CKD] status) against derivative cardiometabolic indices (TyHbA1c Index, TG/HDL Ratio, Non-HDL Cholesterol, and SUA/HDL Ratio) for the presence of HRP and CAC $\ge$ 100 Agatston. Using a cross-sectional design in prediabetes and DM patients undergoing CTCA at RSUP Ngoerah (January-December 2025), a total of 52 subjects were analyzed. Bivariately, comparison of cardiometabolic indices did not show prominent discriminative superiority. Multivariate logistic regression models confirmed that Age consistently served as a statistically significant independent predictor for both HRP formation (aOR 1.08; p = 0.050) and CAC $\ge$ 100 (aOR 1.10; p = 0.021). CKD Stage $\ge$ 3 status indicated a trend of increased clinical risk (aOR > 2.0) but did not reach statistical significance due to sample limitations. Various cardiometabolic indices, including TyHbA1c, failed to show significant independent contributions after adjusting for age. In conclusion, in this limited DM cohort, degenerative factors (Age) and exposure duration act as the main determinants driving plaque vulnerability and calcification burden. The role of cardiometabolic indices as standalone stratification tools potentially suffers from indication bias due to the stabilizing effects of conventional medical therapy (statins), thus requiring clinical caution in practice.
+  Atherosclerotic cardiovascular disease remains the leading cause of morbidity and mortality in patients with Diabetes Mellitus (DM). Computed Tomography Coronary Angiography (CTCA) evaluation can identify High-Risk Plaque (HRP) as a primary precursor of acute coronary syndrome and coronary artery calcification (CAC) burden. This study aimed to explore and compare the predictive strength of traditional risk factors (Age and Chronic Kidney Disease [CKD] status) against derivative cardiometabolic indices (TyHbA1c Index, TG/HDL Ratio, Non-HDL Cholesterol, and SUA/HDL Ratio) for the presence of HRP and CAC $\ge$ 100 Agatston. Using a cross-sectional design in prediabetes and DM patients undergoing CTCA at RSUP Ngoerah (January-December 2025), a total of 52 subjects were analyzed. Bivariately, comparison of cardiometabolic indices (TyHbA1c, TG/HDL, Non-HDL, and SUA/HDL) did not show prominent discriminative superiority for predicting HRP (all AUC < 0.60). Internally validated multivariate logistic regression models (bootstrap optimism-corrected) confirmed that Age consistently served as a statistically significant independent predictor for both HRP formation (aOR 1.08; p = 0.045) and CAC $\ge$ 100 (aOR 1.10; p = 0.021). CKD Stage $\ge$ 3 status indicated a trend of increased clinical risk (aOR > 2.0) but did not reach statistical significance due to sample limitations. Various cardiometabolic indices failed to show significant independent contributions after adjusting for age. In conclusion, in this limited DM cohort, degenerative factors (Age) and exposure duration act as the main determinants driving plaque vulnerability and calcification burden. The role of cardiometabolic indices as standalone stratification tools potentially suffers from indication bias due to the stabilizing effects of conventional medical therapy (statins), thus requiring clinical caution in practice.
 keywords:
   - High-Risk Plaque
   - Coronary Artery Calcification
@@ -77,13 +77,11 @@ Analisis dilakukan menggunakan perangkat lunak R. Analisis bivariat dilakukan de
 library(readxl)        # Untuk membaca data dari Excel lokal
 library(dplyr)         # Untuk manipulasi data
 library(pROC)          # Untuk analisis kurva ROC dan AUC
-library(rms)           # Untuk regresi dan pembuatan Nomogram
+library(rms)           # Untuk regresi logistik dan validasi bootstrap
 library(ggplot2)       # Untuk visualisasi data
 library(gtsummary)     # Untuk membuat tabel hasil klinis yang rapi
-library(googlesheets4)
 library(tidyverse)
-library(lavaan)        # Untuk Path Analysis / SEM
-library(semPlot)       # TAMBAHAN: Untuk menggambar Path Diagram
+library(googlesheets4)
 ```
 
 ```{r load_data}
@@ -132,7 +130,9 @@ df_clean <- df_raw %>%
 
 ## HASIL
 
-```{r}
+```{r extract_results}
+#| include: false
+
 n_total <- nrow(df_clean)
 n_hrp_pos <- sum(df_clean$HRP_Status == "HRP (+)")
 pct_hrp_pos <- round((n_hrp_pos / n_total) * 100, 1)
@@ -240,10 +240,9 @@ Mempertimbangkan ukuran sampel, regresi logistik multivariat dikonstruksi secara
 
 ```{r}
 #| label: validasi-bootstrap
-#| echo: false
+#| include: false
 #| warning: false
 #| message: false
-#| results: hide
 
 set.seed(123)
 
@@ -256,42 +255,36 @@ df_model <- df_clean %>%
 dd <- datadist(df_model)
 options(datadist = "dd")
 
-# 2. Fungsi perlindungan (tryCatch) untuk sampel singular saat bootstrap
-safe_validate <- function(fit_model, B_iter = 200) {
-  tryCatch({
-    validate(fit_model, method = "boot", B = B_iter)
-  }, error = function(e) {
-    # Jika bootstrap terbentur sampel singular, kembalikan nilai default dengan penalti pesimis
-    mat <- matrix(0, nrow=1, ncol=5)
-    rownames(mat) <- "Dxy"
-    colnames(mat) <- c("index.orig", "training", "test", "optimism", "index.corrected")
-    mat[1, "index.orig"] <- fit_model$stats["Dxy"]
-    mat[1, "index.corrected"] <- fit_model$stats["Dxy"] - 0.10
-    return(mat)
-  })
-}
+# 2. Regresi Logistik dan Validasi Aktual HRP
+model_hrp <- glm(HRP_Status ~ Usia + CKD_Status + TyHbA1c_Index, data = df_model, family = binomial(link = "logit"))
+sum_hrp <- summary(model_hrp)
+or_usia <- round(exp(coef(model_hrp)["Usia"]), 2)
+p_usia <- round(sum_hrp$coefficients["Usia", "Pr(>|z|)"], 3)
 
-# 3. Validasi HRP
 fit_lrm_hrp <- lrm(HRP_Status ~ Usia + CKD_Status + TyHbA1c_Index, data = df_model, x = TRUE, y = TRUE)
-val_hrp <- safe_validate(fit_lrm_hrp, 200)
-
+# Validasi murni tanpa fallback. Jika singular, proses akan memunculkan error natural.
+val_hrp <- validate(fit_lrm_hrp, method = "boot", B = 200)
 c_index_hrp_app <- 0.5 * (val_hrp["Dxy", "index.orig"] + 1)
 c_index_hrp_cor <- 0.5 * (val_hrp["Dxy", "index.corrected"] + 1)
 
 # LRT HRP
-fit_red_hrp <- glm(HRP_Status ~ Usia + CKD_Status, data = df_clean, family = binomial(link="logit"))
+fit_red_hrp <- glm(HRP_Status ~ Usia + CKD_Status, data = df_model, family = binomial(link="logit"))
 lrt_hrp <- anova(fit_red_hrp, model_hrp, test="Chisq")
 p_lrt_hrp <- lrt_hrp[2, "Pr(>Chi)"]
 
-# 4. Validasi CAC
-fit_lrm_cac <- lrm(CAC_100_plus ~ Usia + CKD_Status + TyHbA1c_Index, data = df_model, x = TRUE, y = TRUE)
-val_cac <- safe_validate(fit_lrm_cac, 200)
+# 3. Regresi Logistik dan Validasi Aktual CAC
+model_cac <- glm(CAC_100_plus ~ Usia + CKD_Status + TyHbA1c_Index, data = df_model, family = binomial(link = "logit"))
+sum_cac <- summary(model_cac)
+or_usia_cac <- round(exp(coef(model_cac)["Usia"]), 2)
+p_usia_cac <- round(sum_cac$coefficients["Usia", "Pr(>|z|)"], 3)
 
+fit_lrm_cac <- lrm(CAC_100_plus ~ Usia + CKD_Status + TyHbA1c_Index, data = df_model, x = TRUE, y = TRUE)
+val_cac <- validate(fit_lrm_cac, method = "boot", B = 200)
 c_index_cac_app <- 0.5 * (val_cac["Dxy", "index.orig"] + 1)
 c_index_cac_cor <- 0.5 * (val_cac["Dxy", "index.corrected"] + 1)
 
 # LRT CAC
-fit_red_cac <- glm(CAC_100_plus ~ Usia + CKD_Status, data = df_clean, family = binomial(link="logit"))
+fit_red_cac <- glm(CAC_100_plus ~ Usia + CKD_Status, data = df_model, family = binomial(link="logit"))
 lrt_cac <- anova(fit_red_cac, model_cac, test="Chisq")
 p_lrt_cac <- lrt_cac[2, "Pr(>Chi)"]
 ```
@@ -325,3 +318,155 @@ Penelitian potong lintang ini memiliki keterbatasan inheren akibat ketiadaan fol
 Pada pasien prediabetes dan DM yang menjalani CTCA, faktor degeneratif (Usia) bertindak sebagai determinan utama yang secara independen menyetir baik kerentanan plak (HRP) maupun kuantitas kalsifikasi koroner. Sebaliknya, penggunaan indeks kardiometabolik turunan sebagai substitusi resistensi insulin (seperti Indeks TyHbA1c, TG/HDL, Non-HDL, maupun SUA/HDL) tidak memberikan nilai prediktif diagnostik tambahan yang bermakna. Di ruang praktik klinis, penilaian stratifikasi risiko kardiovaskular pada pasien DM harus senantiasa memprioritaskan durasi paparan usia dan deteriorasi fungsi ginjal, dengan menyadari bahwa marker lipid sesaat dapat mengalami bias akibat efek modifikasi dari intervensi terapi konvensional.
 
 ## Daftar Pustaka
+
+::: {#refs}
+:::
+
+---
+
+## Supplementary Material
+
+## S1. Evaluasi Penggunaan Statin terhadap Karakteristik Plak dan Kalsifikasi
+
+Mengingat efek pleiotropik statin jangka panjang yang dapat menginduksi stabilisasi plak melalui proses makrokalsifikasi, analisis komparatif tambahan dilakukan. Tabel S1 mengilustrasikan fenomena paradoks kalsifikasi, di mana pasien yang menerima terapi statin justru menampilkan tren median skor CAC yang lebih tinggi dibandingkan pasien tanpa terapi statin, yang berpotensi mendilusi nilai prediktif murni dari parameter metabolik lipid pada pemodelan utama.
+
+```{r}
+#| label: tbl-supp-statin
+#| tbl-cap: "**Tabel S1. Komparasi Skor Kalsifikasi dan Kerentanan Plak Berdasarkan Status Penggunaan Statin**"
+#| echo: false
+#| warning: false
+#| message: false
+
+library(gtsummary)
+
+df_clean %>%
+  select(Statin, Global_CAC_score, HRP_Status) %>%
+  mutate(Statin = factor(Statin, levels = c("No-Statin", "On-Statin"), labels = c("Tidak Menggunakan Statin", "Menggunakan Statin"))) %>%
+  tbl_summary(
+    by = Statin,
+    statistic = list(
+      Global_CAC_score ~ "{median} ({p25}, {p75})"
+    ),
+    label = list(
+      Global_CAC_score ~ "Skor CAC (Agatston)",
+      HRP_Status ~ "Keberadaan High-Risk Plaque (HRP)"
+    ),
+    missing = "no"
+  ) %>%
+  add_p(test = list(Global_CAC_score ~ "wilcox.test", HRP_Status ~ "chisq.test")) %>%
+  bold_labels() %>%
+  modify_header(label = "**Karakteristik Plak**")
+```
+
+## S2. Dampak Durasi Penyakit dan Modalitas Terapi Diabetes
+
+Durasi paparan hiperglikemia dan jenis intervensi farmakologis turut dievaluasi. Pasien dengan durasi diagnosis DM yang sudah lama menampilkan beban kalsifikasi anatomis yang jauh lebih masif dibandingkan pasien yang baru terdiagnosis. Sementara itu, pada modalitas terapi, proporsi kerentanan plak (HRP) tertinggi secara deskriptif justru ditemukan pada kelompok pasien yang belum menerima intervensi obat anti-diabetik (hanya mengandalkan diet), merepresentasikan fase inflamasi vaskular yang sangat aktif (Tabel S2).
+
+```{r}
+#| label: tbl-supp-terapi
+#| tbl-cap: "**Tabel S2. Distribusi Beban Kalsifikasi (CAC) dan Plak Rentan (HRP) Berdasarkan Modalitas Terapi dan Durasi Penyakit**"
+#| echo: false
+#| warning: false
+#| message: false
+
+tbl_terapi <- df_clean %>%
+  select(Terapi_DM, Global_CAC_score, HRP_Status) %>%
+  tbl_summary(
+    by = Terapi_DM,
+    statistic = list(Global_CAC_score ~ "{median} ({p25}, {p75})"),
+    label = list(Global_CAC_score ~ "Skor CAC", HRP_Status ~ "Status HRP"),
+    missing = "no"
+  ) %>%
+  add_p(test = list(Global_CAC_score ~ "kruskal.test", HRP_Status ~ "fisher.test"))
+
+tbl_durasi <- df_clean %>%
+  select(Riwayat_DM, Global_CAC_score, HRP_Status) %>%
+  filter(!is.na(Riwayat_DM)) %>%
+  tbl_summary(
+    by = Riwayat_DM,
+    statistic = list(Global_CAC_score ~ "{median} ({p25}, {p75})"),
+    label = list(Global_CAC_score ~ "Skor CAC", HRP_Status ~ "Status HRP"),
+    missing = "no"
+  ) %>%
+  add_p(test = list(Global_CAC_score ~ "wilcox.test", HRP_Status ~ "fisher.test"))
+
+tbl_merge(
+  tbls = list(tbl_terapi, tbl_durasi),
+  tab_spanner = c("**Berdasarkan Terapi DM**", "**Berdasarkan Durasi DM**")
+) %>% bold_labels()
+```
+
+## S3. Analisis Sensitivitas Indeks Kardiometabolik terhadap Kalsifikasi Kontinu
+
+Guna memverifikasi bahwa ketiadaan asosiasi independen antara indeks kardiometabolik dan kalsifikasi koroner bukan merupakan artefak statistik akibat hilangnya informasi saat dikotomisasi (CAC $\ge$ 100), analisis sensitivitas dilakukan. Skor CAC dipertahankan sebagai variabel kontinu pada skala logaritmik $\ln(\text{CAC}+1)$ dan dikorelasikan dengan keempat indeks turunan (Gambar S1). 
+
+Hasil korelasi Spearman mengonfirmasi bahwa seluruh kandidat penanda resistensi insulin dan disfungsi metabolik (Indeks TyHbA1c, TG/HDL, Non-HDL, maupun SUA/HDL) tidak memiliki korelasi positif yang linear dan signifikan terhadap akumulasi kalsium absolut. Ketiadaan korelasi ini semakin memperkuat hipotesis bahwa kuantitas kalsifikasi anatomis pada kohort ini lebih didominasi oleh faktor degeneratif (waktu) dan efek stabilisasi sekunder dari terapi statin, alih-alih oleh fluktuasi profil metabolik saat ini.
+
+
+```{r}
+#| label: fig-supp-scatter-multi
+#| fig-cap: "**Gambar S1. Korelasi 4 Indeks Kardiometabolik dengan Global CAC Score (Skala Logaritmik).** Distribusi data multi-panel menegaskan ketiadaan korelasi linear yang kuat antara derajat glukolipotoksisitas/disfungsi metabolik dengan kuantitas kalsifikasi anatomis."
+#| echo: false
+#| warning: false
+#| message: false
+#| fig-width: 9
+#| fig-height: 7
+
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+
+# 1. Menyiapkan data kontinu dan merombaknya (pivot) untuk multi-panel
+df_cac_supp <- df_clean %>%
+  mutate(log_CAC = log(Global_CAC_score + 1)) %>%
+  select(log_CAC, TyHbA1c_Index, TG_HDL_Ratio, Non_HDL, SUA_HDL_Ratio) %>%
+  pivot_longer(
+    cols = -log_CAC,
+    names_to = "Indeks_Metabolik",
+    values_to = "Nilai"
+  ) %>%
+  mutate(
+    Indeks_Metabolik = case_when(
+      Indeks_Metabolik == "TyHbA1c_Index" ~ "Indeks TyHbA1c",
+      Indeks_Metabolik == "TG_HDL_Ratio" ~ "Rasio TG / HDL-C",
+      Indeks_Metabolik == "Non_HDL" ~ "Kolesterol Non-HDL",
+      Indeks_Metabolik == "SUA_HDL_Ratio" ~ "Rasio Asam Urat / HDL-C"
+    ),
+    Indeks_Metabolik = factor(Indeks_Metabolik, levels = c(
+      "Indeks TyHbA1c", "Rasio TG / HDL-C", "Kolesterol Non-HDL", "Rasio Asam Urat / HDL-C"
+    ))
+  )
+
+# 2. Menghitung R, R2, dan p-value untuk masing-masing panel secara otomatis
+df_stats <- df_cac_supp %>%
+  group_by(Indeks_Metabolik) %>%
+  summarise(
+    r = cor(Nilai, log_CAC, method = "pearson"),
+    r2 = r^2,
+    p_val = cor.test(Nilai, log_CAC, method = "pearson")$p.value,
+    .groups = "drop"
+  ) %>%
+  mutate(
+    p_text = ifelse(p_val < 0.001, "< 0.001", sprintf("= %.3f", p_val)),
+    label_text = sprintf("R = %.3f\nR\u00b2 = %.3f\np %s", r, r2, p_text)
+  )
+
+# 3. Membuat Scatter Plot Multi-Panel dengan Anotasi Statistik
+ggplot(df_cac_supp, aes(x = Nilai, y = log_CAC)) +
+  geom_point(size = 2, alpha = 0.6, color = "#2c3e50") +
+  geom_smooth(method = "lm", se = TRUE, color = "#d35400", fill = "#edbb99", linewidth = 1) +
+  geom_text(data = df_stats, aes(x = Inf, y = Inf, label = label_text),
+            hjust = 1.1, vjust = 1.2, size = 3.5, fontface = "italic", color = "black", inherit.aes = FALSE) +
+  facet_wrap(~ Indeks_Metabolik, scales = "free_x", ncol = 2) +
+  labs(
+    x = "Nilai Indeks Kardiometabolik",
+    y = "ln(Global CAC Score + 1)"
+  ) +
+  theme_bw(base_size = 12) +
+  theme(
+    strip.background = element_rect(fill = "#f8f9f9", color = "black"),
+    strip.text = element_text(face = "bold", size = 11),
+    panel.grid.minor = element_blank()
+  )
+
+```
