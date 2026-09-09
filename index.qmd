@@ -57,6 +57,7 @@ format:
     echo: false
     warning: false
     message: false
+    reference-doc: template_pencil.docx
 bibliography: pencil_endokrin.bib
 lang: id
 crossref:
