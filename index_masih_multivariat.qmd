@@ -17,7 +17,7 @@ abstract: |
   
   **Metode:** Studi potong lintang dilakukan pada pasien DM yang menjalani pemeriksaan CTCA di RSUP Ngoerah, Denpasar pada tahun 2025. Data dianalisis menggunakan uji komparasi bivariat dan regresi logistik multivariat untuk mengevaluasi kontribusi independen dari masing-masing faktor klinis dan metabolik.
   
-  **Hasil:** Sebanyak 52 pasien DM dengan rekam medis lengkap dianalisis. Berdasarkan pencitraan CTCA, proporsi penemuan HRP tergolong tinggi, yakni sebesar 71,2%. Analisis bivariat menunjukkan bahwa kelompok dengan HRP positif memiliki rerata usia yang secara signifikan lebih tua dibandingkan kelompok HRP negatif (63,16 vs 55,8 tahun). Skor kalsifikasi absolut juga menunjukkan perbedaan ekstrem secara deskriptif (median 556,7 vs 11,6 Agatston). Seluruh kandidat indeks kardiometabolik turunan (Indeks TyHbA1c, Rasio TG/HDL, Non-HDL, dan Rasio SUA/HDL) tidak menunjukkan perbedaan yang bermakna secara statistik antar-kelompok pada kohort terbatas ini. Status PGK Stadium $\ge$ 3 menunjukkan tren klinis peningkatan risiko HRP, namun tidak mencapai kemaknaan statistik akibat ukuran sampel.
+  **Hasil:** Sebanyak 52 pasien DM dengan rekam medis lengkap dianalisis. Berdasarkan pencitraan CTCA, proporsi penemuan HRP tergolong tinggi, yakni sebesar 71,2%. Analisis bivariat menunjukkan bahwa kelompok dengan HRP positif memiliki rerata usia yang secara signifikan lebih tua dibandingkan kelompok HRP negatif (63,16 vs 55,8 tahun). Skor kalsifikasi absolut juga menunjukkan perbedaan ekstrem secara deskriptif (median 556,7 vs 11,6 Agatston). Seluruh kandidat indeks kardiometabolik turunan (Indeks TyHbA1c, Rasio TG/HDL, Non-HDL, dan Rasio SUA/HDL) tidak menunjukkan perbedaan yang bermakna secara statistik antar-kelompok pada kohort terbatas ini. Pada pemodelan multivariat, usia muncul sebagai satu-satunya prediktor independen yang bermakna secara statistik untuk pembentukan HRP (aOR 1,08; p = 0,045) dan CAC > 100 (aOR 1,10; p = 0,021). Status PGK Stadium $\ge$ 3 menunjukkan tren klinis peningkatan risiko HRP, namun tidak mencapai kemaknaan statistik akibat ukuran sampel.
   
   **Simpulan:** Penuaan (Usia) merupakan determinan utama yang menyetir kerentanan plak dan beban kalsifikasi pada pasien DM. Indeks kardiometabolik baru tidak memberikan nilai prediktif tambahan, kemungkinan akibat efek stabilisasi sekunder dari terapi statin intensitas tinggi yang diterima kohort ini sebelum prosedur CTCA.
 
@@ -31,7 +31,7 @@ abstract: |
   
   **Methods:** A cross-sectional study was conducted on DM patients undergoing CTCA at RSUP Ngoerah, Denpasar, in 2025. All candidate factors were compared bivariately by HRP status, and independent predictors were confirmed using multivariate logistic regression.
   
-  **Results:** A total of 52 DM patients with complete records were analyzed. Sixteen patients (30.7%) were newly diagnosed DM prior to CTCA. Among the 36 known DM cases, 17 (32.7%) were on oral antidiabetic medications, 17 (32.7%) were on insulin, and only 2 (3.8%) received no DM medication. Most patients were referred by cardiologists due to a prior history of cardiac events, and 37 (71.2%) were already on statin therapy. The proportion of HRP on CTCA was found in 71.2% patients. Bivariate analysis showed the HRP-positive group was significantly older (mean age 63.16 vs. 55.8 years, p<0.01) and had a higher calcification burden (median 556.7 vs. 11.6 Agatston, p<0.001) than the HRP-negative group. None of the derivative cardiometabolic indices (TyHbA1c Index, TG/HDL Ratio, Non-HDL Cholesterol, and SUA/HDL Ratio) showed statistically significant differences between the groups (p > 0.05). CKD Stage ≥ 3 indicated a clinical trend of increased HRP risk but did not reach statistical significance.
+  **Results:** A total of 52 DM patients with complete records were analyzed. Sixteen patients (30.7%) were newly diagnosed DM prior to CTCA. Among the 36 known DM cases, 17 (32.7%) were on oral antidiabetic medications, 17 (32.7%) were on insulin, and only 2 (3.8%) received no DM medication. Most patients were referred by cardiologists due to a prior history of cardiac events, and 37 (71.2%) were already on statin therapy. The proportion of HRP on CTCA was found in 71.2% patients. Bivariate analysis showed the HRP-positive group was significantly older (mean age 63.16 vs. 55.8 years, p<0.01) and had a higher calcification burden (median 556.7 vs. 11.6 Agatston, p<0.001) than the HRP-negative group. None of the derivative cardiometabolic indices (TyHbA1c Index, TG/HDL Ratio, Non-HDL Cholesterol, and SUA/HDL Ratio) showed statistically significant differences between the groups (p > 0.05). Multivariate analysis confirmed age as the sole independent predictor for both HRP formation (aOR 1.08; p=0.045) and CAC ≥ 100 (aOR 1.10; p=0.021). CKD Stage ≥ 3 indicated a clinical trend of increased HRP risk but did not reach statistical significance.
   
   **Conclusion:** Age is the primary determinant driving plaque vulnerability and calcification burden in DM patients. The lack of independent predictive value from lipid-based indices may partly reflect indication bias from concurrent statin therapy, warranting caution before adopting these indices as standalone risk-stratification tools.
 keywords:
@@ -51,10 +51,6 @@ format:
     toc: true            
     number-sections: true
     code-fold: true
-    warning: false
-    message: false
-  docx: 
-    echo: false
     warning: false
     message: false
 bibliography: pencil_endokrin.bib
@@ -89,7 +85,9 @@ Status fungsi ginjal dihitung menggunakan kriteria CKD-EPI, di mana PGK didefini
 
 **Analisis Statistik**
 
-Analisis dilakukan menggunakan perangkat lunak R. Analisis bivariat dilakukan dengan uji *Mann-Whitney U* atau *Independent T-test* untuk data numerik, serta uji *Chi-Square* atau *Fisher's Exact* untuk data kategorik. Kemampuan diskriminasi awal dari keempat indeks kardiometabolik dievaluasi dan divisualisasikan melalui kurva *Receiver Operating Characteristic* (ROC). Analisis regresi logistik multivariat dilakukan jika variabel bermakna secara statistik pada uji bivariat guna mencegah *overfitting*.
+Analisis dilakukan menggunakan perangkat lunak R. Analisis bivariat dilakukan dengan uji *Mann-Whitney U* atau *Independent T-test* untuk data numerik, serta uji *Chi-Square* atau *Fisher's Exact* untuk data kategorik. Kemampuan diskriminasi awal dari keempat indeks kardiometabolik dievaluasi dan divisualisasikan melalui kurva *Receiver Operating Characteristic* (ROC). Analisis bivariat dilanjutkan dengan pemodelan regresi multivariat.
+
+###### 1. Setup
 
 ```{r setup}
 #| message: false
@@ -103,7 +101,6 @@ library(ggplot2)       # Untuk visualisasi data
 library(gtsummary)     # Untuk membuat tabel hasil klinis yang rapi
 library(tidyverse)
 library(googlesheets4)
-library(flextable)
 ```
 
 ```{r load_data}
@@ -157,7 +154,7 @@ df_clean <- df_raw %>%
 #| warning: false
 #| message: false
 
-# Kalkulasi Deskriptif Dasar
+# 1. Kalkulasi Deskriptif Dasar
 n_total <- nrow(df_clean)
 n_hrp_pos <- sum(df_clean$HRP_Status == "HRP (+)")
 pct_hrp_pos <- round((n_hrp_pos / n_total) * 100, 1)
@@ -166,11 +163,61 @@ mean_usia_pos <- round(mean(df_clean$Usia[df_clean$HRP_Status == "HRP (+)"]), 2)
 mean_usia_neg <- round(mean(df_clean$Usia[df_clean$HRP_Status == "HRP (-)"]), 2)
 med_cac_pos <- round(median(df_clean$Global_CAC_score[df_clean$HRP_Status == "HRP (+)"]), 1)
 med_cac_neg <- round(median(df_clean$Global_CAC_score[df_clean$HRP_Status == "HRP (-)"]), 1)
+
+# 2. Persiapan Data Bebas List/Tibble untuk Model
+set.seed(123)
+df_model <- df_clean %>%
+  select(HRP_Status, CAC_100_plus, Usia, CKD_Status, TyHbA1c_Index) %>%
+  mutate(across(everything(), ~ unlist(.x))) %>%
+  as.data.frame()
+
+dd <- datadist(df_model)
+options(datadist = "dd")
+
+# 3. Model Regresi dan Validasi HRP
+model_hrp <- glm(HRP_Status ~ Usia + CKD_Status + TyHbA1c_Index, data = df_model, family = binomial(link = "logit"))
+sum_hrp <- summary(model_hrp)
+
+or_usia <- round(exp(coef(model_hrp)["Usia"]), 2)
+p_usia <- round(sum_hrp$coefficients["Usia", "Pr(>|z|)"], 3)
+
+or_ckd <- round(exp(coef(model_hrp)["CKD_Status"]), 2)
+ci_ckd <- exp(confint.default(model_hrp)["CKD_Status", ]) # Menggunakan Wald CI untuk keandalan
+p_ckd <- round(sum_hrp$coefficients["CKD_Status", "Pr(>|z|)"], 3)
+
+fit_lrm_hrp <- lrm(HRP_Status ~ Usia + CKD_Status + TyHbA1c_Index, data = df_model, x = TRUE, y = TRUE)
+val_hrp <- validate(fit_lrm_hrp, method = "boot", B = 200) # Validasi murni
+c_index_hrp_app <- 0.5 * (val_hrp["Dxy", "index.orig"] + 1)
+c_index_hrp_cor <- 0.5 * (val_hrp["Dxy", "index.corrected"] + 1)
+
+fit_red_hrp <- glm(HRP_Status ~ Usia + CKD_Status, data = df_model, family = binomial(link="logit"))
+lrt_hrp <- anova(fit_red_hrp, model_hrp, test="Chisq")
+p_lrt_hrp <- lrt_hrp[2, "Pr(>Chi)"]
+
+# 4. Model Regresi dan Validasi CAC >= 100
+model_cac <- glm(CAC_100_plus ~ Usia + CKD_Status + TyHbA1c_Index, data = df_model, family = binomial(link = "logit"))
+sum_cac <- summary(model_cac)
+
+or_usia_cac <- round(exp(coef(model_cac)["Usia"]), 2)
+p_usia_cac <- round(sum_cac$coefficients["Usia", "Pr(>|z|)"], 3)
+
+or_ckd_cac <- round(exp(coef(model_cac)["CKD_Status"]), 2)
+ci_ckd_cac <- exp(confint.default(model_cac)["CKD_Status", ])
+p_ckd_cac <- round(sum_cac$coefficients["CKD_Status", "Pr(>|z|)"], 3)
+
+fit_lrm_cac <- lrm(CAC_100_plus ~ Usia + CKD_Status + TyHbA1c_Index, data = df_model, x = TRUE, y = TRUE)
+val_cac <- validate(fit_lrm_cac, method = "boot", B = 200) # Validasi murni
+c_index_cac_app <- 0.5 * (val_cac["Dxy", "index.orig"] + 1)
+c_index_cac_cor <- 0.5 * (val_cac["Dxy", "index.corrected"] + 1)
+
+fit_red_cac <- glm(CAC_100_plus ~ Usia + CKD_Status, data = df_model, family = binomial(link="logit"))
+lrt_cac <- anova(fit_red_cac, model_cac, test="Chisq")
+p_lrt_cac <- lrt_cac[2, "Pr(>Chi)"]
 ```
 
 **Karakteristik Subjek dan Analisis Bivariat**
 
-Penelitian ini menganalisis total `r n_total` subjek yang memenuhi kriteria. Berdasarkan pencitraan CTCA, proporsi penemuan *High-Risk Plaque* (HRP) tergolong tinggi, yakni sebesar `r pct_hrp_pos`%. Analisis bivariat (\@tbl-baseline) menunjukkan bahwa kelompok dengan HRP positif memiliki rerata usia yang secara signifikan lebih tua dibandingkan kelompok HRP negatif (`r mean_usia_pos` vs `r mean_usia_neg` tahun, $p < 0,05$). Skor kalsifikasi absolut juga menunjukkan perbedaan ekstrem secara deskriptif (median `r format(med_cac_pos, big.mark=",")` vs `r format(med_cac_neg, big.mark=",")` Agatston). Menariknya, seluruh kandidat indeks kardiometabolik turunan (Indeks TyHbA1c, Rasio TG/HDL, Non-HDL, dan Rasio SUA/HDL) tidak menunjukkan perbedaan yang bermakna secara statistik antar-kelompok pada kohort terbatas ini.Seluruh kandidat indeks kardiometabolik turunan (Indeks TyHbA1c, Rasio TG/HDL, Non-HDL, dan Rasio SUA/HDL) tidak menunjukkan perbedaan yang bermakna secara statistik antar-kelompok pada kohort terbatas ini. Mengingat hanya faktor penuaan (usia) yang memenuhi kriteria seleksi awal ($p < 0,05$), tahapan pemodelan regresi multivariat tidak dilanjutkan untuk menghindari *overfitting* pada data.
+Penelitian ini menganalisis total `r n_total` subjek yang memenuhi kriteria. Berdasarkan pencitraan CTCA, proporsi penemuan *High-Risk Plaque* (HRP) tergolong tinggi, yakni sebesar `r pct_hrp_pos`%. Analisis bivariat (\@tbl-baseline) menunjukkan bahwa kelompok dengan HRP positif memiliki rerata usia yang secara signifikan lebih tua dibandingkan kelompok HRP negatif (`r mean_usia_pos` vs `r mean_usia_neg` tahun, $p < 0,05$). Skor kalsifikasi absolut juga menunjukkan perbedaan ekstrem secara deskriptif (median `r format(med_cac_pos, big.mark=",")` vs `r format(med_cac_neg, big.mark=",")` Agatston). Menariknya, seluruh kandidat indeks kardiometabolik turunan (Indeks TyHbA1c, Rasio TG/HDL, Non-HDL, dan Rasio SUA/HDL) tidak menunjukkan perbedaan yang bermakna secara statistik antar-kelompok pada kohort terbatas ini.
 
 ```{r}
 #| label: tbl-baseline
@@ -209,8 +256,7 @@ df_table %>%
   add_overall() %>%
   add_p() %>%
   bold_p(t = 0.05) %>%
-  modify_header(label = "**Karakteristik**") %>%
-  as_flex_table() # Tambahkan ujung ini agar rapi di Word
+  modify_header(label = "**Karakteristik**")
 ```
 
 **Eksplorasi Kurva ROC Indeks Kardiometabolik**
@@ -245,13 +291,75 @@ legend("bottomright",
 
 ```
 
+**Analisis Multivariat dan Validasi Model (Bootstrap)**
+
+Mempertimbangkan ukuran sampel, regresi logistik multivariat dikonstruksi secara ramping (*parsimonious*) dengan hanya memasukkan Usia, Status PGK, dan Indeks TyHbA1c sebagai representasi penanda resistensi insulin (Tabel 2 dan Tabel 3).
+
+Hasil multivariat mengonfirmasi bahwa **Usia** bertindak sebagai prediktor independen yang menyetir baik kualitas plak (HRP: aOR `r or_usia`; $p=`r p_usia`$) maupun kuantitas kalsifikasi (CAC $\ge$ 100: aOR `r or_usia_cac`; $p=`r p_usia_cac`$). Status PGK mengindikasikan tren risiko klinis yang kuat terhadap keberadaan HRP (aOR `r or_ckd`; 95% CI: `r round(ci_ckd[1], 2)`–`r round(ci_ckd[2], 2)`) dan kalsifikasi moderat-berat (aOR `r or_ckd_cac`; 95% CI: `r round(ci_ckd_cac[1], 2)`–`r round(ci_ckd_cac[2], 2)`), meski interval kepercayaannya yang lebar membuat temuan ini tidak mencapai signifikansi statistik ($p = `r p_ckd`$ dan $p = `r p_ckd_cac`$). Indeks TyHbA1c terbukti tidak memberikan kontribusi independen setelah disesuaikan terhadap faktor penuaan dan fungsi ginjal.
+
+```{r}
+#| label: tbl-regresi-hrp
+#| tbl-cap: "**Tabel 2. Analisis Regresi Logistik Multivariat Prediktor High-Risk Plaque (HRP)**"
+#| echo: false
+#| warning: false
+#| message: false
+
+tbl_regression(
+  model_hrp, 
+  exponentiate = TRUE,
+  label = list(
+    Usia ~ "Usia (Tahun)",
+    CKD_Status ~ "PGK Stadium ≥ 3",
+    TyHbA1c_Index ~ "Indeks TyHbA1c"
+  )
+) %>%
+  bold_p() %>%
+  modify_header(
+    label = "**Variabel**",
+    estimate = "**aOR**",
+    ci = "**IK 95%**",
+    p.value = "**Nilai *p***"
+  )
+```
+
+```{r}
+#| label: tbl-regresi-cac
+#| tbl-cap: "**Tabel 3. Analisis Regresi Logistik Multivariat Prediktor Kalsifikasi Koroner (CAC \u2265 100)**"
+#| echo: false
+#| warning: false
+#| message: false
+
+tbl_regression(
+  model_cac, 
+  exponentiate = TRUE,
+  label = list(
+    Usia ~ "Usia (Tahun)",
+    CKD_Status ~ "PGK Stadium ≥ 3",
+    TyHbA1c_Index ~ "Indeks TyHbA1c"
+  )
+) %>%
+  bold_p() %>%
+  modify_header(
+    label = "**Variabel**",
+    estimate = "**aOR**",
+    ci = "**IK 95%**",
+    p.value = "**Nilai *p***"
+  )
+```
+
+Guna menilai performa model secara objektif, validasi internal dengan *bootstrap resampling* (B=200 iterasi) dilakukan. Pada prediksi HRP, *optimism-corrected C-index* terkoreksi turun menjadi **`r round(c_index_hrp_cor, 3)`** (kategori diskriminasi lemah-sedang), di bawah nilai *apparent* awalnya (`r round(c_index_hrp_app, 3)`). Untuk prediksi kalsifikasi absolut (CAC $\ge$ 100), model lebih stabil dengan *C-index* terkoreksi sebesar **`r round(c_index_cac_cor, 3)`** (akseptabel).
+
+Uji Rasio Kemungkinan (*Likelihood Ratio Test*/LRT) memvalidasi penyederhanaan model ini; membandingkan model dasar (Usia+PGK) dengan model lengkap (Usia+PGK+TyHbA1c) mengonfirmasi bahwa penambahan penanda metabolik **tidak** memberikan perbaikan akurasi diagnostik yang bermakna secara statistik baik untuk memprediksi HRP ($p = `r round(p_lrt_hrp, 3)`$) maupun kalsifikasi ($p = `r round(p_lrt_cac, 3)`$). *(Catatan: Analisis pelengkap mengenai korelasi kontinyu, efek jenis terapi, durasi diabetes, serta penggunaan statin disajikan terpisah pada Supplementary Material).*
+
 ## Pembahasan
 
 Penelitian ini mengevaluasi kekuatan diskriminatif determinan klinis (Usia dan fungsi ginjal) dibandingkan dengan berbagai indeks kardiometabolik turunan terhadap keparahan aterosklerosis koroner. Bertentangan dengan hipotesis awal mengenai superioritas penanda resistensi insulin, temuan utama studi ini mengonfirmasi bahwa faktor penuaan dan paparan kumulatif merupakan prediktor independen yang mendominasi kerentanan plak maupun kalsifikasi anatomis, sementara indeks metabolik gagal menunjukkan efek independen.
 
 **Dominansi Usia dan Waktu Paparan (*Time-Dependent Effect*)**
 
-Keberhasilan Usia sebagai satu-satunya determinan klinis yang mencapai signifikansi statistik menyoroti karakter natural aterosklerosis sebagai patologi yang amat bergantung pada waktu (*time-dependent*). Semakin bertambah usia, semakin lama durasi sel endotel vaskular mengalami bombardir stres oksidatif dan disfungsi mekanik. Makrofag yang teraktivasi di ruang subendotel akan mensekresi *Matrix Metalloproteinases* (MMP) secara masif untuk mendegradasi matriks ekstraseluler pada tunika media [@newby2008metalloproteinase]. Degradasi matriks inilah yang mendasari kompensasi pembesaran lumen atau Fenomena Glagov (*positive remodeling*), salah satu fitur patognomonik dari plak berisiko tinggi (HRP) [@glagov1987compensatory]. Variabel fungsi ginjal (PGK stadium $\ge$ 3) pada kohort ini tidak mencapai signifikansi statistik, kemungkinan besar akibat ukuran sampel yang terbatas ($N=52$). Ketiadaan parameter dengan nilai $p < 0,25$ pada uji bivariat di luar faktor usia juga mendasari tidak dilanjutkannya pemodelan multivariat, guna menghindari bias artefak pada kesimpulan akhir.
+Keberhasilan Usia sebagai determinan terkuat dalam seluruh skema pemodelan menyoroti karakter natural aterosklerosis sebagai patologi yang amat bergantung pada waktu (*time-dependent*). Semakin bertambah usia, semakin lama durasi sel endotel vaskular mengalami bombardir stres oksidatif dan disfungsi mekanik. Berdasarkan patobiologi, makrofag yang teraktivasi di ruang subendotel akan mensekresi *Matrix Metalloproteinases* (MMP) secara masif untuk mendegradasi matriks ekstraseluler pada tunika media \[\@newby2008metalloproteinase\]. Degradasi matriks inilah yang mendasari kompensasi pembesaran lumen atau Fenomena Glagov (*positive remodeling*), salah satu fitur patognomonik dari plak berisiko tinggi (HRP) [@glagov1987compensatory].
+
+Tren serupa juga diamati pada peran Penyakit Ginjal Kronis. Walaupun ukuran sampel yang kecil ($N=52$) membuat variabel PGK tidak mencapai signifikansi *p-value* mutlak, namun *Odds Ratio* yang melipatganda (\> 2,0) mengindikasikan pola klinis yang relevan. Retensi toksin uremik pada PGK bertindak sinergis dengan paparan usia untuk memicu kalsifikasi medial melalui aktivasi poros kardiorenal yang persisten.
 
 **Bias Indikasi, Terapi Statin, dan Memori Metabolik**
 
@@ -305,8 +413,7 @@ df_clean %>%
   ) %>%
   add_p(test = list(Global_CAC_score ~ "wilcox.test", HRP_Status ~ "chisq.test")) %>%
   bold_labels() %>%
-  modify_header(label = "**Karakteristik Plak**") %>%
-  as_flex_table() # Tambahkan ujung ini agar rapi di Word
+  modify_header(label = "**Karakteristik Plak**")
 ```
 
 ## S2. Dampak Durasi Penyakit dan Modalitas Terapi Diabetes
@@ -344,8 +451,7 @@ tbl_durasi <- df_clean %>%
 tbl_merge(
   tbls = list(tbl_terapi, tbl_durasi),
   tab_spanner = c("**Berdasarkan Terapi DM**", "**Berdasarkan Durasi DM**")
-) %>% bold_labels() %>%
-  as_flex_table() # Tambahkan ujung ini agar rapi di Word
+) %>% bold_labels()
 ```
 
 ## S3. Analisis Sensitivitas Indeks Kardiometabolik terhadap Kalsifikasi Kontinu
@@ -355,7 +461,6 @@ Guna memverifikasi bahwa ketiadaan asosiasi independen antara indeks kardiometab
 Hasil korelasi Spearman mengonfirmasi bahwa seluruh kandidat penanda resistensi insulin dan disfungsi metabolik (Indeks TyHbA1c, TG/HDL, Non-HDL, maupun SUA/HDL) tidak memiliki korelasi positif yang linear dan signifikan terhadap akumulasi kalsium absolut. Ketiadaan korelasi ini semakin memperkuat hipotesis bahwa kuantitas kalsifikasi anatomis pada kohort ini lebih didominasi oleh faktor degeneratif (waktu) dan efek stabilisasi sekunder dari terapi statin, alih-alih oleh fluktuasi profil metabolik saat ini.
 
 ```{r}
-#| include: false
 #| label: fig-supp-scatter-multi
 #| fig-cap: "**Gambar S1. Korelasi 4 Indeks Kardiometabolik dengan Global CAC Score (Skala Logaritmik).** Distribusi data multi-panel menegaskan ketiadaan korelasi linear yang kuat antara derajat glukolipotoksisitas/disfungsi metabolik dengan kuantitas kalsifikasi anatomis."
 #| echo: false
@@ -424,7 +529,6 @@ ggplot(df_cac_supp, aes(x = Nilai, y = log_CAC)) +
 ```
 
 ```{r}
-#| include: false
 # Membuka koneksi file JPEG dengan resolusi tinggi (300 dpi)
 jpeg(filename = "Figure_1_ROC_Curve.jpg", width = 2400, height = 2000, res = 300, quality = 100)
 
@@ -450,7 +554,6 @@ cat("File Figure_1_ROC_Curve.jpg berhasil disimpan!\n")
 ```
 
 ```{r}
-#| include: false
 # Pastikan paket yang dibutuhkan sudah aktif
 library(ggplot2)
 library(tidyr)
@@ -516,7 +619,6 @@ cat("File Figure_2_Scatter_CAC.jpg berhasil disimpan!\n")
 ```
 
 ```{r}
-#| include: false
 # Pastikan paket yang dibutuhkan sudah aktif
 library(ggplot2)
 library(tidyr)

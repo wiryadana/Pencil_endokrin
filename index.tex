@@ -147,13 +147,19 @@
  
 
 
-\usepackage{booktabs}
-\usepackage{caption}
-\usepackage{longtable}
-\usepackage{colortbl}
-\usepackage{array}
-\usepackage{anyfontsize}
+\usepackage{fontspec}
 \usepackage{multirow}
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage[normalem]{ulem}
+\usepackage{hhline}
+\newlength\Oldarrayrulewidth
+\newlength\Oldtabcolsep
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{wrapfig}
 \usepackage{url} %this package should fix any errors with URLs in refs.
 \usepackage{lineno}
 \usepackage[inline]{trackchanges} %for better track changes. finalnew option will compile document with changes incorporated.
@@ -263,12 +269,9 @@ kalsifikasi absolut juga menunjukkan perbedaan ekstrem secara deskriptif
 (median 556,7 vs 11,6 Agatston). Seluruh kandidat indeks kardiometabolik
 turunan (Indeks TyHbA1c, Rasio TG/HDL, Non-HDL, dan Rasio SUA/HDL) tidak
 menunjukkan perbedaan yang bermakna secara statistik antar-kelompok pada
-kohort terbatas ini. Pada pemodelan multivariat, usia muncul sebagai
-satu-satunya prediktor independen yang bermakna secara statistik untuk
-pembentukan HRP (aOR 1,08; p = 0,045) dan CAC \textgreater{} 100 (aOR
-1,10; p = 0,021). Status PGK Stadium \(\ge\) 3 menunjukkan tren klinis
-peningkatan risiko HRP, namun tidak mencapai kemaknaan statistik akibat
-ukuran sampel.
+kohort terbatas ini. Status PGK Stadium \(\ge\) 3 menunjukkan tren
+klinis peningkatan risiko HRP, namun tidak mencapai kemaknaan statistik
+akibat ukuran sampel.
 
 \textbf{Simpulan:} Penuaan (Usia) merupakan determinan utama yang
 menyetir kerentanan plak dan beban kalsifikasi pada pasien DM. Indeks
@@ -283,46 +286,42 @@ intensitas tinggi yang diterima kohort ini sebelum prosedur CTCA.
 \textbf{Background:} Cardiovascular disease is a major complication of
 Diabetes Mellitus (DM). Computed Tomography Coronary Angiography (CTCA)
 is widely used to identify High-Risk Plaque (HRP) and coronary artery
-calcification (CAC). In addition to conventional risk factors, various
-novel cardiometabolic indices have been proposed; however, their
-real-world clinical application remains debated and limited,
-particularly among the diabetic population.
+calcification (CAC). Beyond conventional risk factors, several novel
+cardiometabolic indices have been proposed, but their real-world
+clinical value remains debated.
 
-\textbf{Objective:} To evaluate the association of traditional clinical
-risk factors (age, gender, chronic kidney disease {[}CKD{]},
-hypertension, smoking status), laboratory parameters (triglycerides,
-high-density lipoprotein {[}HDL{]}, low-density lipoprotein {[}LDL{]},
-total cholesterol, serum uric acid {[}SUA{]}, HbA1c), and novel
+\textbf{Objective:} To compare conventional clinical and laboratory risk
+factors (age, gender, chronic kidney disease {[}CKD{]}, hypertension,
+smoking status, lipid profile, uric acid, HbA1c) against four derivative
 cardiometabolic indices (TyHbA1c Index, TG/HDL Ratio, Non-HDL
-Cholesterol, SUA/HDL Ratio) with the presence of HRP and CAC (Agatston
-score).
+Cholesterol, SUA/HDL Ratio) as predictors of HRP and CAC ≥100 Agatston.
 
 \textbf{Methods:} A cross-sectional study was conducted on DM patients
-undergoing CTCA at RSUP Ngoerah, Denpasar, in 2025. Data were analyzed
-using bivariate comparative tests and multivariate logistic regression
-to evaluate the independent contribution of each clinical and metabolic
-factor.
+undergoing CTCA at RSUP Ngoerah, Denpasar, in 2025. All candidate
+factors were compared bivariately by HRP status, and independent
+predictors were confirmed using multivariate logistic regression.
 
 \textbf{Results:} A total of 52 DM patients with complete records were
-analyzed. Based on CTCA imaging, the proportion of HRP was notably high
-at 71.2\%. Bivariate analysis demonstrated that the HRP-positive group
-was significantly older than the HRP-negative group (mean age 63.16
-vs.~55.8 years). Absolute calcification scores also showed a severe
-descriptive difference (median 556.7 vs.~11.6 Agatston). None of the
-derivative cardiometabolic indices (TyHbA1c Index, TG/HDL Ratio, Non-HDL
-Cholesterol, and SUA/HDL Ratio) showed statistically significant
-differences between the groups in this limited cohort. In multivariate
-modeling, age emerged as the sole statistically significant independent
-predictor for both HRP formation (aOR 1.08; p = 0.045) and CAC
-\textgreater{} 100 (aOR 1.10; p = 0.021). CKD Stage \(\ge\) 3 indicated
-a clinical trend of increased HRP risk but did not reach statistical
-significance due to the small sample size.
+analyzed. Sixteen patients (30.7\%) were newly diagnosed DM prior to
+CTCA. Among the 36 known DM cases, 17 (32.7\%) were on oral antidiabetic
+medications, 17 (32.7\%) were on insulin, and only 2 (3.8\%) received no
+DM medication. Most patients were referred by cardiologists due to a
+prior history of cardiac events, and 37 (71.2\%) were already on statin
+therapy. The proportion of HRP on CTCA was found in 71.2\% patients.
+Bivariate analysis showed the HRP-positive group was significantly older
+(mean age 63.16 vs.~55.8 years, p\textless0.01) and had a higher
+calcification burden (median 556.7 vs.~11.6 Agatston, p\textless0.001)
+than the HRP-negative group. None of the derivative cardiometabolic
+indices (TyHbA1c Index, TG/HDL Ratio, Non-HDL Cholesterol, and SUA/HDL
+Ratio) showed statistically significant differences between the groups
+(p \textgreater{} 0.05). CKD Stage ≥ 3 indicated a clinical trend of
+increased HRP risk but did not reach statistical significance.
 
-\textbf{Conclusion:} Aging is the primary determinant driving plaque
-vulnerability and calcification burden in DM patients. Novel
-cardiometabolic indices do not provide additional predictive value,
-likely due to the secondary stabilizing effects of high-intensity statin
-therapy received by this cohort prior to CTCA.
+\textbf{Conclusion:} Age is the primary determinant driving plaque
+vulnerability and calcification burden in DM patients. The lack of
+independent predictive value from lipid-based indices may partly reflect
+indication bias from concurrent statin therapy, warranting caution
+before adopting these indices as standalone risk-stratification tools.
 \end{abstract}
 
 
@@ -333,40 +332,40 @@ therapy received by this cohort prior to CTCA.
 
 Penyakit kardiovaskular aterosklerotik (ASCVD) tetap menjadi penyebab
 utama morbiditas dan mortalitas pada pasien dengan Diabetes Mellitus
-(DM). Patogenesis aterosklerosis pada populasi DM sangatlah kompleks dan
+(DM). Patogenesis aterosklerosis pada populasi DM kompleks dan
 multifaktorial. Resistensi insulin kronis dan glukolipotoksisitas diakui
-sebagai motor utama pemicu disfungsi endotel (Bornfeldt \& Tabas, 2011).
-Hal ini memicu ketertarikan luas terhadap berbagai indeks
-kardiometabolik turunan---seperti Indeks TyHbA1c, Rasio Trigliserida
+sebagai faktor utama pemicu disfungsi endotel (Bornfeldt \& Tabas,
+2011). Hal ini memicu ketertarikan terhadap berbagai indeks
+kardiometabolik turunan seperti Indeks TyHbA1c, Rasio Trigliserida
 terhadap HDL (TG/HDL), Kolesterol Non-HDL, hingga Rasio Asam Urat
-terhadap HDL (SUA/HDL)---sebagai penanda biologis alternatif yang
+terhadap HDL (SUA/HDL) sebagai penanda biologis alternatif yang
 dihipotesiskan mampu merepresentasikan beban patofisiologis secara lebih
 presisi dibandingkan parameter lipid konvensional ({Jin dkk.}, 2020;
 {Won dkk.}, 2018).
 
 Di sisi lain, proses aterosklerosis tidak hanya dikendalikan oleh
-fluktuasi metabolik, melainkan juga sangat bergantung pada faktor
-degeneratif (Usia) dan durasi paparan stresor terhadap dinding vaskular.
+fluktuasi faktor metabolik, melainkan juga sangat bergantung pada faktor
+degeneratif (usia) dan durasi paparan stresor terhadap dinding vaskular.
 Lebih lanjut, literatur menegaskan bahwa komplikasi fungsi ginjal
 (Penyakit Ginjal Kronis/PGK) seringkali bertindak sebagai katalisator
-yang mempercepat progresi kalsifikasi melalui poros kardiorenal.
-Kehadiran PGK mampu melipatgandakan kerentanan vaskular melampaui efek
-parameter lipid atau glikemik semata.
+yang mempercepat progresi kalsifikasi. Kehadiran PGK mampu meningkatkan
+kerentanan jaringan vaskular melampaui efek parameter lipid atau
+glikemik semata.
 
 Dalam perspektif diagnostik modern, evaluasi anatomi koroner non-invasif
 menggunakan \emph{Computed Tomography Coronary Angiography} (CTCA)
 memungkinkan identifikasi \emph{High-Risk Plaque} (HRP) sebagai
 prekursor sindrom koroner akut ({Motoyama dkk.}, 2015), sekaligus
 mengkuantifikasi beban kalsifikasi (CAC Score) ({Cury dkk.}, 2022).
-Kendati berbagai indeks kardiometabolik baru terus bermunculan,
-keunggulan prediktif aktualnya bila disandingkan langsung
+Kendati berbagai penelitian indeks kardiometabolik baru terus
+bermunculan, keunggulan prediktif aktualnya bila disandingkan langsung
 (\emph{head-to-head}) dengan faktor risiko tradisional (seperti Usia dan
-fungsi ginjal) pada \emph{setting} dunia nyata masih menjadi perdebatan.
-Oleh karena itu, penelitian ini bertujuan untuk mengeksplorasi dan
-membandingkan kekuatan diskriminatif determinan klinis terhadap indeks
-kardiometabolik turunan dalam memprediksi kejadian HRP dan kalsifikasi
-koroner pada kohort DM, guna memfasilitasi stratifikasi risiko yang
-lebih rasional di ruang praktik.
+fungsi ginjal) pada konteks praktik klinik masih belum banyak
+dievaluasi. Oleh karena itu, penelitian ini bertujuan untuk
+mengeksplorasi faktor risiko tradisional dan indeks kardiometabolik
+turunan dalam memprediksi kejadian HRP dan kalsifikasi koroner pada
+kohort DM, guna memfasilitasi stratifikasi risiko yang lebih rasional
+pada praktek klinis.
 
 \section{Metode}\label{metode}
 
@@ -374,21 +373,20 @@ lebih rasional di ruang praktik.
 
 Penelitian ini merupakan studi analitik observasional dengan pendekatan
 potong lintang (\emph{cross-sectional}). Populasi target adalah pasien
-prediabetes dan DM yang menjalani pemeriksaan CTCA di RSUP Prof.~dr.
-I.G.N.G. Ngoerah pada periode 1 Januari 2025 hingga 31 Desember 2025.
-Teknik pengambilan sampel menggunakan \emph{consecutive sampling}.
-Kriteria inklusi meliputi: (1) Usia \(\ge\) 18 tahun; (2) Data rekam
-medis lengkap (usia, jenis kelamin, antropometri, durasi DM, terapi);
-(3) Hasil laboratorium lengkap dalam kurun 30 hari sebelum CTCA (HbA1c,
-profil lipid, asam urat, serum kreatinin). Pasien dengan riwayat
-\emph{Coronary Artery Bypass Grafting} (CABG) atau \emph{End-Stage Renal
-Disease} dieksklusi.
+DM yang menjalani pemeriksaan CTCA di RSUP Prof.~dr. I.G.N.G. Ngoerah
+pada periode 1 Januari 2025 hingga 31 Desember 2025. Teknik pengambilan
+sampel menggunakan \emph{consecutive sampling}. Kriteria inklusi
+meliputi: (1) Usia \(\ge\) 18 tahun; (2) Data rekam medis lengkap (usia,
+jenis kelamin, antropometri, durasi DM, terapi); (3) Hasil laboratorium
+lengkap dalam kurun 30 hari sebelum CTCA (HbA1c, profil lipid, asam
+urat, serum kreatinin). Pasien dengan riwayat \emph{Coronary Artery
+Bypass Grafting} (CABG) atau \emph{End-Stage Renal Disease} dieksklusi.
 
 \textbf{Pengumpulan Data dan Definisi Operasional}
 
 Data diekstraksi dari Sistem Informasi Manajemen Rumah Sakit (SIMRS).
-Untuk keperluan eksplorasi kardiometabolik, empat indeks turunan
-dihitung: 1. \textbf{Indeks TyHbA1c} =
+Terdapat empat indeks kardiometabolik turunan dihitung dari data: 1.
+\textbf{Indeks TyHbA1c} =
 \(\ln(\text{Trigliserida [mg/dL]} \times \text{HbA1c [\%]})\) 2.
 \textbf{Rasio TG/HDL} = \(\text{Trigliserida} / \text{HDL}\) 3.
 \textbf{Kolesterol Non-HDL} = \(\text{Kolesterol Total} - \text{HDL}\)
@@ -407,18 +405,12 @@ moderat-berat.
 
 Analisis dilakukan menggunakan perangkat lunak R. Analisis bivariat
 dilakukan dengan uji \emph{Mann-Whitney U} atau \emph{Independent
-T-test}, serta \emph{Chi-Square} atau \emph{Fisher's Exact}. Kemampuan
-diskriminasi awal dari keempat indeks kardiometabolik dievaluasi dan
-divisualisasikan melalui kurva \emph{Receiver Operating Characteristic}
-(ROC). Pemodelan Regresi Logistik Multivariat kemudian dikonstruksi
-secara \emph{a priori} dengan memasukkan Usia, status PGK, dan Indeks
-TyHbA1c (sebagai perwakilan indeks metabolik utama) untuk mencegah
-\emph{overfitting} pada sampel terbatas. Performa model divalidasi
-secara internal menggunakan \emph{bootstrap resampling} (B = 200
-iterasi) untuk memperoleh \emph{optimism-corrected C-index}, dan
-akurasinya diuji menggunakan \emph{Likelihood Ratio Test} (LRT).
-
-\subparagraph{1. Setup}\label{setup}
+T-test} untuk data numerik, serta uji \emph{Chi-Square} atau
+\emph{Fisher's Exact} untuk data kategorik. Kemampuan diskriminasi awal
+dari keempat indeks kardiometabolik dievaluasi dan divisualisasikan
+melalui kurva \emph{Receiver Operating Characteristic} (ROC). Analisis
+regresi logistik multivariat dilakukan jika variabel bermakna secara
+statistik pada uji bivariat guna mencegah \emph{overfitting}.
 
 \section{HASIL}\label{hasil}
 
@@ -434,52 +426,188 @@ juga menunjukkan perbedaan ekstrem secara deskriptif (median 556.7 vs
 11.6 Agatston). Menariknya, seluruh kandidat indeks kardiometabolik
 turunan (Indeks TyHbA1c, Rasio TG/HDL, Non-HDL, dan Rasio SUA/HDL) tidak
 menunjukkan perbedaan yang bermakna secara statistik antar-kelompok pada
-kohort terbatas ini.
+kohort terbatas ini.Seluruh kandidat indeks kardiometabolik turunan
+(Indeks TyHbA1c, Rasio TG/HDL, Non-HDL, dan Rasio SUA/HDL) tidak
+menunjukkan perbedaan yang bermakna secara statistik antar-kelompok pada
+kohort terbatas ini. Mengingat hanya faktor penuaan (usia) yang memenuhi
+kriteria seleksi awal (\(p < 0,05\)), tahapan pemodelan regresi
+multivariat tidak dilanjutkan untuk menghindari \emph{overfitting} pada
+data.
 
-\begin{table}
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{2.23in}|p{1.41in}|p{1.41in}|p{1.41in}|p{0.82in}}
 
 \caption{\label{tbl-baseline}\textbf{Tabel 1. Karakteristik Dasar,
 Profil Klinis, dan Komparasi Indeks Kardiometabolik Berdasarkan Status
 HRP}}
 
-\centering{
+\tabularnewline
 
-\fontsize{12.0pt}{14.0pt}\selectfont
-\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcccc}
-\toprule
-\textbf{Karakteristik} & \textbf{Overall}  N = 52\textsuperscript{\textit{1}} & \textbf{HRP (-)}  N = 15\textsuperscript{\textit{1}} & \textbf{HRP (+)}  N = 37\textsuperscript{\textit{1}} & \textbf{p-value}\textsuperscript{\textit{2}} \\ 
-\midrule\addlinespace[2.5pt]
-Usia (Tahun) & 63 (54, 67) & 57 (48, 63) & 64 (58, 69) & {\bfseries 0.010} \\ 
-Indeks Massa Tubuh (kg/m²) & 28.2 (24.4, 29.7) & 28.7 (25.6, 31.8) & 28.1 (24.0, 29.4) & 0.3 \\ 
-Penggunaan Statin &  &  &  & 0.3 \\ 
-    Tidak & 15 (29\%) & 6 (40\%) & 9 (24\%) &  \\ 
-    Ya & 37 (71\%) & 9 (60\%) & 28 (76\%) &  \\ 
-Modalitas Terapi DM &  &  &  & 0.7 \\ 
-    Tanpa Terapi/Diet & 18 (35\%) & 4 (27\%) & 14 (38\%) &  \\ 
-    OAD & 17 (33\%) & 6 (40\%) & 11 (30\%) &  \\ 
-    Insulin & 17 (33\%) & 5 (33\%) & 12 (32\%) &  \\ 
-Durasi Diagnosis DM &  &  &  & >0.9 \\ 
-    Baru Terdiagnosis & 16 (31\%) & 5 (33\%) & 11 (30\%) &  \\ 
-    Sudah Lama & 36 (69\%) & 10 (67\%) & 26 (70\%) &  \\ 
-Status Fungsi Ginjal &  &  &  & 0.3 \\ 
-    Normal/PGK ≤ 2 & 38 (73\%) & 13 (87\%) & 25 (68\%) &  \\ 
-    PGK stadium ≥ 3 & 14 (27\%) & 2 (13\%) & 12 (32\%) &  \\ 
-Skor CAC Aktual (Agatston) & 300 (16, 911) & 12 (0, 18) & 557 (219, 1,014) & {\bfseries <0.001} \\ 
-Indeks TyHbA1c & 6.86 (6.37, 7.33) & 6.84 (6.29, 8.09) & 6.88 (6.50, 7.32) & >0.9 \\ 
-Rasio TG / HDL-C & 3.5 (2.2, 5.1) & 2.9 (2.0, 7.6) & 3.6 (2.4, 5.0) & >0.9 \\ 
-Kolesterol Non-HDL (mg/dL) & 127 (103, 154) & 135 (116, 185) & 119 (97, 150) & 0.065 \\ 
-Rasio Asam Urat / HDL-C & 0.18 (0.13, 0.23) & 0.19 (0.13, 0.31) & 0.17 (0.14, 0.20) & 0.6 \\ 
-\bottomrule
-\end{tabular*}
-\begin{minipage}{\linewidth}
-\vspace{.05em}
-\textsuperscript{\textit{1}}Median (Q1, Q3); n (\%)\\
-\textsuperscript{\textit{2}}Wilcoxon rank sum exact test; Fisher's exact test\\
-\end{minipage}
+\ascline{1pt}{000000}{1-5}
 
-}
+\multicolumn{1}{>{\raggedright}m{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Karakteristik}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Overall}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 52}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{HRP\ (-)}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 15}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{HRP\ (+)}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 37}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{p-value}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{2}}}}} \\
 
-\end{table}%
+\ascline{1pt}{000000}{1-5}\endfirsthead 
+
+\ascline{1pt}{000000}{1-5}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Karakteristik}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Overall}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 52}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{HRP\ (-)}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 15}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{HRP\ (+)}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 37}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{p-value}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{2}}}}} \\
+
+\ascline{1pt}{000000}{1-5}\endhead
+
+
+
+\multicolumn{5}{>{\raggedright}m{\dimexpr 7.27in+8\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Median\ (Q1,\ Q3);\ n\ (\%)}}}} \\
+
+
+
+
+
+\multicolumn{5}{>{\raggedright}m{\dimexpr 7.27in+8\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{2}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Wilcoxon\ rank\ sum\ exact\ test;\ Fisher's\ exact\ test}}}} \\
+
+\endlastfoot
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Usia\ (Tahun)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 63\ (54,\ 67)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 57\ (48,\ 63)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 64\ (58,\ 69)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{0.010}}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Indeks\ Massa\ Tubuh\ (kg/m²)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 28.2\ (24.4,\ 29.7)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 28.7\ (25.6,\ 31.8)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 28.1\ (24.0,\ 29.4)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.3}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Penggunaan\ Statin}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.3}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 15.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Tidak}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 15\ (29\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 6\ (40\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 9\ (24\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 15.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Ya}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 37\ (71\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 9\ (60\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 28\ (76\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Modalitas\ Terapi\ DM}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.7}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 15.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Tanpa\ Terapi/Diet}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 18\ (35\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 4\ (27\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 14\ (38\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 15.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} OAD}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 17\ (33\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 6\ (40\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 11\ (30\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 15.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Insulin}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 17\ (33\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 5\ (33\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 12\ (32\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Durasi\ Diagnosis\ DM}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} >0.9}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 15.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Baru\ Terdiagnosis}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 16\ (31\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 5\ (33\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 11\ (30\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 15.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Sudah\ Lama}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 36\ (69\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 10\ (67\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 26\ (70\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Status\ Fungsi\ Ginjal}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.3}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 15.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Normal/PGK\ ≤\ 2}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 38\ (73\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 13\ (87\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 25\ (68\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 15.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} PGK\ stadium\ ≥\ 3}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 14\ (27\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 2\ (13\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 12\ (32\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Skor\ CAC\ Aktual\ (Agatston)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 300\ (16,\ 911)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 12\ (0,\ 18)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 557\ (219,\ 1,014)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{<0.001}}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Indeks\ TyHbA1c}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 6.86\ (6.37,\ 7.33)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 6.84\ (6.29,\ 8.09)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 6.88\ (6.50,\ 7.32)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} >0.9}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Rasio\ TG\ /\ HDL-C}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 3.5\ (2.2,\ 5.1)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 2.9\ (2.0,\ 7.6)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 3.6\ (2.4,\ 5.0)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} >0.9}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Kolesterol\ Non-HDL\ (mg/dL)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 127\ (103,\ 154)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 135\ (116,\ 185)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 119\ (97,\ 150)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.065}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.23in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Rasio\ Asam\ Urat\ /\ HDL-C}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.18\ (0.13,\ 0.23)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.19\ (0.13,\ 0.31)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.41in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.17\ (0.14,\ 0.20)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.6}}}} \\
+
+\ascline{1pt}{000000}{1-5}
+
+
+\end{longtable}
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
 
 \textbf{Eksplorasi Kurva ROC Indeks Kardiometabolik}
 
@@ -506,93 +634,6 @@ kerentanan plak (HRP) tergolong lemah pada kohort ini.}
 
 \end{figure}%
 
-\textbf{Analisis Multivariat dan Validasi Model (Bootstrap)}
-
-Mempertimbangkan ukuran sampel, regresi logistik multivariat
-dikonstruksi secara ramping (\emph{parsimonious}) dengan hanya
-memasukkan Usia, Status PGK, dan Indeks TyHbA1c sebagai representasi
-penanda resistensi insulin (Tabel 2 dan Tabel 3).
-
-Hasil multivariat mengonfirmasi bahwa \textbf{Usia} bertindak sebagai
-prediktor independen yang menyetir baik kualitas plak (HRP: aOR 1.08;
-\(p=0.045\)) maupun kuantitas kalsifikasi (CAC \(\ge\) 100: aOR 1.1;
-\(p=0.021\)). Status PGK mengindikasikan tren risiko klinis yang kuat
-terhadap keberadaan HRP (aOR 2.22; 95\% CI: 0.39--12.58) dan kalsifikasi
-moderat-berat (aOR 1.4; 95\% CI: 0.27--7.16), meski interval
-kepercayaannya yang lebar membuat temuan ini tidak mencapai signifikansi
-statistik (\(p = 0.369\) dan \(p = 0.69\)). Indeks TyHbA1c terbukti
-tidak memberikan kontribusi independen setelah disesuaikan terhadap
-faktor penuaan dan fungsi ginjal.
-
-\begin{table}
-
-\caption{\label{tbl-regresi-hrp}\textbf{Tabel 2. Analisis Regresi
-Logistik Multivariat Prediktor High-Risk Plaque (HRP)}}
-
-\centering{
-
-\fontsize{12.0pt}{14.0pt}\selectfont
-\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcccc}
-\toprule
-\textbf{Variabel} & \textbf{aOR} & \textbf{IK 95\%} & \textbf{95\% CI} & \textbf{Nilai \emph{p}} \\ 
-\midrule\addlinespace[2.5pt]
-Usia (Tahun) & 1.08 & 1.01,  1.17 & 1.01, 1.17 & {\bfseries 0.045} \\ 
-PGK Stadium ≥ 3 & 2.22 & 0.44,  16.7 & 0.44, 16.7 & 0.4 \\ 
-Indeks TyHbA1c & 1.05 & 0.35,  3.35 & 0.35, 3.35 & >0.9 \\ 
-\bottomrule
-\end{tabular*}
-\begin{minipage}{\linewidth}
-\vspace{.05em}
-Abbreviations: CI = Confidence Interval, OR = Odds Ratio\\
-\end{minipage}
-
-}
-
-\end{table}%
-
-\begin{table}
-
-\caption{\label{tbl-regresi-cac}\textbf{Tabel 3. Analisis Regresi
-Logistik Multivariat Prediktor Kalsifikasi Koroner (CAC ≥ 100)}}
-
-\centering{
-
-\fontsize{12.0pt}{14.0pt}\selectfont
-\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lcccc}
-\toprule
-\textbf{Variabel} & \textbf{aOR} & \textbf{IK 95\%} & \textbf{95\% CI} & \textbf{Nilai \emph{p}} \\ 
-\midrule\addlinespace[2.5pt]
-Usia (Tahun) & 1.10 & 1.02,  1.20 & 1.02, 1.20 & {\bfseries 0.021} \\ 
-PGK Stadium ≥ 3 & 1.40 & 0.28,  8.08 & 0.28, 8.08 & 0.7 \\ 
-Indeks TyHbA1c & 0.47 & 0.14,  1.40 & 0.14, 1.40 & 0.2 \\ 
-\bottomrule
-\end{tabular*}
-\begin{minipage}{\linewidth}
-\vspace{.05em}
-Abbreviations: CI = Confidence Interval, OR = Odds Ratio\\
-\end{minipage}
-
-}
-
-\end{table}%
-
-Guna menilai performa model secara objektif, validasi internal dengan
-\emph{bootstrap resampling} (B=200 iterasi) dilakukan. Pada prediksi
-HRP, \emph{optimism-corrected C-index} terkoreksi turun menjadi
-\textbf{0.669} (kategori diskriminasi lemah-sedang), di bawah nilai
-\emph{apparent} awalnya (0.728). Untuk prediksi kalsifikasi absolut (CAC
-\(\ge\) 100), model lebih stabil dengan \emph{C-index} terkoreksi
-sebesar \textbf{0.739} (akseptabel).
-
-Uji Rasio Kemungkinan (\emph{Likelihood Ratio Test}/LRT) memvalidasi
-penyederhanaan model ini; membandingkan model dasar (Usia+PGK) dengan
-model lengkap (Usia+PGK+TyHbA1c) mengonfirmasi bahwa penambahan penanda
-metabolik \textbf{tidak} memberikan perbaikan akurasi diagnostik yang
-bermakna secara statistik baik untuk memprediksi HRP (\(p = 0.931\))
-maupun kalsifikasi (\(p = 0.173\)). \emph{(Catatan: Analisis pelengkap
-mengenai korelasi kontinyu, efek jenis terapi, durasi diabetes, serta
-penggunaan statin disajikan terpisah pada Supplementary Material).}
-
 \section{Pembahasan}\label{pembahasan}
 
 Penelitian ini mengevaluasi kekuatan diskriminatif determinan klinis
@@ -606,26 +647,23 @@ indeks metabolik gagal menunjukkan efek independen.
 
 \textbf{Dominansi Usia dan Waktu Paparan (\emph{Time-Dependent Effect})}
 
-Keberhasilan Usia sebagai determinan terkuat dalam seluruh skema
-pemodelan menyoroti karakter natural aterosklerosis sebagai patologi
-yang amat bergantung pada waktu (\emph{time-dependent}). Semakin
-bertambah usia, semakin lama durasi sel endotel vaskular mengalami
-bombardir stres oksidatif dan disfungsi mekanik. Berdasarkan
-patobiologi, makrofag yang teraktivasi di ruang subendotel akan
-mensekresi \emph{Matrix Metalloproteinases} (MMP) secara masif untuk
-mendegradasi matriks ekstraseluler pada tunika media
-{[}@newby2008metalloproteinase{]}. Degradasi matriks inilah yang
-mendasari kompensasi pembesaran lumen atau Fenomena Glagov
+Keberhasilan Usia sebagai satu-satunya determinan klinis yang mencapai
+signifikansi statistik menyoroti karakter natural aterosklerosis sebagai
+patologi yang amat bergantung pada waktu (\emph{time-dependent}).
+Semakin bertambah usia, semakin lama durasi sel endotel vaskular
+mengalami bombardir stres oksidatif dan disfungsi mekanik. Makrofag yang
+teraktivasi di ruang subendotel akan mensekresi \emph{Matrix
+Metalloproteinases} (MMP) secara masif untuk mendegradasi matriks
+ekstraseluler pada tunika media (Newby, 2008). Degradasi matriks inilah
+yang mendasari kompensasi pembesaran lumen atau Fenomena Glagov
 (\emph{positive remodeling}), salah satu fitur patognomonik dari plak
-berisiko tinggi (HRP) (Glagov dkk., 1987).
-
-Tren serupa juga diamati pada peran Penyakit Ginjal Kronis. Walaupun
-ukuran sampel yang kecil (\(N=52\)) membuat variabel PGK tidak mencapai
-signifikansi \emph{p-value} mutlak, namun \emph{Odds Ratio} yang
-melipatganda (\textgreater{} 2,0) mengindikasikan pola klinis yang
-relevan. Retensi toksin uremik pada PGK bertindak sinergis dengan
-paparan usia untuk memicu kalsifikasi medial melalui aktivasi poros
-kardiorenal yang persisten.
+berisiko tinggi (HRP) (Glagov dkk., 1987). Variabel fungsi ginjal (PGK
+stadium \(\ge\) 3) pada kohort ini tidak mencapai signifikansi
+statistik, kemungkinan besar akibat ukuran sampel yang terbatas
+(\(N=52\)). Ketiadaan parameter dengan nilai \(p < 0,25\) pada uji
+bivariat di luar faktor usia juga mendasari tidak dilanjutkannya
+pemodelan multivariat, guna menghindari bias artefak pada kesimpulan
+akhir.
 
 \textbf{Bias Indikasi, Terapi Statin, dan Memori Metabolik}
 
@@ -716,6 +754,12 @@ angiography and the likelihood of acute coronary events in mid-term
 follow-up. \emph{Journal of the American College of Cardiology},
 \emph{66}(4), 337--346. \url{https://doi.org/10.1016/j.jacc.2015.05.069}
 
+\bibitem[\citeproctext]{ref-newby2008metalloproteinase}
+Newby, A. C. (2008). Metalloproteinase expression in macrophages: its
+role in plaque rupture and atherothrombosis. \emph{Arteriosclerosis,
+Thrombosis, and Vascular Biology}, \emph{28}(12), 2108--2114.
+\url{https://doi.org/10.1161/ATVBAHA.108.173898}
+
 \bibitem[\citeproctext]{ref-won2018relationship}
 {Won, K.-B., Park, G.-M., Lee, S.-E., Cho, I.-J., Kim, H.-C., Lee,
 B.-K., dkk.} (2018). Relationship of insulin resistance estimated by
@@ -740,33 +784,83 @@ menampilkan tren median skor CAC yang lebih tinggi dibandingkan pasien
 tanpa terapi statin, yang berpotensi mendilusi nilai prediktif murni
 dari parameter metabolik lipid pada pemodelan utama.
 
-\begin{table}
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{2.81in}|p{2.31in}|p{1.86in}|p{0.82in}}
 
 \caption{\label{tbl-supp-statin}\textbf{Tabel S1. Komparasi Skor
 Kalsifikasi dan Kerentanan Plak Berdasarkan Status Penggunaan Statin}}
 
-\centering{
+\tabularnewline
 
-\fontsize{12.0pt}{14.0pt}\selectfont
-\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lccc}
-\toprule
-\textbf{Karakteristik Plak} & \textbf{Tidak Menggunakan Statin}  N = 15\textsuperscript{\textit{1}} & \textbf{Menggunakan Statin}  N = 37\textsuperscript{\textit{1}} & \textbf{p-value}\textsuperscript{\textit{2}} \\ 
-\midrule\addlinespace[2.5pt]
-{\bfseries Skor CAC (Agatston)} & 210 (12, 557) & 302 (40, 923) & 0.5 \\ 
-{\bfseries Keberadaan High-Risk Plaque (HRP)} &  &  & 0.4 \\ 
-    HRP (-) & 6 (40\%) & 9 (24\%) &  \\ 
-    HRP (+) & 9 (60\%) & 28 (76\%) &  \\ 
-\bottomrule
-\end{tabular*}
-\begin{minipage}{\linewidth}
-\vspace{.05em}
-\textsuperscript{\textit{1}}Median (Q1, Q3); n (\%)\\
-\textsuperscript{\textit{2}}Wilcoxon rank sum exact test; Pearson's Chi-squared test\\
-\end{minipage}
+\ascline{1pt}{000000}{1-4}
 
-}
+\multicolumn{1}{>{\raggedright}m{\dimexpr 2.81in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Karakteristik\ Plak}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2.31in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Tidak\ Menggunakan\ Statin}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 15}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.86in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Menggunakan\ Statin}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 37}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{p-value}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{2}}}}} \\
 
-\end{table}%
+\ascline{1pt}{000000}{1-4}\endfirsthead 
+
+\ascline{1pt}{000000}{1-4}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 2.81in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Karakteristik\ Plak}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 2.31in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Tidak\ Menggunakan\ Statin}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 15}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.86in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Menggunakan\ Statin}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 37}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{p-value}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{2}}}}} \\
+
+\ascline{1pt}{000000}{1-4}\endhead
+
+
+
+\multicolumn{4}{>{\raggedright}m{\dimexpr 7.8in+6\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Median\ (Q1,\ Q3);\ n\ (\%)}}}} \\
+
+
+
+
+
+\multicolumn{4}{>{\raggedright}m{\dimexpr 7.8in+6\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{2}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Wilcoxon\ rank\ sum\ exact\ test;\ Pearson's\ Chi-squared\ test}}}} \\
+
+\endlastfoot
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.81in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Skor\ CAC\ (Agatston)}}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 2.31in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 210\ (12,\ 557)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.86in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 302\ (40,\ 923)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.5}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.81in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Keberadaan\ High-Risk\ Plaque\ (HRP)}}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 2.31in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.86in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.4}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.81in+0\tabcolsep}}{\advance\leftskip by 15.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} HRP\ (-)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 2.31in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 6\ (40\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.86in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 9\ (24\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 2.81in+0\tabcolsep}}{\advance\leftskip by 15.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} HRP\ (+)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 2.31in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 9\ (60\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.86in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 28\ (76\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} \\
+
+\ascline{1pt}{000000}{1-4}
+
+
+\end{longtable}
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
 
 \section{S2. Dampak Durasi Penyakit dan Modalitas Terapi
 Diabetes}\label{s2.-dampak-durasi-penyakit-dan-modalitas-terapi-diabetes}
@@ -780,37 +874,102 @@ deskriptif justru ditemukan pada kelompok pasien yang belum menerima
 intervensi obat anti-diabetik (hanya mengandalkan diet),
 merepresentasikan fase inflamasi vaskular yang sangat aktif (Tabel S2).
 
-\begin{table}
+\global\setlength{\Oldarrayrulewidth}{\arrayrulewidth}
+
+\global\setlength{\Oldtabcolsep}{\tabcolsep}
+
+\setlength{\tabcolsep}{2pt}
+
+\renewcommand*{\arraystretch}{1.5}
+
+
+
+\providecommand{\ascline}[3]{\noalign{\global\arrayrulewidth #1}\arrayrulecolor[HTML]{#2}\cline{#3}}
+
+\begin{longtable}[c]{|p{1.30in}|p{1.65in}|p{1.32in}|p{1.19in}|p{0.82in}|p{1.71in}|p{1.28in}|p{0.82in}}
 
 \caption{\label{tbl-supp-terapi}\textbf{Tabel S2. Distribusi Beban
 Kalsifikasi (CAC) dan Plak Rentan (HRP) Berdasarkan Modalitas Terapi dan
 Durasi Penyakit}}
 
-\centering{
+\tabularnewline
 
-\fontsize{12.0pt}{14.0pt}\selectfont
-\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lccccccc}
-\toprule
- & \multicolumn{4}{c}{{\textbf{Berdasarkan Terapi DM}}} & \multicolumn{3}{c}{{\textbf{Berdasarkan Durasi DM}}} \\ 
-\cmidrule(lr){2-5} \cmidrule(lr){6-8}
-\textbf{Characteristic} & \textbf{Tanpa Terapi/Diet}  N = 18\textsuperscript{\textit{1}} & \textbf{OAD}  N = 17\textsuperscript{\textit{1}} & \textbf{Insulin}  N = 17\textsuperscript{\textit{1}} & \textbf{p-value}\textsuperscript{\textit{2}} & \textbf{Baru Terdiagnosis}  N = 16\textsuperscript{\textit{1}} & \textbf{Sudah Lama}  N = 36\textsuperscript{\textit{1}} & \textbf{p-value}\textsuperscript{\textit{3}} \\ 
-\midrule\addlinespace[2.5pt]
-{\bfseries Skor CAC} & 215 (21, 853) & 861 (12, 1,161) & 219 (18, 476) & 0.4 & 148 (9, 540) & 398 (20, 926) & 0.2 \\ 
-{\bfseries Status HRP} &  &  &  & 0.7 &  &  & >0.9 \\ 
-    HRP (-) & 4 (22\%) & 6 (35\%) & 5 (29\%) &  & 5 (31\%) & 10 (28\%) &  \\ 
-    HRP (+) & 14 (78\%) & 11 (65\%) & 12 (71\%) &  & 11 (69\%) & 26 (72\%) &  \\ 
-\bottomrule
-\end{tabular*}
-\begin{minipage}{\linewidth}
-\vspace{.05em}
-\textsuperscript{\textit{1}}Median (Q1, Q3); n (\%)\\
-\textsuperscript{\textit{2}}Kruskal-Wallis rank sum test; Fisher's exact test\\
-\textsuperscript{\textit{3}}Wilcoxon rank sum exact test; Fisher's exact test\\
-\end{minipage}
+\ascline{1pt}{000000}{1-8}
 
-}
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.3in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ }}}} & \multicolumn{4}{>{\centering}m{\dimexpr 4.99in+6\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Berdasarkan\ Terapi\ DM}}}}} & \multicolumn{3}{>{\centering}m{\dimexpr 3.81in+4\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Berdasarkan\ Durasi\ DM}}}}} \\
 
-\end{table}%
+\ascline{1pt}{000000}{1-8}
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.3in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Characteristic}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.65in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Tanpa\ Terapi/Diet}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 18}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.32in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{OAD}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 17}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.19in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Insulin}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 17}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{p-value}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{2}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.71in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Baru\ Terdiagnosis}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 16}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.28in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Sudah\ Lama}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 36}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{p-value}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{3}}}}} \\
+
+\ascline{1pt}{000000}{1-8}\endfirsthead 
+
+\ascline{1pt}{000000}{1-8}
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.3in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ }}}} & \multicolumn{4}{>{\centering}m{\dimexpr 4.99in+6\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Berdasarkan\ Terapi\ DM}}}}} & \multicolumn{3}{>{\centering}m{\dimexpr 3.81in+4\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Berdasarkan\ Durasi\ DM}}}}} \\
+
+\ascline{1pt}{000000}{1-8}
+
+
+
+\multicolumn{1}{>{\raggedright}m{\dimexpr 1.3in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Characteristic}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.65in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Tanpa\ Terapi/Diet}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 18}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.32in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{OAD}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 17}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.19in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Insulin}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 17}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{p-value}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{2}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.71in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Baru\ Terdiagnosis}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 16}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 1.28in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Sudah\ Lama}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \ \ }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \linebreak }}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} N\ =\ 36}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}} & \multicolumn{1}{>{\centering}m{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{p-value}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{3}}}}} \\
+
+\ascline{1pt}{000000}{1-8}\endhead
+
+
+
+\multicolumn{8}{>{\raggedright}m{\dimexpr 10.1in+14\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{1}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Median\ (Q1,\ Q3);\ n\ (\%)}}}} \\
+
+
+
+
+
+\multicolumn{8}{>{\raggedright}m{\dimexpr 10.1in+14\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{2}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Kruskal-Wallis\ rank\ sum\ test;\ Fisher's\ exact\ test}}}} \\
+
+
+
+
+
+\multicolumn{8}{>{\raggedright}m{\dimexpr 10.1in+14\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textsuperscript{3}}}}\textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} Wilcoxon\ rank\ sum\ exact\ test;\ Fisher's\ exact\ test}}}} \\
+
+\endlastfoot
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 1.3in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Skor\ CAC}}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.65in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 215\ (21,\ 853)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.32in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 861\ (12,\ 1,161)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.19in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 219\ (18,\ 476)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.4}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.71in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 148\ (9,\ 540)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.28in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 398\ (20,\ 926)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.2}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 1.3in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} \textbf{Status\ HRP}}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.65in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.32in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.19in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 0.7}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.71in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.28in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} >0.9}}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 1.3in+0\tabcolsep}}{\advance\leftskip by 15.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} HRP\ (-)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.65in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 4\ (22\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.32in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 6\ (35\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.19in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 5\ (29\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.71in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 5\ (31\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.28in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 10\ (28\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} \\
+
+
+
+
+
+\multicolumn{1}{>{\raggedright}p{\dimexpr 1.3in+0\tabcolsep}}{\advance\leftskip by 15.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} HRP\ (+)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.65in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 14\ (78\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.32in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 11\ (65\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.19in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 12\ (71\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.71in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 11\ (69\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 1.28in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} 26\ (72\%)}}}} & \multicolumn{1}{>{\centering}p{\dimexpr 0.82in+0\tabcolsep}}{\advance\leftskip by 5.0pt\relax \advance\rightskip by 5.0pt\relax \textcolor[HTML]{000000}{\fontsize{11}{11}\selectfont{{\fontspec{Arial} }}}} \\
+
+\ascline{1pt}{000000}{1-8}
+
+
+\end{longtable}
+
+\arrayrulecolor[HTML]{000000}
+
+\global\setlength{\arrayrulewidth}{\Oldarrayrulewidth}
+
+\global\setlength{\tabcolsep}{\Oldtabcolsep}
+
+\renewcommand*{\arraystretch}{1}
 
 \section{S3. Analisis Sensitivitas Indeks Kardiometabolik terhadap
 Kalsifikasi
@@ -831,22 +990,6 @@ semakin memperkuat hipotesis bahwa kuantitas kalsifikasi anatomis pada
 kohort ini lebih didominasi oleh faktor degeneratif (waktu) dan efek
 stabilisasi sekunder dari terapi statin, alih-alih oleh fluktuasi profil
 metabolik saat ini.
-
-\begin{figure}
-
-\centering{
-
-\pandocbounded{\includegraphics[keepaspectratio]{index_files/figure-pdf/fig-supp-scatter-multi-1.pdf}}
-
-}
-
-\caption{\label{fig-supp-scatter-multi}\textbf{Gambar S1. Korelasi 4
-Indeks Kardiometabolik dengan Global CAC Score (Skala Logaritmik).}
-Distribusi data multi-panel menegaskan ketiadaan korelasi linear yang
-kuat antara derajat glukolipotoksisitas/disfungsi metabolik dengan
-kuantitas kalsifikasi anatomis.}
-
-\end{figure}%
 
 
 
