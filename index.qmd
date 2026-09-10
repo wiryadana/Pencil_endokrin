@@ -13,13 +13,13 @@ author:
 abstract: |
   **Latar Belakang:** Penyakit kardiovaskular adalah komplikasi utama Diabetes Mellitus (DM). *Computed Tomography Coronary Angiography* (CTCA) digunakan secara luas untuk mendeteksi *High-Risk Plaque* (HRP) dan kalsifikasi arteri koroner (CAC). Selain faktor risiko konvensional, berbagai indeks kardiometabolik baru telah diusulkan; namun, penerapannya di ruang praktik klinis dunia nyata masih diperdebatkan dan terbatas, terutama pada populasi DM.
   
-  **Tujuan:** Mengevaluasi asosiasi faktor risiko klinis tradisional (usia, jenis kelamin, Penyakit Ginjal Kronis [PGK], hipertensi, status merokok), parameter laboratorium (trigliserida, HDL, LDL, kolesterol total, asam urat serum [SUA], HbA1c), serta indeks kardiometabolik baru (Indeks TyHbA1c, Rasio TG/HDL, Kolesterol Non-HDL, Rasio SUA/HDL) terhadap keberadaan HRP dan CAC (Skor Agatston).
+  **Tujuan:** Mengevaluasi asosiasi faktor risiko klinis dan laboratorium konvensional (usia, jenis kelamin, fungsi ginjal, profil lipid, HbA1c) dibandingkan dengan empat indeks kardiometabolik turunan (Indeks TyHbA1c, Rasio TG/HDL, Kolesterol Non-HDL, Rasio SUA/HDL) sebagai prediktor keberadaan HRP dan keparahan kalsifikasi arteri koroner (CAC).
   
-  **Metode:** Studi potong lintang dilakukan pada pasien DM yang menjalani pemeriksaan CTCA di RSUP Ngoerah, Denpasar pada tahun 2025. Data dianalisis menggunakan uji komparasi bivariat dan regresi logistik multivariat untuk mengevaluasi kontribusi independen dari masing-masing faktor klinis dan metabolik.
+  **Metode:** Studi potong lintang dilakukan pada pasien DM yang menjalani pemeriksaan CTCA di RSUP Ngoerah, Denpasar pada tahun 2025. Data dianalisis menggunakan uji komparasi bivariat berdasarkan status HRP dan korelasi linear terhadap skor CAC, dengan pemodelan regresi multivariat direncanakan sebagai langkah kondisional jika prasyarat kemaknaan awal terpenuhi.
   
   **Hasil:** Sebanyak 52 pasien DM dengan rekam medis lengkap dianalisis. Enam belas pasien (30,7%) merupakan pasien yang baru terdiagnosis DM sebelum prosedur CTCA. Dari 36 kasus DM lama, 17 pasien (32,7%) mendapat terapi obat antidiabetik oral, 17 pasien (32,7%) mendapat insulin, dan hanya 2 pasien (3,8%) yang tidak mendapat obat DM. Mayoritas pasien dirujuk oleh kardiolog akibat riwayat kejadian kardiovaskular sebelumnya, dengan 37 pasien (71,2%) telah menerima terapi statin. Berdasarkan pencitraan CTCA, proporsi penemuan HRP tergolong tinggi, yakni sebesar 71,2%. Analisis bivariat menunjukkan bahwa kelompok dengan HRP positif memiliki rerata usia yang secara signifikan lebih tua dibandingkan kelompok HRP negatif (63,16 vs 55,8 tahun, p<0,01). Skor kalsifikasi absolut juga menunjukkan perbedaan ekstrem (median 556,7 vs 11,6 Agatston, p<0,001). Seluruh kandidat indeks kardiometabolik turunan tidak menunjukkan perbedaan yang bermakna secara statistik antar-kelompok pada kohort terbatas ini. Status PGK Stadium >= 3 menunjukkan tren klinis peningkatan risiko HRP, namun tidak mencapai kemaknaan statistik.
   
-  **Simpulan:** Penuaan (Usia) merupakan determinan utama yang menyetir kerentanan plak dan beban kalsifikasi pada pasien DM. Indeks kardiometabolik baru tidak memberikan nilai prediktif tambahan, kemungkinan akibat efek stabilisasi sekunder dari terapi statin intensitas tinggi yang diterima kohort ini sebelum prosedur CTCA.
+  **Simpulan:** Penuaan (Usia) merupakan determinan utama yang menyetir kerentanan plak dan beban kalsifikasi pada pasien DM. Indeks kardiometabolik turunan tidak memberikan nilai prediktif tambahan yang independen, kemungkinan akibat efek stabilisasi sekunder dari terapi statin yang diterima kohort ini sebelum prosedur CTCA.
 
   ---
 
@@ -27,13 +27,13 @@ abstract: |
 
   **Background:** Cardiovascular disease is a major complication of Diabetes Mellitus (DM). Computed Tomography Coronary Angiography (CTCA) is widely used to identify High-Risk Plaque (HRP) and coronary artery calcification (CAC). Beyond conventional risk factors, several novel cardiometabolic indices have been proposed, but their real-world clinical value remains debated.
   
-  **Objective:** To compare conventional clinical and laboratory risk factors (age, gender, chronic kidney disease [CKD], hypertension, smoking status, lipid profile, uric acid, HbA1c) against four derivative cardiometabolic indices (TyHbA1c Index, TG/HDL Ratio, Non-HDL Cholesterol, SUA/HDL Ratio) as predictors of HRP and CAC ≥100 Agatston.
+  **Objective:** To compare conventional clinical and laboratory risk factors (age, gender, renal function, lipid profile, HbA1c) against four derivative cardiometabolic indices (TyHbA1c Index, TG/HDL Ratio, Non-HDL Cholesterol, SUA/HDL Ratio) as predictors of HRP and the severity of coronary artery calcification (CAC).
   
-  **Methods:** A cross-sectional study was conducted on DM patients undergoing CTCA at RSUP Ngoerah, Denpasar, in 2025. All candidate factors were compared bivariately by HRP status, and independent predictors were confirmed using multivariate logistic regression.
+  **Methods:** A cross-sectional study was conducted on DM patients undergoing CTCA at RSUP Ngoerah, Denpasar, in 2025. All candidate factors were compared bivariately by HRP status and linearly correlated with CAC scores, with multivariate regression planned conditionally upon meeting initial statistical thresholds.
   
   **Results:** A total of 52 DM patients with complete records were analyzed. Sixteen patients (30.7%) were newly diagnosed DM prior to CTCA. Among the 36 known DM cases, 17 (32.7%) were on oral antidiabetic medications, 17 (32.7%) were on insulin, and only 2 (3.8%) received no DM medication. Most patients were referred by cardiologists due to a prior history of cardiac events, and 37 (71.2%) were already on statin therapy. The proportion of HRP on CTCA was found in 71.2% patients. Bivariate analysis showed the HRP-positive group was significantly older (mean age 63.16 vs. 55.8 years, p<0.01) and had a higher calcification burden (median 556.7 vs. 11.6 Agatston, p<0.001) than the HRP-negative group. None of the derivative cardiometabolic indices (TyHbA1c Index, TG/HDL Ratio, Non-HDL Cholesterol, and SUA/HDL Ratio) showed statistically significant differences between the groups (p > 0.05). CKD Stage ≥ 3 indicated a clinical trend of increased HRP risk but did not reach statistical significance.
   
-  **Conclusion:** Age is the primary determinant driving plaque vulnerability and calcification burden in DM patients. The lack of independent predictive value from lipid-based indices may partly reflect indication bias from concurrent statin therapy, warranting caution before adopting these indices as standalone risk-stratification tools.
+  **Conclusion:** Age is the primary determinant driving plaque vulnerability and calcification burden in DM patients. The lack of independent predictive value from derivative indices may partly reflect indication bias from concurrent statin therapy, warranting caution before adopting these indices as standalone risk-stratification tools.
 keywords:
   - High-Risk Plaque
   - Coronary Artery Calcification
@@ -211,6 +211,55 @@ pct_lama_opt <- format(round((n_nhdl_opt_lama / n_nhdl_opt) * 100, 0), decimal.m
 n_tg_norm <- sum(df_clean$TG_HDL_Ratio < 3.0, na.rm = TRUE)
 n_tg_norm_terkontrol <- sum(df_clean$TG_HDL_Ratio < 3.0 & df_clean$HbA1C < 7.0, na.rm = TRUE)
 pct_hba1c_tg_norm <- format(round((n_tg_norm_terkontrol / n_tg_norm) * 100, 0), decimal.mark=",")
+
+# 8. Kalkulasi Korelasi untuk Narasi (Log CAC)
+df_clean$log_CAC <- log(df_clean$Global_CAC_score + 1)
+
+# Fungsi untuk menghitung dan format korelasi
+get_cor <- function(var_name) {
+  res <- cor.test(df_clean[[var_name]], df_clean$log_CAC, method = "pearson")
+  r_val <- format(round(res$estimate, 3), decimal.mark=",")
+  p_num <- res$p.value
+  p_val <- ifelse(p_num < 0.001, "< 0,001", paste0("= ", format(round(p_num, 3), decimal.mark=",")))
+  return(list(r = r_val, p = p_val))
+}
+
+# Ekstrak nilai korelasi masing-masing variabel
+cor_tg <- get_cor("Trigliserida")
+cor_tc <- get_cor("Kolesterol-Total")
+cor_tghdl <- get_cor("TG_HDL_Ratio")
+cor_nhdl <- get_cor("Non_HDL")
+cor_usia <- get_cor("Usia")
+
+# 9. Kalkulasi PGK untuk Narasi Pembahasan
+n_hrp_neg <- sum(df_clean$HRP_Status == "HRP (-)", na.rm = TRUE)
+n_pgk_pos_hrp <- sum(df_clean$CKD_Status == 1 & df_clean$HRP_Status == "HRP (+)", na.rm = TRUE)
+n_pgk_neg_hrp <- sum(df_clean$CKD_Status == 1 & df_clean$HRP_Status == "HRP (-)", na.rm = TRUE)
+pct_pgk_pos_hrp <- format(round((n_pgk_pos_hrp / n_hrp_pos) * 100, 0), decimal.mark=",")
+pct_pgk_neg_hrp <- format(round((n_pgk_neg_hrp / n_hrp_neg) * 100, 0), decimal.mark=",")
+
+# 10. Kalkulasi P-value dan AUC Ekstra untuk Bab Pembahasan
+library(pROC)
+
+# AUC Non-HDL
+auc_nhdl <- format(round(auc(roc(df_clean$HRP_Status, df_clean$Non_HDL, quiet=TRUE)), 2), decimal.mark=",")
+
+# P-value Bivariat Non-HDL vs HRP (Wilcoxon)
+pval_nhdl_hrp <- format(round(wilcox.test(Non_HDL ~ HRP_Status, data = df_clean)$p.value, 3), decimal.mark=",")
+
+# P-value Non-HDL Kat vs CAC (Wilcoxon)
+df_clean$Non_HDL_Kat_Temp <- ifelse(df_clean$Non_HDL >= 130, "Tinggi", "Optimal")
+pval_nhdl_cac <- format(round(wilcox.test(Global_CAC_score ~ Non_HDL_Kat_Temp, data = df_clean)$p.value, 3), decimal.mark=",")
+
+# P-value Durasi DM vs Non-HDL Kat (Chi-Square)
+pval_durasi_nhdl <- format(round(chisq.test(table(df_clean$Riwayat_DM, df_clean$Non_HDL_Kat_Temp), correct = FALSE)$p.value, 3), decimal.mark=",")
+
+# P-value HbA1c vs TG/HDL (Chi-Square)
+df_clean$TG_HDL_Kat_Temp <- ifelse(df_clean$TG_HDL_Ratio >= 3.0, "Tinggi", "Normal")
+df_clean$HbA1C_Kat_Temp <- ifelse(df_clean$HbA1C >= 7.0, "Tidak Terkontrol", "Terkontrol")
+pval_hba1c_tghdl <- format(round(chisq.test(table(df_clean$HbA1C_Kat_Temp, df_clean$TG_HDL_Kat_Temp), correct = FALSE)$p.value, 3), decimal.mark=",")
+
+
 ```
 
 **Karakteristik Subjek, Profil Klinis, dan Analisis Bivariat**
@@ -223,7 +272,7 @@ Analisis bivariat menunjukkan bahwa kelompok dengan HRP positif memiliki rerata 
 
 Mengingat tingginya persentase pasien yang telah menerima terapi medis spesifik, evaluasi komparatif tambahan memperlihatkan fenomena paradoks kalsifikasi, di mana pasien yang menggunakan statin justru menampilkan tren median skor CAC yang lebih tinggi dibandingkan pasien tanpa statin (`r med_cac_statin_pos` vs `r med_cac_statin_neg` Agatston). Begitu pula pada durasi penyakit, pasien dengan DM yang sudah lama menampilkan beban kalsifikasi yang jauh lebih masif dibandingkan pasien yang baru terdiagnosis. Di sisi lain, proporsi kerentanan plak (HRP) tertinggi secara persentase justru ditemukan pada kelompok yang belum menerima intervensi obat anti-diabetik (hanya mengandalkan diet), merepresentasikan fase inflamasi vaskular primer yang sangat aktif.
 
-Seluruh kandidat indeks kardiometabolik turunan (Indeks TyHbA1c, Rasio TG/HDL, Non-HDL, dan Rasio SUA/HDL) secara konsisten tidak menunjukkan perbedaan yang bermakna secara statistik antar-kelompok pada kohort terbatas ini. Mengingat hanya faktor penuaan (usia) yang memenuhi kriteria seleksi awal ($p < 0,25$), tahapan pemodelan regresi multivariat tidak dilanjutkan untuk menghindari *overfitting* pada data.
+Seluruh kandidat indeks kardiometabolik turunan (Indeks TyHbA1c, Rasio TG/HDL, Non-HDL, dan Rasio SUA/HDL) secara konsisten tidak menunjukkan perbedaan yang bermakna secara statistik antar-kelompok pada kohort terbatas ini. Mengingat hanya faktor penuaan (usia) yang memenuhi kriteria seleksi awal ($p < 0,05$), tahapan pemodelan regresi multivariat tidak dilanjutkan untuk menghindari *overfitting* pada data.
 
 ```{r}
 #| label: tbl-baseline
@@ -439,11 +488,13 @@ tbl_merge(
 
 Untuk menelusuri akar penyebab dari anomali korelasi terbalik pada Kolesterol Non-HDL (di mana Non-HDL optimal justru memiliki kalsifikasi masif), analisis komparasi silang (*cross-tabulation*) dilakukan terhadap seluruh profil klinis pasien (@tbl-nonhdl).
 
-Hasil analisis membuktikan secara objektif bahwa anomali ini tidak semata-mata disetir oleh penggunaan statin ($p=0,200$), melainkan secara signifikan didominasi oleh faktor **Durasi Diagnosis DM** ($p=0,029$). Kelompok pasien dengan Kolesterol Non-HDL yang optimal (\< 130 mg/dL) ternyata berisi `r pct_lama_opt`% pasien dengan riwayat DM yang sudah lama. Tingginya skor kalsifikasi pada kelompok ini sejalan dengan kronisitas paparan penyakit, bukan sekadar cerminan profil lipid saat ini.
+Hasil analisis membuktikan secara objektif bahwa anomali ini tidak semata-mata disetir oleh penggunaan statin ($p=0,2$), melainkan secara signifikan didominasi oleh faktor **Durasi Diagnosis DM** ($p=0,029$). Kelompok pasien dengan Kolesterol Non-HDL yang optimal (\< 130 mg/dL) ternyata berisi `r pct_lama_opt`% pasien dengan riwayat DM yang sudah lama. Tingginya skor kalsifikasi pada kelompok ini sejalan dengan kronisitas paparan penyakit, bukan sekadar cerminan profil lipid saat ini.
 
 Di sisi lain, analisis terpisah pada Rasio TG/HDL (@tbl-tghdl) membuktikan signifikansi biologis dari indeks tersebut. Kelompok pasien dengan Rasio TG/HDL yang normal (\< 3,0) terbukti secara signifikan memiliki proporsi **Kontrol Glikemik (HbA1c)** yang jauh lebih baik (`r pct_hba1c_tg_norm`% terkontrol, $p=0,044$) dibandingkan kelompok dengan rasio tinggi. Hal ini memvalidasi Rasio TG/HDL sebagai penanda *surrogate* resistensi insulin yang representatif, meskipun indeks tersebut gagal mengungguli faktor degeneratif (usia) dalam memprediksi kerentanan plak dan kalsifikasi koroner permanen.
 
-Untuk memverifikasi ketahanan (*robustness*) dari temuan negatif ini, analisis lanjutan berupa evaluasi performa diagnostik (Kurva ROC) dan analisis korelasi linear sensitivitas terhadap skor CAC logaritmik turut dilakukan. Seluruh hasil analisis ini mengonfirmasi bahwa indeks kardiometabolik turunan memiliki daya diskriminasi yang lemah (AUC \< 0,70) dan tidak memiliki korelasi linear yang bermakna terhadap beban kalsifikasi, yang secara komprehensif dapat dilihat pada *Supplementary Material* (@fig-supp-roc dan @fig-supp-scatter).
+Untuk memverifikasi ketahanan (*robustness*) dari temuan ini, analisis lanjutan berupa evaluasi performa diagnostik (Kurva ROC) dan korelasi linear komprehensif turut dilakukan. Kurva ROC mengonfirmasi daya diskriminasi keempat indeks kardiometabolik yang lemah (AUC < 0,70) terhadap HRP (**@fig-supp-roc**). 
+
+Lebih lanjut, analisis korelasi terhadap skor CAC logaritmik (**@fig-supp-scatter**) justru menampilkan pola **korelasi negatif** yang signifikan secara statistik pada parameter lipid dan indeks turunannya, seperti Trigliserida ($R = `r cor_tg$r`, p `r cor_tg$p`$), Kolesterol Total ($R = `r cor_tc$r`, p `r cor_tc$p`$), Rasio TG/HDL ($R = `r cor_tghdl$r`, p `r cor_tghdl$p`$), dan Non-HDL ($R = `r cor_nhdl$r`, p `r cor_nhdl$p`$). Hal ini secara kuantitatif memperkuat argumen *metabolic memory* yang diobservasi sebelumnya: bahwa kalsifikasi yang semakin parah sejalan dengan intensitas kontrol lipid (efek statin kronis) saat ini, sehingga indeks metabolik sirkulasi menampilkan ilusi "berkorelasi terbalik" dan kehilangan relevansinya sebagai prediktor linier independen pada fase penyakit lanjut.
 
 ```{r}
 #| label: tbl-nonhdl
@@ -507,15 +558,15 @@ Penelitian ini mengevaluasi kekuatan diskriminatif determinan klinis (Usia dan f
 
 **Dominansi Usia dan Waktu Paparan (*Time-Dependent Effect*)**
 
-Keberhasilan Usia sebagai satu-satunya determinan klinis yang mencapai signifikansi statistik menyoroti karakter natural aterosklerosis sebagai patologi yang amat bergantung pada waktu (*time-dependent*). Semakin bertambah usia, semakin lama durasi sel endotel vaskular mengalami bombardir stres oksidatif dan disfungsi mekanik. Makrofag yang teraktivasi di ruang subendotel akan mensekresi *Matrix Metalloproteinases* (MMP) secara masif untuk mendegradasi matriks ekstraseluler pada tunika media [@newby2008metalloproteinase]. Degradasi matriks inilah yang mendasari kompensasi pembesaran lumen atau Fenomena Glagov (*positive remodeling*), salah satu fitur patognomonik dari plak berisiko tinggi (HRP) [@glagov1987compensatory]. Variabel fungsi ginjal (PGK stadium $\ge$ 3) pada kohort ini tidak mencapai signifikansi statistik, kemungkinan besar akibat ukuran sampel yang terbatas ($N=52$). Ketiadaan parameter dengan nilai $p < 0,25$ pada uji bivariat di luar faktor usia juga mendasari tidak dilanjutkannya pemodelan multivariat, guna menghindari bias artefak pada kesimpulan akhir.
+Keberhasilan Usia sebagai satu-satunya determinan klinis yang mencapai signifikansi statistik menyoroti karakter natural aterosklerosis sebagai patologi yang amat bergantung pada waktu (*time-dependent*). Semakin bertambah usia, semakin lama durasi sel endotel vaskular mengalami bombardir stres oksidatif dan disfungsi mekanik. Makrofag yang teraktivasi di ruang subendotel akan mensekresi *Matrix Metalloproteinases* (MMP) secara masif untuk mendegradasi matriks ekstraseluler pada tunika media [@newby2008metalloproteinase]. Degradasi matriks inilah yang mendasari kompensasi pembesaran lumen atau Fenomena Glagov (*positive remodeling*), salah satu fitur patognomonik dari plak berisiko tinggi (HRP) [@glagov1987compensatory]. Variabel komplikasi ginjal (PGK stadium $\ge$ 3) secara persentase menampilkan tren klinis peningkatan risiko yang jelas pada kelompok HRP positif dibandingkan HRP negatif (`r pct_pgk_pos_hrp`% vs `r pct_pgk_neg_hrp`%), namun belum mencapai kemaknaan statistik, kemungkinan besar akibat pembatasan kekuatan sampel tunggal ($N = `r n_total`$). Ketiadaan parameter dengan nilai $p < 0,05$ pada uji bivariat di luar faktor usia juga mendasari tidak dilanjutkannya pemodelan multivariat, guna menghindari bias artefak pada kesimpulan akhir.
 
 **Memori Metabolik, Paradoks Lipid, dan Resistensi Insulin**
 
-Temuan negatif mengenai kegagalan sebagian besar indeks kardiometabolik—termasuk TyHbA1c, TG/HDL, hingga SUA/HDL—dalam membedakan derajat anatomis aterosklerosis merupakan data observasional yang amat krusial. Kegagalan ini, ditambah dengan temuan paradoksikal berupa korelasi terbalik yang signifikan pada Kolesterol Non-HDL ($p=0,037$ terhadap peningkatan CAC), berhasil diurai melalui analisis tabulasi silang.
+Di antara keempat kandidat indeks kardiometabolik, **Kolesterol Non-HDL secara konsisten menampilkan sinyal diskriminatif yang paling menonjol** di sepanjang tahap analisis. Hal ini dibuktikan melalui margin signifikansi bivariat pada status HRP ($p = `r pval_nhdl_hrp`$), capaian *Area Under the Curve* tertinggi pada evaluasi kurva ROC (AUC = `r auc_nhdl`), serta korelasi linear negatif yang sangat bermakna terhadap logaritma kalsifikasi absolut ($R = `r cor_nhdl$r`, p `r cor_nhdl$p`$). Di sisi lain, indeks turunan yang murni merepresentasikan resistensi insulin seperti TyHbA1c dan Rasio SUA/HDL benar-benar tenggelam dan gagal menunjukkan sinyal asosiasi apapun.
 
-Berbeda dengan asumsi awal mengenai dominansi efek statin, anomali kalsifikasi ini secara statistik justru disetir oleh **durasi diagnosis DM** ($p=0,029$). Pasien dengan profil lipid yang "tampak optimal" di laboratorium ternyata adalah mereka yang telah mengidap DM dalam waktu yang sangat lama (82%). Hal ini merupakan manifestasi klinis klasik dari *metabolic memory* (memori metabolik). Kerusakan vaskular dan deposisi kalsium sejatinya telah berproses tanpa henti selama bertahun-tahun. Walaupun pada saat prosedur CTCA profil lipid mereka sudah ditekan hingga mencapai target (baik melalui perbaikan diet kronis, medikamentosa, maupun fase *burnt-out* metabolik), skor kalsifikasi koroner mereka sudah terlanjur melambung tinggi, sehingga menciptakan ilusi "paradoks lipid".
+Tingginya sorotan analitik pada Kolesterol Non-HDL ini—yang secara paradoksikal menunjukkan bahwa nilai Non-HDL yang "optimal" justru memiliki skor CAC yang jauh lebih masif ($p = `r pval_nhdl_cac`$)—berhasil diurai secara objektif melalui analisis tabulasi silang. Berbeda dengan asumsi awal mengenai dominansi efek statin, anomali kalsifikasi ini secara statistik disetir oleh **durasi diagnosis DM** ($p = `r pval_durasi_nhdl`$). Pasien dengan profil lipid yang "tampak optimal" di laboratorium ternyata adalah mereka yang telah mengidap DM dalam waktu yang sangat lama (`r pct_lama_opt`%). Hal ini merupakan manifestasi klinis klasik dari *metabolic memory* (memori metabolik). Kerusakan vaskular dan deposisi kalsium sejatinya telah berproses tanpa henti selama bertahun-tahun. Walaupun pada saat prosedur CTCA profil lipid sirkulasi mereka sudah ditekan hingga mencapai target (baik melalui perbaikan diet kronis, medikamentosa, maupun fase *burnt-out* metabolik), kalsifikasi koroner permanen mereka sudah terlanjur melambung tinggi, sehingga menciptakan ilusi "paradoks lipid".
 
-Sementara itu, signifikansi korelasi antara Rasio TG/HDL yang normal dengan pencapaian kontrol glikemik (HbA1c) yang baik ($p=0,044$) sangat menarik. Temuan ini memvalidasi kapasitas rasio tersebut sebagai cerminan status resistensi insulin dan kontrol metabolik sesaat. Namun, ketiadaan asosiasi Rasio TG/HDL terhadap luaran HRP dan CAC kembali menegaskan bahwa marker metabolik sirkulasi tidak mampu melampaui kekuatan faktor degeneratif (usia) dan waktu paparan (*time-dependent*) dalam memprediksi perubahan struktural vaskular permanen pada populasi DM.
+Sementara itu, signifikansi korelasi antara Rasio TG/HDL yang normal dengan pencapaian kontrol glikemik (HbA1c) yang baik (`r pct_hba1c_tg_norm`% terkontrol, $p = `r pval_hba1c_tghdl`$) sangat menarik. Temuan ini memvalidasi kapasitas rasio tersebut sebagai cerminan status resistensi insulin dan kontrol metabolik sesaat. Namun, ketiadaan asosiasi Rasio TG/HDL terhadap luaran HRP dan CAC kembali menegaskan bahwa marker metabolik sirkulasi tidak mampu melampaui kekuatan faktor degeneratif (usia) dan waktu paparan (*time-dependent*) dalam memprediksi perubahan struktural vaskular permanen pada populasi DM.
 
 **Keterbatasan**
 
@@ -639,7 +690,7 @@ legend("bottomright",
 
 **Korelasi Komprehensif Seluruh Parameter Klinis dan Laboratorium**
 
-Analisis korelasi linear yang komprehensif dilakukan untuk mengevaluasi hubungan antara seluruh variabel kontinu (termasuk usia, IMT, parameter laboratorium standar, dan indeks kardiometabolik) terhadap nilai logaritmik kalsifikasi koroner absolut ($\ln[\text{CAC}+1]$). Hasil pemetaan ini menegaskan kembali bahwa di antara seluruh parameter yang ada, faktor degeneratif (usia) merupakan satu-satunya variabel yang secara konsisten menunjukkan tren korelasi linear yang bermakna positif, sementara seluruh indeks kardiometabolik turunan tidak memiliki korelasi yang signifikan (**\@fig-supp-scatter**).
+Analisis korelasi linear yang komprehensif dilakukan untuk mengevaluasi hubungan antara seluruh variabel kontinu (termasuk usia, IMT, parameter laboratorium standar, dan indeks kardiometabolik) terhadap nilai logaritmik kalsifikasi koroner absolut ($\ln[\text{CAC}+1]$). Hasil pemetaan ini menegaskan bahwa faktor degeneratif (usia) merupakan satu-satunya variabel yang secara konsisten menunjukkan tren korelasi linear yang bermakna **positif** ($R = `r cor_usia$r`, p `r cor_usia$p`$). Sebaliknya, seluruh parameter lipid sirkulasi beserta indeks turunannya (termasuk Rasio TG/HDL dan Non-HDL) secara konsisten menunjukkan korelasi linear yang bermakna namun dengan arah **negatif**. Pola ini mendukung hipotesis bias indikasi terapi profilaksis agresif (statin) yang diberikan secara proporsional terhadap tingkat keparahan aterosklerosis klinis pasien (**\@fig-supp-scatter**).
 
 ```{r}
 #| label: fig-supp-scatter
