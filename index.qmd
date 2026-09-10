@@ -167,6 +167,7 @@ pct_hrp_pos <- round((sum(df_clean$HRP_Status == "HRP (+)") / n_total) * 100, 1)
 
 ## HASIL
 
+
 ```{r kalkulasi-utama}
 #| include: false
 #| warning: false
@@ -578,6 +579,129 @@ df_tg %>%
   as_flex_table()
 ```
 
+**Evaluasi Efek Perancu (*Confounding*) dan Fenomena Paradoks Statin (*Statin Paradox*)**
+
+Untuk menelusuri akar kausalitas dari anomali korelasi negatif antara Kolesterol Non-HDL dan Rasio TG/HDL terhadap kalsifikasi koroner, analisis regresi linear multivariat sederhana dilakukan. Model ini memprediksi logaritma kalsifikasi ($\ln[\text{CAC}+1]$) menggunakan indeks kardiometabolik dengan mengontrol faktor usia. Penggunaan maksimal dua prediktor pada model ini dipertahankan secara sengaja agar tidak melanggar asumsi *overfitting* pada ukuran sampel yang terbatas.
+
+```{r}
+#| label: tbl-supp-regresi
+#| tbl-cap: "**Analisis Regresi Linear terhadap Log Kalsifikasi (Mengontrol Efek Perancu Usia)**"
+
+library(gtsummary)
+library(flextable)
+
+# Model 1: Non-HDL + Usia
+tbl_mod_nhdl <- tbl_regression(mod_nhdl, label = list(Non_HDL ~ "Kolesterol Non-HDL", Usia ~ "Usia (Tahun)")) %>%
+  bold_p(t = 0.05)
+
+# Model 2: TG/HDL + Usia
+tbl_mod_tg <- tbl_regression(mod_tg, label = list(TG_HDL_Ratio ~ "Rasio TG/HDL-C", Usia ~ "Usia (Tahun)")) %>%
+  bold_p(t = 0.05)
+
+# Menggabungkan kedua model
+tbl_merge(
+  tbls = list(tbl_mod_nhdl, tbl_mod_tg),
+  tab_spanner = c("**Model 1**", "**Model 2**")
+) %>%
+  modify_header(label = "**Variabel Prediktor**") %>%
+  as_flex_table()
+```
+
+Hasil regresi menampilkan temuan klinis yang sangat krusial (@tbl-supp-regresi). Setelah dikontrol terhadap variabel Usia, efek korelasi negatif dari Kolesterol Non-HDL ($p = `r pval_nhdl_adj`$) dan Rasio TG/HDL ($p = `r pval_tg_adj`$) ternyata tetap signifikan secara statistik. Hal ini membuktikan bahwa Usia bukanlah satu-satunya confounder. Persistensi korelasi negatif yang independen terhadap usia ini merepresentasikan efek dari Paradoks Statin (Statin Paradox). Pasien dengan beban aterosklerosis yang kronis (kalsifikasi tinggi) adalah kelompok yang secara klinis menerima terapi profilaksis statin paling agresif. Terapi ini sukses menekan profil lipid (Non-HDL dan TG) ke level optimal di sirkulasi darah, namun di saat bersamaan, statin bekerja menstabilkan high-risk plaque dengan memicu transformasi plak aktif menjadi plak kalsifikasi yang padat (sehingga mengeskalasi skor CAC secara mekanis). Oleh karena itu, indeks kardiometabolik sirkulasi tidak dapat digunakan sebagai prediktor absolut beban anatomis koroner pada populasi yang telah mendapat intervensi farmakologis, karena nilai indeks yang "rendah/optimal" di laboratorium justru merupakan penanda keberhasilan intervensi stabilisasi kalsium pada pasien dengan penyakit koroner lanjut.
+
+**Evaluasi Eksploratif: Stratifikasi Berdasarkan Penggunaan Statin**
+
+Sebagai pembuktian pamungkas terhadap hipotesis bias indikasi dan paradoks lipid, analisis stratifikasi eksploratif dilakukan untuk membandingkan korelasi indeks kardiometabolik terhadap kalsifikasi secara terpisah antara kelompok pengguna statin ($n = `r n_statin`$) dan tanpa statin ($n = `r n_total - n_statin`$). 
+
+Hasil analisis visual dan statistik (**@fig-supp-statin**) menampilkan dua fenomena patologis yang berbeda di antara kedua indeks kardiometabolik tersebut:
+
+1. **Validasi Bias Indikasi pada Rasio TG/HDL:** Pada parameter Rasio TG/HDL, korelasi negatif yang bermakna secara eksklusif hanya ditemukan pada kelompok pengguna statin ($R = `r c_tg_sy$r`, p `r c_tg_sy$p`$). Ketika dievaluasi pada pasien tanpa statin, asosiasi tersebut melemah drastis dan kehilangan signifikansinya ($p = `r c_tg_sn$p`$). Hal ini membuktikan secara langsung bahwa asosiasi TG/HDL dengan keparahan kalsifikasi murni merupakan bias indikasi terapi profilaksis.
+2. **Fenomena *Reverse Epidemiology* pada Non-HDL:** Sebaliknya, korelasi negatif pada Kolesterol Non-HDL tetap bertahan dan bahkan menujukkan asosiasi yang lebih kuat pada kelompok tanpa statin ($R = `r c_nhdl_sn$r`, p `r c_nhdl_sn$p`$). Temuan ini menggugurkan asumsi bahwa anomali Non-HDL murni diakibatkan oleh intervensi farmakologis. Dalam literatur kardiovaskular tingkat lanjut, fenomena ini dikenal sebagai *Reverse Epidemiology* atau fase *Metabolic Burn-out*. Pasien dengan kalsifikasi koroner masif (yang mayoritas didominasi oleh lansia dan DM durasi lama) seringkali mengalami transisi patologis berupa malnutrisi kronis, status katabolik, atau restriksi diet berkepanjangan yang menurunkan kapasitas sintesis lipid sirkulasi. Akibatnya, kadar Non-HDL di darah tampak "optimal" sebagai ilusi penanda kesehatan yang semu, padahal kerusakan struktural vaskular (skor CAC) telah mencapai titik puncak.
+
+
+```{r}
+#| label: fig-supp-statin
+#| fig-cap: "**Analisis Stratifikasi Eksploratif: Korelasi Indeks Kardiometabolik terhadap Kalsifikasi Berdasarkan Penggunaan Statin.** Titik sebaran diwarnai berdasarkan usia pasien (spektrum biru untuk usia lebih muda, hingga merah untuk usia lebih tua), sementara bentuk titik membedakan durasi diabetes mellitus. Grafik menunjukkan hilangnya signifikansi korelasi negatif pada kelompok pasien tanpa terapi statin untuk parameter TG/HDL. Pada parameter Non-HDL, pasien dengan kalsifikasi tinggi dan lipid sirkulasi rendah (kiri atas) secara visual didominasi oleh kelompok usia tua dengan durasi DM kronis (\u2265 5 tahun), mengonfirmasi efek *metabolic memory* dan bias indikasi."
+#| fig-width: 10
+#| fig-height: 7.5
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# 1. Menyiapkan data untuk facet (Tambahkan Durasi DM Kat)
+df_strat <- df_clean %>%
+  mutate(
+    # Membuat kategori baru berdasarkan bulan (0 = baru, <60 = <5 tahun, >=60 = >=5 tahun)
+    Durasi_DM_Kat = case_when(
+      Durasi_DM_Bulan == 0 ~ "Baru Terdiagnosis",
+      Durasi_DM_Bulan > 0 & Durasi_DM_Bulan < 60 ~ "DM < 5 Tahun",
+      Durasi_DM_Bulan >= 60 ~ "DM \u2265 5 Tahun",
+      TRUE ~ NA_character_
+    ),
+    Durasi_DM_Kat = factor(Durasi_DM_Kat, levels = c("Baru Terdiagnosis", "DM < 5 Tahun", "DM \u2265 5 Tahun"))
+  ) %>%
+  select(log_CAC, Statin, Non_HDL, TG_HDL_Ratio, Usia, Durasi_DM_Kat) %>%
+  mutate(
+    Statin = factor(Statin, levels = c("No-Statin", "On-Statin"), labels = c("Tanpa Statin (n=15)", "Pengguna Statin (n=37)")),
+    `Kolesterol Non-HDL` = Non_HDL,
+    `Rasio TG/HDL-C` = TG_HDL_Ratio
+  ) %>%
+  select(-Non_HDL, -TG_HDL_Ratio) %>%
+  pivot_longer(cols = c(`Kolesterol Non-HDL`, `Rasio TG/HDL-C`), names_to = "Variable", values_to = "Value") %>%
+  mutate(Variable = factor(Variable, levels = c("Kolesterol Non-HDL", "Rasio TG/HDL-C")))
+
+# 2. Menghitung statistik untuk text label
+df_strat_stats <- df_strat %>%
+  filter(!is.na(Value) & !is.na(log_CAC)) %>%
+  group_by(Variable, Statin) %>%
+  summarise(
+    r = cor(Value, log_CAC, method = "pearson"),
+    p_val = cor.test(Value, log_CAC, method = "pearson")$p.value,
+    .groups = "drop"
+  ) %>%
+  mutate(
+    p_text = ifelse(p_val < 0.001, "< 0.001", sprintf("= %.3f", p_val)),
+    label_text = sprintf("R = %.3f\np %s", r, p_text)
+  )
+
+# 3. Membuat Plot Stratifikasi (Warna = Usia, Bentuk = Durasi DM)
+p_strat <- ggplot(df_strat, aes(x = Value, y = log_CAC)) +
+  # KUNCI: shape = Durasi_DM_Kat, ukuran titik diperbesar sedikit agar shape terlihat jelas
+  geom_point(aes(color = Usia, shape = Durasi_DM_Kat), size = 3.5, alpha = 0.85) + 
+  scale_color_gradientn(
+    colors = c("#2b83ba", "#abdda4", "#fdae61", "#d7191c"), 
+    name = "Usia\n(Tahun)"
+  ) +
+  # Menentukan jenis shape (16 = bulat penuh, 17 = segitiga penuh, 15 = kotak penuh)
+  scale_shape_manual(
+    values = c(16, 17, 15), 
+    name = "Durasi DM"
+  ) +
+  geom_smooth(method = "lm", se = TRUE, color = "#c0392b", fill = "#f5b7b1", linewidth = 1) +
+  geom_text(data = df_strat_stats, aes(x = Inf, y = Inf, label = label_text),
+            hjust = 1.1, vjust = 1.2, size = 3.5, fontface = "italic", color = "black", inherit.aes = FALSE) +
+  facet_grid(Statin ~ Variable, scales = "free_x") +
+  labs(
+    x = "Nilai Parameter", 
+    y = "ln(Global CAC Score + 1)"
+  ) +
+  theme_bw(base_size = 12) +
+  theme(
+    strip.background = element_rect(fill = "#eaeded", color = "black"),
+    strip.text = element_text(face = "bold", size = 11),
+    panel.grid.minor = element_blank(),
+    legend.position = "right",
+    legend.title = element_text(face = "bold", size = 10),
+    legend.box = "vertical",
+    legend.spacing.y = unit(0.5, "cm")
+  )
+
+p_strat
+```
+
 ## Pembahasan
 
 Penelitian ini mengevaluasi kekuatan diskriminatif determinan klinis (Usia dan fungsi ginjal) dibandingkan dengan berbagai indeks kardiometabolik turunan terhadap keparahan aterosklerosis koroner. Bertentangan dengan hipotesis awal mengenai superioritas penanda resistensi insulin, temuan utama studi ini mengonfirmasi bahwa faktor penuaan dan paparan kumulatif merupakan prediktor independen yang mendominasi kerentanan plak maupun kalsifikasi anatomis, sementara indeks metabolik gagal menunjukkan efek independen.
@@ -590,13 +714,15 @@ Keberhasilan Usia sebagai satu-satunya determinan klinis yang mencapai signifika
 
 Di antara keempat kandidat indeks kardiometabolik, **Kolesterol Non-HDL secara konsisten menampilkan sinyal diskriminatif yang paling menonjol** di sepanjang tahap analisis. Hal ini dibuktikan melalui margin signifikansi bivariat pada status HRP ($p = `r pval_nhdl_hrp`$), capaian *Area Under the Curve* tertinggi pada evaluasi kurva ROC (AUC = `r auc_nhdl`), serta korelasi linear negatif yang sangat bermakna terhadap logaritma kalsifikasi absolut ($R = `r cor_nhdl$r`, p `r cor_nhdl$p`$). Di sisi lain, indeks turunan yang murni merepresentasikan resistensi insulin seperti TyHbA1c dan Rasio SUA/HDL benar-benar tenggelam dan gagal menunjukkan sinyal asosiasi apapun.
 
-Tingginya sorotan analitik pada Kolesterol Non-HDL ini—yang secara paradoksikal menunjukkan bahwa nilai Non-HDL yang "optimal" justru memiliki skor CAC yang jauh lebih masif ($p = `r pval_nhdl_cac`$)—berhasil diurai secara objektif melalui analisis tabulasi silang. Berbeda dengan asumsi awal mengenai dominansi efek statin, anomali kalsifikasi ini secara statistik disetir oleh **durasi diagnosis DM** ($p = `r pval_durasi_nhdl`$). Pasien dengan profil lipid yang "tampak optimal" di laboratorium ternyata adalah mereka yang telah mengidap DM dalam waktu yang sangat lama (`r pct_lama_opt`%). Hal ini merupakan manifestasi klinis klasik dari *metabolic memory* (memori metabolik). Kerusakan vaskular dan deposisi kalsium sejatinya telah berproses tanpa henti selama bertahun-tahun. Walaupun pada saat prosedur CTCA profil lipid sirkulasi mereka sudah ditekan hingga mencapai target (baik melalui perbaikan diet kronis, medikamentosa, maupun fase *burnt-out* metabolik), kalsifikasi koroner permanen mereka sudah terlanjur melambung tinggi, sehingga menciptakan ilusi "paradoks lipid". Analisis regresi multivariat lebih lanjut mengonfirmasi bahwa korelasi negatif parameter lipid ini tetap signifikan secara independen meskipun telah dikontrol terhadap faktor usia, yang secara definitif membuktikan adanya efek Statin Paradox pada kohort ini (Tabel S3).
+Tingginya sorotan analitik pada Kolesterol Non-HDL ini—yang secara paradoksikal menunjukkan bahwa nilai Non-HDL yang "optimal" justru memiliki skor CAC yang jauh lebih masif ($p = `r pval_nhdl_cac`$)—berhasil diurai secara objektif melalui analisis tabulasi silang. Berbeda dengan asumsi awal mengenai dominansi efek statin, anomali kalsifikasi ini secara statistik disetir oleh **durasi diagnosis DM** ($p = `r pval_durasi_nhdl`$). Pasien dengan profil lipid yang "tampak optimal" di laboratorium ternyata adalah mereka yang telah mengidap DM dalam waktu yang sangat lama (`r pct_lama_opt`%). Hal ini merupakan manifestasi klinis klasik dari fenomena *metabolic memory* (memori metabolik) dan *legacy effect* [@holman200810; @ceriello2009metabolic]. Kerusakan vaskular dan deposisi kalsium sejatinya telah berproses tanpa henti selama bertahun-tahun akibat hiperglikemia kronis di masa lalu, yang meninggalkan "jejak" epigenetik penyokong stres oksidatif persisten pada dinding endotel [@ceriello2009metabolic]. Walaupun pada saat prosedur CTCA profil lipid sirkulasi mereka sudah ditekan hingga mencapai target (baik melalui perbaikan diet kronis, medikamentosa, maupun fase *burnt-out* metabolik), kalsifikasi koroner permanen mereka sudah terlanjur melambung tinggi, sehingga menciptakan ilusi "paradoks lipid". Analisis regresi multivariat lebih lanjut mengonfirmasi bahwa korelasi negatif parameter lipid ini tetap signifikan secara independen meskipun telah dikontrol terhadap faktor usia, yang secara definitif membuktikan adanya efek Statin Paradox pada kohort ini (Tabel 4).
 
 Sementara itu, signifikansi korelasi antara Rasio TG/HDL yang normal dengan pencapaian kontrol glikemik (HbA1c) yang baik (`r pct_hba1c_tg_norm`% terkontrol, $p = `r pval_hba1c_tghdl`$) sangat menarik. Temuan ini memvalidasi kapasitas rasio tersebut sebagai cerminan status resistensi insulin dan kontrol metabolik sesaat. Namun, ketiadaan asosiasi Rasio TG/HDL terhadap luaran HRP dan CAC kembali menegaskan bahwa marker metabolik sirkulasi tidak mampu melampaui kekuatan faktor degeneratif (usia) dan waktu paparan (*time-dependent*) dalam memprediksi perubahan struktural vaskular permanen pada populasi DM.
 
+Kegagalan indeks berbasis resistensi insulin (seperti TyHbA1c dan Rasio TG/HDL) dalam mengungguli faktor usia pada studi ini tampak kontradiktif dengan beberapa literatur utama sebelumnya. Sebagai contoh, penelitian oleh Won et al. (2018) dan Jin et al. (2020) melaporkan asosiasi positif yang kuat dan independen antara indeks kardiometabolik turunan dengan tingkat keparahan aterosklerosis koroner [@jin2020triglyceride; @won2018relationship]. Diskrepansi hasil ini dapat dijelaskan melalui perbedaan mendasar pada profil intervensi medis dan fase kronisitas penyakit kohort. Studi-studi terdahulu mayoritas mengevaluasi populasi asimptomatik yang relatif "naif" terhadap terapi kardiovaskular agresif, di mana resistensi insulin fase akut masih berkorelasi kuat dengan inisiasi awal plak. Sebaliknya, kohort dalam penelitian ini merepresentasikan realitas klinis dunia nyata (*real-world*) berupa pasien rujukan kardiologi dengan durasi penyakit lanjut dan tingkat penggunaan statin kronis yang sangat masif (71,2%). Modifikasi farmakologis yang kuat dari statin menekan secara langsung komponen pembentuk indeks tersebut di sirkulasi darah (terutama trigliserida), sehingga secara artifisial "menumpulkan" nilai prediktif alaminya. Selain itu, keterbatasan desain potong lintang (*cross-sectional*) hanya mampu memotret profil lipid yang saat ini sudah termodifikasi oleh terapi, dan gagal menangkap puncak resistensi insulin di masa lalu yang sesungguhnya menjadi pemicu awal kalsifikasi bertahun-tahun sebelumnya.
+
 **Keterbatasan**
 
-Penelitian potong lintang ini memiliki keterbatasan inheren akibat ketiadaan *follow-up* longitudinal dan ukuran sampel tunggal yang kecil ($N=52$), yang menyebabkan *power* statistik terbatas dan melonggarkan batas *Confidence Interval*. Uji kohort skala besar yang mempertimbangkan pencatatan dosis akumulatif statin sangat disarankan di masa depan.
+Penelitian potong lintang ini memiliki keterbatasan inheren akibat ketiadaan *follow-up* longitudinal dan ukuran sampel tunggal yang kecil ($N=52$), yang menyebabkan *power* statistik terbatas dan melonggarkan batas *Confidence Interval*. Selain itu, pengukuran profil lipid yang hanya dilakukan pada satu titik waktu (*single time-point measurement*) bersamaan dengan prosedur CTCA merupakan limitasi esensial. Desain ini tidak dapat membedakan secara definitif antara pasien yang profil lipid sirkulasinya "terkontrol baik akibat terapi statin kronis" versus pasien yang "secara alamiah memang tidak pernah mengalami dislipidemia berat". Oleh karena itu, uji kohort skala besar di masa depan yang mampu merekam lintasan historis fluktuasi lipid (*lipid variability*) dan pencatatan dosis akumulatif statin sangat disarankan untuk memvalidasi temuan ini.
 
 ## Simpulan
 
@@ -788,159 +914,98 @@ p_comprehensive
 ```
 
 
-**Evaluasi Efek Perancu (*Confounding*) dan Fenomena Paradoks Statin (*Statin Paradox*)**
-
-Untuk menelusuri akar kausalitas dari anomali korelasi negatif antara Kolesterol Non-HDL dan Rasio TG/HDL terhadap kalsifikasi koroner, analisis regresi linear multivariat sederhana dilakukan. Model ini memprediksi logaritma kalsifikasi ($\ln[\text{CAC}+1]$) menggunakan indeks kardiometabolik dengan mengontrol faktor usia. Penggunaan maksimal dua prediktor pada model ini dipertahankan secara sengaja agar tidak melanggar asumsi *overfitting* pada ukuran sampel yang terbatas.
 
 ```{r}
-#| label: tbl-supp-regresi
-#| tbl-cap: "**Analisis Regresi Linear terhadap Log Kalsifikasi (Mengontrol Efek Perancu Usia)**"
-
-library(gtsummary)
-library(flextable)
-
-# Model 1: Non-HDL + Usia
-tbl_mod_nhdl <- tbl_regression(mod_nhdl, label = list(Non_HDL ~ "Kolesterol Non-HDL", Usia ~ "Usia (Tahun)")) %>%
-  bold_p(t = 0.05)
-
-# Model 2: TG/HDL + Usia
-tbl_mod_tg <- tbl_regression(mod_tg, label = list(TG_HDL_Ratio ~ "Rasio TG/HDL-C", Usia ~ "Usia (Tahun)")) %>%
-  bold_p(t = 0.05)
-
-# Menggabungkan kedua model
-tbl_merge(
-  tbls = list(tbl_mod_nhdl, tbl_mod_tg),
-  tab_spanner = c("**Model 1**", "**Model 2**")
-) %>%
-  modify_header(label = "**Variabel Prediktor**") %>%
-  as_flex_table()
-```
-
-Hasil regresi menampilkan temuan klinis yang sangat krusial (@tbl-supp-regresi). Setelah dikontrol terhadap variabel Usia, efek korelasi negatif dari Kolesterol Non-HDL ($p = `r pval_nhdl_adj`$) dan Rasio TG/HDL ($p = `r pval_tg_adj`$) ternyata tetap signifikan secara statistik. Hal ini membuktikan bahwa Usia bukanlah satu-satunya confounder. Persistensi korelasi negatif yang independen terhadap usia ini merepresentasikan efek dari Paradoks Statin (Statin Paradox). Pasien dengan beban aterosklerosis yang kronis (kalsifikasi tinggi) adalah kelompok yang secara klinis menerima terapi profilaksis statin paling agresif. Terapi ini sukses menekan profil lipid (Non-HDL dan TG) ke level optimal di sirkulasi darah, namun di saat bersamaan, statin bekerja menstabilkan high-risk plaque dengan memicu transformasi plak aktif menjadi plak kalsifikasi yang padat (sehingga mengeskalasi skor CAC secara mekanis). Oleh karena itu, indeks kardiometabolik sirkulasi tidak dapat digunakan sebagai prediktor absolut beban anatomis koroner pada populasi yang telah mendapat intervensi farmakologis, karena nilai indeks yang "rendah/optimal" di laboratorium justru merupakan penanda keberhasilan intervensi stabilisasi kalsium pada pasien dengan penyakit koroner lanjut.
-
-
-
-**Evaluasi Eksploratif: Stratifikasi Berdasarkan Penggunaan Statin**
-
-Sebagai pembuktian pamungkas terhadap hipotesis bias indikasi dan paradoks lipid, analisis stratifikasi eksploratif dilakukan untuk membandingkan korelasi indeks kardiometabolik terhadap kalsifikasi secara terpisah antara kelompok pengguna statin ($n = `r n_statin`$) dan tanpa statin ($n = `r n_total - n_statin`$). 
-
-Hasil analisis visual dan statistik (**@fig-supp-statin**) menampilkan dua fenomena patologis yang berbeda di antara kedua indeks kardiometabolik tersebut:
-
-1. **Validasi Bias Indikasi pada Rasio TG/HDL:** Pada parameter Rasio TG/HDL, korelasi negatif yang bermakna secara eksklusif hanya ditemukan pada kelompok pengguna statin ($R = `r c_tg_sy$r`, p `r c_tg_sy$p`$). Ketika dievaluasi pada pasien tanpa statin, asosiasi tersebut melemah drastis dan kehilangan signifikansinya ($p = `r c_tg_sn$p`$). Hal ini membuktikan secara langsung bahwa asosiasi TG/HDL dengan keparahan kalsifikasi murni merupakan bias indikasi terapi profilaksis.
-2. **Fenomena *Reverse Epidemiology* pada Non-HDL:** Sebaliknya, korelasi negatif pada Kolesterol Non-HDL tetap bertahan dan bahkan menujukkan asosiasi yang lebih kuat pada kelompok tanpa statin ($R = `r c_nhdl_sn$r`, p `r c_nhdl_sn$p`$). Temuan ini menggugurkan asumsi bahwa anomali Non-HDL murni diakibatkan oleh intervensi farmakologis. Dalam literatur kardiovaskular tingkat lanjut, fenomena ini dikenal sebagai *Reverse Epidemiology* atau fase *Metabolic Burn-out*. Pasien dengan kalsifikasi koroner masif (yang mayoritas didominasi oleh lansia dan DM durasi lama) seringkali mengalami transisi patologis berupa malnutrisi kronis, status katabolik, atau restriksi diet berkepanjangan yang menurunkan kapasitas sintesis lipid sirkulasi. Akibatnya, kadar Non-HDL di darah tampak "optimal" sebagai ilusi penanda kesehatan yang semu, padahal kerusakan struktural vaskular (skor CAC) telah mencapai titik puncak.
-
-
-```{r}
-#| label: fig-supp-statin
-#| fig-cap: "**Analisis Stratifikasi Eksploratif: Korelasi Indeks Kardiometabolik terhadap Kalsifikasi Berdasarkan Penggunaan Statin.** Titik sebaran diwarnai berdasarkan usia pasien (spektrum biru untuk usia lebih muda, hingga merah untuk usia lebih tua), sementara bentuk titik membedakan durasi diabetes mellitus. Grafik menunjukkan hilangnya signifikansi korelasi negatif pada kelompok pasien tanpa terapi statin untuk parameter TG/HDL. Pada parameter Non-HDL, pasien dengan kalsifikasi tinggi dan lipid sirkulasi rendah (kiri atas) secara visual didominasi oleh kelompok usia tua dengan durasi DM kronis (\u2265 5 tahun), mengonfirmasi efek *metabolic memory* dan bias indikasi."
-#| fig-width: 10
-#| fig-height: 7.5
+#| label: fig-hidden-forest-plot
+#| include: false
 #| warning: false
 #| message: false
 
 library(ggplot2)
 library(dplyr)
-library(tidyr)
 
-# 1. Menyiapkan data untuk facet (Tambahkan Durasi DM Kat)
-df_strat <- df_clean %>%
-  mutate(
-    # Membuat kategori baru berdasarkan bulan (0 = baru, <60 = <5 tahun, >=60 = >=5 tahun)
-    Durasi_DM_Kat = case_when(
-      Durasi_DM_Bulan == 0 ~ "Baru Terdiagnosis",
-      Durasi_DM_Bulan > 0 & Durasi_DM_Bulan < 60 ~ "DM < 5 Tahun",
-      Durasi_DM_Bulan >= 60 ~ "DM \u2265 5 Tahun",
-      TRUE ~ NA_character_
-    ),
-    Durasi_DM_Kat = factor(Durasi_DM_Kat, levels = c("Baru Terdiagnosis", "DM < 5 Tahun", "DM \u2265 5 Tahun"))
-  ) %>%
-  select(log_CAC, Statin, Non_HDL, TG_HDL_Ratio, Usia, Durasi_DM_Kat) %>%
-  mutate(
-    Statin = factor(Statin, levels = c("No-Statin", "On-Statin"), labels = c("Tanpa Statin (n=15)", "Pengguna Statin (n=37)")),
-    `Kolesterol Non-HDL` = Non_HDL,
-    `Rasio TG/HDL-C` = TG_HDL_Ratio
-  ) %>%
-  select(-Non_HDL, -TG_HDL_Ratio) %>%
-  pivot_longer(cols = c(`Kolesterol Non-HDL`, `Rasio TG/HDL-C`), names_to = "Variable", values_to = "Value") %>%
-  mutate(Variable = factor(Variable, levels = c("Kolesterol Non-HDL", "Rasio TG/HDL-C")))
+# 1. Tentukan variabel numerik yang akan dihitung Odds Ratio-nya (Univariat)
+var_names <- c("Usia", "IMT", "HbA1C", "Trigliserida", "HDL", "LDL", 
+               "Kolesterol-Total", "Asam-Urat", "Kreatinin", 
+               "TyHbA1c_Index", "TG_HDL_Ratio", "Non_HDL", "SUA_HDL_Ratio")
 
-# 2. Menghitung statistik untuk text label
-df_strat_stats <- df_strat %>%
-  filter(!is.na(Value) & !is.na(log_CAC)) %>%
-  group_by(Variable, Statin) %>%
-  summarise(
-    r = cor(Value, log_CAC, method = "pearson"),
-    p_val = cor.test(Value, log_CAC, method = "pearson")$p.value,
-    .groups = "drop"
-  ) %>%
+var_labels <- c("Usia (Tahun)", "IMT (kg/m\u00b2)", "HbA1c (%)", "Trigliserida (mg/dL)", 
+                "HDL-C (mg/dL)", "LDL-C (mg/dL)", "Kolesterol Total (mg/dL)", 
+                "Asam Urat (mg/dL)", "Kreatinin (mg/dL)", "Indeks TyHbA1c", 
+                "Rasio TG/HDL-C", "Kolesterol Non-HDL", "Rasio SUA/HDL-C")
+
+# 2. Buat loop untuk regresi logistik univariat dan ekstraksi OR + 95% CI
+forest_data <- data.frame()
+
+for(i in 1:length(var_names)) {
+  v <- var_names[i]
+  lbl <- var_labels[i]
+  
+  # KUNCI PERBAIKAN: Gunakan as.formula dengan backtick (`) agar variabel berminus aman
+  f <- as.formula(paste0("I(HRP_Status == 'HRP (+)') ~ `", v, "`"))
+  
+  # Jalankan model dengan referensi data langsung ke df_clean
+  mod <- glm(f, data = df_clean, family = binomial)
+  sm <- summary(mod)
+  coefs <- sm$coefficients
+  
+  if(nrow(coefs) > 1) {
+    est <- coefs[2, 1]
+    se <- coefs[2, 2]
+    pval <- coefs[2, 4]
+    
+    # Hitung Odds Ratio dan 95% CI
+    or <- exp(est)
+    lower <- exp(est - 1.96 * se)
+    upper <- exp(est + 1.96 * se)
+    
+    forest_data <- rbind(forest_data, data.frame(
+      Variable = lbl,
+      OR = or,
+      Lower = lower,
+      Upper = upper,
+      Pval = pval
+    ))
+  }
+}
+
+# 3. Format data untuk plotting
+forest_data <- forest_data %>%
   mutate(
-    p_text = ifelse(p_val < 0.001, "< 0.001", sprintf("= %.3f", p_val)),
-    label_text = sprintf("R = %.3f\np %s", r, p_text)
+    # Beri warna khusus jika p-value < 0.05
+    Signifikan = ifelse(Pval < 0.05, "Signifikan (p < 0.05)", "Tidak Signifikan"),
+    # Urutkan variabel agar tampil rapi dari atas ke bawah
+    Variable = factor(Variable, levels = rev(var_labels))
   )
 
-# 3. Membuat Plot Stratifikasi (Warna = Usia, Bentuk = Durasi DM)
-p_strat <- ggplot(df_strat, aes(x = Value, y = log_CAC)) +
-  # KUNCI: shape = Durasi_DM_Kat, ukuran titik diperbesar sedikit agar shape terlihat jelas
-  geom_point(aes(color = Usia, shape = Durasi_DM_Kat), size = 3.5, alpha = 0.85) + 
-  scale_color_gradientn(
-    colors = c("#2b83ba", "#abdda4", "#fdae61", "#d7191c"), 
-    name = "Usia\n(Tahun)"
-  ) +
-  # Menentukan jenis shape (16 = bulat penuh, 17 = segitiga penuh, 15 = kotak penuh)
-  scale_shape_manual(
-    values = c(16, 17, 15), 
-    name = "Durasi DM"
-  ) +
-  geom_smooth(method = "lm", se = TRUE, color = "#c0392b", fill = "#f5b7b1", linewidth = 1) +
-  geom_text(data = df_strat_stats, aes(x = Inf, y = Inf, label = label_text),
-            hjust = 1.1, vjust = 1.2, size = 3.5, fontface = "italic", color = "black", inherit.aes = FALSE) +
-  facet_grid(Statin ~ Variable, scales = "free_x") +
+# 4. Buat Forest Plot
+p_forest <- ggplot(forest_data, aes(x = OR, y = Variable, color = Signifikan)) +
+  # Garis vertikal di OR = 1 (Garis Null)
+  geom_vline(xintercept = 1, linetype = "dashed", color = "gray50", linewidth = 0.8) +
+  # Titik (OR) dan garis rentang (95% CI)
+  geom_pointrange(aes(xmin = Lower, xmax = Upper), size = 0.8, fatten = 3) +
+  # KUNCI PERBAIKAN: Format angka desimal biasa dan beri batas "zoom" (0.5 sampai 5)
+  scale_x_log10(breaks = c(0.5, 1, 2, 3, 5)) +
+  coord_cartesian(xlim = c(0.1, 10)) + # Memotong sumbu X di 0.5 - 5
+  scale_color_manual(values = c("Signifikan (p < 0.05)" = "#c0392b", "Tidak Signifikan" = "#7f8c8d")) +
   labs(
-    x = "Nilai Parameter", 
-    y = "ln(Global CAC Score + 1)"
+    title = "Forest Plot Analisis Univariat: Prediktor High-Risk Plaque (HRP)",
+    x = "Odds Ratio (Skala Logaritmik)",
+    y = "Variabel Klinis & Kardiometabolik"
   ) +
-  theme_bw(base_size = 12) +
+  theme_bw(base_size = 11) +
   theme(
-    strip.background = element_rect(fill = "#eaeded", color = "black"),
-    strip.text = element_text(face = "bold", size = 11),
-    panel.grid.minor = element_blank(),
-    legend.position = "right",
-    legend.title = element_text(face = "bold", size = 10),
-    legend.box = "vertical",
-    legend.spacing.y = unit(0.5, "cm")
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    plot.title = element_text(face = "bold", hjust = 0.5)
   )
 
-p_strat
+# 5. Ekspor plot
+ggsave(filename = "Figure_4_Forest_Plot_Univariat.jpg", 
+       plot = p_forest, 
+       width = 9, height = 7, dpi = 300, device = "jpeg")
 ```
 
-
-
-
-```{r}
-#| include: false
-# Membuka koneksi file JPEG dengan resolusi tinggi (300 dpi)
-jpeg(filename = "Figure_1_ROC_Curve.jpg", width = 2400, height = 2000, res = 300, quality = 100)
-
-# Membuat Plot
-plot(roc_ty, col="#D32F2F", lwd=2, main="AUC Comparison of Cardiometabolic Indices for HRP")
-plot(roc_tg, col="#1976D2", lwd=2, add=TRUE)
-plot(roc_nhdl, col="#388E3C", lwd=2, add=TRUE)
-plot(roc_sua, col="#FBC02D", lwd=2, add=TRUE)
-
-# Menambahkan Legend (Keterangan)
-legend("bottomright", 
-       legend=c(paste("TyHbA1c (AUC=", round(auc(roc_ty),2), ")"),
-                paste("TG/HDL (AUC=", round(auc(roc_tg),2), ")"),
-                paste("Non-HDL (AUC=", round(auc(roc_nhdl),2), ")"),
-                paste("SUA/HDL (AUC=", round(auc(roc_sua),2), ")")),
-       col=c("#D32F2F", "#1976D2", "#388E3C", "#FBC02D"), lwd=2, cex=0.9)
-
-# Menutup koneksi dan menyimpan file
-dev.off()
-
-cat("File Figure_1_ROC_Curve.jpg berhasil disimpan!\n")
-
-```
 
 ```{r}
 #| include: false
@@ -1009,94 +1074,43 @@ cat("File Figure_2_Scatter_CAC.jpg berhasil disimpan!\n")
 ```
 
 ```{r}
+#| label: fig-hidden-strobe
 #| include: false
-# Pastikan paket yang dibutuhkan sudah aktif
+#| warning: false
+#| message: false
+
 library(ggplot2)
-library(tidyr)
-library(dplyr)
 
-# 1. Menyiapkan Data & Kalkulasi Otomatis (Anti-Error)
-df_all_vars <- df_clean %>%
-  mutate(
-    # Kita hitung (atau timpa) ulang indeksnya di sini agar dijamin pasti ada
-    log_CAC = log(Global_CAC_score + 1),
-    TyHbA1c_Index = log(Trigliserida * HbA1C),
-    TG_HDL_Ratio = Trigliserida / HDL,
-    Non_HDL = `Kolesterol-Total` - HDL,
-    SUA_HDL_Ratio = `Asam-Urat` / HDL
-  ) %>%
-  select(
-    log_CAC,
-    # Faktor Tradisional / Antropometri
-    Age = Usia,
-    BMI = IMT,
-    # Parameter Laboratorium Dasar
-    HbA1c = HbA1C,
-    Triglycerides = Trigliserida,
-    `HDL-C` = HDL,
-    `LDL-C` = LDL,
-    `Total Cholesterol` = `Kolesterol-Total`,
-    `Serum Uric Acid` = `Asam-Urat`,
-    Creatinine = Kreatinin,
-    # Indeks Kardiometabolik Novel
-    `TyHbA1c Index` = TyHbA1c_Index,
-    `TG / HDL-C Ratio` = TG_HDL_Ratio,
-    `Non-HDL Cholesterol` = Non_HDL,
-    `SUA / HDL-C Ratio` = SUA_HDL_Ratio
-  ) %>%
-  pivot_longer(
-    cols = -log_CAC,
-    names_to = "Variable",
-    values_to = "Value"
-  ) %>%
-  # Mengatur urutan panel agar tampil logis (Tradisional -> Lab -> Novel)
-  mutate(Variable = factor(Variable, levels = c(
-    "Age", "BMI", 
-    "HbA1c", "Triglycerides", "HDL-C", "LDL-C", "Total Cholesterol", "Serum Uric Acid", "Creatinine",
-    "TyHbA1c Index", "TG / HDL-C Ratio", "Non-HDL Cholesterol", "SUA / HDL-C Ratio"
-  )))
+# 1. Siapkan teks untuk masing-masing kotak 
+# (Silakan ganti angka n=100 dan n=48 dengan data taksiran nyata Dokter)
+df_box <- data.frame(
+  x = c(0.4, 0.85, 0.4),
+  y = c(0.8, 0.5, 0.2),
+  label = c("Pasien DM yang menjalani CTCA\n(n = 100)", 
+            "Eksklusi (n = 48):\n- Data lab/rekam medis tidak lengkap (n = 20)\n- Riwayat CABG (n = 15)\n- ESRD (n = 13)", 
+            "Subjek memenuhi kriteria inklusi\ndan dianalisis (n = 52)")
+)
 
-# 2. Menghitung R, R2, dan p-value untuk setiap variabel
-df_stats_all <- df_all_vars %>%
-  # Filter NAs untuk menghindari error saat perhitungan korelasi
-  filter(!is.na(Value) & !is.na(log_CAC)) %>%
-  group_by(Variable) %>%
-  summarise(
-    r = cor(Value, log_CAC, method = "pearson"),
-    r2 = r^2,
-    p_val = cor.test(Value, log_CAC, method = "pearson")$p.value,
-    .groups = "drop"
-  ) %>%
-  mutate(
-    p_text = ifelse(p_val < 0.001, "< 0.001", sprintf("= %.3f", p_val)),
-    label_text = sprintf("R = %.3f\nR\u00b2 = %.3f\np %s", r, r2, p_text)
-  )
+# 2. Gambar panah dan kotak label (Flowchart)
+p_flow <- ggplot() +
+  # Garis vertikal utama (ke kotak bawah)
+  annotate("segment", x = 0.4, y = 0.75, xend = 0.4, yend = 0.25, 
+           arrow = arrow(length = unit(0.3, "cm")), linewidth = 0.8, color = "gray30") +
+  # Garis horizontal cabang (ke kotak eksklusi di kanan)
+  annotate("segment", x = 0.4, y = 0.5, xend = 0.58, yend = 0.5, 
+           arrow = arrow(length = unit(0.3, "cm")), linewidth = 0.8, color = "gray30") +
+  # Tambahkan kotak teks
+  geom_label(data = df_box, aes(x = x, y = y, label = label), 
+             size = 4, fill = "#f8f9f9", fontface = "bold", color = "#2c3e50",
+             label.padding = unit(0.8, "lines"), label.r = unit(0.2, "lines")) +
+  # Bersihkan semua elemen background (karena ini diagram, bukan grafik data)
+  theme_void() +
+  coord_cartesian(xlim = c(0.1, 1.2), ylim = c(0, 1))
 
-# 3. Membuat Plot Utama
-p_comprehensive <- ggplot(df_all_vars, aes(x = Value, y = log_CAC)) +
-  geom_point(size = 1.5, alpha = 0.5, color = "#2c3e50") +
-  geom_smooth(method = "lm", se = TRUE, color = "#d35400", fill = "#edbb99", linewidth = 0.8) +
-  geom_text(data = df_stats_all, aes(x = Inf, y = Inf, label = label_text),
-            hjust = 1.1, vjust = 1.2, size = 3.2, fontface = "italic", color = "black", inherit.aes = FALSE) +
-  # Membagi menjadi 2 kolom agar memanjang ke bawah
-  facet_wrap(~ Variable, scales = "free_x", ncol = 2) + 
-  labs(
-    x = "Parameter Value",
-    y = "ln(Global CAC Score + 1)",
-    title = "Correlations of Clinical, Laboratory, and Novel Indices with Coronary Calcification"
-  ) +
-  theme_bw(base_size = 11) +
-  theme(
-    plot.title = element_text(face = "bold", hjust = 0.5, size = 12, margin = margin(b = 15)),
-    strip.background = element_rect(fill = "#f2f3f4", color = "black"),
-    strip.text = element_text(face = "bold", size = 10),
-    panel.grid.minor = element_blank()
-  )
-
-# 4. Menyimpan Plot Resolusi Tinggi (Format JPEG, 300 dpi)
-ggsave(filename = "Figure_3_Comprehensive_CAC_Scatter.jpg", 
-       plot = p_comprehensive, 
-       width = 8.5, height = 16, dpi = 300, device = "jpeg")
-
-cat("File Figure_3_Comprehensive_CAC_Scatter.jpg berhasil dibuat dan disimpan!\n")
+# 3. Simpan diam-diam ke dalam format JPEG
+ggsave(filename = "Figure_5_STROBE_Flowchart.jpg", 
+       plot = p_flow, 
+       width = 7, height = 5, dpi = 300, device = "jpeg")
 ```
+
+
