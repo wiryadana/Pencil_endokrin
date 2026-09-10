@@ -167,7 +167,6 @@ pct_hrp_pos <- round((sum(df_clean$HRP_Status == "HRP (+)") / n_total) * 100, 1)
 
 ## HASIL
 
-
 ```{r kalkulasi-utama}
 #| include: false
 #| warning: false
@@ -519,9 +518,9 @@ Hasil analisis membuktikan secara objektif bahwa anomali ini tidak semata-mata d
 
 Di sisi lain, analisis terpisah pada Rasio TG/HDL (@tbl-tghdl) membuktikan signifikansi biologis dari indeks tersebut. Kelompok pasien dengan Rasio TG/HDL yang normal (\< 3,0) terbukti secara signifikan memiliki proporsi **Kontrol Glikemik (HbA1c)** yang jauh lebih baik (`r pct_hba1c_tg_norm`% terkontrol, $p=0,044$) dibandingkan kelompok dengan rasio tinggi. Hal ini memvalidasi Rasio TG/HDL sebagai penanda *surrogate* resistensi insulin yang representatif, meskipun indeks tersebut gagal mengungguli faktor degeneratif (usia) dalam memprediksi kerentanan plak dan kalsifikasi koroner permanen.
 
-Untuk memverifikasi ketahanan (*robustness*) dari temuan ini, analisis lanjutan berupa evaluasi performa diagnostik (Kurva ROC) dan korelasi linear komprehensif turut dilakukan. Kurva ROC mengonfirmasi daya diskriminasi keempat indeks kardiometabolik yang lemah (AUC < 0,70) terhadap HRP (**@fig-supp-roc**). 
+Untuk memverifikasi ketahanan (*robustness*) dari temuan ini, analisis lanjutan berupa evaluasi performa diagnostik (Kurva ROC) dan korelasi linear komprehensif turut dilakukan. Kurva ROC mengonfirmasi daya diskriminasi keempat indeks kardiometabolik yang lemah (AUC \< 0,70) terhadap HRP (@fig-supp-roc).
 
-Lebih lanjut, analisis korelasi terhadap skor CAC logaritmik (**@fig-supp-scatter**) justru menampilkan pola **korelasi negatif** yang signifikan secara statistik pada parameter lipid dan indeks turunannya, seperti Trigliserida ($R = `r cor_tg$r`, p `r cor_tg$p`$), Kolesterol Total ($R = `r cor_tc$r`, p `r cor_tc$p`$), Rasio TG/HDL ($R = `r cor_tghdl$r`, p `r cor_tghdl$p`$), dan Non-HDL ($R = `r cor_nhdl$r`, p `r cor_nhdl$p`$). Hal ini secara kuantitatif memperkuat argumen *metabolic memory* yang diobservasi sebelumnya: bahwa kalsifikasi yang semakin parah sejalan dengan intensitas kontrol lipid (efek statin kronis) saat ini, sehingga indeks metabolik sirkulasi menampilkan ilusi "berkorelasi terbalik" dan kehilangan relevansinya sebagai prediktor linier independen pada fase penyakit lanjut.
+Lebih lanjut, analisis korelasi terhadap skor CAC logaritmik (@fig-supp-scatter) justru menampilkan pola **korelasi negatif** yang signifikan secara statistik pada parameter lipid dan indeks turunannya, seperti Trigliserida ($R = `r cor_tg$r`, p`r cor_tg$p`$), Kolesterol Total ($R = `r cor_tc$r`, p`r cor_tc$p`$), Rasio TG/HDL ($R = `r cor_tghdl$r`, p`r cor_tghdl$p`$), dan Non-HDL ($R = `r cor_nhdl$r`, p`r cor_nhdl$p`$). Hal ini secara kuantitatif memperkuat argumen *metabolic memory* yang diobservasi sebelumnya: bahwa kalsifikasi yang semakin parah sejalan dengan intensitas kontrol lipid (efek statin kronis) saat ini, sehingga indeks metabolik sirkulasi menampilkan ilusi "berkorelasi terbalik" dan kehilangan relevansinya sebagai prediktor linier independen pada fase penyakit lanjut.
 
 ```{r}
 #| label: tbl-nonhdl
@@ -598,30 +597,34 @@ tbl_mod_nhdl <- tbl_regression(mod_nhdl, label = list(Non_HDL ~ "Kolesterol Non-
 tbl_mod_tg <- tbl_regression(mod_tg, label = list(TG_HDL_Ratio ~ "Rasio TG/HDL-C", Usia ~ "Usia (Tahun)")) %>%
   bold_p(t = 0.05)
 
-# Menggabungkan kedua model
-tbl_merge(
+# KUNCI PERBAIKAN: Gunakan tbl_stack dengan header deskriptif dan tambah catatan kaki
+tbl_stack(
   tbls = list(tbl_mod_nhdl, tbl_mod_tg),
-  tab_spanner = c("**Model 1**", "**Model 2**")
+  # 1. Ubah teks header agar lebih jelas
+  group_header = c("Model 1: Evaluasi Kolesterol Non-HDL", 
+                   "Model 2: Evaluasi Rasio TG/HDL-C")
 ) %>%
   modify_header(label = "**Variabel Prediktor**") %>%
-  as_flex_table()
+  as_flex_table() %>%
+  # 2. Tambahkan catatan kaki (footnote) di bagian bawah tabel
+  flextable::add_footer_lines("Keterangan: Model 1 dan Model 2 dianalisis secara terpisah (parsial) untuk memprediksi nilai logaritma kalsifikasi koroner (ln[CAC+1]) dengan mengontrol variabel perancu (Usia).")
 ```
 
-Hasil regresi menampilkan temuan klinis yang sangat krusial (@tbl-supp-regresi). Setelah dikontrol terhadap variabel Usia, efek korelasi negatif dari Kolesterol Non-HDL ($p = `r pval_nhdl_adj`$) dan Rasio TG/HDL ($p = `r pval_tg_adj`$) ternyata tetap signifikan secara statistik. Hal ini membuktikan bahwa Usia bukanlah satu-satunya confounder. Persistensi korelasi negatif yang independen terhadap usia ini merepresentasikan efek dari Paradoks Statin (Statin Paradox). Pasien dengan beban aterosklerosis yang kronis (kalsifikasi tinggi) adalah kelompok yang secara klinis menerima terapi profilaksis statin paling agresif. Terapi ini sukses menekan profil lipid (Non-HDL dan TG) ke level optimal di sirkulasi darah, namun di saat bersamaan, statin bekerja menstabilkan high-risk plaque dengan memicu transformasi plak aktif menjadi plak kalsifikasi yang padat (sehingga mengeskalasi skor CAC secara mekanis). Oleh karena itu, indeks kardiometabolik sirkulasi tidak dapat digunakan sebagai prediktor absolut beban anatomis koroner pada populasi yang telah mendapat intervensi farmakologis, karena nilai indeks yang "rendah/optimal" di laboratorium justru merupakan penanda keberhasilan intervensi stabilisasi kalsium pada pasien dengan penyakit koroner lanjut.
+Hasil regresi menampilkan temuan klinis yang sangat krusial (@tbl-supp-regresi). Setelah dikontrol terhadap variabel Usia, efek korelasi negatif dari Kolesterol Non-HDL ($p = `r pval_nhdl_adj`$) dan Rasio TG/HDL ($p = `r pval_tg_adj`$) ternyata tetap signifikan secara statistik. Hal ini membuktikan secara objektif bahwa Usia bukanlah satu-satunya *confounder*. Persistensi korelasi negatif yang independen terhadap usia ini mengindikasikan kuat adanya bias perancu lain di luar demografi, yang dicurigai bersumber dari intervensi farmakologis agresif. Oleh karena itu, untuk menguji hipotesis ini dan membuktikan secara definitif keberadaan efek Paradoks Statin (*Statin Paradox*), evaluasi stratifikasi berdasarkan status penggunaan statin perlu dilakukan pada tahap selanjutnya.
 
 **Evaluasi Eksploratif: Stratifikasi Berdasarkan Penggunaan Statin**
 
-Sebagai pembuktian pamungkas terhadap hipotesis bias indikasi dan paradoks lipid, analisis stratifikasi eksploratif dilakukan untuk membandingkan korelasi indeks kardiometabolik terhadap kalsifikasi secara terpisah antara kelompok pengguna statin ($n = `r n_statin`$) dan tanpa statin ($n = `r n_total - n_statin`$). 
+Sebagai pembuktian pamungkas terhadap hipotesis bias indikasi dan paradoks lipid, analisis stratifikasi eksploratif dilakukan untuk membandingkan korelasi indeks kardiometabolik terhadap kalsifikasi secara terpisah antara kelompok pengguna statin ($n = `r n_statin`$) dan tanpa statin ($n = `r n_total - n_statin`$).
 
-Hasil analisis visual dan statistik (**@fig-supp-statin**) menampilkan dua fenomena patologis yang berbeda di antara kedua indeks kardiometabolik tersebut:
+Hasil analisis visual dan statistik (Gambar 1) memberikan sinyal eksploratif yang menarik untuk merestrukturisasi hipotesis awal mengenai peran statin, dengan menyoroti dua potensi pola patologis.
 
-1. **Validasi Bias Indikasi pada Rasio TG/HDL:** Pada parameter Rasio TG/HDL, korelasi negatif yang bermakna secara eksklusif hanya ditemukan pada kelompok pengguna statin ($R = `r c_tg_sy$r`, p `r c_tg_sy$p`$). Ketika dievaluasi pada pasien tanpa statin, asosiasi tersebut melemah drastis dan kehilangan signifikansinya ($p = `r c_tg_sn$p`$). Hal ini membuktikan secara langsung bahwa asosiasi TG/HDL dengan keparahan kalsifikasi murni merupakan bias indikasi terapi profilaksis.
-2. **Fenomena *Reverse Epidemiology* pada Non-HDL:** Sebaliknya, korelasi negatif pada Kolesterol Non-HDL tetap bertahan dan bahkan menujukkan asosiasi yang lebih kuat pada kelompok tanpa statin ($R = `r c_nhdl_sn$r`, p `r c_nhdl_sn$p`$). Temuan ini menggugurkan asumsi bahwa anomali Non-HDL murni diakibatkan oleh intervensi farmakologis. Dalam literatur kardiovaskular tingkat lanjut, fenomena ini dikenal sebagai *Reverse Epidemiology* atau fase *Metabolic Burn-out*. Pasien dengan kalsifikasi koroner masif (yang mayoritas didominasi oleh lansia dan DM durasi lama) seringkali mengalami transisi patologis berupa malnutrisi kronis, status katabolik, atau restriksi diet berkepanjangan yang menurunkan kapasitas sintesis lipid sirkulasi. Akibatnya, kadar Non-HDL di darah tampak "optimal" sebagai ilusi penanda kesehatan yang semu, padahal kerusakan struktural vaskular (skor CAC) telah mencapai titik puncak.
+**Persistensi Anomali Kardiometabolik:** Berbeda dengan asumsi bahwa korelasi terbalik murni diakibatkan oleh bias indikasi statin, parameter Rasio TG/HDL justru menunjukkan koefisien korelasi negatif yang sedikit lebih besar pada kelompok tanpa statin ($R = `r c_tg_sn$r`$) dibandingkan pengguna statin ($R = `r c_tg_sy$r`$). Kehilangan signifikansi statistik pada kelompok tanpa statin ($p `r c_tg_sn$p`$) lebih mencerminkan keterbatasan kekuatan sampel (*power*) akibat ukuran kohort yang kecil ($n = `r n_total - n_statin`$) daripada hilangnya arah asosiasi. Hal ini memberikan sinyal awal bahwa anomali penurunan lipid pada kalsifikasi tinggi mungkin tetap eksis terlepas dari intervensi farmakologis.
 
+**kemungkinan *Reverse Epidemiology*:** Pola anomali ini terlihat semakin jelas pada parameter Kolesterol Non-HDL, di mana korelasi negatif yang bermakna tetap bertahan pada kelompok tanpa statin ($R = `r c_nhdl_sn$r`$, $p `r c_nhdl_sn$p`$). Meskipun temuan pada ukuran sampel yang sangat terbatas ini ($n = `r n_total - n_statin`$) sangat rentan terhadap efek *outlier* dan tidak dapat dijadikan kesimpulan definitif, pola visual ini sejalan dengan hipotesis *Reverse Epidemiology* atau fase *Metabolic Burn-out*. Pasien dengan kalsifikasi koroner masif (yang mayoritas didominasi oleh lansia dan DM durasi kronis) seringkali mengalami transisi patologis sistemik—seperti malnutrisi kronis, status katabolik, atau restriksi diet berkepanjangan—yang secara alamiah dapat menurunkan kapasitas sintesis lipid sirkulasi. Akibatnya, kadar lipid di darah berpotensi tampak "optimal" sebagai ilusi penanda kesehatan yang semu, padahal kerusakan struktural vaskular (skor CAC) telah ireversibel. Walau demikian, temuan ini murni bersifat eksploratif (*hypothesis-generating*) dan sangat membutuhkan validasi pada kohort longitudinal dengan ukuran sampel yang jauh lebih memadai.
 
 ```{r}
 #| label: fig-supp-statin
-#| fig-cap: "**Analisis Stratifikasi Eksploratif: Korelasi Indeks Kardiometabolik terhadap Kalsifikasi Berdasarkan Penggunaan Statin.** Titik sebaran diwarnai berdasarkan usia pasien (spektrum biru untuk usia lebih muda, hingga merah untuk usia lebih tua), sementara bentuk titik membedakan durasi diabetes mellitus. Grafik menunjukkan hilangnya signifikansi korelasi negatif pada kelompok pasien tanpa terapi statin untuk parameter TG/HDL. Pada parameter Non-HDL, pasien dengan kalsifikasi tinggi dan lipid sirkulasi rendah (kiri atas) secara visual didominasi oleh kelompok usia tua dengan durasi DM kronis (\u2265 5 tahun), mengonfirmasi efek *metabolic memory* dan bias indikasi."
+#| fig-cap: "**Analisis Stratifikasi Eksploratif: Korelasi Indeks Kardiometabolik terhadap Kalsifikasi Berdasarkan Penggunaan Statin.** Titik sebaran diwarnai berdasarkan usia pasien (spektrum biru untuk usia lebih muda, hingga merah untuk usia lebih tua), sementara bentuk titik membedakan durasi diabetes mellitus. Grafik menunjukkan persistensi arah korelasi negatif pada kedua kelompok pengobatan. Kehilangan signifikansi statistik pada parameter TG/HDL di kelompok tanpa terapi statin lebih mencerminkan keterbatasan kekuatan sampel (n=`r n_total - n_statin`) mengingat koefisien korelasi yang tetap konsisten. Pada parameter Non-HDL, pasien dengan kalsifikasi tinggi dan lipid sirkulasi rendah (kiri atas) secara visual didominasi oleh kelompok usia tua dengan durasi DM kronis (\u2265 5 tahun). Meskipun demikian, pola pada subgrup tanpa statin ini masih bersifat eksploratif dan memerlukan validasi lebih lanjut untuk mengonfirmasi efek *metabolic memory* maupun bias indikasi."
 #| fig-width: 10
 #| fig-height: 7.5
 #| warning: false
@@ -712,13 +715,15 @@ Keberhasilan Usia sebagai satu-satunya determinan klinis yang mencapai signifika
 
 **Memori Metabolik, Paradoks Lipid, dan Resistensi Insulin**
 
-Di antara keempat kandidat indeks kardiometabolik, **Kolesterol Non-HDL secara konsisten menampilkan sinyal diskriminatif yang paling menonjol** di sepanjang tahap analisis. Hal ini dibuktikan melalui margin signifikansi bivariat pada status HRP ($p = `r pval_nhdl_hrp`$), capaian *Area Under the Curve* tertinggi pada evaluasi kurva ROC (AUC = `r auc_nhdl`), serta korelasi linear negatif yang sangat bermakna terhadap logaritma kalsifikasi absolut ($R = `r cor_nhdl$r`, p `r cor_nhdl$p`$). Di sisi lain, indeks turunan yang murni merepresentasikan resistensi insulin seperti TyHbA1c dan Rasio SUA/HDL benar-benar tenggelam dan gagal menunjukkan sinyal asosiasi apapun.
+Di antara keempat kandidat indeks kardiometabolik, **Kolesterol Non-HDL secara konsisten menampilkan sinyal diskriminatif yang paling menonjol** di sepanjang tahap analisis. Hal ini dibuktikan melalui margin signifikansi bivariat pada status HRP ($p = `r pval_nhdl_hrp`$), capaian *Area Under the Curve* tertinggi pada evaluasi kurva ROC (AUC = `r auc_nhdl`), serta korelasi linear negatif yang sangat bermakna terhadap logaritma kalsifikasi absolut ($R = `r cor_nhdl$r`, p`r cor_nhdl$p`$). Di sisi lain, indeks turunan yang murni merepresentasikan resistensi insulin seperti TyHbA1c dan Rasio SUA/HDL benar-benar tenggelam dan gagal menunjukkan sinyal asosiasi apapun.
 
 Tingginya sorotan analitik pada Kolesterol Non-HDL ini—yang secara paradoksikal menunjukkan bahwa nilai Non-HDL yang "optimal" justru memiliki skor CAC yang jauh lebih masif ($p = `r pval_nhdl_cac`$)—berhasil diurai secara objektif melalui analisis tabulasi silang. Berbeda dengan asumsi awal mengenai dominansi efek statin, anomali kalsifikasi ini secara statistik disetir oleh **durasi diagnosis DM** ($p = `r pval_durasi_nhdl`$). Pasien dengan profil lipid yang "tampak optimal" di laboratorium ternyata adalah mereka yang telah mengidap DM dalam waktu yang sangat lama (`r pct_lama_opt`%). Hal ini merupakan manifestasi klinis klasik dari fenomena *metabolic memory* (memori metabolik) dan *legacy effect* [@holman200810; @ceriello2009metabolic]. Kerusakan vaskular dan deposisi kalsium sejatinya telah berproses tanpa henti selama bertahun-tahun akibat hiperglikemia kronis di masa lalu, yang meninggalkan "jejak" epigenetik penyokong stres oksidatif persisten pada dinding endotel [@ceriello2009metabolic]. Walaupun pada saat prosedur CTCA profil lipid sirkulasi mereka sudah ditekan hingga mencapai target (baik melalui perbaikan diet kronis, medikamentosa, maupun fase *burnt-out* metabolik), kalsifikasi koroner permanen mereka sudah terlanjur melambung tinggi, sehingga menciptakan ilusi "paradoks lipid". Analisis regresi multivariat lebih lanjut mengonfirmasi bahwa korelasi negatif parameter lipid ini tetap signifikan secara independen meskipun telah dikontrol terhadap faktor usia, yang secara definitif membuktikan adanya efek Statin Paradox pada kohort ini (Tabel 4).
 
 Sementara itu, signifikansi korelasi antara Rasio TG/HDL yang normal dengan pencapaian kontrol glikemik (HbA1c) yang baik (`r pct_hba1c_tg_norm`% terkontrol, $p = `r pval_hba1c_tghdl`$) sangat menarik. Temuan ini memvalidasi kapasitas rasio tersebut sebagai cerminan status resistensi insulin dan kontrol metabolik sesaat. Namun, ketiadaan asosiasi Rasio TG/HDL terhadap luaran HRP dan CAC kembali menegaskan bahwa marker metabolik sirkulasi tidak mampu melampaui kekuatan faktor degeneratif (usia) dan waktu paparan (*time-dependent*) dalam memprediksi perubahan struktural vaskular permanen pada populasi DM.
 
 Kegagalan indeks berbasis resistensi insulin (seperti TyHbA1c dan Rasio TG/HDL) dalam mengungguli faktor usia pada studi ini tampak kontradiktif dengan beberapa literatur utama sebelumnya. Sebagai contoh, penelitian oleh Won et al. (2018) dan Jin et al. (2020) melaporkan asosiasi positif yang kuat dan independen antara indeks kardiometabolik turunan dengan tingkat keparahan aterosklerosis koroner [@jin2020triglyceride; @won2018relationship]. Diskrepansi hasil ini dapat dijelaskan melalui perbedaan mendasar pada profil intervensi medis dan fase kronisitas penyakit kohort. Studi-studi terdahulu mayoritas mengevaluasi populasi asimptomatik yang relatif "naif" terhadap terapi kardiovaskular agresif, di mana resistensi insulin fase akut masih berkorelasi kuat dengan inisiasi awal plak. Sebaliknya, kohort dalam penelitian ini merepresentasikan realitas klinis dunia nyata (*real-world*) berupa pasien rujukan kardiologi dengan durasi penyakit lanjut dan tingkat penggunaan statin kronis yang sangat masif (71,2%). Modifikasi farmakologis yang kuat dari statin menekan secara langsung komponen pembentuk indeks tersebut di sirkulasi darah (terutama trigliserida), sehingga secara artifisial "menumpulkan" nilai prediktif alaminya. Selain itu, keterbatasan desain potong lintang (*cross-sectional*) hanya mampu memotret profil lipid yang saat ini sudah termodifikasi oleh terapi, dan gagal menangkap puncak resistensi insulin di masa lalu yang sesungguhnya menjadi pemicu awal kalsifikasi bertahun-tahun sebelumnya.
+
+Secara keseluruhan, ketiga kerangka patofisiologis ini—*metabolic memory*, *statin paradox*, dan *reverse epidemiology*—tidaklah saling eksklusif, melainkan berjalin kelindan membentuk profil kardiometabolik pasien di dunia nyata. Pada mayoritas kohort, durasi DM yang panjang (*metabolic memory*) dan efek stabilisasi dari intervensi statin kronis (*statin paradox*) kemungkinan besar bekerja secara bersamaan dalam menciptakan ilusi profil lipid sirkulasi yang tampak optimal di tengah beban kalsifikasi anatomis yang masif. Sementara itu, hipotesis *reverse epidemiology* bertindak sebagai observasi pelengkap sekunder yang menjelaskan mengapa anomali serupa tetap dapat ditemukan pada subgrup kecil pasien tanpa statin, yakni akibat fase *burn-out* metabolik dan katabolik di usia lanjut. Sintesis ini menegaskan bahwa penggunaan parameter lipid tunggal secara terisolasi dapat menyesatkan stratifikasi risiko kardiovaskular pada pasien DM kronis jika tidak diintegrasikan dengan riwayat durasi penyakit dan rekam medis pengobatan secara utuh.
 
 **Keterbatasan**
 
@@ -735,7 +740,7 @@ Pada pasien prediabetes dan DM yang menjalani CTCA, faktor degeneratif (Usia) be
 
 ------------------------------------------------------------------------
 
-## Supplementary Material
+## Lampiran
 
 **Analisis Karakteristik Klinis Tambahan Terhadap Indeks Kardiometabolik Novel**
 
@@ -842,7 +847,7 @@ legend("bottomright",
 
 **Korelasi Komprehensif Seluruh Parameter Klinis dan Laboratorium**
 
-Analisis korelasi linear yang komprehensif dilakukan untuk mengevaluasi hubungan antara seluruh variabel kontinu (termasuk usia, IMT, parameter laboratorium standar, dan indeks kardiometabolik) terhadap nilai logaritmik kalsifikasi koroner absolut ($\ln[\text{CAC}+1]$). Hasil pemetaan ini menegaskan bahwa faktor degeneratif (usia) merupakan satu-satunya variabel yang secara konsisten menunjukkan tren korelasi linear yang bermakna **positif** ($R = `r cor_usia$r`, p `r cor_usia$p`$). Sebaliknya, seluruh parameter lipid sirkulasi beserta indeks turunannya (termasuk Rasio TG/HDL dan Non-HDL) secara konsisten menunjukkan korelasi linear yang bermakna namun dengan arah **negatif**. Pola ini mendukung hipotesis bias indikasi terapi profilaksis agresif (statin) yang diberikan secara proporsional terhadap tingkat keparahan aterosklerosis klinis pasien (**\@fig-supp-scatter**).
+Analisis korelasi linear yang komprehensif dilakukan untuk mengevaluasi hubungan antara seluruh variabel kontinu (termasuk usia, IMT, parameter laboratorium standar, dan indeks kardiometabolik) terhadap nilai logaritmik kalsifikasi koroner absolut ($\ln[\text{CAC}+1]$). Hasil pemetaan ini menegaskan bahwa faktor degeneratif (usia) merupakan satu-satunya variabel yang secara konsisten menunjukkan tren korelasi linear yang bermakna **positif** ($R = `r cor_usia$r`, p`r cor_usia$p`$). Sebaliknya, seluruh parameter lipid sirkulasi beserta indeks turunannya (termasuk Rasio TG/HDL dan Non-HDL) secara konsisten menunjukkan korelasi linear yang bermakna namun dengan arah **negatif**. Pola ini mendukung hipotesis bias indikasi terapi profilaksis agresif (statin) yang diberikan secara proporsional terhadap tingkat keparahan aterosklerosis klinis pasien (**@fig-supp-scatter**).
 
 ```{r}
 #| label: fig-supp-scatter
@@ -912,8 +917,6 @@ p_comprehensive <- ggplot(df_all_vars, aes(x = Value, y = log_CAC)) +
 # 4. Tampilkan plot ke dokumen
 p_comprehensive
 ```
-
-
 
 ```{r}
 #| label: fig-hidden-forest-plot
@@ -1005,7 +1008,6 @@ ggsave(filename = "Figure_4_Forest_Plot_Univariat.jpg",
        plot = p_forest, 
        width = 9, height = 7, dpi = 300, device = "jpeg")
 ```
-
 
 ```{r}
 #| include: false
@@ -1112,5 +1114,3 @@ ggsave(filename = "Figure_5_STROBE_Flowchart.jpg",
        plot = p_flow, 
        width = 7, height = 5, dpi = 300, device = "jpeg")
 ```
-
-
