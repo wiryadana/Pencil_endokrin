@@ -1106,12 +1106,12 @@ df_spss <- df_clean %>%
   rename_with(~ gsub("[^A-Za-z0-9]", "_", .x))
 
 # 2. Mengekspor dataframe SPSS
-write_sav(df_spss, "Data_Kardiometabolik_Siap_Validasi.sav")
+write_sav(df_spss, "Data_CTCA_Kardiometabolik.sav")
 
 # 3. Membuat file CSV yang juga bebas dari 'list'
 df_csv <- df_clean %>%
   mutate(across(where(is.list), ~ sapply(.x, toString)))
 
-write.csv(df_csv, "Data_Kardiometabolik_Siap_Validasi.csv", row.names = FALSE)
+write.csv(df_csv, "Data_CTCA_Kardiometabolik.csv", row.names = FALSE)
 ```
 
