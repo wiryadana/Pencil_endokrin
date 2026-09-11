@@ -1,0 +1,2096 @@
+"No","Nama Pasien","No. RM","Laporan","Tahun","DM","Gender","Usia","Hipertensi","Durasi_DM","Merokok","IMT","Statin","OAD-INSULIN","DM_cardioprotective","HbA1C","Kreatinin","Fosphat","Kalsium","Hemoglobin","Kolesterol-Total","LDL","HDL","Trigliserida","Asam-Urat","Albumin","L-R_Dominant","Global_CAC_score","LM_Predominant_plaque","LM_High-risk-plaque","LM_Low-attenuation-Plaque","LM_PR_index","LM_NapkinRing-Sign","LM_Spotty-Calcification","LM_Stenosis","LM_CAD-RADS","LAD_Predominant_plaque","LAD_High-risk-plaque","LAD_Low-attenuation-Plaque","LAD_PR_index","LAD_NapkinRing-Sign","LAD_Spotty-Calcification","LAD_Stenosis","LAD_CAD-RADS","LCx_Predominant_plaque","LCx_High-risk-plaque","LCx_Low-attenuation-Plaque","LCx_PR_index","LCx_NapkinRing-Sign","LCx_Spotty-Calcification","LCx_Stenosis","LCx_CAD-RADS","RCA_Predominant_plaque","RCA_High-risk-plaque","RCA_Low-attenuation-Plaque","RCA_PR_index","RCA_NapkinRing-Sign","RCA_Spotty-Calcification","RCA_Stenosis","RCA_CAD-RADS","Global_CAD-RADS","CTR","Valve_calcification","Ventricular_hypertrophy","EpicardialAdipose_thickness","PericoronaryFatAttenuation-Index","HRP_Status","CAC_100_plus","TyHbA1c_Index","TG_HDL_Ratio","Non_HDL","SUA_HDL_Ratio","Terapi_DM","Durasi_DM_Bulan","Riwayat_DM","Hipertensi_Kat","Kappa","Alpha","Sex_Mult","eGFR","CKD_Status","log_CAC","Non_HDL_Kat_Temp","TG_HDL_Kat_Temp","HbA1C_Kat_Temp"
+1,"Nengah Budiarmadi",26041776,"Temuan :
+Total calcium score 0 mengesankan no identifiable calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM):
+- berukuran panjang +/- 18.3 mm, bercabang menjadi LAD dan LCX.
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification
+- Tak tampak myocardial bridging pada LM
+
+LAD:
+- berukuran panjang +/- 86.5 mm.
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification.
+- LAD bercabang menjadi cabang diagonal yang patent.
+- Tak tampak myocardial bridging pada LAD.
+
+LCX:
+- berukuran panjang +/- 100.2 mm.
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification.
+- LCX bercabang menjadi cabang obtuse marginal yang patent.
+- Tak tampak myocardial bridging pada LCX.
+
+RCA:
+- berukuran panjang +/- 198.5 mm.
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification.
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan.
+Cor ukuran kesan membesar, CTR 57%.
+Pada regio thorax yang terscanning sebagian : tak tampak kelainan
+Kesan        :        
+- Total calcium score 0 (No Indentifiable) sesuai Agatston score, mengesankan Very Low Risk for Coronary Artery Disease
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification pada RCA, LAD, LCX, dan LM
+Kesimpulan : CAD-RADS 0 (Absence of CAD)
+
+- Cardiomegaly
+- Right coronary artery dominance, tanpa anomali anatomi arteri koroner",2025,"DM/Prediabetes","P",53,"HT Terkontrol",2,"Tidak-merokok",25.64,"On-Statin","Insulin","None",7.1,0.96,NA,NA,13,170,120,37,150,6.9,NA,"Right",0,"None","None","0","0","0","0","Normal","0","None","None","0","0","0","0","Normal","0","None","None","0","0","0","0","Normal","0","None","None","0","0","0","0","Normal","0","0","57","0","0","","","HRP (-)",0,6.97073007814353,4.05405405405405,133,0.186486486486486,"Insulin",2,"Sudah Lama","Hipertensi Terkontrol",0.7,-0.241,1.012,70.7469339385553,0,0,"Tinggi","Tinggi","Tidak Terkontrol"
+2,"Bpk I Nym Dangin",1002479,"TEMUAN:
+Total calcium score 262.6 mengesankan moderate calcification
+
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right artery coronary dominance
+
+Left main (LM):
+- berukuran panjang +/- 8.4 mm, bercabang menjadi LAD dan LCX.
+- Tampak calcified plaque dengan positive remodelling pada proximal LM (segment 5) yang menyebabkan stenosis sebesar +/- 25-49%
+
+LAD:
+- berukuran panjang +/- 156.3 mm.
+- Tampak calcified plaque dengan positive remodelling pada proximal LAD (segment 6) yang menyebabkan stenosis sebesar +/- 1-24%
+- Tampak calcified plaque dengan positive remodelling pada mid LAD (segment 7) yang menyebabkan stenosis sebesar +/- 1-24%
+- LAD bercabang menjadi cabang diagonal yang patent.
+- Tak tampak myocardial bridging pada LAD.
+
+LCX:
+- berukuran panjang +/- 99.7 mm.
+- Tampak calcified plaque dengan positive remodelling pada proximal LCX (segment 11) yang menyebabkan stenosis sebesar +/- 1-24%
+- LCX bercabang menjadi cabang obtuse marginal yang patent.
+- Tak tampak myocardial bridging pada LCX.
+
+RCA:
+- berukuran panjang +/- 152.2 mm
+
+- Tampak calcified plaque dengan positive remodelling pada proximal RCA (segment 1) yang menyebabkan stenosis sebesar +/- 25-49%
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi
+Ekstra-cardiac: tak tampak kelainan.
+Jantung ukuran normal, CTR 52%
+
+Pada regio thorax yang terscanning : tak tampak kelainan
+Kesan        :        
+- Total calcium score 262.6 (Moderate Calcification) sesuai Agatston score, mengesankan Moderate Risk for Coronary Artery Disease
+- Calcified plaque dengan positive remodelling pada proximal LM (segment 5) yang menyebabkan mild stenosis
+- Calcified plaque dengan positive remodelling pada proximal LAD (segment 6) yang menyebabkan minimal stenosis
+- Calcified plaque dengan positive remodelling pada mid LAD (segment 7) yang menyebabkan minimal stenosis
+- Calcified plaque dengan positive remodelling pada proximal LCX (segment 11) yang menyebabkan minimal stenosis
+- Calcified plaque dengan positive remodelling pada proximal RCA (segment 1) yang menyebabkan mild stenosis
+
+Kesimpulan : CAD-RADS 2/P1/HRP (sesuai dengan CAD RAD 2.0)
+
+- Cor ukuran normal
+- Right artery coronary dominance, tanpa anomali anatomi arteri koroner",2025,"DM/Prediabetes","L",60,"HT st I",24,"Tidak-merokok",28.37,"On-Statin","OAD","None",9.6,1.03,NA,NA,13.9,188,134,42,157,9,NA,"Right",262.6,"Calcified","HRP","0","1","0","0","Mild (25-49%)","2/P1/HRP","Calcified","HRP","0","1","0","0","Minimal (1-24%)","1/P1/HRP","Calcified","HRP","0","1","0","0","Minimal (1-24%)","1/P1/HRP","Calcified","HRP","0","1","0","0","Mild (25-49%)","2/P1/HRP","2/P1/HRP","52","0","","","","HRP (+)",1,7.3180089038221,3.73809523809524,146,0.214285714285714,"OAD",24,"Sudah Lama","Hipertensi Tidak Terkontrol",0.9,-0.302,1,83.1599521245684,0,5.57443280262835,"Tinggi","Tinggi","Tidak Terkontrol"
+3,"Ni Nyoman Sudresti",621184,"Temuan :
+Total calcium score 0 mengesankan no identifiable calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+Left main (LM):
+- berukuran panjang +/- 11.5 mm, bercabang menjadi LAD dan LCX.
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification
+- Tak tampak myocardial bridging pada LM
+LAD:
+- berukuran panjang +/- 138.4 mm.
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification.
+- LAD bercabang menjadi cabang diagonal yang patent.
+- Tak tampak myocardial bridging pada LAD.
+LCX:
+- berukuran panjang +/- 117.9 mm.
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification.
+- LCX bercabang menjadi cabang obtuse marginal yang patent.
+- Tak tampak myocardial bridging pada LCX.
+RCA:
+- berukuran panjang +/- 108.2 mm.
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification.
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan mitral
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan.
+Cor ukuran kesan membesar, CTR 49%.
+Pada regio thorax yang terscanning sebagian : tak tampak kelainan
+Kesan        :        
+- Total calcium score 0 (No Identifiable) sesuai Agatston score, mengesankan Very Low Risk for Coronary Artery Disease
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification pada RCA, LAD, LCX, dan LM
+Kesimpulan : CAD-RADS 0 (Absence of CAD)
+- Right coronary artery dominance, tanpa anomali anatomi arteri coroner",2025,"DM/Prediabetes","P",48,"HT-Tidak-ada",0,"Tidak-merokok",29.03,"No-Statin","Tanpa-obat","None",6,0.64,NA,NA,12.2,188,142,42,63,7.1,NA,"Right",0,"None","None","0","0","0","0","Normal","0","None","None","0","0","0","0","Normal","0","None","None","0","0","0","0","Normal","0","None","None","0","0","0","0","Normal","0","0","49","0","0","","","HRP (-)",0,5.93489419561959,1.5,146,0.169047619047619,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Tidak ada riwayat hipertensi",0.7,-0.241,1.012,108.943104364395,0,0,"Tinggi","Normal","Terkontrol"
+4,"Herwanto Mulyadi",26000630,"Temuan :
+Total calcium score 304.2 mengesankan moderate calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance.
+
+Left main (LM): berukuran panjang ± 9.1 mm, bercabang menjadi LAD, LCX dan ramus intermedius. Tampak calcified plaque pada distal segmen 5 yang menyebabkan stenosis +/- 1-24%. Tak tampak non calcified plaque, napkin-type plaque, dan spot calcification. Tak tampak myocardial bridging pada LM
+
+LAD: Berukuran panjang ± 132.8 mm. Tampak calcified plaque disertai remodelling pada segment 6,7 yang menyebabkan stenosis terbesar ± 25-49% pada segment 6. Tak tampak non calcified plaque, dan napkin-type plaque, ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD.
+
+LCX: Berukuran panjang ± 121.6 mm. Tampak calcified plaque disertai remodelling pada segment 13 yang menyebabkan stenosis sebesar 1-24%. LCX bercabang menjadi cabang obtuse marginal yang patent. Tak tampak non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tidak tampak myocardial bridging pada LCX.
+
+RCA: Berukuran panjang ± 190.4 mm. Tampak calcified plaque disertai positive remodelling pada segment 2,3 yang menyebabkan stenosis terbesar 50-69% pada segment 3. Tak tampak non calcified plaque, napkin-type plaque, dan spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tampak kalsifikasi pada katup aorta
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Jantung ukuran membesar, CTR 71%
+
+Pada regio thorax yang terscanning sebagian : tak tampak kelainan
+Kesan        :        
+- Total calcium score 304.2 mengesankan severecalcification sesuai sesuai Agatston score dan Moderate Risk of Coronary Artery Disease sesuai dengan CSANZ
+
+- Calcified plaque disertai positive remodelling pada segment 2,3 RCA yang menyebabkan moderate stenosis (CAD-RADS 3)
+- Calcified plaque disertai positive remodelling pada segment 6,7 LAD yang menyebabkan mild stenosis (CAD-RADS 2)
+- Calcified plaque disertai positive remodelling pada segment 13 LCX yang menyebabkan minimal stenosis (CAD-RADS 1)
+- Calcified plaque pada distal segmen 5 LM yang menyebabkan minimal stenosis (CAD-RADS 1)
+
+Kesimpulan : CAD-RADS 3/P3/HRP (sesuai dengan CAD RAD 2.0)
+
+- Cardiomegaly
+- Right coronary artery dominance, tanpa anomali origin arteri koroner",2025,"DM/Prediabetes","L",67,"HT-Tidak-ada",216,"Tidak-merokok",23.7,"On-Statin","Insulin","None",8,2.08,NA,"8.4",13.2,123,87,43,32,6.1,"2.90","Right",304.2,"Calcified","None","0","0","0","0","Minimal (1-24%)","1","Calcified","HRP","0","1","0","0","Mild (25-49%)","2","Calcified","HRP","0","1","0","0","Minimal (1-24%)","1","Calcified","HRP","0","1","0","0","Moderate (50-69%)","3","3/P3/HRP","71","Aorta","0","","","HRP (+)",1,5.54517744447956,0.744186046511628,80,0.141860465116279,"Insulin",216,"Sudah Lama","Tidak ada riwayat hipertensi",0.9,-0.302,1,34.255936522877,1,5.7209672994103,"Optimal","Normal","Tidak Terkontrol"
+5,"I Gede Manis",26030782,"Temuan :
+Total calcium score 475.9 mengesankan severe calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Co-dominance artery coronary
+
+Left main (LM): berukuran panjang +/- 10.5 mm, bercabang menjadi LAD dan LCX. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tak tampak myocardial bridging pada LM
+
+LAD: berukuran panjang +/- 148.5 mm. Tampak multiple calcified plaque dengan positive remodelling pada proksimal LAD yang menyebabkan stenosis terbesar +/-44-69% sepanjang +/- 2.6 mm. LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD.
+
+LCX: berukuran panjang +/- 62.6 mm. Tampak calcified plaque dengan positive remodelling pada proksimal RCA yang menyebabkan stenosis terbesar +/-25-44% sepanjang +/- 1.2 mm. LCX bercabang menjadi cabang obtuse marginal yang patent. Tidak tampak myocardial bridging pada LCX.
+
+RCA: berukuran panjang +/- 180.6 mm. Tampak calcified plaque dengan positive remodelling pada proksimal RCA yang menyebabkan stenosis terbesar +/-40-60% sepanjang +/- 5.5 mm. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran dan bentuk kesan normal, CTR 53%
+Kesan        :        
+- Total calcium score 475.9 mengesankan (severe calcification) sesuai Agatston score, mengesankan High Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Multiple calcified plaque dengan positive remodelling pada proksimal LAD yang menyebabkan moderate stenosis
+- Calcified plaque dengan positive remodelling pada proksimal RCA yang menyebabkan mild stenosis
+- Calcified plaque dengan positive remodelling pada proksimal RCA yang menyebabkan moderate stenosis
+Kesimpulan : CAD-RADS 3/P3/HRP (Absence of CAD) (sesuai dengan CAD RAD 2.0)
+
+- Co-dominance artery coronary, tanpa anomali origin arteri koroner.",2026,"DM/Prediabetes","L",60,"HT-Tidak-ada",12,"Tidak-merokok",30.1,"No-Statin","Insulin","None",7.7,2.08,NA,NA,14.6,161,101,25,218,10.4,NA,"Co-Dominant",475.9,"None","None","-","0","0","0","Normal","0","Calcified","HRP","-","1","0","0","Moderate (50-69%)","-","Calcified","HRP","-","1","0","0","Mild (25-49%)","-","Calcified","HRP","-","1","0","0","Moderate (50-69%)","-","3/P3/HRP","0.53","None","-","-","-","HRP (+)",1,7.42571539164873,8.72,136,0.416,"Insulin",12,"Sudah Lama","Tidak ada riwayat hipertensi",0.9,-0.302,1,35.7802110826007,1,6.16730682530418,"Tinggi","Tinggi","Tidak Terkontrol"
+6,"Drs. I Wayan Diarsa, M.Si",26032561,"Temuan :
+Total calcium score 1011.3 mengesankan severe calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+PDA berasal dari LCX
+
+Left main (LM):
+- berukuran panjang +/- 11.5 mm, bercabang menjadi LAD dan LCX.
+- Tak tampak calcified plaque, non-calcified palque, napkin ring maupun spotty calcification pada LM
+- Tak tampak myocardial bridging pada LM
+
+LAD:
+- berukuran panjang +/- 148.1 mm.
+- Tampak mixed plaque dengan positive remodelling pada segment 6 yang menyebabkan stenosis sebesar +/- 70-99%
+- Tampak non calcified plaque pada segment 6 yang menyebabkan stenosis sebesar +/- 25-49%
+- LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD
+- Tak tampak myocardial bridging pada LAD
+
+LCX:
+- berukuran panjang +/- 120.8 mm.
+- Tampak calcified plaque dengan positive remodelling pada segment 11 yang menyebabkan stenosis sebesar +/- 25-49%
+- Tampak multiple calcified plaque dengan positive remodelling pada segment 13 yang menyebabkan stenosis sebesar +/- 25-49%
+- LCX bercabang menjadi cabang obtuse marginal yang patent.
+- Tak tampak myocardial bridging pada LCX
+
+RCA:
+- berukuran panjang +/- 87.3 mm.
+- Tampak calcified plaque dengan positive remodelling pada segment 1 yang menyebabkan stenosis sebesar +/- 1-24%
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kelainan
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Jantung ukuran normal, CTR 46%
+Tampak kalsifikasi pada aorta descenden, annulus fibrosus
+
+Pada regio thorax yang sebagian terscanning : tak tampak kelainan
+Kesan        :        
+- Total calcium score 1011.3 (Severe Calcification) sesuai Agatston score, mengesankan High Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Mixed plaque dengan positive remodelling pada segment 6 LAD yang menyebabkan severe stenosis
+- Multiple calcified plaque dengan positive remodelling pada segment 13 LCX dan segment 11 LCX yang menyebabkan mild stenosis
+- Calcified plaque dengan positive remodelling pada segment 1 RCA yang menyebabkan minimal stenosis
+- Non calcified plaque pada segment 6 LAD yang menyebabkan mild stenosis
+
+Kesimpulan : CAD RADS 4A/P3/HRP (sesuai dengan CAD RAD 2.0)
+
+- Left dominance coronary artery
+- Atherosclerosis pada aorta descenden dan annulus fibrosus",2026,"DM/Prediabetes","L",67,"HT-Tidak-ada",60,"Merokok",31.22,"On-Statin","OAD","None",6.5,1.25,NA,NA,15,155,117,37,101,7.4,NA,"Left",1011.3,"None","None","None","0","0","0","Normal","0","Mixed","HRP","Non-calcified","1","0","0","Severe (70-99%)","4A/P3/HRP","Calcified","HRP","None","1","0","0","Mild (25-49%)","2/P2/HRP","Calcified","HRP","None","1","0","0","Minimal (1-24%)","1/P1/HRP","4A/P3/HRP","0.46","Calcified","-","-","-","HRP (+)",1,6.48692269374285,2.72972972972973,118,0.2,"OAD",60,"Sudah Lama","Tidak ada riwayat hipertensi",0.9,-0.302,1,63.113146371074,0,6.91998024860471,"Optimal","Normal","Terkontrol"
+7,"I Ketut Sidiarja",26043658,"TEMUAN:
+Total calcium score 420.2 mengesankan severe calcification
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right artery coronary dominance
+
+Left main (LM):
+- berukuran panjang +/- 7.9 mm, bercabang menjadi LAD dan LCX.
+- Tampak calcified plaque pada segment 5 LM yang menyebabkan stenosis sebesar +/- 37%
+
+LAD:
+- berukuran panjang +/- 150.8 mm.
+- Tampak calcified plaque pada segment proximal (segment 6) yang menyebabkan stenosis sebesar +/- 55%
+- Tampak calcified plaque pada segment mid (segment 7) yang menyebabkan stenosis sebesar +/- 26%
+- LAD bercabang menjadi cabang diagonal yang patent.
+- Tak tampak myocardial bridging pada LAD.
+LCX:
+- berukuran panjang +/- 113.5 mm.
+- Tampak calcified plaque pada proximal (segment 11 ) yang menyebabkan stenosis sebesar +/- 28%
+- Tampak calcified plaque pada distal (segment 13 ) yang menyebabkan stenosis sebesar +/- 27%
+- LCX bercabang menjadi cabang obtuse marginal yang patent.
+- Tak tampak myocardial bridging pada LCX.
+RCA:
+- berukuran panjang +/- 182.4 mm
+- Tampak calcified plaque pada medial (segment 2) yang menyebabkan stenosis sebesar +/- 27%
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi
+Tampak kalsifikasi aorta abdominalis
+Ekstra-cardiac: tak tampak kelainan.
+Jantung ukuran normal, CTR 48%
+
+Pada regio thorax yang terscanning : tampak fibrosis pada lobus inferior paru kiri
+Kesan        :        
+- Total calcium score 420.2 (Severe Calcification) sesuai Agatston score, mengesankan High Risk for Coronary Artery Disease
+- Calcified plaque pada proximal (segment 6) LAD yang menyebabkan moderate stenosis
+- Calcified plaque pada segment 5 LM yang menyebabkan mild stenosis
+- Calcified plaque pada mid (segment 7) LAD yang menyebabkan mild stenosis
+- Calcified plaque pada proximal (segment 11) LCX yang menyebabkan mild stenosis
+- Calcified plaque pada proximal (segment 13) LCX yang menyebabkan mild stenosis
+- Calcified plaque pada medial RCA (segmen 2) yang menyebabkan mild stenosis
+Kesimpulan : CAD-RADS 3/P3 (sesuai dengan CAD RAD 2.0)
+- Right artery coronary dominance, tanpa anomali anatomi arteri koroner",2026,"DM/Prediabetes","L",63,"HT Terkontrol",12,"Merokok",28.72,"No-Statin","OAD","None",6,1.18,NA,NA,13.5,171,114,46,94,6.3,NA,"Right",420.2,"Calcified","None","-","-","-","-","Mild (25-49%)","-","Calcified","None","-","-","-","-","Moderate (50-69%)","-","Calcified","None","-","-","-","-","Mild (25-49%)","-","Calcified","None","-","-","-","-","Mild (25-49%)","-","3/P3","0.48","None","-","-","-","HRP (-)",1,6.33505425149806,2.04347826086957,125,0.13695652173913,"OAD",12,"Sudah Lama","Hipertensi Terkontrol",0.9,-0.302,1,69.3357900876562,0,6.04310778025982,"Optimal","Normal","Terkontrol"
+8,"Ida Ayu Parmini",26054625,"Temuan :
+Total calcium score 590.4 mengesankan severe calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM):
+- berukuran panjang +/- 14.0 mm, bercabang menjadi LAD dan LCX.
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification.
+- Tak tampak myocardial bridging pada LM.
+
+LAD:
+- berukuran panjang +/- 164.2 mm.
+- Tampak multiple calcified plaque dengan positive remodelling pada proksimal LAD (segmen 6) yang menyebabkan stenosis +/- 25-49%
+- Tampak calcified plaque dengan positive remodelling pada middle LAD (segmen 7) yang menyebabkan stenosis +/- 1-24%
+- LAD bercabang menjadi cabang diagonal yang patent.
+- Tak tampak myocardial bridging pada LAD.
+
+LCX:
+- berukuran panjang +/- 84.2 mm.
+- Tampak multiple calcified plaque dengan positive remodelling pada middle LCX (segmen 13) yang menyebabkan stenosis +/- 25-49%
+- LCX bercabang menjadi cabang obtuse marginal yang patent.
+- Tak tampak myocardial bridging pada LCX.
+
+RCA:
+- berukuran panjang +/- 197.4 mm.
+- Tampak multiple calcified plaque pada middle RCA (segmen 2) yang menyebabkan stenosis +/- 25-49%
+- Tampak multiple calcified plaque pada middle RCA (segmen 2) yang menyebabkan stenosis +/- 50-69%
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging pada RCA.
+- Tampak tortousity pada RCA distal
+
+Katup jantung : Tak tampak kalsifikasi pada mitral, tricuspid dan pulmonal.
+Pericardium : Tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac : Tak tampak kelainan.
+Cor ukuran membesar, CTR 65%.
+Pada regio thorax yang terscanning : Tak tampak kelainan.
+Kesan        :        
+- Total calcium score 590.4 (severe) sesuai Agatston score, mengesankan severe Risk for Coronary Artery Disease dan High Risk of Coronary Artery Disease sesuai dengan CSANZ
+
+- Multiple calcified plaque pada middle RCA (segmen 2) yang menyebabkan moderate stenosis
+- Multiple calcified plaque dengan positive remodelling pada proksimal LAD (segmen 6), middle LCX (segmen 13)
+- Calcified plaque dengan positive remodelling pada middle LAD (segmen 7) yang menyebabkan minimal stenosis
+
+Kesimpulan :
+CAD-RADS 3/P3/HRP (sesuai dengan CAD RAD 2.0)
+
+- Right coronary artery dominance, tanpa anomali anatomi arteri koroner
+- Cardiomegaly",2026,"DM/Prediabetes","P",76,"HT st I",120,"Tidak-merokok",29.38,"On-Statin","Insulin","None",11.9,1.05,NA,"9.1",12.9,187,131,33,193,6.5,"3.70","Right",590.4,"None","None","-","0","0","0","Normal","-","Calcified","HRP","-","1","0","0","Mild (25-49%)","-","Calcified","HRP","-","1","0","0","Mild (25-49%)","-","Calcified","None","-","0","0","0","Moderate (50-69%)","-","3/P3/HRP","0.65","None","-","-","-","HRP (+)",1,7.73922858902237,5.84848484848485,154,0.196969696969697,"Insulin",120,"Sudah Lama","Hipertensi Tidak Terkontrol",0.7,-0.241,1.012,55.0659034733021,1,6.38249260741838,"Tinggi","Tinggi","Tidak Terkontrol"
+9,"Maryati",26027830,"Temuan :
+Total calcium score 556.7 mengesankan severe calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM): berukuran panjang +/- 13.9 mm.
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification.
+LM bercabang menjadi LAD dan LCX.
+- Tak tampak myocardial bridging pada LM
+
+LAD: berukuran panjang +/- 73.0 mm.
+- Tampak multiple mixed plaque dengan positive remodelling pada proksimal LAD yang menyebabkan stenosis sebesar +/- 50-69% sepanjang +/- 1.9 mm
+- Tak tampak napkin-type plaque ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent.
+- Tak tampak myocardial bridging pada LAD.
+
+LCX: berukuran panjang +/- 49.0 mm.
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification.
+- LCX bercabang menjadi cabang obtuse marginal yang patent.
+-Tidak tampak myocardial bridging pada LCX.
+
+RCA: berukuran panjang +/- 160.5 mm.
+- Tampak multiple mixed plaque dengan napkin-ring sign pada middle LAD yang menyebabkan stenosis sebesar +/- 70-99% sepanjang +/- 6.6 mm
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tampak superfisial myocardial bridging pada segmen 1 dan 3 RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor kesan membesar, CTR 61%
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+Kesan        :        
+- Total calcium score 556.7 (severe calcification) sesuai Agatston score, mengesankan High Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Multiple mixed plaque dengan positive remodelling pada proksimal LAD yang menyebabkan moderate stenosis
+- Multiple mixed plaque dengan napkin-ring sign pada middle LAD yang menyebabkan severe stenosis
+- Superfisial myocardial bridging pada segmen 1 dan 3 RCA.
+Kesimpulan : CAD-RADS 4A/P3/HRP (sesuai dengan CAD RAD 2.0)
+
+- Right coronary artery dominance, tanpa anomali origin arteri koroner.
+- Cardiomegaly",2026,"DM/Prediabetes","P",66,"HT-Tidak-ada",120,"Tidak-merokok",29.62,"No-Statin","Insulin","None",9,1.26,NA,NA,11.6,150,94,38,91,6.7,NA,"Right",556.7,"None","None","-","0","0","0","Normal","-","Mixed","HRP","-","1","1","0","Severe (70-99%)","-","None","None","-","0","0","0","Normal","-","None","None","-","0","0","0","Normal","-","4A/P3/HRP","0.61","None","-","-","-","HRP (+)",1,6.70808408385307,2.39473684210526,112,0.176315789473684,"Insulin",120,"Sudah Lama","Tidak ada riwayat hipertensi",0.7,-0.241,1.012,47.0842166959097,1,6.32382118339551,"Optimal","Normal","Tidak Terkontrol"
+10,"I GEDE WIPRADA PASUPATI",20031700,"Temuan :
+
+Total calcium score 922.6 mengesankan severe calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM):
+- berukuran panjang +/- 8.6 mm, bercabang menjadi LAD dan LCX.
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification
+- Tak tampak myocardial bridging pada LM
+
+LAD:
+- berukuran panjang +/- 97.7 mm.
+- Tampak mixed calcified dan non calcified plaque pada proximal LAD ( segmen 6) yang menyebabkan stenosis sebesar +/- 70-99%. Masih tampak kontras mengisi aspek distalnya LAD
+- Tak tampak napkin-type plaque ataupun spot calcification
+- LAD bercabang menjadi cabang diagonal yang patent.
+- Tak tampak myocardial bridging pada LAD.
+
+LCX:
+- berukuran panjang +/- 151.5 mm.
+- Tampak calcified plaque dengan positive remodelling pada proximal LCX (segmen 11) yang menyebabkan stenosis sebesar +/- 1-24%.
+- Tampak mixed calcified dan low attenuation plaque disertai positive remodelling pada mid LCX (segmen 13) yang menyebabkan stenosis sebesar +/- 50-69%
+- Tak tampak napkin-type plaque ataupun spot calcification
+- LCX bercabang menjadi cabang obtuse marginal yang patent.
+- Tak tampak myocardial bridging pada LCX.
+
+RCA:
+- berukuran panjang +/- 64.4 mm.
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta, mitral, tricuspid maupun pulmonal.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran dan bentuk kesan normal, CTR 56%
+Pada regio thorax yang terscanning sebagian:
+Tulang-tulang : tampak multiple osteophyte pada CV thoracalis
+Kesan        :        
+- Total calcium score 922.6 mengesankan severe calcification sesuai Agatston score dan High Risk of Coronary Artery Disease sesuai dengan CSANZ
+- Mixed calcified dan non calcified plaque pada proximal LAD ( segmen 6) yang menyebabkan severe stenosis
+- Mixed calcified dan low attenuation plaque disertai positive remodelling pada mid LCX (segmen 13) yang moderate stenosis
+- Calcified plaque dengan positive remodelling pada proximal LCX (segmen 11) yang menyebabkan minimal stenosis
+
+Kesimpulan : CAD-RADS 4A/P3/HRP (sesuai dengan CAD RAD 2.0)
+- Right coronary artery dominance, tanpa anomali anatomi arteri koroner
+- Spondylosis thoracalis",2025,"DM/Prediabetes","L",42,"HT st I",60,"Merokok",37.11,"On-Statin","OAD","None",9.3,1.07,NA,NA,15,176,128,34,144,6,NA,"Right",922.6,"None","None","0","0","0","0","Normal","0","Mixed","HRP","0","0","0","0","Severe (70-99%)","4/P3","Mixed","HRP","1","1","0","0","Moderate (50-69%)","3/P2","None","None","0","0","0","0","Normal","0","4A/P3/HRP","0.56","None","-","-","-","HRP (+)",1,7.19982769973521,4.23529411764706,142,0.176470588235294,"OAD",60,"Sudah Lama","Hipertensi Tidak Terkontrol",0.9,-0.302,1,88.8539018319659,0,6.82827907748034,"Tinggi","Tinggi","Tidak Terkontrol"
+11,"MUJIANIK",24061123,"Temuan :
+Total calcium score 2933.2 mengesankan Extensive calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM):
+- Berukuran panjang +/- 8.3 mm, bercabang menjadi LAD dan LCX.
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification.
+- Tak tampak myocardial bridging pada LM
+
+LAD:
+- Berukuran panjang +/- 89.9 mm.
+- Tampak multiple calcified plaque dengan positive remodelling pada segment 6-7 LAD segmen yang menyebabkan stenosis terbesar +/- 70-99% sepanjang +/- 33.5 mm
+- Tampak multiple calcified plaque dengan positive remodelling pada segment 8 LAD segmen yang menyebabkan stenosis terbesar +/- 25-49% sepanjang +/- 1.5 mm
+- Tak tampak non calcified plaque, dan napkin-type plaque, ataupun spot calcification.
+- LAD bercabang menjadi cabang diagonal yang patent.
+- Tak tampak myocardial bridging pada LAD.
+
+D2 :
+- Berukuran panjang +/- 23.6 mm.
+- Tampak multiple calcified plaque yang menyebabkan stenosis terbesar +/- 25-49% sepanjang +/- 4 mm
+
+LCX:
+- Berukuran panjang +/- 49.8 mm.
+- Tampak multiple calcified plaque dan non calcified plaque dengan positive remodelling pada segment 13 LCX yang menyebabkan stenosis terbesar +/- 70-99% sepanjang +/- 13.3 mm
+- Tak tampak napkin-type plaque, ataupun spot calcification.
+- LCX bercabang menjadi cabang obtuse marginal yang patent.
+- Tidak tampak myocardial bridging pada LCX.
+
+RCA:
+- Berukuran panjang +/- 148.3 mm.
+- Tampak multiple calcified plaque dengan positive remodelling pada segment 1 RCA yang menyebabkan stenosis terbesar +/- 70-99% sepanjang +/- 13.3 mm
+- Tampak multiple calcified plaque dengan positive remodelling pada segment 2 RCA yang menyebabkan stenosis terbesar +/- 50-69% sepanjang +/- 9.4 mm
+- Tampak multiple calcified plaque dan non calcified plaque dengan positive remodelling pada segment 3 RCA yang menyebabkan stenosis terbesar +/- 70-99% sepanjang +/- 9.7 mm
+- Tampak multiple calcified plaque dengan positive remodelling pada segment 16 RCA yang menyebabkan stenosis terbesar +/- 25-49% sepanjang +/- 2.9 mm
+- Tak tampak non calcified plaque, dan napkin-type plaque, ataupun spot calcification.
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran dan bentuk kesan membesar, CTR 61%
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+Kesan        :        
+- Total calcium score 2933.2 (Extensive calcification) sesuai Agatston score, mengesankan High Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Multiple calcified plaque dengan positive remodelling pada segment 6-7 LAD segmen yang menyebabkan severe stenosis (CAD-RADS 4A/HRP)
+- Multiple calcified plaque dengan positive remodelling pada segment 8 LAD segmen yang menyebabkan mild stenosis (CAD-RADS 2/HRP)
+- Multiple calcified plaque pada D2 yang menyebabkan mild stenosis (CAD-RADS 2)
+- Multiple calcified plaque dan non calcified plaque dengan positive remodelling pada segment 13 LCX yang menyebabkan severe stenosis (CAD-RADS 4A/HRP)
+- Multiple calcified plaque dengan positive remodelling pada segment 1 RCA yang menyebabkan severe stenosis (CAD-RADS 4A/HRP)
+- Multiple calcified plaque dengan positive remodelling pada segment 2 RCA yang menyebabkan moderate stenosis (CAD-RADS 3/HRP)
+- Multiple calcified plaque dan non calcified plaque dengan positive remodelling pada segment 3 RCA yang menyebabkan severe stenosis (CAD-RADS 4A/HRP)
+- Multiple calcified plaque dengan positive remodelling pada segment 16 RCA yang menyebabkan mild stenosis (CAD-RADS 2/HRP)
+
+Kesimpulan : CAD-RADS 4B/P4/HRP (sesuai dengan CAD RAD 2.0)
+
+- Right coronary artery dominance, tanpa anomali origin arteri koroner.",2026,"DM/Prediabetes","P",41,"HT-Tidak-ada",36,"Merokok",24.97,"On-Statin","Insulin","None",10.9,1.95,NA,NA,10,152,122,23,82,9.1,"5.50","Right",2933.2,"None","None","0","0","0","0","Normal","0","Calcified","HRP","0","1","0","0","Severe (70-99%)","4A/HRP","Mixed","HRP","0","1","0","0","Severe (70-99%)","4A/HRP","Mixed","HRP","0","1","0","0","Severe (70-99%)","4A/HRP","4B/P4/HRP","0.61","None","-","-","-","HRP (+)",1,6.79548203649935,3.56521739130435,129,0.395652173913043,"Insulin",36,"Sudah Lama","Tidak ada riwayat hipertensi",0.7,-0.241,1.012,32.5689426969435,1,7.98419012270554,"Optimal","Tinggi","Tidak Terkontrol"
+12,"SUDERNO",26044480,"Temuan :
+Total calcium score 898.8 mengesankan severe calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri
+Right coronary artery dominance.
+
+Left main (LM):
+- berukuran panjang +/- 14.7 mm, bercabang menjadi LAD dan LCX.
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification
+
+LAD:
+- berukuran panjang +/- 131.9 mm.
+- Tampak multiple calcified plaque dengan positive remodelling pada segment proximal (segment 6) yang menyebabkan stenosis sebesar +/- 70-99% sepanjang +/- 10.1 mm
+- Tampak multiple calcified plaque dengan positive remodelling pada segment mid (segment 7) yang menyebabkan stenosis sebesar +/- 50-69%
+- Tampak multiple calcified plaque dengan positive remodelling pada segment distal (segment 8) yang menyebabkan stenosis sebesar +/- 25-49%
+- LAD bercabang menjadi cabang diagonal yang patent.
+- Tak tampak myocardial bridging pada LAD.
+
+LCX:
+- berukuran panjang +/- 71.4 mm.
+- Tampak calcified plaque pada proximal (segment 11 ) yang menyebabkan stenosis sebesar +/- 1-24%
+- Tampak multiple calcified plaque dengan positive remodelling pada distal (segment 13) yang menyebabkan stenosis sebesar +/- 50-69%
+- LCX bercabang menjadi cabang obtuse marginal yang patent.
+- Tak tampak myocardial bridging pada LCX.
+
+RCA:
+- berukuran panjang +/- 120.8 mm
+- Tampak multiple calcified plaque dengan positive remodelling pada proximal (segment 2) yang menyebabkan stenosis sebesar +/- 1-24%
+- Tampak calcified plaque pada distal (segment 3) yang menyebabkan stenosis sebesar +/- 25-49%
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging
+
+Katup jantung: tak tampak kalsifikasi pada katup mitral, tricuspid maupun aortic dan pulmonal.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan.
+Cor ukuran normal, CTR 41%
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+Kesan        :        
+- Total calcium score 898.8 (severe calcification) sesuai Agatston score, mengesankan High Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Multiple calcified plaque dengan positive remodelling pada segment proximal LAD (segment 6) yang menyebabkan severe stenosis
+- Multiple calcified plaque dengan positive remodelling pada segment mid LAD (segment 7) yang menyebabkan moderate stenosis
+- Multiple calcified plaque dengan positive remodelling pada segment distal LAD (segment 8) yang menyebabkan mild stenosis
+- Calcified plaque pada proximal LCX (segment 11 ) yang menyebabkan minimal stenosis
+- Multiple calcified plaque dengan positive remodelling pada distal LCX (segment 13) yang menyebabkan moderate stenosis
+- Multiple calcified plaque dengan positive remodelling pada proximal RCA (segment 2) yang menyebabkan minimal stenosis
+- Calcified plaque pada distal RCA (segment 3) yang menyebabkan mild stenosis
+Kesimpulan : CAD-RADS 4A/P3/HRP (sesuai dengan CAD RAD 2.0)
+
+- Right coronary artery dominance",2025,"DM/Prediabetes","L",60,"HT Terkontrol",12,"Merokok",28.28,"On-Statin","Tanpa-obat","None",9.9,1.28,NA,NA,15.9,127,93,27,173,5,"4.30","Right",898.8,"None","None","0","0","0","0","Normal","0","Calcified","HRP","0","1","0","0","Severe (70-99%)","4/P3/HRP","Calcified","HRP","0","1","0","0","Moderate (50-69%)","3/P2/HRP","Calcified","HRP","0","1","0","0","Mild (25-49%)","2/P1","4A/P3/HRP","0.41","None","-","-","-","HRP (+)",1,7.44582635163832,6.40740740740741,100,0.185185185185185,"Tanpa Terapi/Diet",12,"Sudah Lama","Hipertensi Terkontrol",0.9,-0.302,1,64.0718017255077,0,6.80217251640707,"Optimal","Tinggi","Tidak Terkontrol"
+13,"Ni Made Budhi",26000634,"TEMUAN :Total calcium score 2648.2 mengesankan extensive calcification
+RCA berasal dari sinus coronary kiri.
+Right coronary artery dominance
+
+Left main (LM): berukuran panjang +/- 8.4 mm, bercabang menjadi LAD dan LCX. Tak tampak calcified plaque maupun stenosis. Tak tampak myocardial bridging pada LM
+LAD: berukuran panjang +/- 131.5 mm, LAD bercabang menjadi cabang diagonal yang patent. Tampak calcified plaque dengan positive remodeling pada proximal LAD hingga diagonal branch D1 dan D2 yang menyebabkan total stenosis 99-100% sepanjang +/- 32,4mm pada proximal LAD dan sepanjang +/- 2.9mm pada D2..Tak tampak myocardial bridging pada LAD
+LCX: berukuran panjang +/- 71.6 mm, LCX bercabang menjadi cabang obtuse marginal yang patent.
+Tampak mix plaque pada proximal LCX dengan positive remodeling yang menyebabkan stenosis sebesar 100% sepanjang 4.1mm
+Tampak multiple calcified plaque dengan positive remodeling pada mid dan distal LCX yang menyebabkan stenosis masing-masing sebesar 45% sepanjang 2.9 mm, dan 81% sepanjang 6.9mm. Tak tampak myocardial bridging pada LCX
+RCA: berukuran panjang +/- 143.3 mm. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tampak multiple calcified plaque dengan positive remodeling pada proksimal, mid, dan distal RCA yang menyebabkan stenosis masing-masing sebesar 37% sepanjang 35.3mm , 27% sepanjang 2.1mm dan , 52% sepanjang 3.8mm. Tak tampak myocardial bridging pada RCA
+
+Jantung ukuran normal CTR 50%
+Tampak kalsifikasi pada arcus aorta, aorta ascendens, dan aorta descendens
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi
+Tak ada mural thrombus atau massa intracradiac di atrium dan ventrikel kiri
+Tak tampak emboli paru maupun diseksi
+Ekstra-cardiac : tak tampak kelainan
+
+
+Kesan        :        
+- Total calcium score 2648.2 mengesankan extensive calcification sesuai Agatston score
+- Calcified plaque pada proximal LAD dan mixed plaque pada proximal LCX dengan positive remodelling yang menyebabkan stenosis sebesar +/- 100%
+- Calcified plaque pada LCX distal yang menyebabkan stenosis sebesar +/- 70-99%
+- Multiple calcified plaque dengan positive remodelling pada mid LCX dan RCA yang menyebabkan stenosis sebesar +/-50-69%
+
+- Aorthosklerosis pada arcus aorta, aorta ascendens, dan aorta descendens
+- Right coronary artery dominance
+- Anomali origin RCA berasal dari sinus coronary kiri.
+
+Berdasarkan temuan di atas sesuai CAD-RADS 5/P4/HRP (Sesuai CAD-RADS 2.0, Extensive stenosis)",2026,"DM/Prediabetes","P",79,"HT Terkontrol",36,"Tidak-merokok",21.45,"On-Statin","Insulin","None",7.8,0.86,"4.60","9.6",11.2,167,102,47,95,5.2,"4.10","Right",2648.2,"None","None","0","0","0","0","Normal","0","Calcified","HRP","0","1","0","0","Occlusion (100%)","5/P4","Mixed","HRP","0","1","0","0","Occlusion (100%)","5/P4","Calcified","HRP","0","1","0","0","Moderate (50-69%)","3/P2","5/P4/HRP","0.5","None","-","-","-","HRP (+)",1,6.60800062529609,2.02127659574468,120,0.11063829787234,"Insulin",36,"Sudah Lama","Hipertensi Terkontrol",0.7,-0.241,1.012,68.6765964472742,0,7.88201298661082,"Optimal","Normal","Tidak Terkontrol"
+14,"Lilis Setyawati",22059923,"TEMUAN : Total calcium score 17.5, mengesankan minimal calcification
+
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner
+Right coronary artery dominance
+
+Left main (LM): berukuran panjang +/- 16.0 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. LM berasal dari sinus coronary kanan berjalan ke posterior dari aortic root dan bercabang menjadi LAD dan LCX. Tak tampak myocardial bridging pada LM.
+LAD: berukuran panjang +/- 76.9 mm. Tampak spotty calcification pada proksimal LAD dengan stenosis sebesar +/-9%. Tak tampak non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD.
+LCX: berukuran panjang +/- 74.3 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. LCX bercabang menjadi cabang obtuse marginal yang patent. Tak tampak myocardial bridging pada LCX.
+RCA: berukuran panjang +/- 142.7 mm. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification.  Tak tampak myocardial bridging pada RCA.
+
+Jantung ukuran kesan membesar, CTR +/- 57%.
+Katup jantung: tak tampak kalsifikasi pada katup.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac : tak tampak kelainan.
+Kesan:
+- Total calcium score 17.5 mengesankan mild calcification sesuai Agatston score.
+- Spotty calcification pada proksimal LAD dengan stenosis sebesar 1-24% sesuai dengan CADSRADS 1 (Minimal non obstructive CAD).
+- Tak tampak calcified plaque, non-calcified plaque, dan napkin-type plaque, remodeling ataupun spot calcification pada LM, LCX, RCA sesuai dengan CAD-RADS 0 (No Stenosis).
+- Right coronary artery dominance, tanpa anomali origin arteri koroner.
+Berdasarkan temuan di atas sesuai CAD-RADS 1/P1 (Sesuai CAD-RADS 2.0).
+
+- Cardiomegaly.",2024,"DM/Prediabetes","P",53,"HT Terkontrol",3,"Tidak-merokok",17.06,"No-Statin","Insulin","None",9,0.81,NA,NA,10.8,184,137,31,199,12.8,"4.00","Right",17.5,"None","None","0","0","0","0","Normal","0","Mixed","None","0","0","0","1","Minimal (1-24%)","1/P1","None","None","0","0","0","0","Normal","0","None","None","0","0","0","0","Normal","0","1/P1","0.57","None","None","-","-","HRP (-)",0,7.49052940206071,6.41935483870968,153,0.412903225806452,"Insulin",3,"Sudah Lama","Hipertensi Terkontrol",0.7,-0.241,1.012,86.7463239906208,0,2.91777073208428,"Tinggi","Tinggi","Tidak Terkontrol"
+15,"TITIK SUWARNI",21065359,"Temuan :
+Total calcium score 1161.3 mengesankan extensive calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance.
+
+Left main (LM):
+Berukuran panjang +/- 12.7 mm, bercabang menjadi LAD dan LCX.
+Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification.
+Tak tampak myocardial bridging pada LM
+
+LAD:
+Berukuran panjang +/- 146.5 mm.
+Tampak multiple calcified plaque pada segment 6, 7 dan 8 disertai positive remodelling pada proksimal-distal LAD yang menyebabkan stenosis masing-masing +/- 11%, 9%, 6%, 18%, 17% dan 14%
+Tampak calcified dan non-plaque pada segment 7 disertai positive remodelling pada mid LAD yang menyebabkan stenosis sebesar +/- 57%
+Tak tampak napkin-type plaque, ataupun spot calcification.
+LAD bercabang menjadi cabang diagonal yang patent.
+Tak tampak myocardial bridging pada LAD.
+
+LCX:
+Berukuran panjang +/- 81.8 mm.
+Tampak multiple calcified plaque pada segment 11 dan 13 disertai positif remodelling pada proksimal-mid yang menyebabkan stenosis masing-masing +/- 21%, 19% dan 7%
+Tak tampak non calcified plaque dan napkin-type plaque, ataupun spot calcification.
+LCX bercabang menjadi cabang obtuse marginal yang patent.
+Tidak tampak myocardial bridging pada LCX.
+
+RCA:
+Berukuran panjang +/- 124.5 mm.
+Tampak multiple calcified plaque pada segment 1 dan 2 disertai positif remodelling pada proksimal-mid RCA yang menyebabkan stenosis masing-masing sebesar +/- 4%, 19% dan 20%
+Tak tampak non-calcified plaque, napkin-type plaque ataupun spot calcification.
+Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Jantung ukuran normal CTR 51%
+Pada regio thorax yang terscanning sebagian : tak tampak kelainan
+Kesan        :        
+- Total calcium score 1161.3 (extensive atherosclerotic plaque) mengesankan agressive risk of coronary artery disease sesuai Agatston score.
+- Multiple calcified plaque disertai positif remodelling pada segment 11 dan 13 LCX yang menyebabkan stenosis +/- 1-24% (minimal stenosis)
+- Multiple calcified plaque disertai positif remodelling pada segment 6, 7 dan 8 LAD yang menyebabkan stenosis +/- 25-49 % (mild stenosis)
+- Calcified dan non-plaque disertai positif remodelling pada segment 7 LAD yang menyebabkan stenosis sebesar +/- 50-70% (severe stenosis)
+- Multiple calcified plaque disertai positif remodelling pada segment 1 dan 2 RCA yang menyebabkan stenosis sebesar +/- 1-24% (minimal stenosis)
+- Right coronary artery dominance, tanpa anomali origin arteri koroner
+
+Kesimpulan : CAD-RADS 4/P4/HRP (sesuai dengan CAD RAD 2.0)",2026,"DM/Prediabetes","P",64,"HT Terkontrol",0,"Tidak-merokok",33.3,"No-Statin","OAD","None",5.9,0.92,NA,NA,11.3,152,85,62,65,6.8,NA,"Right",1161.3,"None","None","0","0","0","0","Normal","0","Mixed","HRP","0","1","0","0","Severe (70-99%)","4/P4/HRP","Calcified","HRP","0","1","0","0","Minimal (1-24%)","1/P4/HRP","Calcified","HRP","0","1","0","0","Minimal (1-24%)","1/P4/HRP","4/P4/HRP","51","0","0","-","-","HRP (+)",1,5.94933962080731,1.04838709677419,90,0.109677419354839,"OAD",0,"Baru Terdiagnosis","Hipertensi Terkontrol",0.7,-0.241,1.012,69.5307039437307,0,7.05815607964966,"Optimal","Normal","Terkontrol"
+16,"I NYOMAN DITA",22049922,"Temuan :
+Total calcium score 11.6 mengesankan mild calcification
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner
+Right coronary artery dominance
+
+Left main (LM): berukuran panjang +/- 17.4  mm, bercabang menjadi LAD dan LCX. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tidak tampak myocardial bridging pada LM.
+LAD: berukuran panjang +/- 138.7  mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD. Tampak terpasang stent pada proksimal LAD.
+LCX: berukuran panjang +/- 90.1 mm. Tampak calcified plaque pada dinding proximal LCX yang menyebabkan stenosis +/- 11%. Tak tampak non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. LCX  bercabang menjadi cabang obtuse marginal yang patent. Tidak tampak myocardial bridging pada LCX. 
+RCA: berukuran panjang +/- 179.6 mm. Tampak calcified plaque pada dinding proximal RCA yang tidak menyebabkan stenosis. Tak tampak non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA. 
+Cor : Ukuran kesan membesar, CTR 58%. Tampak penipisan myocardium apex ventricle kiri
+Katup jantung:  tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracradiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac:  tak tampak kelainan.
+
+Pada regio thorax yang terscanning sebagian:  tak tampak kelainan.
+Kesan:
+- Cardiomegaly disertai gambaran chronic transmural myocardiac infarction pada apex ventricle kiri
+- Total calcium score 11.6 mengesankan Mild Calcification sesuai Agatston score.
+- Calcified plaque pada proximal LCX yang menyebabkan stenosis sebesar +/- 1-24%
+- Calcified plaque pada dinding proximal RCA yang tidak menyebabkan stenosis
+- Right coronary artery dominance
+- Terpasang stent pada proximal LAD, tak tampak restenosis stent
+- Cabang diagonal, cabang marginal kiri, PDA, dan cabang marginal kanan tampak patent
+- Tak tampak kalsifikasi pada katup aorta, katup mitral dan aorta descenden
+
+Temuan di atas sesuai CAD-RADS 1/P1/S (sesuai klasifikasi CAD-RADS 2.0)",2025,"DM/Prediabetes","L",46,"HT-Tidak-ada",6,"Tidak-merokok",29.76,"On-Statin","OAD","None",5.8,1.13,NA,NA,14,136,85,32,93,10.5,NA,"Right",11.6,"None","None","None","0","0","0","Normal","0","None","None","None","0","0","0","Normal","0","Calcified","None","None","0","0","0","Minimal (1-24%)","1/P1","Calcified","None","None","0","0","0","Normal","0","1/P1","58","None","None","-","-","HRP (-)",0,6.29045741070563,2.90625,104,0.328125,"OAD",6,"Sudah Lama","Tidak ada riwayat hipertensi",0.9,-0.302,1,81.1780985181135,0,2.53369681395743,"Optimal","Normal","Terkontrol"
+17,"I GUSTI MADE WIRANATA",21059845,"Temuan :
+Total calcium score 138.3 mengesankan moderate calcification
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM):
+- berukuran panjang +/- 4.2 mm, bercabang menjadi LAD dan LCX.
+- Tampak calcified plaque dengan positive remodelling pada LM (segment 5) yang menyebabkan stenosis sebesar +/- 1-24%
+- Tak tampak myocardial bridging pada LM
+
+LAD:
+- berukuran panjang +/- 132.6 mm.
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling atau pun spotty calcification.
+- Tampak calcified plaque disertai positive remodelling pada segmen diagnonal (D1) yang menyebabkan near total stenosis
+- Tak tampak myocardial bridging pada LAD
+
+LCX:
+- berukuran panjang +/- 94 mm.
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling atau pun spotty calcification.
+- LCX bercabang menjadi cabang obtuse marginal yang patent.
+- Tak tampak myocardial bridging pada LCX
+
+RCA:
+- berukuran panjang +/- 132.7 mm.
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling atau pun spotty calcification.
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tampak kalsifikasi pada katup aorta
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan.
+Jantung ukuran dan bentuk kesan normal, CTR 50%
+Pada regio thorax yang terscanning: tak tampak kelainan
+Tampak terpasang CDL dengan tip distal terproyeksi pada atrium kanan
+Kesan        :        
+- Total calcium score 138.3 mengesankan moderate calcification (sesuai Agatston score) dan Moderate Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Calcified plaque dengan positive remodelling pada LM (segment 5) yang menyebabkan minimal stenosis
+- Calcified plaque dengan positive remodelling pada diagonal branch (D1) yang menyebabkan near total stenosis
+Kesimpulan : CAD RADS 1/P2/HRP (sesuai dengan CAD RAD 2.0)
+- Right coronary artery dominance, tanpa anomali origin arteri coroner
+- Kalsifikasi katup aorta
+- Terpasang CDL dengan tip distal terproyeksi pada atrium kanan",2026,"DM/Prediabetes","L",62,"HT Terkontrol",264,"Tidak-merokok",24.22,"On-Statin","Insulin","None",8.6,6.26,"4.20","8.2",11.9,155,97,53,64,3.2,NA,"Right",138.3,"Calcified","HRP","-","1","0","0","Minimal (1-24%)","P2","Calcified","HRP","-","1","0","0","Occlusion (100%)","P1","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","1","50","Yes","-","-","-","HRP (-)",1,6.31064528661913,1.20754716981132,102,0.060377358490566,"Insulin",264,"Sudah Lama","Hipertensi Terkontrol",0.9,-0.302,1,9.41949641674117,1,4.93662988078576,"Optimal","Normal","Tidak Terkontrol"
+18,"OCTAVIANUS PADJI",17046421,"Temuan :
+Total calcium score 594.4 mengesankan severe calcification
+RCA berasal sinotubular junction kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM):
+- Berukuran panjang +/- 6 mm, bercabang menjadi LAD dan LCX.
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification.
+
+LAD:
+- Berukuran panjang +/- 164.3 mm.
+- Tampak calcified plaque pada mid LAD (segment 7) yang menyebabkan stenosis sebesar +/- 25-49%
+- Tampak calcified plaque disertai remodelling pada D1 (segment 9) yang menyebabkan stenosis sebesar +/- 50-69%
+- LAD bercabang menjadi cabang diagonal yang patent.
+- Tak tampak myocardial bridging pada LAD
+
+LCX:
+- Berukuran panjang +/- 45.4 mm.
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification.
+- LCX bercabang menjadi cabang obtuse marginal yang patent.
+- Tak tampak myocardial bridging pada LCX.
+
+RCA:
+- Berukuran panjang +/- 260.5 mm.
+- Tampak terpasang stent pada mid RCA terukur panjang total stent +/- 21 mm
+- Tampak instent restenosis pada mid stent proximal RCA berupa calcified dan non calcified plaque yang menyebabkan penyempitan lumen +/- 50-69%
+- Terlihat kontras mengisi sampai distal RCA
+- Tampak calcified plaque disertai remodelling pada proximal RCA (segment 1) dan mid RCA (segment 3) yang menyebabkan stenosis sebesar +/- 1-24%
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tampak kalsifikasi pada katup aorta, tak tampak kalsifikasi pada katup mitral, tricuspid maupun pulmonal.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Tampak kalsifikasi pada aorta descendens
+Ekstra-cardiac: tak tampak kelainan.
+Cor ukuran membesar ringan, CTR 55%
+
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+Kesan        :        
+- Total calcium score 594.4 mengesankan severe calcification (sesuai Agatston score) dan High Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Instent restenosis pada mid stent proximal RCA berupa calcified dan non calcified plaque yang menyebabkan moderate stenosis
+- Calcified plaque disertai remodelling pada D1 (segment 9) yang menyebabkan moderate stenosis
+- Calcified plaque pada mid LAD (segment 7) yang menyebabkan mild stenosis
+- Calcified plaque disertai remodelling pada proximal RCA (segment 1) dan mid RCA (segment 3) yang menyebabkan minimal stenosis
+Kesimpulan : CAD-RADS 3/P3/HRP/S (sesuai dengan CAD RAD 2.0)
+
+- Aortosclerosis dan sclerosis katup aorta
+- Cardiomegaly
+- Right coronary artery dominance, tanpa anomali origin arteri koroner",2026,"DM/Prediabetes","L",64,"HT Terkontrol",0,"Merokok",29.74,"On-Statin","Tanpa-obat","None",7.4,1.29,NA,NA,11.9,181,121,43,135,4.7,NA,"Right",594.4,"None","None","0","0","0","0","Normal","0","Mixed","None","0","0","0","0","Mild (25-49%)","2/P1","None","None","0","0","0","0","Normal","0","Mixed","HRP","0","1","0","0","Moderate (50-69%)","3/P3/HRP/S","3/P3/HRP/S","55","Aorta","0","0","0","HRP (+)",1,6.90675477864855,3.13953488372093,138,0.109302325581395,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Hipertensi Terkontrol",0.9,-0.302,1,61.9166167459493,0,6.38923344858168,"Tinggi","Tinggi","Tidak Terkontrol"
+19,"NYOMAN GERIH",23071899,"Temuan :
+Total calcium score 22.5 mengesankan mild calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM) :
+- berukuran panjang +/- 7.7 mm, bercabang menjadi LAD dan LCX.
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification.
+
+LAD:
+- Tampak calcified plaque pada proksimal LAD (segmen 6) disertai positive remodeling yang menyebabkan stenosis sebesar +/- 25-49%
+- LAD bercabang menjadi cabang diagonal yang patent.
+- Tak tampak myocardial bridging pada LAD.
+
+LCX:
+- Tampak calcified plaque pada proksimal LCX (segmen 11) disertai positive remodeling yang menyebabkan stenosis sebesar +/- 1-24%
+- LCX bercabang menjadi cabang obtuse marginal yang patent.
+- Tak tampak myocardial bridging pada LCX.
+
+RCA:
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification.
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging pada RCA.
+
+Cor ukuran normal, CTR +/- 58%
+Katup jantung : Tak tampak kalsifikasi pada katup aorta, mitral, trikuspid dan pulmonal.
+Pericardium : Tak tampak efusi, penebalan maupun kalsifikasi.
+Tak tampak mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac : Tak tampak kelainan.
+
+Pada regio thorax yang terscanning :
+- Tampak konsolidasi pada segmen superior lobus inferior paru kanan
+Kesan        :        
+- Total calcium score 22.5 Mild Calcification (sesuai Agatston score), mengesankan Low Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Calcified plaque pada proksimal LAD (segmen 6) disertai positive remodeling yang menyebabkan mild stenosis
+- Calcified plaque pada proksimal LCX (segmen 11) disertai positive remodeling yang menyebabkan minimal stenosis
+
+Kesimpulan : CAD-RADS 2/P1/HRP (sesuai dengan CAD RAD 2.0)
+
+- Right coronary artery dominance, tanpa anomali anatomi arteri koroner
+- Susp. pneumonia, mohon kolerasi klinis",2026,"DM/Prediabetes","L",70,"HT st I",96,"Merokok",29.3,"No-Statin","Insulin","None",9.2,14.7,NA,NA,11.1,122,78,38,91,6.6,"28.50","Right",22.5,"None","None","-","0","0","0","Normal","0","Calcified","HRP","-","1","0","0","Mild (25-49%)","2/P1/HRP","Calcified","HRP","-","1","0","0","Minimal (1-24%)","2/P1/HRP","None","None","-","0","0","0","Normal","0","2/P1/HRP","58","None","-","-","-","HRP (+)",0,6.73006299057184,2.39473684210526,84,0.173684210526316,"Insulin",96,"Sudah Lama","Hipertensi Tidak Terkontrol",0.9,-0.302,1,3.21757013842894,1,3.15700042115011,"Optimal","Normal","Tidak Terkontrol"
+20,"Nyoman Mulyathi",1642841,"Temuan :
+Total calcium score 1240 mengesankan extensive calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM): berukuran panjang +/- 10.4 mm, bercabang menjadi LAD dan LCX.
+- Tampak multiple calcified dan non plaque dengan positive remodelling pada LM hingga bifurcatio LAD yang menyebabkan stenosis sebesar +/- 25-49% sepanjang +/- 12.1 mm
+- Tak tampak napkin-type plaque ataupun spot calcification.
+- Tak tampak myocardial bridging pada LM
+
+LAD: berukuran panjang +/- 148.6mm.
+- Tampak multiple calcified dan non plaque dengan positive remodelling pada proksimal LAD yang menyebabkan stenosis terbesar +/- 70-99% sepanjang +/- 11.1 mm
+- Tak tampak napkin-type plaque ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent.
+- Tampak myocardial bridging pada mid LAD.
+
+LCX: berukuran panjang +/- 47.1 mm.
+- Tampak multiple calcified dan non plaque dengan positive remodeliing pada proksimal LCX yang menyebabkan stenosis terbesar +/- 50-69% sepanjang +/- 4.2 mm
+- Tak tampak napkin-type plaque ataupun spot calcification. LCX bercabang menjadi cabang obtuse marginal yang patent.
+- Tidak tampak myocardial bridging pada LCX.
+
+RCA: berukuran panjang +/- 195.0 mm.
+- Tampak multiple calcified dan non plaque dengan positive remodelling pada proksimal RCA yang menyebabkan stenosis terbesar +/- 50-69% sepanjang +/- 9.0 mm
+- Tampak multiple calcified dan non plaque dengan positive remodelling dan spot calcification pada mid RCA yang menyebabkan stenosis terbesar +/- 50-69% sepanjang +/- 3.8 mm
+- Tak tampak napkin-type plaque. RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran dan bentuk kesan normal, CTR 51%
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+Kesan        :        
+- Total calcium score 1240 (extensive calcification) sesuai Agatston score, mengesankan HIgh Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Multiple calcified dan non plaque dengan positive remodelling pada LM hingga bifurcatio LAD yang menyebabkan mild stenosis
+- Multiple calcified dan non plaque dengan positive remodelling pada proksimal LAD yang menyebabkan severe stenosis
+- Multiple calcified dan non plaque dengan positive remodelling pada proksimal LCX yang menyebabkan moderate stenosis
+- Multiple calcified dan non plaque dengan positive remodelling pada proksimal dan mid RCA yang menyebabkan moderate stenosis
+
+Kesimpulan : CAD-RADS 4A/P4/HRP (sesuai dengan CAD RAD 2.0)
+
+- Right coronary artery dominance, tanpa anomali origin arteri koroner.",2025,"DM/Prediabetes","P",70,"HT-Tidak-ada",12,"Tidak-merokok",26.95,"On-Statin","OAD","SGLT-2i",8,1.3,NA,NA,12.9,202,123,46,225,7,"3.90","Right",1240,"Mixed","HRP","-","1","0","0","Mild (25-49%)","4A/P4/HRP","Mixed","HRP","-","1","0","0","Severe (70-99%)","4A/P4/HRP","Mixed","HRP","-","1","0","0","Moderate (50-69%)","4A/P4/HRP","Mixed","HRP","-","1","0","1","Moderate (50-69%)","4A/P4/HRP","4A/P4/HRP","51","None","-","-","-","HRP (+)",1,7.49554194388426,4.89130434782609,156,0.152173913043478,"OAD",12,"Sudah Lama","Tidak ada riwayat hipertensi",0.7,-0.241,1.012,44.236825194524,1,7.12367278520461,"Tinggi","Tinggi","Tidak Terkontrol"
+21,"LETHA KHUMARI",24031334,"TEMUAN:
+Total calcium score 376.2 mengesankan severe calcification
+
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance.
+
+Left main (LM):
+- berukuran panjang +/- 15.0 mm
+- bercabang menjadi LAD dan LCX.
+- tampak clacified plaque dengan positive remodelling pada segment 5 yang menyebabkan stenosis sepanjang +/- 3.0 mm sebesar +/- 63%
+- tidak tampak myocardial bridging pada LM.
+
+LAD:
+- berukuran panjang +/- 160.1 mm
+- bercabang menjadi cabang diagonal yang patent.
+- tampak calcified plaque dengan positive remodelling pada segment 6 yang menyebabkan stenosis sepanjang +/- 13.2 mm sebesar 75%, pada segment 7 sepanjang +/- 9.8 mm sebesar 63%
+- tampak superficial myocardial bridging pada ¿ medial LAD.
+
+LCX:
+- berukuran panjang +/- 85.4 mm.
+- bercabang menjadi cabang obtuse marginal yang patent
+- tampak calcified plaque dengan positive remodelling pada segment 13 yang menyebabkan stenosis sepanjang +/- 2.1 mm sebesar 72%
+- tidak tampak myocardial bridging pada LCX.
+
+RCA:
+- berukuran panjang +/- 184.2mm.
+- bercabang menjadi cabang acute marginal dan PDA yang patent
+- tampak multiple calcified plaque pada segment 1 yang menyebabkan stenosis sepanjang +/- 1.9 mm sebesar 26% dan sepanjang +/- 2.3 mm sebesar 7%
+- tampak soft plaque pada segment 1 yang menyebabkan stenosis sepanjang +/- 2.2 mm sebesar 39%
+- tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak tampak penebalan dinding ventrikel kiri.
+Tidak ada mural thrombus atau massa intracradiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi
+Ekstra-cardiac: tak tampak kelainan.
+Jantung ukuran membesar CTR 58%
+Kesan        :        
+- Total calcium score 376.2 (mild calcification) mengesankan moderate risk for coronary artery disease sesuai Agatston score
+- Multiple calcified plaque pada segment 6 LAD yang menyebabkan stenosis sepanjang +/- 13.2 mm dan segment 13 sepanjang 2.1 mm sebesar 70-99%
+- Multiple calcified plaque pada segment 5 LM yang menyebabkan stenosis sepanjang +/- 3.0 mm, segment 7 sepanjang +/- 9.8 mm sebesar 50-69%
+- Calcified plaque pada segment 1 RCA yang menyebabkan stenosis sepanjang +/- 1.9 mm, sebesar 25-49%
+- Calcified plaque pada segment 1 RCA yang menyebabkan stenosis sepanjang +/- 2.3 mm
+- Right coronary artery dominance, tanpa anomali anatomi arteri koroner.
+- Cardiomegaly
+
+Kesimpulan : CAD RADS 4A/P3/HRP (sesuai dengan CAD RAD 2.0)",2025,"DM/Prediabetes","P",62,"HT-Tidak-ada",2,"Merokok",28.44,"On-Statin","Tanpa-obat","None",6.4,0.64,NA,NA,13.1,152,93,40,104,4.6,NA,"Right",376,"Calcified","HRP","-","1","0","0","Moderate (50-69%)","4A/P3/HRP","Calcified","HRP","-","1","0","0","Severe (70-99%)","4A/P3/HRP","Calcified","HRP","-","1","0","0","Severe (70-99%)","4A/P3/HRP","Mixed","None","-","0","0","0","Mild (25-49%)","4A/P3/HRP","4A/P3/HRP","58","None","None","-","-","HRP (+)",1,6.500688889507,2.6,112,0.115,"Tanpa Terapi/Diet",2,"Sudah Lama","Tidak ada riwayat hipertensi",0.7,-0.241,1.012,99.858638435702,0,5.93224518744801,"Optimal","Normal","Terkontrol"
+22,"DEDE ARIPIN",26006246,"Temuan :
+Total calcium score 100.3 mengesankan moderate calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance.
+
+Left main (LM):
+Berukuran panjang +/- 9.7 mm, bercabang menjadi LAD dan LCX.
+Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification.
+RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+Tak tampak myocardial bridging pada LM
+
+LAD:
+Berukuran panjang +/- 170.1 mm.
+Tampak multiple calcified plaque segment 6 yang menyebabkan stenosis masing-masing +/- 9% dan 27%, non-calcified plaque, dan napkin-type plaque ataupun spot calcification.
+Tampak non-calcified plaque dengan low attenuation plaque pada segment 6 yang menyebabkan stenosis sebesar +/- 97%
+LAD bercabang menjadi cabang diagonal yang patent.
+Tak tampak myocardial bridging pada LAD.
+LCX:
+Berukuran panjang +/- 115.9 mm.
+Tak tampak calcified plaque, non calcified plaque dan napkin-type plaque, ataupun spot calcification.
+LCX bercabang menjadi cabang obtuse marginal yang patent.
+Tidak tampak myocardial bridging pada LCX.
+
+RCA:
+Berukuran panjang +/- 105.1 mm.
+Tak tampak calcified plaque, non-calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification.
+Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Jantung ukuran normal CTR 51%
+Pada regio thorax yang terscanning sebagian : tak tampak kelainan
+Kesan        :        
+- Total calcium score 100.3 (mild atherosclerotic plaque) mengesankan moderate risk of coronary artery disease sesuai Agatston score.
+- Multiple calcified plaque pada LAD segment 6 yang menyebabkan stenosis 25-49%
+- Non-clacified plaque dengan low attenuation plaque pada segment 6 yang menyebabkan stenosis 70-99%
+- Right coronary artery dominance, tanpa anomali origin arteri koroner
+
+Kesimpulan: CAD-RADS 4A/P2/HRP (sesuai dengan CAD RAD 2.0)",2025,"DM/Prediabetes","L",52,"HT-Tidak-ada",0,"Merokok",29.41,"On-Statin","Tanpa-obat","None",7,1.29,NA,NA,13.3,185,123,31,256,7.9,NA,"Right",100.3,"None","None","-","0","0","0","Normal","0","Mixed","HRP","1","1","1","1","Severe (70-99%)","4A/P2/HRP","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","4A/P2/HRP","51","None","-","-","-","HRP (+)",1,7.49108759353488,8.25806451612903,154,0.254838709677419,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Tidak ada riwayat hipertensi",0.9,-0.302,1,66.714357620737,0,4.61808641125464,"Tinggi","Tinggi","Tidak Terkontrol"
+23,"IDA PEDANDA GEDE PUTRA KENITEN",24059019,"Temuan :
+Total calcium score 1568.7 mengesankan extensive coronary arteri calcification
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM): berukuran panjang +/- 6.5 mm, bercabang menjadi LAD dan LCX. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque ataupun spot calcification. Tak tampak myocardial bridging pada LM
+
+LAD: berukuran panjang +/- 125.3mm. Tampak multiple calcified plaque pada segmen 6-8 disertai positif remodelling pada proksimal LAD yang menyebabkan stenosis terbesar pada segmen 6 +/- 70-99 %. Tampak multiple calcified plaque disertai positif remodelling pada mid LAD yang menyebabkan stenosis terbesar +/- 70-99 %. Tak tampak non calcified plaque, dan napkin-type plaque ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD.
+
+LCX: berukuran panjang +/- 66.2 mm. Tampak multiple calcified plaque pada segmen 11,13 disertai positif remodelling pada proximal LCX yang menyebabkan stenosis terbesar pada segmen 11 terbesar +/- 70-99 %. Tak tampak non calcified plaque, dan napkin-type plaque ataupun spot calcification. LCX bercabang menjadi cabang obtuse marginal yang patent. Tidak tampak myocardial bridging pada LCX.
+
+RCA: berukuran panjang +/- 109.6 mm. Tampak multiple calcified plaque pada RCA segmen 1-3, disertai positif remodelling pada yang menyebabkan stenosis terbesar pada segmen 2 +/- 70-99 %. Tak tampak non calcified plaque, dan napkin-type plaque ataupun spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi
+Tampak kalsifikasi pada aorta descendens
+
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran dan bentuk kesan normal, CTR 58 %
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+Kesan        :        
+-Total calcium score 1568.7 (Extensive coronary arteri calcification) mengesankan High Risk of Coronary Artery Disease sesuai Agatston score.
+
+-Multiple calcified plaque disertai positif remodelling pada segmen 6-8 LAD yang menyebabkan stenosis terbesar +/- 70-99 % (Severe Stenosis)
+-Multiple calcified plaque disertai positif remodelling pada segmen 11,13 LCX yang menyebabkan stenosis terbesar +/- 70-99 % (Severe Stenosis)
+-Multiple calcified plaque disertai positif remodelling pada segmen 1-3 RCA yang menyebabkan stenosis terbesar +/- 70-99 % (Severe Stenosis)
+
+Right coronary artery dominance, tanpa anomali origin arteri koroner
+- Kesimpulan: CAD-RADS 4A/ P4 /HRP (sesuai dengan CAD RAD 2.0)
+
+- Atherosclerosis aorta descendens",2025,"DM/Prediabetes","L",84,"HT Terkontrol",36,"Tidak-merokok",21.63,"On-Statin","OAD","None",6.8,0.8,NA,NA,10.9,158,90,51,118,6,NA,"Right",1569,"None","None","-","0","0","0","Normal","0","Calcified","HRP","-","1","0","0","Severe (70-99%)","4A/P4/HRP","Calcified","HRP","-","1","0","0","Severe (70-99%)","4A/P4/HRP","Calcified","HRP","-","1","0","0","Severe (70-99%)","4A/P4/HRP","4A/P4/HRP","58","None","-","-","-","HRP (+)",1,6.68760723664773,2.31372549019608,107,0.117647058823529,"OAD",36,"Sudah Lama","Hipertensi Terkontrol",0.9,-0.302,1,87.2673460571349,0,7.35883089834235,"Optimal","Normal","Terkontrol"
+24,"DRS. MURJOKO",21040259,"Temuan :
+Total calcium score 860.9 mengesankan severe calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance.
+
+Left main (LM): berukuran panjang ± 17 mm, bercabang menjadi LAD, LCX dan ramus intermedius. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tak tampak myocardial bridging pada LM
+
+LAD: Berukuran panjang ± 110.1 mm. Tampak calcified plaque disertai remodelling (+) pada segmen 6 yang menyebabkan stenosis ± 25-49% dan calcified plaque tanpa remodelling pada segmen 7 yang menyebabkan stenosis 25-49%. Tak tampak non calcified plaque, dan napkin-type plaque, ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD.
+
+LCX: Berukuran panjang ± 101.0 mm. Tampak calcified plaque pada segment 13 yang menyebabkan stenosis sebesar 50-69%. LCX bercabang menjadi cabang obtuse marginal yang patent. Tak tampak non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tidak tampak myocardial bridging pada LCX.
+
+RCA: Berukuran panjang ± 172.5 mm. Tampak multiple calcified plaque pada segment 2 dan 3 yang menyebabkan stenosis terbesar 25-49% pada segmen 3. Tak tampak non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tampak kalsifikasi pada katup aorta
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Jantung ukuran normal, CTR 42%
+
+Pada regio thorax yang terscanning sebagian : tak tampak kelainan
+Kesan        :        
+- Total calcium score 860.9 mengesankan severe calcification sesuai Agatston score dan High Risk of Coronary Artery Disease sesuai dengan CSANZ
+- Calcified plaque pada segment 13 LCX yang menyebabkan moderate stenosis
+- Calcified plaque pada segment 6 LAD disertai remodelling (+) yang menyebabkan mild stenosis
+- Calcified plaque pada segment 7 LAD yang menyebabkan mild stenosis
+- Calcified plaque pada segment 2 dan 3 RCA yang menyebabkan mild stenosis
+
+Kesimpulan : CAD-RADS 3/P3/HRP (sesuai dengan CAD RAD 2.0)
+
+- Right coronary artery dominance, tanpa anomali origin arteri koroner",2025,"DM/Prediabetes","L",69,"HT-Tidak-ada",120,"Merokok",28.4,"On-Statin","OAD","None",5.7,1.78,NA,NA,11.6,129,59,47,54,6.4,NA,"Right",860.9,"None","None","-","0","0","0","Normal","0","Calcified","None","-","0","0","0","Mild (25-49%)","-","Calcified","None","-","0","0","0","Moderate (50-69%)","-","Calcified","None","-","0","0","0","Mild (25-49%)","-","3/P3/HRP","42","Aorta","-","-","-","HRP (+)",1,5.72945022140478,1.14893617021277,82,0.136170212765957,"OAD",120,"Sudah Lama","Tidak ada riwayat hipertensi",0.9,-0.302,1,40.7855036054514,1,6.75913925465335,"Optimal","Normal","Terkontrol"
+25,"TABITA ULY",918932,"Temuan :
+Total calcium score 14.7 mengesankan mild calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+- Left main (LM):
+Berukuran panjang +/- 9 mm, bercabang menjadi LAD dan LCX.
+Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification.
+Tak tampak myocardial bridging pada LM.
+- LAD:
+Berukuran panjang +/- 135.2 mm.
+Tampak multiple calcified plaque pada segment 6 yang menyebabkan stenosis sebesar +/- 33% sepanjang +/- 7.3 mm dan segmen 7 menyebabkan stenosis terbesar 50% sepanjang +/- 2.9 mm. Tak tampak non calcified plaque, positive remodeling, napkin-type plaque ataupun spot calcification.
+LAD bercabang menjadi cabang diagonal yang patent.
+Tak tampak myocardial bridging pada LAD.
+- LCX:
+Berukuran panjang +/- 73.1 mm.
+Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification.
+LCX bercabang menjadi cabang obtuse marginal yang patent. Tak tampak superficial myocardial bridging pada LCX.
+- RCA:
+Berukuran panjang +/- 161.3 mm.
+Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification.
+RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran dan bentuk kesan normal, CTR +/- 52%
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+Tampak lesi hipodens berbentuk bulat berdensitas udara pada perifer atrium kanan, yang menetap pada pre dan post pemberian kontras
+
+Kesan        :        
+- Total calcium score 14.7 (mild calcification) sesuai Agatston score, mengesankan mild risk of coronary artery disease.
+- Multiple calcified plaque pada segment 6 dan segmen 7 LAD yang tampak menyebabkan moderate stenosis
+- Tak tampak calcified plaque, non calcified plaque maupun mixed plaque pada LM, LCX maupun RCA.
+- Right coronary artery dominance, tanpa anomali origin arteri koroner.
+- Obs. lesi hipodens berdensitas udara pada perifer atrium kanan, yang menetap pada pre dan post pemberian kontras
+
+
+
+Kesimpulan: CAD-RADS 3/P1 (sesuai dengan CAD RAD 2.0)",2025,"DM/Prediabetes","P",57,"HT-Tidak-ada",120,"Tidak-merokok",23.1,"No-Statin","Insulin","None",8.9,0.8,NA,NA,11.5,166,139,50,113,4.6,NA,"Right",14.7,"None","None","-","0","0","0","Normal","0","Calcified","None","-","0","0","0","Moderate (50-69%)","3/P1","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","3/P1","52","None","-","-","-","HRP (-)",0,6.91343909545043,2.26,116,0.092,"Insulin",120,"Sudah Lama","Tidak ada riwayat hipertensi",0.7,-0.241,1.012,85.8857451273092,0,2.75366071235426,"Optimal","Normal","Tidak Terkontrol"
+26,"NI PUTU INDAH SETIAWATI",810716,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 56 bpm.
+TECHNICAL QUALITY: Baik.
+
+Temuan :
+Total calcium score 0 mengesankan no identifiable calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM): berukuran panjang +/- 11.8 mm, bercabang menjadi LAD dan LCX. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tak tampak myocardial bridging pada LM
+
+LAD: berukuran panjang +/- 127.8 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD.
+
+LCX: berukuran panjang +/- 148.381.5 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. LCX bercabang menjadi cabang obtuse marginal yang patent. Tidak tampak myocardial bridging pada LCX.
+
+RCA: berukuran panjang +/- 141 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tampak efusi perikardium dengan ketebalan +/- 2.9 cm, tak tampak penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Cor ukuran dan bentuk kesan membesar, CTR 73%
+Tampak terukur ratio truncus pulmonal : aorta : 1.08
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+
+
+Kesan        :        
+- Total calcium score 0 (No Indentifiable) sesuai Agatston score, mengesankan Very Low Risk for Coronary Artery Disease
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification pada RCA, LAD, LM, dan LCX
+Kesimpulan :
+CAD-RADS 0 (Absence of CAD)
+
+- Right coronary artery dominance, tanpa anomali origin arteri koroner.
+- Cardiomegaly dengan efusi perikardium dan hipertensi pulmonal",2025,"DM/Prediabetes","P",68,"HT Terkontrol",120,"Tidak-merokok",27.68,"On-Statin","OAD","None",6,0.68,NA,NA,13.2,173,112,46,107,4.2,NA,"Right",0,"None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","0","73","None","-","-","-","HRP (-)",0,6.46458830368996,2.32608695652174,127,0.091304347826087,"OAD",120,"Sudah Lama","Hipertensi Terkontrol",0.7,-0.241,1.012,94.8056718873571,0,0,"Optimal","Normal","Terkontrol"
+27,"I KETUT SANJAYA",26018632,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+
+TEKNIK: Menggunakan Siemens Dual Source CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena, gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+
+ACQUISITION: Prospective ECG trigger 89 bpm.
+TECHNICAL QUALITY: Baik.
+
+Temuan :
+Total calcium score 297.9 mengesankan moderate calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance.
+
+Left main (LM): berukuran panjang ± 8.8 mm, bercabang menjadi LAD, LCX dan ramus intermedius. Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, dan spot calcification. Tak tampak myocardial bridging pada LM
+
+LAD: Berukuran panjang ± 144.7 mm. Tampak calcified plaque disertai positif remodelling pada segment 6,7 yang menyebabkan stenosis terbesar ± 25-49% pada segment 6. Tak tampak non calcified plaque, dan napkin-type plaque, ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD.
+
+LCX: Berukuran panjang ± 76.1 mm. Tampak calcified plaque pada segment 13 yang menyebabkan stenosis sebesar ± 25-49%. LCX bercabang menjadi cabang obtuse marginal yang patent. Tak tampak non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tidak tampak myocardial bridging pada LCX.
+
+RCA: Berukuran panjang ± 175.0 mm. Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, dan spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tampak kalsifikasi pada katup aorta
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Jantung ukuran normal, CTR 47%
+
+Pada regio thorax yang terscanning sebagian : tak tampak kelainan
+Kesan        :        
+- Total calcium score 297.9 mengesankan moderate calcification sesuai sesuai Agatston score dan Moderate Risk of Coronary Artery Disease sesuai dengan CSANZ
+- Calcified plaque disertai positif remodelling pada segment 6,7 LAD yang menyebabkan mild stenosis (CAD-RADS 2)
+- Calcified plaque pada segment 13 LCX yang menyebabkan mild stenosis (CAD-RADS 2)
+
+Kesimpulan : CAD-RADS 2/P2/HRP (sesuai dengan CAD RAD 2.0)
+
+- Right coronary artery dominance, tanpa anomali origin arteri koroner",2025,"DM/Prediabetes","L",54,"HT st II",6,"Tidak-merokok",30.12,"On-Statin","Insulin","None",7.4,1.34,NA,NA,11.3,129,82,31,125,7.2,NA,"Right",297.9,"None","None","-","0","0","0","Normal","0","Calcified","HRP","-","1","0","0","Mild (25-49%)","2/P2/HRP","Calcified","None","-","0","0","0","Mild (25-49%)","2/P2","None","None","-","0","0","0","Normal","0","2/P2/HRP","47","Aorta","-","-","-","HRP (+)",1,6.82979373751242,4.03225806451613,98,0.232258064516129,"Insulin",6,"Sudah Lama","Hipertensi Tidak Terkontrol",0.9,-0.302,1,62.9505005561304,0,5.70010906928989,"Optimal","Tinggi","Tidak Terkontrol"
+28,"PUTU WIBAWA SE",26020394,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+
+TEKNIK: Menggunakan Siemens Dual Source CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena, gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+
+ACQUISITION: Prospective ECG trigger 66 bpm.
+TECHNICAL QUALITY: Baik.
+
+Temuan :
+Total calcium score 5.8 mengesankan mild calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance.
+
+Left main (LM): berukuran panjang ± 17.4 mm, bercabang menjadi LAD dan LCX. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification. Tidak tampak myocardial bridging pada LM.
+
+LAD: Berukuran panjang ± 148.7 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD.
+
+LCX: Berukuran panjang ± 103.8 mm.Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification. LCX bercabang menjadi cabang obtuse marginal yang patent. Tak tampak myocardial bridging pada LCX. Tampak tortousity pada LCX
+
+RCA: Berukuran panjang ± 184.5 mm. Tampak calcified plaque disertai remodelling pada segment 1 yang menyebabkan stenosis ± 1-24%. Tak tampak non calcified plaque, napkin-type plaque, dan spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kelainan
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Jantung ukuran normal, CTR 55%
+
+Pada regio thorax yang terscanning sebagian : tak tampak kelainan
+Kesan        :        
+- Total calcium score 5.8 mengesankan minimal calcification sesuai sesuai Agatston score dan Low Risk of Coronary Artery Disease sesuai dengan CSANZ
+
+- Calcified plaque disertai remodelling pada segment 1 RCA yang menyebabkan minimal stenosis (CAD-RADS 1)
+Kesimpulan : CAD-RADS 1/P1/HRP (sesuai dengan CAD RAD 2.0)
+
+- Right coronary artery dominance, tanpa anomali origin arteri koroner
+- Tortousity LCX",2025,"DM/Prediabetes","L",48,"HT-Tidak-ada",0,"Tidak-merokok",39.52,"On-Statin","Tanpa-obat","None",8.4,0.83,NA,NA,16.1,179,138,40,179,5.3,NA,"Right",5.8,"None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","Calcified","HRP","-","1","0","0","Minimal (1-24%)","1/P1/HRP","1/P1/HRP","55","None","-","-","-","HRP (+)",0,7.31561751169002,4.475,139,0.1325,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Tidak ada riwayat hipertensi",0.9,-0.302,1,107.959194110608,0,1.91692261218206,"Tinggi","Tinggi","Tidak Terkontrol"
+29,"LODEWYK YULIUS LUSI SH",1603872,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 65 bpm.
+TECHNICAL QUALITY: Baik.
+
+Temuan :
+Total calcium score 39.6 (Calcium score sulit di evaluasi karena terpasang stent pada proximal dan mid LAD)
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Left coronary artery dominance.
+
+Left main (LM):
+Berukuran panjang +/- 2.8 mm, bercabang menjadi LAD dan LCX. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tak tampak myocardial bridging pada LM
+
+LAD:
+Berukuran panjang +/- 157.7 mm.
+Tak tampak lesi hiper/hipodens intrastent pada proximal stent, terukur panjang stent +/- 58.8 mm.
+Tak tampak lesi hiper/hipodens intrastent pada mid stent, terukur panjang stent +/- 17.2 mm.
+Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tak tampak myocardial bridging pada LAD. Tampak terpasang dua buah stent pada proksimal LAD dengan panjang stent +/- 58.8 mm dan mid LAD dengan panjang stent +/- 17.2 mm, tak tampak instent restenosis maupun intimal neoplasia
+
+LCX:
+Berukuran panjang +/- 54.3 mm.
+Tampak calcified plaque disertai remodelling pada segment 11 yang menyebabkan stenosis sebesar +/- 1-24%. LCX bercabang menjadi cabang obtuse marginal yang patent. Tidak tampak myocardial bridging pada LCX.
+
+RCA:
+Berukuran panjang +/- 69.4 mm.
+Tampak calcified plaque dan non calcified plaque disertai remodelling pada segment 1 dan 2 yang menyebabkan stenosis terbesar +/- 1-24% pada segment 2. Tak tampak non calcified plaque, dan napkin-type plaque ataupun spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran kesan normal, CTR +/- 51%
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+Kesan        :        
+- Total calcium score sulit dievaluasi karena terpasang stent pada proximal dan mid LAD
+- Calcified plaque dan non calcified plaque disertai remodelling pada segment 1 dan 2 RCA yang menyebabkan minimal stenosis (CAD-RADS 1/HRP)
+- Calcified plaque disertai remodelling pada segment 11 LCX yang menyebabkan minimal stenosis (CAD-RADS 1/HRP)
+
+Kesimpulan : CAD-RADS 1/HRP (sesuai dengan CAD RAD 2.0)
+
+- Left coronary artery dominance, tanpa anomali origin arteri koroner
+- Tampak terpasang dua buah stent pada proksimal LAD dan mid LAD, tak tampak instent restenosis maupun intimal neoplasia",2025,"DM/Prediabetes","L",56,"HT-Tidak-ada",0,"Merokok",24.51,"On-Statin","Tanpa-obat","None",5.6,2.41,NA,NA,9.4,209,120,34,181,11.9,NA,"Left",39.6,"None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","Calcified","HRP","-","0","0","0","Minimal (1-24%)","1/HRP","Mixed","HRP","-","0","0","0","Minimal (1-24%)","1/HRP","1/HRP","51","None","-","-","-","HRP (+)",0,6.92126362900693,5.32352941176471,175,0.35,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Tidak ada riwayat hipertensi",0.9,-0.302,1,30.7399020661741,1,3.70376806660769,"Tinggi","Tinggi","Terkontrol"
+30,"I NENGAH KARIYASA",26021430,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK:
+
+Menggunakan Siemens Somatom Dual Source CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras i nsfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 58 bpm
+TECHNICAL QUALITY: Baik.
+
+TEMUAN:
+Total calcium score 0.6 mengesankan Mild calcification
+
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance.
+
+Left main (LM): berukuran panjang +/- 9.5 mm, bercabang menjadi LAD dan LCX. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification. Tak tampak myocardial bridging pada LM.
+
+LAD: berukuran panjang +/- 88.8 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification. LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD.
+
+LCX: berukuran panjang +/- 94.0 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification. LCX bercabang menjadi cabang obtuse marginal yang patent. Tak tampak myocardial bridging pada LCX.
+
+RCA: berukuran panjang +/- 186.3 mm. Tampak calcified plaque pada segment 2 yang menyebabkan stenosis sebesar ± 1-24% sepanjang ± 5.1 mm.Tak tampak non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak tampak penebalan dinding ventrikel kiri.
+Tidak ada mural thrombus atau massa intracradiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi
+Ekstra-cardiac: tak tampak kelainan.
+Jantung ukuran kesan membesar, CTR 58%
+Kesan        :        
+- Total calcium score 0.6 mengesankan Mild calcification sesuai sesuai Agatston score dan Low Risk of Coronary Artery Disease sesuai dengan CSANZ
+- Calcified plaque pada segment 3 RCA yang menyebabkan minimal stenosis (CAD-RADS 1)
+
+Kesimpulan : CAD-RADS 1/P1 (sesuai dengan CAD RAD 2.0)
+
+- Cardiomegaly
+- Right coronary artery dominance, tanpa anomali anatomi arteri koroner",2025,"DM/Prediabetes","L",64,"HT st I",0,"Merokok",29.41,"On-Statin","Tanpa-obat","None",5.5,1.35,NA,NA,12.8,274,66,35,749,10.7,NA,"Right",0.6,"None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","Calcified","None","-","0","0","0","Minimal (1-24%)","1/P1","1/P1","58","None","None","-","-","HRP (-)",0,8.32348707575565,21.4,239,0.305714285714286,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Hipertensi Tidak Terkontrol",0.9,-0.302,1,58.6292512295987,1,0.470003629245736,"Tinggi","Tinggi","Terkontrol"
+31,"SUHAEDI",17016303,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+
+TEKNIK: Menggunakan Siemens Dual Source CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena, gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+
+ACQUISITION: Prospective ECG trigger 84 bpm.
+TECHNICAL QUALITY: Baik.
+
+Temuan :
+Total calcium score 486.0 mengesankan severe calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance.
+
+Left main (LM): berukuran panjang ± 22.6 mm, bercabang menjadi LAD, LCX dan ramus intermedius. Tampak multiple calcified plaque dan non calcified plaque pada segment 5 yang menyebabkan stenosis terbesar 70-99% sepanjang 2.6 mm. Tak tampak napkin-type plaque, remodelling ataupun spot calcification. Tak tampak myocardial bridging pada LM
+
+LAD: Berukuran panjang ± 126.7 mm. Tampak multiple mixed plaque disertai remodelling (+) pada segmen 6 yang menyebabkan stenosis terbesar ± 25-49% sepanjang 6.4 mm. Tak tampak napkin-type plaque, ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. Tampak myocardial bridging pada segmen 8 LAD.
+
+LCX: Berukuran panjang ± 50.6 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tidak tampak myocardial bridging pada LCX.
+
+RCA: Berukuran panjang ± 147.5 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tampak kalsifikasi pada katup aorta
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Jantung ukuran membesar, CTR 55%, tampak penebalan pada dinding ventrikel kiri
+
+Pada regio thorax yang terscanning sebagian : tak tampak kelainan
+Kesan        :        
+- Total calcium score 486.0 mengesankan severe calcification sesuai Agatston score dan High Risk of Coronary Artery Disease sesuai dengan CSANZ
+- Multiple mixed plaque pada segment 5 LM yang menyebabkan severe stenosis (CAD-RADS 4A)
+- Multiple mixed plaque pada segment 6 LAD disertai remodelling (+) yang menyebabkan mild stenosis (CAD-RADS 2)
+
+Kesimpulan : CAD-RADS 4A/P3/HRP (sesuai dengan CAD RAD 2.0)
+
+- Cardiomegaly dengan konfigurasi LVH
+- Right coronary artery dominance, tanpa anomali origin arteri koroner
+- Myocardial bridging pada segmen 8 LAD.",2025,"DM/Prediabetes","L",63,"HT-Tidak-ada",0,"Merokok",27.08,"On-Statin","Tanpa-obat","None",5.9,0.88,NA,NA,14.5,194,143,33,131,6.2,NA,"Right",486,"Mixed","HRP","-","0","0","0","Severe (70-99%)","4A/P3/HRP","Mixed","HRP","-","0","0","0","Mild (25-49%)","2","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","4A/P3/HRP","55","Aortic valve","LVH","-","-","HRP (+)",1,6.65014967411283,3.96969696969697,161,0.187878787878788,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Tidak ada riwayat hipertensi",0.9,-0.302,1,96.621179994952,0,6.18826412308259,"Tinggi","Tinggi","Terkontrol"
+32,"ANDREAS ALBERT",26012430,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 69 bpm.
+TECHNICAL QUALITY: Baik.
+
+Temuan :
+Total calcium score 219.4 mengesankan moderate calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM): berukuran panjang +/- 2.1 mm, bercabang menjadi LAD, LCX dan ramus intermedius. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tak tampak myocardial bridging pada LM
+
+LAD: berukuran panjang +/- 68.3 mm. Tampak multiple mixed plaque pada LAD segmen 6, spotty calcification (+), disertai remodelling yang menyebabkan stenosis lumen tersempit terukur sebesar +/- 19-35%. LAD bercabang menjadi cabang diagonal yang patent. Tampak superfisial myocardial bridging segmen 8 LAD
+
+LCX: berukuran panjang +/- 74.5 mm. Tampak mixed plaque pada LCX segmen 11, yang menyebabkan stenosis lumen tersempit terukur sebesar +/- 8-15%. LCX bercabang menjadi cabang obtuse marginal yang patent.
+
+RCA: berukuran panjang +/- 136.2 mm. Tampak multiple mixed plaque pada RCA segmen 2 dan 16, yang menyebabkan stenosis dengan lumen tersempit terukur sebesar +/- 16-30% pada segmen 16. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran membesar, CTR 52% disertai penebalan dinding ventrikel
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+Kesan        :        
+-Total calcium score 219.4 mengesankan moderate atherosclerotic plaque sesuai Agatston score P2.
+-Mixed plaque pada LAD yang menyebabkan stenosis sebesar +/- 25-49% sesuai dengan CAD-RADS (Mild stenosis, CAD-RADS 2/P2)
+-Mixed plaque pada RCA yang menyebabkan stenosis sebesar +/- 25-49% sesuai dengan CAD-RADS (Mild stenosis, CAD-RADS 2/P2)
+-Mixed plaque pada LCX yang menyebabkan stenosis sebesar +/- 1-24% sesuai dengan CAD-RADS (Minimal stenosis, CAD-RADS 1/P2)
+
+Kesimpulan: CAD-RADS 2/P3/HRP (sesuai dengan CAD RAD 2.0)
+
+- Cardiomegaly dengan konfigurasi LVH
+- Right coronary artery dominance
+- Superfisial myocardial bridging segmen 8 LAD",2025,"DM/Prediabetes","L",75,"HT-Tidak-ada",480,"Tidak-merokok",28.72,"On-Statin","Insulin","None",5.8,1.16,NA,NA,13.3,122,87,25,85,7.4,"3.30","Right",219,"None","None","-","0","0","0","Normal","0","Mixed","HRP","-","0","0","1","Mild (25-49%)","2/P2","Mixed","None","-","0","0","0","Minimal (1-24%)","1/P2","Mixed","None","-","0","0","0","Mild (25-49%)","2/P2","2/P3/HRP","52","None","Yes","-","-","HRP (+)",1,6.20050917404269,3.4,97,0.296,"Insulin",480,"Sudah Lama","Tidak ada riwayat hipertensi",0.9,-0.302,1,65.6831843409283,0,5.39362754635236,"Optimal","Tinggi","Terkontrol"
+33,"KT BUDI SUSRUSA",13037097,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 55 bpm.
+TECHNICAL QUALITY: Baik.
+
+Temuan :
+Total calcium score 219.5 mengesankan moderate calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM): berukuran panjang +/- 8.1 mm, bercabang menjadi LAD, LCX dan ramus intermedius. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tak tampak myocardial bridging pada LM
+
+LAD: berukuran panjang +/- 78.2 mm. Tampak mixed plaque pada proksimal LAD segmen 7, disertai remodelling yang menyebabkan stenosis lumen terukur sebesar +/- 14-27% pada segment 7 sepanjang 12.7 mm. LAD bercabang menjadi cabang diagonal yang patent.
+
+LCX: berukuran panjang +/- 114.8 mm. Tampak mixed plaque pada LCX segmen 11, yang menyebabkan stenosis lumen terukur sebesar +/- 5-10%. LCX bercabang menjadi cabang obtuse marginal yang patent.
+
+RCA: berukuran panjang +/- 192.9 mm. Tampak multiple mixed plaque pada RCA segmen 1 deisertai remodelling yang menyebabkan stenosis terukur sebesar +/- 5-10%. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran normal, CTR 56%
+Tampak kalsifikasi pada aorta descenden
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+Kesan        :        
+-Total calcium score 219.5 mengesankan moderate atherosclerotic plaque sesuai Agatston score P2.
+-Mixed plaque pada LAD yang menyebabkan stenosis sebesar +/- 25-49% sesuai dengan CAD-RADS (Mild stenosis, CAD-RADS 2/P2)
+-Mixed plaque pada LCX yang menyebabkan stenosis sebesar +/- 1-24% sesuai dengan CAD-RADS (Minimal stenosis, CAD-RADS 1/P2)
+-Mixed plaque pada RCA yang menyebabkan stenosis sebesar +/- 1-24% sesuai dengan CAD-RADS (Minimal stenosis, CAD-RADS 1/P2)
+
+Kesimpulan: CAD-RADS 2/P2/HRP (sesuai dengan CAD RAD 2.0)
+
+- Right coronary artery dominance, tanpa anomali origin arteri koroner.
+- Atherosclerosis aorta descenden",2025,"DM/Prediabetes","L",65,"HT st I",0,"Tidak-merokok",27.13,"On-Statin","Tanpa-obat","None",5.4,0.91,NA,NA,14.9,235,173,48,70,6.2,NA,"Right",219.5,"None","None","-","0","0","0","Normal","0","Mixed","None","-","0","0","0","Mild (25-49%)","2/P2","Mixed","None","-","0","0","0","Minimal (1-24%)","1/P2","Mixed","None","-","0","0","0","Minimal (1-24%)","1/P2","2/P2","56","None","-","-","-","HRP (-)",1,5.93489419561959,1.45833333333333,187,0.129166666666667,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Hipertensi Tidak Terkontrol",0.9,-0.302,1,93.5328551241116,0,5.3958976948869,"Tinggi","Normal","Terkontrol"
+34,"YULI HARTANINGSIH A A",1141912,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 54 bpm.
+TECHNICAL QUALITY: Baik.
+
+Temuan :
+Total calcium score 0 mengesankan no identifiable calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM): berukuran panjang +/- 13.2 mm, bercabang menjadi LAD, LCX dan ramus intermedius. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tak tampak myocardial bridging pada LM
+
+LAD: berukuran panjang +/- 102.5 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD.
+
+LCX: berukuran panjang +/- 92.0 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. LCX bercabang menjadi cabang obtuse marginal yang patent. Tidak tampak myocardial bridging pada LCX.
+
+RCA: berukuran panjang +/- 150.9 mm.
+Tampak non calcified plaque pada segmen 3 yang menyebabkan stenosis sebesar +/- 24% sepanjang 1.6 mm
+Tak tampak calcified plaque dan napkin-type plaque, remodelling ataupun spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran kesan membesar, CTR 53%
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+Kesan        :        
+- Total calcium score 0 mengesankan very low risk of CAD sesuai Agatston score dan very low Risk of Coronary Artery Disease sesuai dengan CSANZ
+- Non calcified plaque pada RCA segmen 3 yang menyebabkan stenosis sebesar 1-24% (sesuai CAD-RADS 1)
+Sesuai CAD-RADS 1 (Sesuai klasifikasi CAD-RADS 2.0)
+
+- Right coronary dominance
+- Cor prominent",2025,"DM/Prediabetes","P",53,"HT Terkontrol",60,"Tidak-merokok",39.04,"On-Statin","OAD","None",4.8,0.58,NA,"8.6",13.3,205,155,50,109,6.4,"4.00","Right",0,"None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","Soft-Plaque","None","-","0","0","0","Minimal (1-24%)","0","1","53","None","-","-","-","HRP (-)",0,6.25996380014299,2.18,155,0.128,"OAD",60,"Sudah Lama","Hipertensi Terkontrol",0.7,-0.241,1.012,108.14288112235,0,0,"Tinggi","Normal","Terkontrol"
+35,"IDA BAGUS GUPTA WIKSUDIANA",26010332,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 62 bpm.
+TECHNICAL QUALITY: Baik.
+
+Temuan :
+Total calcium score 11.9 mengesankan no identifiable calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+
+Left main (LM): berukuran panjang +/- 19.1 mm, bercabang menjadi LAD, LCX dan ramus intermedius. Tampak calcified plaque pada LM, yang menyebabkan stenosis terukur sebesar +/- 10-20%. Tak tampak myocardial bridging pada LM
+
+LAD: berukuran panjang +/- 152.7 mm. Tampak calcified plaque pada LAD segmen 7, disertai remodelling, yang menyebabkan stenosis terukur sebesar +/- 3-5%. LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD.
+
+LCX: berukuran panjang +/- 85.9 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. LCX bercabang menjadi cabang obtuse marginal yang patent. Tak tampak myocardial bridging pada LCX.
+
+RCA: berukuran panjang +/- 154.3 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tampak myocardial bridging pada RCA.
+
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran dan bentuk kesan normal, CTR 48%
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+Kesan        :        
+- Total calcium score 11.9 mengesankan mild calsification of CAD sesuai Agatston score P1
+- Calcified plaque pada LM yang menyebabkan stenosis sebesar +/- 1-24% sesuai dengan CAD-RADS (Minimal stenosis, CAD-RADS 1/P1)
+- Calcified plaque pada LAD yang menyebabkan stenosis sebesar +/- 1-24% sesuai dengan CAD-RADS (Minimal stenosis, CAD-RADS 1/P1)
+- Myocardial bridging pada RCA.
+Kesimpulan: CAD-RADS 1/P1/HRP (sesuai dengan CAD RAD 2.0)
+
+Right coronary artery dominance, tanpa anomali origin arteri koroner.",2025,"DM/Prediabetes","L",44,"HT Terkontrol",12,"Merokok",38.87,"On-Statin","OAD","None",8.6,0.98,NA,NA,13.2,149,80,14,405,5.3,"3.70","Right",11.9,"Calcified","None","-","0","0","0","Minimal (1-24%)","1/P1","Calcified","None","-","0","0","0","Minimal (1-24%)","1/P1","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","1/P1","48","None","-","-","-","HRP (-)",0,8.155649270366,28.9285714285714,135,0.378571428571429,"OAD",12,"Sudah Lama","Hipertensi Terkontrol",0.9,-0.302,1,97.5132723865165,0,2.55722731136763,"Tinggi","Tinggi","Tidak Terkontrol"
+36,"I MADE SUARDIKA",24024842,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 90 bpm.
+TECHNICAL QUALITY: Baik.
+Temuan :
+Total calcium score 0 mengesankan no identifiable calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+Left main (LM): berukuran panjang +/- 8.8 mm, bercabang menjadi LAD, LCX dan ramus intermedius. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tak tampak myocardial bridging pada LM
+LAD: berukuran panjang +/- 145.8 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. Tidak tampak myocardial bridging pada LAD.
+LCX: berukuran panjang +/- 107.5 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. LCX  bercabang menjadi cabang obtuse marginal yang patent. Tampak superficial myocardial bridging pada segmen 13 LCX dan tortuosity pada aspek distal LCX.
+RCA: berukuran panjang +/- 177.1 mm. Tak tampak calcified plaque, non calcified plaque dan napkin-type plaque, remodelling ataupun spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tampak superficial myocardial bridging pada segmen 3 RCA. 
+Katup jantung:  tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran dan bentuk kesan normal, CTR 48%
+Pada regio thorax yang terscanning sebagian:  tak tampak kelainan
+
+Kesan:
+- Total calcium score 0 mengesankan very low risk of CAD sesuai Agatston score P0
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, ataupun spot calcification pada RCA, LCX, LAD dan LM
+(Sesuai klasifikasi CAD-RADS 0)
+- Right coronary dominance
+- Superficial myocardial bridging pada segmen 13 LCX, segmen 3 RCA  dan tortuosity pada aspek distal LCX",2025,"DM/Prediabetes","L",41,"HT Terkontrol",108,"Merokok",31.83,"On-Statin","Insulin","None",12.7,1.09,NA,NA,12.5,301,167,34,257,9.4,NA,"Right",0,"None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","0","48","None","-","-","-","HRP (-)",0,8.09067807835977,7.55882352941176,267,0.276470588235294,"Insulin",108,"Sudah Lama","Hipertensi Terkontrol",0.9,-0.302,1,87.4432412058723,0,0,"Tinggi","Tinggi","Tidak Terkontrol"
+37,"I WAYAN SUARDIKA",21034840,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 54 bpm.
+TECHNICAL QUALITY: Baik.
+Temuan :
+Total calcium score 188.8 mengesankan moderate calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+Left main (LM): berukuran panjang +/- 10.6 mm, bercabang menjadi LAD dan LCX.
+Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tak tampak myocardial bridging pada LM
+LAD: berukuran panjang +/- 137.6 mm.
+ - Tampak multiple mixed plaque pada proksimal LAD yang menyebabkan stenosis sebesar +/- 32-54% sepanjang +/- 1.7 mm dengan positive remodelling
+- Tak tampak napkin-type plaque ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. Tidak tampak myocardial bridging pada LAD.
+LCX: berukuran panjang +/- 111.0 mm.
+- Tampak calcified plaque pada mid LCX yang menyebabkan stenosis sebesar +/- 37-60% sepanjang +/- 1.1 mm dengan positive remodelling
+- Tak tampak non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. LCX bercabang menjadi cabang obtuse marginal yang patent. Tidak tampak myocardial bridging pada LCX.
+RCA: berukuran panjang +/- 176.8 mm.
+-  Tampak multiple mixed plaque pada proksimal RCA yang menyebabkan stenosis sebesar +/- 49-74% sepanjang +/- 6.6 mm dengan positive remodelling
+- Tak tampak napkin-type plaque ataupun spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran dan bentuk kesan normal, CTR 54%
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+
+Kesan:
+- Total calcium score 188.8 (moderate calcification) sesuai Agatston score, mengesankan Moderate Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Multiple mixed plaque dengan positive remodelling pada proksimal LAD yang menyebabkan moderate stenosis sebesar +/- 32-54% (CAD-RADS 3/HRP) 
+- Tampak calcified plaque pada mid LCX yang menyebabkan moderate stenosis sebesar +/- 37-60% (CAD-RADS 3/HRP) 
+- Multiple mixed plaque dengan positive remodelling pada proksimal RCA yang menyebabkan severe stenosis sebesar +/- 49-74% (CAD-RADS 4A/HRP) 
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification pada LM 
+Kesimpulan : CAD-RADS 4A/P3/HRP (sesuai dengan CAD RAD 2.0)
+- Right coronary artery dominance, tanpa anomali origin arteri koroner",2025,"DM/Prediabetes","L",65,"HT-Tidak-ada",12,"Tidak-merokok",28.65,"On-Statin","Insulin","None",6.2,0.97,NA,NA,13.8,112,63,40,98,4.9,NA,"Right",188.8,"None","None","-","0","0","0","Normal","0","Mixed","HRP","-","0","0","0","Moderate (50-69%)","3/HRP","Calcified","HRP","-","0","0","0","Moderate (50-69%)","3/HRP","Mixed","HRP","-","0","0","0","Severe (70-99%)","4A/HRP","4A/P3/HRP","54","None","-","-","-","HRP (+)",1,6.40951677072162,2.45,72,0.1225,"Insulin",12,"Sudah Lama","Tidak ada riwayat hipertensi",0.9,-0.302,1,86.6338831890125,0,5.24597088617583,"Optimal","Normal","Terkontrol"
+38,"I WAYAN DURYA",18024883,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 58 bpm.
+TECHNICAL QUALITY: Baik.
+Temuan :
+Total calcium score 1302.1 mengesankan extensive calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+Left main (LM): berukuran panjang +/- 5.0 mm, bercabang menjadi LAD dan LCX. Tampak multiple calcified plaque dengan positive remodelling pada segmen 5 LM yang menyebabkan stenosis sebesar +/- 33-55% sepanjang +/- 3.1 mm.  Tak tampak myocardial bridging pada LM
+LAD: berukuran panjang +/-  128.7 mm.Tampak multiple calcified plaque dengan positive remodelling pada segmen 11 dan 13 LAD yang menyebabkan stenosis sebesar +/- 50-75% sepanjang +/- 5.7 mm.  LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD.
+LCX: berukuran panjang +/- 71.7 mm. Tampak multiple calcified plaque dengan positive remodelling pada segmen 6 dan 7 LCX yang menyebabkan stenosis sebesar +/- 66-88% sepanjang +/- 5.7 mm. LCX bercabang menjadi cabang obtuse marginal yang patent. Tidak tampak myocardial bridging pada LCX.
+RCA: berukuran panjang +/- 144.4 mm.Tampak multiple calcified plaque dengan positive remodelling pada segmen 1, 2 dan 3 RCA yang menyebabkan stenosis sebesar +/- 33-56% sepanjang +/- 1.4 mm. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran dan bentuk kesan normal, CTR 57%
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+
+Kesan:
+- Total calcium score 1302.1 mengesankan (extensive coronary artery calcification) sesuai Agatston score, mengesankan High Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Multiple calcified plaque pada segmen 5 LM yang menyebabkan moderate stenosis
+- Multiple calcified plaque pada segmen 11 dan 13 LAD yang menyebabkan severe stenosis
+- Multiple calcified plaque pada segmen 6 dan 7 LCX yang menyebabkan severe stenosis
+- Multiple calcified plaque pada segmen 1, 2 dan 3 RCA yang menyebabkan moderate stenosis
+Kesimpulan : CAD-RADS 4A/P4/HRP (sesuai dengan CAD RAD 2.0)
+- Right coronary artery dominance, tanpa anomali origin arteri koroner.",2025,"DM/Prediabetes","L",75,"HT Terkontrol",0,"Merokok",23.03,"No-Statin","Tanpa-obat","None",5.8,1.27,NA,NA,12.8,130,82,34,69,7.9,NA,"Right",1302,"Calcified","HRP","-","1","0","0","Moderate (50-69%)","4A/P4/HRP","Calcified","HRP","-","1","0","0","Severe (70-99%)","4A/P4/HRP","Calcified","HRP","-","1","0","0","Severe (70-99%)","4A/P4/HRP","Calcified","HRP","-","1","0","0","Moderate (50-69%)","4A/P4/HRP","4A/P4/HRP","57","None","-","-","-","HRP (+)",1,5.99196442214963,2.02941176470588,96,0.232352941176471,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Hipertensi Terkontrol",0.9,-0.302,1,58.9168231551344,1,7.17242457712485,"Optimal","Normal","Terkontrol"
+39,"HARIS MAKKA",26015824,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 75 bpm.
+TECHNICAL QUALITY: Baik.
+Temuan :
+Total calcium score 8.7 mengesankan mild calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+Left main (LM): berukuran panjang +/- 6.2 mm, bercabang menjadi LAD dan LCX. 
+- Tak tampak calcified plaque dan non calcified plaque 
+- Tak tampak napkin-type plaque ataupun spot calcification.
+- Tak tampak myocardial bridging pada LM
+LAD: berukuran panjang +/- 119.3 mm 
+- Tampak calcified dan non calcified plaque dengan positive remodelling pada proksimal LAD yang menyebabkan stenosis terbesar +/-1-24% sepanjang +/- 4.4 mm
+- Tak tampak napkin-type plaque  ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. 
+- Tampak superficial myocardial bridging pada mid LAD.
+LCX: berukuran panjang +/- 88.2 mm
+- Tak tampak calcified dan non calcified plaque 
+- Tak tampak napkin-type plaque ataupun spot calcification. LCX  bercabang menjadi cabang obtuse marginal yang patent. 
+- Tak tampak myocardial bridging pada LCX
+RCA: berukuran panjang +/- 125.4 mm
+- Tak tampak calcified plaque dan non calcified plaque 
+- Tak tampak napkin-type plaque ataupun spot calcification.
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging pada RCA. 
+Katup jantung: tak tampak kalsifikasi pada katup aorta. Tak tampak kalsifikasi katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran dan bentuk kesan normal, CTR 44%
+Pada regio thorax yang terscanning sebagian:  tak tampak kelainan
+
+Kesan:
+- Total calcium score  8.7 (mild calcification) sesuai Agatston score, mengesankan Low Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Calcified dan non calcified plaque dengan positive remodelling pada proksimal LAD yang menyebabkan minimal stenosis 
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification pada RCA dan LCX
+- Right coronary artery dominance, tanpa anomali origin arteri koroner.
+Kesimpulan : CAD-RADS 1/P1/HRP (sesuai dengan CAD RAD 2.0)",2025,"DM/Prediabetes","L",61,"HT-Tidak-ada",60,"Merokok",22.89,"No-Statin","Insulin","None",5.6,1.03,NA,NA,6.4,217,136,53,276,7.2,NA,"Right",8.7,"None","None","-","0","0","0","Normal","-","Mixed","HRP","-","1","0","0","Minimal (1-24%)","1/P1/HRP","None","None","-","0","0","0","Normal","-","None","None","-","0","0","0","Normal","-","1/P1/HRP","44","None","-","-","-","HRP (+)",0,7.34316746345825,5.20754716981132,164,0.135849056603774,"Insulin",60,"Sudah Lama","Tidak ada riwayat hipertensi",0.9,-0.302,1,82.6443604213961,0,2.27212588550934,"Tinggi","Tinggi","Terkontrol"
+40,"I MADE RAI ARDANA",19015085,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK:
+Menggunakan Siemens Somatom Dual Source CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras i nsfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 46 bpm
+TECHNICAL QUALITY: Baik.
+Temuan :
+Total calcium score 852.5 mengesankan severe calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right dominance coronary artery.
+Left main (LM): 
+- berukuran panjang +/- 9.7 mm, bercabang menjadi LAD dan LCX.
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification
+- Tak tampak myocardial bridging pada LM
+LAD: 
+- berukuran panjang +/- 147.7 mm. 
+- Tampak calcified plaque dengan positive remodelling pada segment 6 yang menyebabkan stenosis sebesar +/- 25-49 % 	
+-  LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD
+- Tampak turtousity dari LAD 
+LCX: 
+- berukuran panjang +/- 119.9 mm. 
+- Tampak calcified plaque dengan positive remodelling pada segment 11 yang menyebabkan stenosis sebesar +/- 1-24 % 
+- LCX  bercabang menjadi cabang obtuse marginal yang patent. Tak tampak myocardial bridging pada LCX. 
+RCA: 
+- berukuran panjang +/- 123.1 mm. 
+- Tampak calcified plaque dengan positive remodelling pada segment 1 yang menyebabkan stenosis sebesar +/- 70-99 % 
+- Tampak calcified plaque dengan positive remodelling pada segment 2 yang menyebabkan stenosis sebesar +/- 1-24 % 
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA. 
+Katup jantung: tampak kalsifikasi pada katup aorta
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Jantung ukuran normal, CTR 53%	
+Pada regio thorax yang sebagian terscanning : tak tampak kelainan
+
+Kesan:
+- Total calcium score 852.5 (Severe Calcification) sesuai Agatston score, mengesankan High Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Calcified plaque dengan positive remodelling pada segment 1 RCA yang menyebabkan severe stenosis (CAD RADS 4a/P3/HRP)
+- Calcified plaque dengan positive remodelling pada segment 6 LAD yang menyebabkan mild stenosis (CAD RADS 2/P1/HRP)
+- Calcified plaque dengan positive remodelling pada segment 11 LCX dan segment 2 RCA yang menyebabkan minimal stenosis (CAD RADS 1/P1/HRP)
+Kesimpulan : CAD RADS 4A/P3/HRP (sesuai dengan CAD RAD 2.0)
+- Aortosclerosis
+- Turtousity dari LAD 
+- Right dominance coronary artery.",2025,"DM/Prediabetes","L",66,"HT-Tidak-ada",12,"Merokok",24.61,"On-Statin","Tanpa-obat","None",5.6,2.2,NA,NA,13.5,96,37,40,196,6.4,NA,"Right",852.5,"None","None","-","0","0","0","Normal","0","Calcified","HRP","-","1","0","0","Mild (25-49%)","2/P1/HRP","Calcified","HRP","-","1","0","0","Minimal (1-24%)","1/P1/HRP","Calcified","HRP","-","1","0","0","Severe (70-99%)","4a/P3/HRP","4A/P3/HRP","53","Aorta","-","-","-","HRP (+)",1,7.00088125697162,4.9,56,0.16,"Tanpa Terapi/Diet",12,"Sudah Lama","Tidak ada riwayat hipertensi",0.9,-0.302,1,32.2259432341075,1,6.7493455422345,"Optimal","Tinggi","Terkontrol"
+41,"ELLY HANDAYANI",26024665,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Dual Source CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena, gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 75 bpm
+TECHNICAL QUALITY: Baik
+Temuan :
+Total calcium score 21.2 mengesankan mild calcification
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance.
+Left main (LM): 
+- berukuran panjang +/- 7.4 mm, bercabang menjadi LAD dan LCX.
+- Tampak calcified plaque dengan positive remodelling pada segment 5 yang menyebabkan stenosis sebesar +/- 1-24%
+- Tak tampak myocardial bridging pada LM
+LAD: 
+- berukuran panjang +/- 169.1 mm. 
+- Tampak mixed-calcified plaque dengan positive remodelling pada mid LAD (segment 7) yang menyebabkan stenosis sebesar +/- 25-49%
+-  LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD
+LCX: 
+- berukuran panjang +/- 149.4 mm. 
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification
+- LCX bercabang menjadi cabang obtuse marginal yang patent. Tak tampak myocardial bridging pada LCX
+RCA: 
+- berukuran panjang +/- 156.6 mm. 
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA. 
+Katup jantung: tampak kalsifikasi pada katup aorta 
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri
+Tak tampak emboli paru maupun diseksi
+Jantung ukuran normal, CTR 47%
+Tampak kalsifikasi pada aorta ascenden
+Pada regio thorax yang terscanning: tampak cylindrical bronchiectasis segmen medial lobus medius paru kanan
+
+Kesan:
+- Total calcium score 21.2 mengesankan mild calcification (sesuai Agatston score) dan Low Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Calcified plaque dengan positive remodelling pada LM (segment 5) yang menyebabkan minimal stenosis (1-24%)
+(CAD RADS 1)
+- Mixed calcified plaque dengan positive remodelling pada mid LAD (segment 7) yang menyebabkan mild stenosis (25-49%)
+(CAD RADS 2)
+Kesimpulan : CAD RADS 2/P1/HRP (sesuai dengan CAD RAD 2.0)
+- Cor ukuran normal
+- Right coronary artery dominance, tanpa anomali origin arteri koroner
+- Kalsifikasi pada aorta ascenden dan katup aorta 
+- Cylindrical bronchiectasis segmen medial lobus medius paru kanan",2025,"DM/Prediabetes","P",53,"HT Terkontrol",0,"Tidak-merokok",21.23,"On-Statin","Tanpa-obat","None",5.9,1.07,NA,"8.4",9.8,227,164,33,210,5.2,"3.10","Right",21.2,"Calcified","HRP","-","1","0","0","Minimal (1-24%)","1","Mixed","HRP","-","1","0","0","Mild (25-49%)","2","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","2/P1/HRP","47","Aortic valve","-","-","-","HRP (+)",0,7.12205988162914,6.36363636363636,194,0.157575757575758,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Hipertensi Terkontrol",0.7,-0.241,1.012,62.1115789098492,0,3.10009228887823,"Tinggi","Tinggi","Terkontrol"
+42,"NI KETUT REPUN",19058545,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK:
+Menggunakan Siemens Somatom Dual Source CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras i nsfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 68 bpm
+TECHNICAL QUALITY: Baik.
+TEMUAN:
+Total calcium score 930.0 (Calcium score sulit dievaluasi karena terpasang stent pada proximal LAD)
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right artery coronary dominance 
+Left main (LM): berukuran panjang +/- 9.8 mm, bercabang menjadi LAD dan LCX. 
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, positive remodelling ataupun spotty calcification. 
+- Tak tampak myocardial bridging pada LM.
+LAD: berukuran panjang +/- 147 mm
+- Tak tampak lesi hiper/hipodens intrastent pada proximal stent, terukur panjang stent +/- 15.8 mm
+- Tampak calcified plaque dengan positive remodelling pada LAD distal dari stent (segment 6) yang menyebabkan stenosis terbesar +/- 25-49 % 
+- LAD bercabang menjadi cabang diagonal yang patent. 
+- Tak tampak myocardial bridging pada LAD.
+LCX: berukuran panjang +/- 67 mm. 
+- Tampak calcified plaque pada proximal LCX (segment 11) yang menyebabkan stenosis terbesar +/- 25-49 % 
+- LCX bercabang menjadi cabang obtuse marginal yang patent. 
+- Tak tampak myocardial bridging pada LCX.
+RCA: berukuran panjang +/- 140 mm. 
+- Tampak calcified plaque pada proximal RCA (segment 1) yang menyebabkan stenosis terbesar +/- 25-49 % 
+- Tampak calcified plaque dengan positive remodelling pada RCA (segment 3) yang menyebabkan stenosis terbesar +/- 1-24 % 
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent. 
+- Tak tampak myocardial bridging pada RCA.
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak tampak penebalan dinding ventrikel kiri.
+Tidak ada mural thrombus atau massa intracradiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi
+Ekstra-cardiac: tak tampak kelainan.
+Jantung ukuran membesar, CTR 58%
+Tampak kalsifikasi pada aorta descendens dan anulus aorta
+Pada regio thorax yang terscanning : tak tampak kelainan
+
+Kesan:
+- Total calcium score sulit dievaluasi karena terpasang stent pada proximal LAD
+(CAD-RADS 2/S)
+- Calcified plaque dengan positive remodelling pada LAD distal dari stent (segment 6), proximal LCX (segment 11), dan proximal RCA (segment 1) yang menyebabkan mild stenosis 
+(CAD-RADS 2)
+- Calcified plaque dengan positive remodelling pada RCA (segment 3) yang menyebabkan minimal stenosis 
+(CAD-RADS 1)
+Kesimpulan : CAD-RADS 2/P2/HRP/S
+- Cardiomegaly
+- Right coronary artery dominance, tanpa anomali origin arteri koroner
+- Atherosclerosis pada aorta descendens dan anulus aorta",2025,"DM/Prediabetes","P",72,"HT Terkontrol",60,"Tidak-merokok",24.69,"On-Statin","OAD","None",7.4,0.72,NA,NA,12.7,217,135,39,241,6.1,NA,"Right",930,"None","None","-","0","0","0","Normal","0","Calcified","HRP","-","1","0","0","Mild (25-49%)","2/P2/HRP/S","Calcified","None","-","0","0","0","Mild (25-49%)","2","Calcified","HRP","-","1","0","0","Mild (25-49%)","2/P2/HRP","2/P2/HRP/S","58","None","None","-","-","HRP (+)",1,7.48627693370078,6.17948717948718,178,0.156410256410256,"OAD",60,"Sudah Lama","Hipertensi Terkontrol",0.7,-0.241,1.012,88.779963608961,0,6.83625927727707,"Tinggi","Tinggi","Tidak Terkontrol"
+43,"MUCHAMAD ADHA, S.T",15019007,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Dual Source CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena, gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 69 bpm
+TECHNICAL QUALITY: Baik
+Temuan :
+Total calcium score 1689.7 mengesankan extensive calcification
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance.
+Left main (LM): 
+- berukuran panjang +/- 11.5 mm, bercabang menjadi LAD dan LCX.
+- Tampak calcified plaque dengan positive remodelling pada LM segment 5 yang menyebabkan stenosis terbesar +/- 50-69%
+LAD: 
+- berukuran panjang +/- 163.8 mm. 
+- Tampak calcified plaque dengan positive remodelling pada LAD segment 6 yang menyebabkan stenosis terbesar +/- 50-69%
+- Tampak calcified plaque dengan positive remodelling pada LAD segment 7 yang menyebabkan stenosis terbesar +/- 50-69%
+- Tampak calcified plaque dengan positive remodelling pada LAD segment 6 yang menyebabkan stenosis terbesar +/- 70-99%
+- Tampak calcified plaque dengan positive remodelling pada LAD segment 8 yang menyebabkan stenosis terbesar +/- 70-99%
+-  LAD bercabang menjadi cabang diagonal yang patent. 
+Tampak myocardial bridging pada LAD
+LCX: 
+- berukuran panjang +/- 73.5 mm. 
+- Tampak calcified plaque dengan positive remodelling pada LCX segment 11 yang menyebabkan stenosis terbesar +/- 70-99%
+- Tampak calcified plaque dengan positive remodelling pada LCX segment 13 yang menyebabkan stenosis terbesar +/- 70-99%
+- LCX bercabang menjadi cabang obtuse marginal yang patent. Tak tampak myocardial bridging pada LCX
+RCA: 
+- berukuran panjang +/- 113.9 mm. 
+- Tampak calcified plaque dengan positive remodelling pada RCA segment 1 yang menyebabkan stenosis terbesar +/- 50-69%
+- Tampak calcified plaque dengan positive remodelling pada RCA segment 2 yang menyebabkan stenosis terbesar +/- 70-99%
+- Tampak calcified plaque dengan positive remodelling pada RCA segment 3 yang menyebabkan stenosis terbesar +/- 70-99%
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA
+Katup jantung: tak tampak kalsifikasi pada katup mitral, tricuspid maupun aortic dan pulmonal.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri
+Tak tampak emboli paru maupun diseksi
+Jantung ukuran normal, CTR 57%
+Tampak kalsifikasi pada aorta descenden
+Pada regio thorax yang terscanning: tak tampak kelainan
+
+Kesan:
+- Total calcium score 1689.7 mengesankan extensive calcification sesuai sesuai Agatston score dan High Risk of Coronary Artery Disease sesuai dengan CSANZ
+- Calcified plaque dengan positive remodelling pada LAD segment 6,8, LCX segment 11,13 dan RCA segment 2,3 yang menyebabkan severe stenosis (70-99%)
+CAD RADS 4B
+- Calcified plaque dengan positive remodelling pada LM segment 5, LAD segment 6,7 dan RCA segment 1 yang menyebabkan moderate stenosis (50-69%)
+CAD RADS 3
+Kesimpulan : CAD RADS 4B/P4/HRP (sesuai dengan CAD RAD 2.0)
+- Cor ukuran normal
+- Right coronary artery dominance, tanpa anomali origin arteri koroner
+- Myocardial bridging pada LAD
+- Atherosclerosis aorta descenden",2025,"DM/Prediabetes","L",46,"HT st I",12,"Tidak-merokok",28.08,"On-Statin","OAD","None",9.9,0.82,NA,"7.5",17.2,192,111,42,211,8.5,"3.10","Right",1689.7,"Calcified","HRP","0","1","0","0","Moderate (50-69%)","3/P1/HRP","Calcified","HRP","0","1","0","0","Severe (70-99%)","4B/P4/HRP","Calcified","HRP","0","1","0","0","Severe (70-99%)","4B/P4/HRP","Calcified","HRP","0","1","0","0","Severe (70-99%)","4B/P4/HRP","4B/P4/HRP","57","None","-","-","-","HRP (+)",1,7.64439289061661,5.02380952380952,150,0.202380952380952,"OAD",12,"Sudah Lama","Hipertensi Tidak Terkontrol",0.9,-0.302,1,109.711322353309,0,7.43289792334292,"Tinggi","Tinggi","Tidak Terkontrol"
+44,"I KETUT SUKARTA",26034868,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK:
+Menggunakan Siemens Somatom Dual Source CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras i nsfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 83 bpm
+TECHNICAL QUALITY: Baik.
+TEMUAN:
+Total calcium score 0 mengesankan no indentifiable calcification
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance.
+Left main (LM): berukuran panjang +/- 7.0 mm, bercabang menjadi LAD dan LCX. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification. Tidak tampak myocardial bridging pada LM.
+LAD: berukuran panjang +/- 128.0 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification. LAD bercabang menjadi cabang diagonal yang patent. Tampak myocardial bridging pada LAD.
+LCX: berukuran panjang +/- 71.7 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification. LCX bercabang menjadi cabang obtuse marginal yang patent. Tak tampak myocardial bridging pada LCX.
+RCA: berukuran panjang +/- 127.5 mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA.
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak tampak penebalan dinding ventrikel kiri.
+Tidak ada mural thrombus atau massa intracradiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi
+Ekstra-cardiac: tak tampak kelainan.
+Jantung ukuran kesan normal, CTR 51%
+
+Kesan:
+- Total calcium score 0 (No Indentifiable) sesuai Agatston score, mengesankan Very Low Risk for Coronary Artery Disease 
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification pada RCA, LAD, LCX, dan LM
+- Superficial myocardial bridging pada LAD
+Kesimpulan : CAD-RADS 0 (Absence of CAD)
+- Cor ukuran normal
+- Right coronary artery dominance, tanpa anomali anatomi arteri koroner",2025,"DM/Prediabetes","L",61,"HT-Tidak-ada",0,"Tidak-merokok",33.56,"No-Statin","OAD","SGLT-2i",6.1,1.2,NA,NA,14,217,62,32,580,8.8,NA,"Right",0,"None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","None","None","-","0","0","0","Normal","0","0","51","None","None","-","-","HRP (-)",0,8.17131687471973,18.125,185,0.275,"OAD",0,"Baru Terdiagnosis","Tidak ada riwayat hipertensi",0.9,-0.302,1,68.8018945765633,0,0,"Tinggi","Tinggi","Terkontrol"
+45,"I NENGAH SUARSA",22055322,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK:
+Menggunakan Siemens Somatom Dual Source CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras i nsfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 59 bpm
+TECHNICAL QUALITY: Baik.
+Temuan :
+Total calcium score 1013.7 mengesankan severe calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right dominance coronary artery.
+Left main (LM): 
+- berukuran panjang +/- 6.8 mm, bercabang menjadi LAD dan LCX.
+- Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, positive remodelling ataupun spotty calcification
+- Tak tampak myocardial bridging
+LAD: 
+- berukuran panjang +/- 97.7 mm. 
+- Tampak non calcified plaque dan multiple calcified plaque dengan positive remodelling pada segment 6 yang menyebabkan stenosis sebesar +/- 70-99%
+- Tampak multiple calcified plaque dengan positive remodelling pada segment 7 yang menyebabkan stenosis sebesar +/- 50-69%  	
+-  LAD bercabang menjadi cabang diagonal yang patent. 
+- Tampak turtousity LAD
+- Tak tampak myocardial bridging
+LCX: 
+- berukuran panjang +/- 65.4 mm. 
+- Tampak multiple calcified plaque dengan positive remodelling pada segment 11 yang menyebabkan stenosis sebesar +/- 70-99%
+- Tampak multiple calcified plaque dengan positive remodelling pada segment 13 yang menyebabkan stenosis sebesar +/- 50-69%  
+- LCX  bercabang menjadi cabang obtuse marginal yang patent
+- Tak tampak myocardial bridging
+RCA: 
+- berukuran panjang +/- 113.2 mm
+- Tampak calcified plaque dengan positive remodelling pada segment 1 yang menyebabkan stenosis sebesar +/- 1-24% 
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent. 
+- Tak tampak myocardial bridging
+Katup jantung: tak tampak kelainan
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Jantung ukuran normal, CTR 49%	
+Tampak kalsifikasi pada arcus aorta, aorta ascendens dan aorta descendens
+Pada regio thorax yang sebagian terscanning : tak tampak kelainan
+
+Kesan:
+- Total calcium score 1013.7 (Severe Calcification) sesuai Agatston score, mengesankan High Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Non calcified plaque dan multiple calcified plaque dengan positive remodelling pada segment 6 LAD yang menyebabkan severe stenosis (CAD RAD 4A)
+- Multiple calcified plaque dengan positive remodelling pada segment 7 LAD dan segment 13 LCX yang menyebabkan moderate stenosis (CAD RAD 3)
+- Multiple calcified plaque dengan positive remodelling pada segment 11 LCX yang menyebabkan severe stenosis (CAD RAD 4A)
+- Calcified plaque dengan positive remodelling pada segment 1 RCA yang menyebabkan minimal stenosis (CAD RAD 1)
+Kesimpulan : CAD RADS 4A/P4/HRP (sesuai dengan CAD RAD 2.0)
+- Cor ukuran normal
+- Right coronary artery dominance, tanpa anomali origin arteri koroner
+- Aortosclerosis dan atherosclerosis pada aorta ascendens dan aorta descendens",2025,"DM/Prediabetes","L",67,"HT st I",12,"Merokok",24.03,"On-Statin","Tanpa-obat","None",6.5,2.34,"4.20","9.3",10.9,159,101,43,151,6.9,"281.50","Right",1013.7,"None","None","-","0","0","0","Normal","0","Mixed","HRP","-","1","0","0","Severe (70-99%)","4A/P4/HRP","Mixed","HRP","-","1","0","0","Severe (70-99%)","4A/P4/HRP","Calcified","HRP","-","1","0","0","Minimal (1-24%)","1","4A/P4/HRP","49","None","-","-","-","HRP (+)",1,6.88908201371652,3.51162790697674,116,0.16046511627907,"Tanpa Terapi/Diet",12,"Sudah Lama","Hipertensi Tidak Terkontrol",0.9,-0.302,1,29.7408117644945,1,6.92234828128504,"Optimal","Tinggi","Terkontrol"
+46,"I KETUT WIRAWAN",1447283,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 57 bpm.
+TECHNICAL QUALITY: Baik.
+Temuan :
+Total calcium score 195.2 mengesankan moderate calcification
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Left coronary artery dominance.
+Left main (LM): berukuran panjang +/- 8.8 mm, bercabang menjadi LAD, LCX dan ramus intermedius. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tak tampak myocardial bridging pada LM
+LAD: berukuran panjang +/- 151.1 mm.Tampak multiple calcified plaque pada segmen 6 yang menyebabkan stenosis dengan lumen terukur +/- 88%. LAD bercabang menjadi cabang diagonal yang patent. Tidak tampak myocardial bridging pada LAD.
+LCX: berukuran panjang +/- 127.8 mm. Tampak calcified plaque pada segmen 11 yang menyebabkan stenosis dengan lumen terukur +/- 40%. LCX  bercabang menjadi cabang obtuse marginal yang patent.  Tidak tampak myocardial bridging pada LCX.
+RCA: berukuran panjang +/- 152.6 mm. Tampak spotty calcification pada segmen 3 yang menyebabkan stenosis lumen terukur +/- 32% dengan remodelling. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA. 
+Katup jantung: tak tampak kalsifikasi pada katup aorta , tampak kalsifikasi pada chordae tendineae katup mitral.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran dan bentuk kesan normal, CTR 52 %
+Pada regio thorax yang terscanning sebagian:  tak tampak kelainan
+
+Kesan:
+- Total calcium score 195.2 mengesankan moderate atherosclerotic plaque sesuai Agatston score P2.
+- Calcified plaque pada LAD yang menyebabkan Severe stenosis
+- Calcified plaque pada LCX yang menyebabkan Mild stenosis
+- Spotty calcification pada RCA dengan remodelling  yang menyebabkan Mild stenosis
+- Left coronary artery dominance, tanpa anomali origin arteri koroner.
+Kesimpulan: CAD-RADS 4a/P2/HRP (sesuai dengan CAD RAD 2.0)
+- Kalsifikasi chordae tendineae katup mitral.",2025,"DM/Prediabetes","L",72,"HT Terkontrol",0,"Tidak-merokok",27.76,"On-Statin","Tanpa-obat","None",5.9,1.02,NA,NA,16.2,120,59,45,95,6,NA,"Left",195.2,"None","None","-","0","0","0","Normal","0","Calcified","None","-","0","0","0","Severe (70-99%)","4a/P2","Calcified","None","-","0","0","0","Mild (25-49%)","2/P2","Calcified","HRP","-","0","0","1","Mild (25-49%)","2/P2/HRP","4a/P2/HRP","52","Chordae tendineae katup mitral","-","-","-","HRP (+)",1,6.32882924251221,2.11111111111111,75,0.133333333333333,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Hipertensi Terkontrol",0.9,-0.302,1,78.0884141471921,0,5.27913454713126,"Optimal","Normal","Terkontrol"
+47,"I NYOMAN MURDA",26033060,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 72 bpm.
+TECHNICAL QUALITY: Baik.
+Temuan :
+Total calcium score 209.8 mengesankan moderate calcification
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+Left main (LM): berukuran panjang +/- 10.7  mm, bercabang menjadi LAD dan LCX. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. Tak tampak myocardial bridging pada LM
+LAD: berukuran panjang +/- 136.6 mm. 
+Tampak calcified plaque disertai positive remodelling pada segmen proximal LAD (segmen 6) yang menyebabkan stenosis sebesar +/- 70-99%
+Tak tampak non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification. LAD bercabang menjadi cabang diagonal yang patent. Tak tampak myocardial bridging pada LAD.
+LCX: berukuran panjang +/- 105.3 mm. 
+Tampak calcified plaque pada segmen proximal LCX (segmen 11) yang menyebabkan stenosis sebesar +/- 70-99%
+non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. LCX  bercabang menjadi cabang obtuse marginal yang patent.  Tidak tampak myocardial bridging pada LCX.
+RCA: berukuran panjang +/- 154.5mm. Tak tampak calcified plaque, non calcified plaque, dan napkin-type plaque, remodelling ataupun spot calcification. RCA bercabang menjadi cabang acute marginal dan PDA yang patent. Tak tampak myocardial bridging pada RCA. 
+Katup jantung:  tampak kalsifikasi pada katup aorta
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran kesan normal, CTR 44 %
+Pada regio thorax yang terscanning sebagian: 
+Tampak cystic bronchiectasis pada lobus inferior paru kiri
+
+Kesan:
+- Total calcium score 209.8 mengesankan moderate calcification sesuai Agatston score dan  Moderate Risk of Coronary Artery Disease sesuai dengan CSANZ
+- Calcified plaque disertai positive remodelling pada segmen proximal LAD (segmen 6) yang menyebabkan severe stenosis
+- Calcified plaque pada segmen proximal LCX(segmen 11) yang menyebabkan severe stenosis
+Kesimpulan : CAD-RADS 4A/P2/HRP (sesuai dengan CAD RAD 2.0)
+- Right coronary artery dominance, tanpa anomali origin arteri koroner.
+- Kalsifikasi katup aorta
+- Cystic bronchiectasis pada lobus inferior paru kiri",2025,"DM/Prediabetes","L",68,"HT-Tidak-ada",0,"Merokok",23.03,"No-Statin","Tanpa-obat","None",5.8,1.01,NA,NA,11.5,154,107,35,168,6.4,NA,"Right",209.8,"None","None","-","0","0","0","Normal","0","Calcified","HRP","-","1","0","0","Severe (70-99%)","4A/P2/HRP","Calcified","None","-","0","0","0","Severe (70-99%)","4A/P2","None","None","-","0","0","0","Normal","0","4A/P2/HRP","44","Aorta","-","-","-","HRP (+)",1,6.88182189695563,4.8,119,0.182857142857143,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Tidak ada riwayat hipertensi",0.9,-0.302,1,81.0074928278491,0,5.35090981666721,"Optimal","Tinggi","Terkontrol"
+48,"DR. I GST PT HENDRA SANJAYA",16013606,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 52 bpm.
+TECHNICAL QUALITY: Baik.
+Temuan :
+Total calcium score 12.3 mengesankan mild calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner.
+Right coronary artery dominance.
+Left main (LM): 
+- Berukuran panjang +/- 15.6 mm, bercabang menjadi LAD dan LCX.
+- Tampak calcified plaque pada LM yang menyebabkan stenosis sebesar +/- 1-24%
+- Tak tampak non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification
+- Tak tampak myocardial bridging pada LM
+LAD:
+- berukuran panjang +/- 124.3 mm.
+- Tampak multiple calcified plaque pada LAD (segmen 6 dan segmen 7) yang menyebabkan stenosis sebesar +/- 1-24%
+- Tak tampak non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification.
+- LAD bercabang menjadi cabang diagonal yang patent.
+- Tak tampak myocardial bridging pada LAD.
+LCX:
+- berukuran panjang +/- 108.2 mm. 
+- Tampak multiple calcified plaque pada LCX (segmen 11 dan segmen 13) yang menyebabkan stenosis sebesar +/- 25-49%
+- Tak tampak non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification.
+- LCX  bercabang menjadi cabang obtuse marginal yang patent. 
+- Tak tampak myocardial bridging pada LCX.
+RCA: 
+- berukuran panjang +/- 126.8 mm.
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification. 
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent.
+- Tak tampak myocardial bridging pada RCA. 
+Katup jantung: tak tampak kalsifikasi pada katup aorta, mitral, tricuspid maupun pulmonal.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan
+Cor ukuran dan bentuk kesan normal, CTR 56%
+Pada regio thorax yang terscanning sebagian:  tak tampak kelainan
+
+Kesan:
+- Total calcium score 12.3 sesuai Agatston score P1
+- Calcified plaque pada LM yang menyebabkan minimal stenosis
+- Multiple calcified plaque pada LAD (segmen 6 dan segmen 7) yang menyebabkan minimal stenosis
+- Multiple calcified plaque pada proximal LCX (segmen 11 dan segmen 13) yang menyebabkan mild stenosis
+Kesimpulan : CAD-RADS 2/P1 (sesuai dengan CAD RAD 2.0)
+- Right coronary artery dominance, tanpa anomali anatomi arteri koroner",2025,"DM/Prediabetes","L",59,"HT-Tidak-ada",0,"Tidak-merokok",27.02,"No-Statin","Tanpa-obat","None",5.9,1.2,NA,NA,15.5,149,78,37,159,8,NA,"Right",12.3,"Calcified","None","-","0","0","0","Minimal (1-24%)","2/P1","Calcified","None","-","0","0","0","Minimal (1-24%)","2/P1","Calcified","None","-","0","0","0","Mild (25-49%)","2/P1","None","None","-","0","0","0","Normal","2/P1","2/P1","56","None","-","-","-","HRP (-)",0,6.84385655313191,4.2972972972973,112,0.216216216216216,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Tidak ada riwayat hipertensi",0.9,-0.302,1,69.6630384055964,0,2.58776403522771,"Optimal","Tinggi","Terkontrol"
+49,"DR MULYADI RIDIA SPOT",1457386,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 83	 bpm
+TECHNICAL QUALITY: Baik.
+TEMUAN:
+Total calcium score 1714.0 mengesankan Extensive calcification
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right artery coronary dominance 
+Left main (LM): 
+- berukuran panjang +/- 11.5 mm, bercabang menjadi LAD dan LCX. 
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, positive remodelling ataupun spotty calcification
+LAD: 
+- berukuran panjang +/- 118.8 mm. 
+- Tampak multiple calcified dan non calcified plaque dengan positive remodelling pada proximal LAD (segment 6) yang menyebabkan stenosis sebesar +/- 70-99%
+- Tampak multiple calcified dan non calcified plaque dengan positive remodelling pada mid LAD (segment 7) yang menyebabkan stenosis sebesar +/- 50-69%
+- Tampak multiple calcified dan non calcified plaque dengan positive remodelling pada distal LAD (segment 8) yang menyebabkan stenosis sebesar +/- 70-99%
+- LAD bercabang menjadi cabang diagonal yang patent. 
+- Tak tampak myocardial bridging pada LAD.
+LCX : 
+- berukuran panjang +/- 56.9 mm. 
+- Tampak multiple calcified dan non calcified plaque dengan positive remodelling pada proximal LCX (segment 11) yang menyebabkan stenosis sebesar +/- 25-49%
+- Tampak multiple calcified dan non calcified plaque dengan positive remodelling pada distal LCX (segment 14) yang menyebabkan stenosis sebesar +/- 50-69%
+- LCX bercabang menjadi cabang obtuse marginal yang patent. 
+- Tak tampak myocardial bridging pada LCX.
+RCA: 
+- berukuran panjang +/- 179.8 mm
+- Tampak multiple calcified dan non calcified plaque dengan positive remodelling pada proximal RCA (segment 1) yang menyebabkan stenosis sebesar +/- 25-49%
+- Tampak multiple calcified dan non calcified plaque dengan positive remodelling pada proximal RCA (segment 2) yang menyebabkan stenosis sebesar +/- 50-69%
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent. 
+- Tak tampak myocardial bridging
+Katup jantung: tampak kalsifikasi pada katup aorta 
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tidak ada mural thrombus atau massa intracradiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi
+Ekstra-cardiac: tak tampak kelainan.
+Jantung ukuran normal, CTR 44% 
+Pada regio thorax yang terscanning : tak tampak kelainan
+
+Kesan:
+- Total calcium score 1714.0 (Extensive Calcification) sesuai Agatston score, mengesankan High Risk for Coronary Artery Disease 
+- Multiple calcified dan non calcified plaque dengan positive remodelling pada proximal LAD (segment 6) yang menyebabkan severe stenosis 
+- Multiple calcified dan non calcified plaque dengan positive remodelling pada mid LAD (segment 7) yang menyebabkan moderate stenosis 
+- Multiple calcified dan non calcified plaque dengan positive remodelling pada distal LAD (segment 8) yang menyebabkan severe stenosis 
+- Multiple calcified dan non calcified plaque dengan positive remodelling pada proximal LCX (segment 11) yang menyebabkan mild stenosis 
+- Multiple calcified dan non calcified plaque dengan positive remodelling pada distal LCX (segment 14) yang menyebabkan moderate stenosis
+- Multiple calcified dan non calcified plaque dengan positive remodelling pada proximal RCA (segment 1) yang menyebabkan mild stenosis
+- Multiple calcified dan non calcified plaque dengan positive remodelling pada proximal RCA (segment 2) yang menyebabkan moderate stenosis
+Kesimpulan : CAD-RADS 4A/P4/HRP (sesuai dengan CAD RAD 2.0)
+- Cor ukuran normal
+- Kalsifikasi pada katup aorta 
+- Right artery coronary dominance, tanpa anomali anatomi arteri koroner",2025,"DM/Prediabetes","L",65,"HT Terkontrol",0,"Tidak-merokok",23.67,"On-Statin","Tanpa-obat","None",6.3,0.94,NA,NA,15.7,210,147,45,86,7.1,NA,"Right",1714,"None","None","-","0","0","0","Normal","0","Mixed","HRP","-","1","0","0","Severe (70-99%)","4A/P4/HRP","Mixed","HRP","-","1","0","0","Moderate (50-69%)","3/P4/HRP","Mixed","HRP","-","1","0","0","Moderate (50-69%)","3/P4/HRP","4A/P4/HRP","44","Aorta","-","-","-","HRP (+)",1,6.29489692965099,1.91111111111111,165,0.157777777777778,"Tanpa Terapi/Diet",0,"Baru Terdiagnosis","Hipertensi Terkontrol",0.9,-0.302,1,89.9622767614871,0,7.44716835960004,"Tinggi","Normal","Terkontrol"
+50,"ASIYAH",26041115,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Dual Source CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena, gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 63 bpm
+TECHNICAL QUALITY: Baik
+Temuan :
+Total calcium score 2034.7 mengesankan extensive calcification
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance.
+Left main (LM): 
+- berukuran panjang +/- 9.1 mm, bercabang menjadi LAD dan LCX.
+- Tampak calcified plaque dengan positive remodelling pada LM (segmen 5) yang menyebabkan stenosis sebesar +/- 1-24%
+- Tak tampak myocardial bridging pada LM
+LAD: 
+- berukuran panjang +/- 159.2 mm. 
+- Tampak calcified dan non calcified plaque dengan positive remodelling pada proksimal LAD (segmen 6) yang menyebabkan stenosis terbesar +/- 70-99% sepanjang +/- 21.0 mm
+- Tampak multiple calcified plaque pada mid LAD (segmen 7) yang menyebabkan stenosis terbesar +/- 70-99%
+- LAD bercabang menjadi cabang diagonal yang patent.
+- Tak tampak myocardial bridging pada LAD
+LCX: 
+- berukuran panjang +/- 72.7 mm. 
+- Tampak calcified dan non calcified plaque dengan positive remodelling pada proksimal LCX (segmen 11) yang menyebabkan stenosis terbesar +/- 50-69%
+- LCX bercabang menjadi cabang obtuse marginal yang patent. 
+- Tak tampak myocardial bridging pada LCX
+RCA: 
+- berukuran panjang +/- 138.8 mm. 
+- Tampak calcified dan non calcified plaque dengan positive remodelling pada proksimal RCA (segmen 1) yang menyebabkan stenosis terbesar +/- 70-99% sepanjang +/- 25.1 mm
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent. 
+- Tak tampak myocardial bridging pada RCA. 
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri
+Tak tampak emboli paru maupun diseksi
+Ekstra-cardiac: tak tampak kelainan
+Jantung ukuran dan bentuk kesan normal
+Pada regio thorax yang sebagian terscanning : tak tampak kelainan
+
+Kesan:
+- Total calcium score 2034.7 mengesankan extensive calcification (sesuai Agatston score) dan High Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Calcified plaque dengan positive remodelling pada LM (segmen 5) yang menyebabkan minimal stenosis sebesar
+- Calcified dan non calcified plaque dengan positive remodelling pada proksimal LAD (segmen 6) yang menyebabkan severe stenosis 
+- Multiple calcified plaque pada mid LAD (segmen 7) yang menyebabkan severe stenosis
+- Calcified dan non calcified plaque dengan positive remodelling pada proksimal LCX (segmen 11) yang menyebabkan moderate stenosis
+- Calcified dan non calcified plaque dengan positive remodelling pada proksimal RCA (segmen 1) yang menyebabkan severe stenosis 
+Kesimpulan : CAD RADS 4/P4/HRP (sesuai dengan CAD RAD 2.0)
+- Right coronary artery dominance, tanpa anomali origin arteri koroner",2025,"DM/Prediabetes","P",64,"HT Terkontrol",60,"Tidak-merokok",36.45,"No-Statin","OAD","None",5.5,0.84,NA,NA,12.2,165,95,39,197,10.2,"5.0","Right",2034.7,"Calcified","HRP","-","1","0","0","Minimal (1-24%)","4/P4/HRP","Mixed","HRP","-","1","0","0","Severe (70-99%)","4/P4/HRP","Mixed","HRP","-","1","0","0","Moderate (50-69%)","4/P4/HRP","Mixed","HRP","-","1","0","0","Severe (70-99%)","4/P4/HRP","4/P4/HRP","-","None","-","-","-","HRP (+)",1,6.98795182097641,5.05128205128205,126,0.261538461538461,"OAD",60,"Sudah Lama","Hipertensi Terkontrol",0.7,-0.241,1.012,77.5509059909659,0,7.618595019073,"Optimal","Tinggi","Terkontrol"
+51,"LUH MADE MURDIANI",26043462,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Dual Source CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena, gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 56 bpm
+TECHNICAL QUALITY: Baik
+Temuan :
+Total calcium score 522.8 mengesankan severe calcification
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri, tak tampak anomali anatomi arteri koroner. Right coronary artery dominance
+Left main (LM): 
+- berukuran panjang +/- 6.7 mm, bercabang menjadi LAD dan LCX.
+- Tampak calcified plaque pada LM (segment 5) yang menyebabkan stenosis sebesar +/- 25-49%
+- Tak tampak myocardial bridging pada LM
+LAD: 
+- berukuran panjang +/- 142.8 mm. 
+- Tampak multiple calcified plaque dengan positive remodelling pada proksimal LAD (segment 6) yang menyebabkan stenosis terbesar +/- 50-69%
+-  LAD bercabang menjadi cabang diagonal
+- Tak tampak myocardial bridging pada LAD
+LCX: 
+- berukuran panjang +/- 110.1 mm. 
+- Tampak multiple calcified plaque dengan positive remodelling pada proksimal LCX (segment 11) yang menyebabkan stenosis terbesar +/- 25-49%
+- Tampak calcified plaque dengan positive remodelling pada mid LCX (segment 13) yang menyebabkan stenosis sebesar +/- 1-24% 
+- LCX bercabang menjadi cabang obtuse marginal yang patent
+- Tak tampak myocardial bridging pada LCX
+RCA: 
+- berukuran panjang +/- 150.0 mm. 
+- Tampak multiple calcified plaque dengan positive remodeling pada proksimal RCA (segment 1) yang menyebabkan stenosis terbesar +/- 50-69%
+- Tampak calcified plaque dengan positive remodeling pada mid RCA (segment 2) yang menyebabkan stenosis sebesar +/- 1-24%
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent
+- Tak tampak myocardial bridging pada RCA
+Katup jantung: tak tampak kalsifikasi pada katup aorta dan katup mitral
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri
+Tak tampak emboli paru maupun diseksi
+Ekstra-cardiac: tak tampak kelainan
+Jantung ukuran dan bentuk kesan normal
+Tampak kalsifikasi pada aorta ascendens
+Pada regio thorax yang sebagian terscanning : tak tampak kelainan
+
+Kesan:
+- Total calcium score 522.8 mengesankan severe calcification (sesuai Agatston score) dan High Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Calcified plaque pada LM (segment 5) yang menyebabkan mild stenosis
+- Multiple calcified plaque dengan positive remodelling pada proksimal LAD (segment 6) yang menyebabkan moderate stenosis
+- Multiple calcified plaque dengan positive remodelling pada proksimal LCX (segment 11) yang menyebabkan mild stenosis
+- Calcified plaque dengan positive remodelling pada mid LCX (segment 13) yang menyebabkan minimal stenosis
+- Multiple calcified plaque dengan positive remodeling pada proksimal RCA (segment 1) yang menyebabkan moderate stenosis
+- Calcified plaque dengan positive remodeling pada mid RCA (segment 2) yang menyebabkan minimal stenosis
+Kesimpulan : CAD RADS 4A/P3/HRP (sesuai dengan CAD RAD 2.0)
+- Right coronary artery dominance, tanpa anomali origin arteri koroner
+- Atherosclerosis pada aorta ascendens",2025,"DM/Prediabetes","P",58,"HT Terkontrol",12,"Tidak-merokok",25.39,"No-Statin","OAD","None",8.3,0.87,NA,NA,13.1,127,74,38,122,7.5,NA,"Right",522.8,"Calcified","None","-","0","0","0","Mild (25-49%)","2/P1","Calcified","HRP","-","1","0","0","Moderate (50-69%)","3/P2/HRP","Calcified","HRP","-","1","0","0","Mild (25-49%)","2/P1/HRP","Calcified","HRP","-","1","0","0","Moderate (50-69%)","3/P2/HRP","4A/P3/HRP","-","None","-","-","-","HRP (+)",1,6.92027655953581,3.21052631578947,89,0.197368421052632,"OAD",12,"Sudah Lama","Hipertensi Terkontrol",0.7,-0.241,1.012,77.1800332818459,0,6.26110993207361,"Optimal","Tinggi","Tidak Terkontrol"
+52,"I GUSTI AYU SUARTINI",26046383,"TS. Yth,
+Hasil Pemeriksaan CT Angiografi Cardiac + Calcium Scoring :
+TEKNIK: Menggunakan Siemens Somatom Perspective 128 slices CT Scanner, prospective study, diikuti dengan protokol kalsium arteri koroner. Setelah pemberian kontras intravena (Ultravis® 50 cc), gambar kolimasi 0,8 mm diperoleh melalui arteri koroner. Data ditransfer untuk rekonstruksi 3D termasuk curved MPR dan multi-planar imaging.
+ACQUISITION: Prospective ECG trigger 93 bpm.
+TECHNICAL QUALITY: Baik.
+Temuan :
+Total calcium score 302.3 mengesankan severe calcification.
+RCA berasal dari sinus coronary kanan, LM berasal dari sinus coronary kiri
+Right coronary artery dominance.
+Left main (LM): 
+- berukuran panjang +/- 9.4 mm, bercabang menjadi LAD dan LCX. 
+- Tak tampak calcified plaque, non calcified plaque, napkin-type plaque, remodelling ataupun spot calcification  
+LAD: 
+- berukuran panjang +/- 149.6 mm. 
+- Tampak calcified plaque dengan positive remodelling pada LAD proximal (segment 6) yang menyebabkan stenosis sebesar +/- 50-69%
+- Tampak multiple calcified plaque dengan positive remodelling pada LAD mid (segment 7) yang menyebabkan stenosis sebesar +/- 25-49%  
+- LAD bercabang menjadi cabang diagonal yang patent. 
+- Tak tampak myocardial bridging pada LAD.
+LCX: 
+- berukuran panjang +/- 118.5 mm. 
+- Tampak calcified plaque pada LCX proximal (segment 11) yang menyebabkan stenosis sebesar +/- 1-24% 
+- LCX bercabang menjadi cabang obtuse marginal yang patent. 
+- Tak tampak myocardial bridging pada LCX.
+RCA: 
+- berukuran panjang +/- 144.1 mm
+- Tampak calcified plaque tanpa positive remodelling pada RCA proximal (segment 1) yang menyebabkan stenosis sebesar +/- 1-24%
+- RCA bercabang menjadi cabang acute marginal dan PDA yang patent. 
+- Tak tampak myocardial bridging
+Katup jantung: tak tampak kalsifikasi pada katup mitral, tricuspid maupun aortic dan pulmonal.
+Pericardium: tak tampak efusi, penebalan maupun kalsifikasi.
+Tak ada mural thrombus atau massa intracardiac di atrium dan ventrikel kiri.
+Tak tampak emboli paru maupun diseksi.
+Ekstra-cardiac: tak tampak kelainan.
+Cor ukuran normal, CTR 50%
+Pada regio thorax yang terscanning sebagian: tak tampak kelainan
+
+Kesan:
+- Total calcium score 302.3 (severe calcification) sesuai Agatston score, mengesankan High Risk for Coronary Artery Disease sesuai dengan CSANZ
+- Calcified plaque dengan positive remodelling pada LAD proximal (segment 6) yang menyebabkan moderate stenosis
+- Multiple calcified plaque dengan positive remodelling pada LAD mid (segment 7) yang menyebabkan mild stenosis
+- Calcified plaque pada LCX proximal (segment 11) yang menyebabkan minimal stenosis
+- Calcified plaque tanpa positive remodelling pada RCA proximal (segment 1) yang menyebabkan minimal stenosis
+Kesimpulan : CAD-RADS 3/P3/HRP (sesuai dengan CAD RAD 2.0)
+- Right coronary artery dominance, tanpa anomali origin arteri koroner",2025,"DM/Prediabetes","P",56,"HT Terkontrol",96,"Tidak-merokok",23.44,"On-Statin","Insulin","None",7.8,0.58,NA,NA,12.4,171,103,53,100,3.9,NA,"Right",302.3,"None","None","-","0","0","0","Normal","0","Calcified","HRP","-","1","0","0","Moderate (50-69%)","3/P3/HRP","Calcified","None","-","0","0","0","Minimal (1-24%)","1","Calcified","None","-","0","0","0","Minimal (1-24%)","1","3/P3/HRP","50","None","-","-","-","HRP (+)",1,6.65929391968364,1.88679245283019,118,0.0735849056603774,"Insulin",96,"Sudah Lama","Hipertensi Terkontrol",0.7,-0.241,1.012,106.143868797049,0,5.71472241469454,"Optimal","Normal","Tidak Terkontrol"

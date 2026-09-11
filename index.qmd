@@ -3,7 +3,7 @@ title: "Hubungan Faktor Risiko Klinis dan Indeks Kardiometabolik terhadap Kerent
 date: now
 date-format: "DD MMMM YYYY, HH:mm"
 author:
-  - name: Kadek Adit Wiryadana
+  - name: Kadek Adit Wiryadana; Made Ratna Saraswati
     email: wiryadana.2371041012@student.unud.ac.id
     corresponding: true
     affiliations:
@@ -104,6 +104,7 @@ library(gtsummary)     # Untuk membuat tabel hasil klinis yang rapi
 library(tidyverse)
 library(googlesheets4)
 library(flextable)
+library(haven)
 ```
 
 ```{r load_data}
@@ -1087,3 +1088,30 @@ ggsave(filename = "Figure_5_STROBE_Flowchart.jpg",
        plot = p_flow, 
        width = 7, height = 5, dpi = 300, device = "jpeg")
 ```
+
+
+```{r}
+#| label: ekspor-data-spss
+#| include: false
+#| warning: false
+
+library(haven)
+library(dplyr)
+
+# 1. Membersihkan nama kolom DAN tipe data untuk SPSS
+df_spss <- df_clean %>%
+  # Meratakan/mengubah kolom bertipe 'list' menjadi teks biasa ('character')
+  mutate(across(where(is.list), ~ sapply(.x, toString))) %>%
+  # Mengubah semua spasi, titik, dan tanda baca pada nama kolom menjadi underscore
+  rename_with(~ gsub("[^A-Za-z0-9]", "_", .x))
+
+# 2. Mengekspor dataframe SPSS
+write_sav(df_spss, "Data_Kardiometabolik_Siap_Validasi.sav")
+
+# 3. Membuat file CSV yang juga bebas dari 'list'
+df_csv <- df_clean %>%
+  mutate(across(where(is.list), ~ sapply(.x, toString)))
+
+write.csv(df_csv, "Data_Kardiometabolik_Siap_Validasi.csv", row.names = FALSE)
+```
+
