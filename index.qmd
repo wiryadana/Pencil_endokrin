@@ -15,7 +15,7 @@ abstract: |
   
   **Metode:** Studi potong lintang mengevaluasi pasien DM yang menjalani *Computed Tomography Coronary Angiography* (CTCA) di RSUP Ngoerah pada tahun 2025. Profil klinis (usia, jenis kelamin, pengobatan, kreatinin, profil lipid, HbA1c) dan indeks kardiometabolik turunan (Indeks TyHbA1c, Rasio TG/HDL, Kolesterol Non-HDL, Rasio SUA/HDL) dianalisis menggunakan komparasi bivariat untuk status HRP dan korelasi linear untuk skor CAC.
   
-  **Hasil:** Sampel penelitian berjumlah 52 pasien, 30,8% merupakan pasien baru terdiagnosis DM. Pada kasus DM lama (69,2%), terapi yang diterima meliputi antidiabetik oral (32,7%), regimen insulin (32,7%), dan tanpa pengobatan (3,8%). Sebagian besar pasien (71,2%) menerima terapi statin dan dirujuk karena riwayat kejadian kardiovaskular sebelumnya. HRP teridentifikasi pada 71,2% pasien. Kelompok HRP-positif secara signifikan lebih tua (63,16 vs 55,8 tahun, p<0,01) dengan beban CAC yang lebih tinggi (median 556,7 vs 11,6 Agatston, p<0,001). Indeks kardiometabolik turunan tidak menunjukkan diskriminasi yang bermakna terhadap HRP. Sebaliknya, analisis korelasi mengungkapkan asosiasi negatif yang paradoksikal antara indeks turunan lipid dan keparahan CAC. Evaluasi stratifikasi mengindikasikan bahwa anomali ini terutama disetir oleh durasi DM yang panjang dan terapi statin (paradoks statin).
+  **Hasil:** Sampel penelitian berjumlah 52 pasien, 30,8% merupakan pasien baru terdiagnosis DM. Pada kasus DM lama (69,2%), terapi yang diterima meliputi antidiabetik oral (32,7%), regimen insulin (32,7%), dan tanpa pengobatan (3,8%). Sebagian besar pasien (71,2%) menerima terapi statin dan dirujuk karena riwayat kejadian kardiovaskular sebelumnya. HRP teridentifikasi pada 71,2% pasien. Kelompok HRP-positif secara signifikan lebih tua (63,16 vs 55,8 tahun, p<0,01) dengan beban CAC yang lebih tinggi (median 556,7 vs 11,6 Agatston, p<0,001). Indeks kardiometabolik turunan tidak menunjukkan diskriminasi yang bermakna terhadap HRP. Sebaliknya, analisis korelasi mengungkapkan asosiasi negatif yang paradoksikal antara indeks turunan lipid dan keparahan CAC. Evaluasi stratifikasi mengindikasikan bahwa anomali ini terutama disetir oleh durasi DM yang panjang dan terapi statin.
   
   **Simpulan:** Usia merupakan determinan utama aterosklerosis koroner pada pasien DM. Hubungan terbalik yang paradoksikal antara indeks kardiometabolik dengan CAC menyoroti efek perancu dari terapi statin, yang menjadikan kadar lipid tampak optimal secara semu pada kasus yang parah sehingga membatasi nilai prediktif klinis mandirinya.
 
@@ -105,6 +105,7 @@ library(tidyverse)
 library(googlesheets4)
 library(flextable)
 library(haven)
+library(tibble)
 ```
 
 ```{r load_data}
@@ -113,7 +114,9 @@ library(haven)
 #| paged-print: false
 
 # Otorisasi Google Sheets (Pilih '0' atau login sesuai petunjuk di console R)
-gs4_auth(email = TRUE) 
+#gs4_auth(email = TRUE) 
+
+gs4_deauth()
 
 # Tautan Google Sheets
 sheet_url <- "[https://docs.google.com/spreadsheets/d/18yyL48LTB-njD6iGNwiuYiiG4uCG1edVn6d3TYQnpE8/edit?gid=288598852#gid=288598852](https://docs.google.com/spreadsheets/d/18yyL48LTB-njD6iGNwiuYiiG4uCG1edVn6d3TYQnpE8/edit?gid=288598852#gid=288598852)"
@@ -211,9 +214,9 @@ pct_hba1c_tg_norm <- format(round((n_tg_norm_terkontrol / n_tg_norm) * 100, 0), 
 # 8. Kalkulasi Korelasi untuk Narasi (Log CAC)
 df_clean$log_CAC <- log(df_clean$Global_CAC_score + 1)
 
-# Fungsi untuk menghitung dan format korelasi
+# Fungsi untuk menghitung dan format korelasi (SUDAH DIREVISI KE SPEARMAN)
 get_cor <- function(var_name) {
-  res <- cor.test(df_clean[[var_name]], df_clean$log_CAC, method = "pearson")
+  res <- suppressWarnings(cor.test(df_clean[[var_name]], df_clean$log_CAC, method = "spearman", exact = FALSE))
   r_val <- format(round(res$estimate, 3), decimal.mark=",")
   p_num <- res$p.value
   p_val <- ifelse(p_num < 0.001, "< 0,001", paste0("= ", format(round(p_num, 3), decimal.mark=",")))
@@ -277,20 +280,20 @@ fmt_cor <- function(res) {
   return(list(r = r_val, p = p_val))
 }
 
-c_nhdl_sy <- fmt_cor(cor.test(df_statin_yes$Non_HDL, df_statin_yes$log_CAC, method = "pearson"))
-c_nhdl_sn <- fmt_cor(cor.test(df_statin_no$Non_HDL, df_statin_no$log_CAC, method = "pearson"))
-c_tg_sy <- fmt_cor(cor.test(df_statin_yes$TG_HDL_Ratio, df_statin_yes$log_CAC, method = "pearson"))
-c_tg_sn <- fmt_cor(cor.test(df_statin_no$TG_HDL_Ratio, df_statin_no$log_CAC, method = "pearson"))
+c_nhdl_sy <- fmt_cor(suppressWarnings(cor.test(df_statin_yes$Non_HDL, df_statin_yes$log_CAC, method = "spearman", exact = FALSE)))
+c_nhdl_sn <- fmt_cor(suppressWarnings(cor.test(df_statin_no$Non_HDL, df_statin_no$log_CAC, method = "spearman", exact = FALSE)))
+c_tg_sy <- fmt_cor(suppressWarnings(cor.test(df_statin_yes$TG_HDL_Ratio, df_statin_yes$log_CAC, method = "spearman", exact = FALSE)))
+c_tg_sn <- fmt_cor(suppressWarnings(cor.test(df_statin_no$TG_HDL_Ratio, df_statin_no$log_CAC, method = "spearman", exact = FALSE)))
 
 ```
 
 **Karakteristik Subjek, Profil Klinis, dan Analisis Bivariat**
 
-Penelitian ini menganalisis total `r n_total` subjek pasien DM. Mayoritas pasien memiliki riwayat rujukan dari kardiolog akibat riwayat *cardiac events* sebelumnya, sehingga `r n_statin` pasien (`r pct_statin`%) tercatat telah menerima terapi statin. Dari segi durasi penyakit, `r n_dm_baru` pasien (`r pct_dm_baru`%) merupakan pasien yang baru terdiagnosis DM sebelum prosedur CTCA. Sementara itu, pada profil pengobatan antidiabetik, pasien terbagi merata antara pengguna obat oral (`r pct_oad`%) dan insulin (`r pct_ins`%), sedangkan sisanya (`r pct_diet`%) belum atau tidak menerima terapi medikamentosa (terdiri atas `r format(round(((n_diet - n_dm_baru) / n_total) * 100, 1), decimal.mark=",")`% pasien DM lama yang mengandalkan modifikasi diet dan `r pct_dm_baru`% pasien baru terdiagnosis).
+Penelitian ini menganalisis total `r n_total` subjek pasien DM. Mayoritas pasien memiliki riwayat rujukan dari kardiolog akibat riwayat *cardiac events* sebelumnya, sehingga `r n_statin` pasien (`r pct_statin`%) tercatat telah menerima terapi statin. Dari segi durasi penyakit, `r n_dm_baru` pasien (`r pct_dm_baru`%) merupakan pasien yang baru terdiagnosis DM sebelum prosedur CTCA. Sementara itu, pada profil pengobatan antidiabetik, pasien terbagi merata antara pengguna obat oral (`r pct_oad`%) dan insulin (`r pct_ins`%), sedangkan sisanya (`r pct_diet`%) belum atau tidak menerima terapi medikamentosa (terdiri atas `r format(round(((n_diet - n_dm_baru) / n_total) * 100, 1), decimal.mark=",")`% pasien DM lama yang mengandalkan modifikasi diet dan `r pct_dm_baru`% pasien baru terdiagnosis). Berdasarkan uji normalitas Shapiro-Wilk, sebagian besar variabel numerik, termasuk skor kalsifikasi koroner (CAC), menunjukkan distribusi data yang tidak normal (p \< 0,05) (lampiran). Oleh karena itu, data kontinu pada penelitian ini disajikan dalam bentuk median dengan rentang interkuartil (Q1–Q3), uji non-parametrik (Mann-Whitney U), dan seluruh analisis korelasi lanjutan menggunakan uji non-parametrik Spearman's rank ($\rho$).
 
 Berdasarkan pencitraan CTCA, proporsi penemuan *High-Risk Plaque* (HRP) yakni sebesar `r pct_hrp_pos`%. Seluruh karakteristik dasar, parameter laboratorium, dan profil pengobatan dievaluasi sekaligus terhadap dua luaran utama yakni status HRP (@tbl-baseline) dan skor kalsifikasi absolut (@tbl-cac). Analisis bivariat menunjukkan bahwa kelompok dengan HRP positif memiliki rerata usia yang secara signifikan lebih tua dibandingkan kelompok HRP negatif (`r mean_usia_pos` vs `r mean_usia_neg` tahun, $p = 0,010$). Skor kalsifikasi absolut juga menunjukkan perbedaan bermakna antar kelompok (median `r med_cac_pos` vs `r med_cac_neg` Agatston, $p < 0,001$).
 
-Melihat tingginya persentase pasien yang telah menerima terapi medis spesifik, evaluasi komparatif tambahan terkait penggunaan statin menampilkan tren median skor CAC yang lebih tinggi dibandingkan pasien tanpa statin (`r med_cac_statin_pos` vs `r med_cac_statin_neg` Agatston). Begitu pula pada durasi penyakit, pasien dengan DM yang sudah lama menampilkan beban kalsifikasi yang jauh lebih tinggi dibandingkan pasien yang baru terdiagnosis. Di sisi lain, proporsi kerentanan plak (HRP) tertinggi secara persentase justru ditemukan pada kelompok yang belum menerima intervensi obat anti-diabetik (hanya mengandalkan diet).
+Melihat tingginya persentase pasien yang telah menerima terapi medis spesifik, evaluasi komparatif tambahan terkait penggunaan statin menampilkan tren median skor CAC yang lebih tinggi dibandingkan pasien tanpa statin (`r med_cac_statin_pos` vs `r med_cac_statin_neg` Agatston). Begitu pula pada durasi penyakit, pasien dengan DM yang sudah lama menampilkan skor kalsifikasi yang jauh lebih tinggi dibandingkan pasien yang baru terdiagnosis. Di sisi lain, proporsi kerentanan plak (HRP) tertinggi secara persentase justru ditemukan pada kelompok yang belum menerima intervensi obat anti-diabetik (hanya mengandalkan diet).
 
 Seluruh kandidat indeks kardiometabolik turunan (Indeks TyHbA1c, Rasio TG/HDL, Non-HDL, dan Rasio SUA/HDL) secara konsisten tidak menunjukkan perbedaan yang bermakna secara statistik antar-kelompok pada kohort terbatas ini. Mengingat hanya faktor penuaan (usia) yang memenuhi kriteria seleksi awal ($p < 0,05$), tahapan pemodelan regresi multivariat tidak dilanjutkan untuk menghindari *overfitting* pada data.
 
@@ -355,43 +358,54 @@ df_table %>%
 ```{r}
 #| label: tbl-cac
 #| tbl-cap: "**Evaluasi Karakteristik Klinis dan Laboratorium Dasar terhadap Distribusi Beban Kalsifikasi Koroner (Skor CAC)**"
+#| warning: false
+#| message: false
 
-# 1. Membuat Kategori Lab Dasar (berdasarkan cut-off klinis standar)
+library(gtsummary)
+library(flextable)
+library(dplyr)
+library(tibble)
+
+# 1. Membuat Kategori Lab Dasar & Menambahkan Jumlah (n)
 df_cac <- df_table %>%
   mutate(
     HbA1C_Kat = factor(ifelse(HbA1C >= 7.0, "\u2265 7.0% (Tidak Terkontrol)", "< 7.0% (Terkontrol)"), 
                        levels = c("< 7.0% (Terkontrol)", "\u2265 7.0% (Tidak Terkontrol)")),
-    
     Kolesterol_Kat = factor(ifelse(`Kolesterol-Total` >= 200, "\u2265 200 mg/dL (Tinggi)", "< 200 mg/dL (Normal)"), 
                             levels = c("< 200 mg/dL (Normal)", "\u2265 200 mg/dL (Tinggi)")),
-    
     LDL_Kat = factor(ifelse(LDL >= 100, "\u2265 100 mg/dL (Tidak Optimal)", "< 100 mg/dL (Optimal)"), 
                      levels = c("< 100 mg/dL (Optimal)", "\u2265 100 mg/dL (Tidak Optimal)")),
-    
-    # HDL, Asam Urat, dan Hemoglobin memiliki cut-off berbeda untuk Laki-laki & Perempuan
     HDL_Kat = factor(case_when(
       Gender == "Laki-laki" & HDL < 40 ~ "Rendah",
       Gender == "Perempuan" & HDL < 50 ~ "Rendah",
       TRUE ~ "Normal"
     ), levels = c("Normal", "Rendah")),
-    
     TG_Kat = factor(ifelse(Trigliserida >= 150, "\u2265 150 mg/dL (Tinggi)", "< 150 mg/dL (Normal)"), 
                     levels = c("< 150 mg/dL (Normal)", "\u2265 150 mg/dL (Tinggi)")),
-    
     AsamUrat_Kat = factor(case_when(
       Gender == "Laki-laki" & `Asam-Urat` > 7.0 ~ "Hiperurisemia",
       Gender == "Perempuan" & `Asam-Urat` > 6.0 ~ "Hiperurisemia",
       TRUE ~ "Normal"
     ), levels = c("Normal", "Hiperurisemia")),
-    
     HGB_Kat = factor(case_when(
       Gender == "Laki-laki" & Hemoglobin < 13.0 ~ "Anemia",
       Gender == "Perempuan" & Hemoglobin < 12.0 ~ "Anemia",
       TRUE ~ "Normal"
     ), levels = c("Normal", "Anemia"))
-  )
+  ) %>%
+  mutate(across(
+    c(HRP_Status, Usia_Kat, Gender, IMT_Kat, Hipertensi_Kat, Merokok, 
+      Statin, Terapi_DM, Riwayat_DM, CKD_Status,
+      HGB_Kat, HbA1C_Kat, Kolesterol_Kat, LDL_Kat, HDL_Kat, TG_Kat, AsamUrat_Kat),
+    ~ {
+      fac <- as.factor(.x)
+      lvls <- levels(fac)
+      counts <- table(fac)
+      new_labels <- paste0(lvls, " (n=", as.numeric(counts[lvls]), ")")
+      factor(fac, levels = lvls, labels = new_labels)
+    }
+  ))
 
-# 2. Mendaftarkan label untuk tabel
 label_variabel_2 <- list(
   HRP_Status ~ "Status High-Risk Plaque (HRP)",
   Usia_Kat ~ "Kategori Usia",
@@ -412,54 +426,111 @@ label_variabel_2 <- list(
   AsamUrat_Kat ~ "Asam Urat Serum"
 )
 
-# 3. Mencetak Tabel 2
+# 3. FUNGSI KUSTOM (Revisi: SPEARMAN CORRELATION)
+korelasi_kontinu <- function(data, variable, ...) {
+  kamus_var <- c(
+    "Usia_Kat" = "Usia",
+    "IMT_Kat" = "IMT",
+    "HbA1C_Kat" = "HbA1C",
+    "Kolesterol_Kat" = "Kolesterol-Total",
+    "LDL_Kat" = "LDL",
+    "HDL_Kat" = "HDL",
+    "TG_Kat" = "Trigliserida",
+    "AsamUrat_Kat" = "Asam-Urat",
+    "HGB_Kat" = "Hemoglobin"
+  )
+  
+  var_kontinu <- kamus_var[[variable]]
+  if (is.null(var_kontinu) || !var_kontinu %in% names(data)) {
+    return(tibble(cor_stat = NA_character_, is_sig = FALSE))
+  }
+  
+  data$log_CAC <- log(data$Global_CAC_score + 1)
+  valid <- !is.na(data[[var_kontinu]]) & !is.na(data$log_CAC)
+  if (sum(valid) < 3) return(tibble(cor_stat = NA_character_, is_sig = FALSE))
+  
+  # MENGGUNAKAN SPEARMAN
+  res <- suppressWarnings(cor.test(data[[var_kontinu]][valid], data$log_CAC[valid], 
+                                   method = "spearman", exact = FALSE))
+  
+  r_str <- format(round(res$estimate, 3), decimal.mark=",")
+  p_str <- ifelse(res$p.value < 0.001, "< 0,001", format(round(res$p.value, 3), decimal.mark=","))
+  sig_flag <- res$p.value < 0.05
+  stat_str <- paste0(r_str, " (p=", p_str, ")")
+  
+  tibble(cor_stat = stat_str, is_sig = sig_flag)
+}
+
+# 4. Membuat Tabel Final
 df_cac %>%
-  select(Global_CAC_score, HRP_Status, Usia_Kat, Gender, IMT_Kat, Hipertensi_Kat, Merokok, 
-         Statin, Terapi_DM, Riwayat_DM, CKD_Status,
-         HGB_Kat, HbA1C_Kat, Kolesterol_Kat, LDL_Kat, HDL_Kat, TG_Kat, AsamUrat_Kat) %>%
   tbl_continuous(
     variable = Global_CAC_score,
+    include = c(HRP_Status, Usia_Kat, Gender, IMT_Kat, Hipertensi_Kat, Merokok, 
+                Statin, Terapi_DM, Riwayat_DM, CKD_Status,
+                HGB_Kat, HbA1C_Kat, Kolesterol_Kat, LDL_Kat, HDL_Kat, TG_Kat, AsamUrat_Kat),
     statistic = ~ "{median} ({p25}, {p75})",
     label = label_variabel_2
   ) %>%
   add_p() %>%
+  add_stat(fns = everything() ~ korelasi_kontinu) %>%
+  modify_header(
+    label ~ "**Karakteristik / Variabel**",
+    stat_0 ~ "**Median (Q1–Q3)**", 
+    p.value ~ "**Nilai p**",
+    cor_stat ~ "**Korelasi Spearman**\n*(rho, p-value)*" # Diubah ke Spearman
+  ) %>%
+  modify_table_styling(columns = cor_stat, rows = is_sig == TRUE, text_format = "bold") %>%
+  modify_column_hide(columns = any_of(c("add_stat_1", "addstat1", "is_sig"))) %>%
   bold_p(t = 0.05) %>%
-  modify_header(label = "**Karakteristik / Variabel**", stat_0 ~ "**Median Skor CAC**") %>%
-  as_flex_table()
+  as_flex_table() %>%
+  flextable::align(align = "center", part = "header") %>%
+  flextable::autofit()
 ```
 
 **Evaluasi Independen Indeks Kardiometabolik Turunan**
 
-Evaluasi secara spesifik hubungan indeks kardiometabolik turunan (sebagai penanda resistensi insulin dan disfungsi endotel) dengan arteriosklerosis dilakukan analisis bivariat (**Tabel 3**). Pada evaluasi beban kalsifikasi, kolesterol Non-HDL menunjukkan asosiasi terbalik yang signifikan secara statistik ($p = 0,037$), di mana kelompok dengan Non-HDL optimal (\< 130 mg/dL) memiliki median kalsifikasi yang lebih tinggi (398 Agatston) dibandingkan kelompok Non-HDL tinggi (70 Agatston). Sementara itu, indeks lainnya (Indeks TyHbA1c, Rasio TG/HDL, dan Rasio SUA/HDL) secara konsisten tidak memiliki hubungan yang bermakna secara statistik terhadap keparahan kalsifikasi.terkait status kerentanan plak (HRP), tidak ada indeks kardiometabolik yang menunjukkan diskriminasi bermakna ($p > 0,05$).
+Evaluasi secara spesifik hubungan indeks kardiometabolik turunan (sebagai penanda resistensi insulin dan disfungsi endotel) dengan arteriosklerosis dilakukan analisis bivariat (**Tabel 3**). Pada evaluasi beban kalsifikasi, kolesterol Non-HDL menunjukkan asosiasi terbalik yang signifikan secara statistik ($p = 0,037$), di mana kelompok dengan Non-HDL optimal (\< 130 mg/dL) memiliki median kalsifikasi yang lebih tinggi (398 Agatston) dibandingkan kelompok Non-HDL tinggi (70 Agatston). Sementara itu, indeks lainnya (Indeks TyHbA1c, Rasio TG/HDL, dan Rasio SUA/HDL) secara konsisten tidak memiliki hubungan yang bermakna secara statistik terhadap derajat kalsifikasi. Terkait status kerentanan plak (HRP), tidak ada indeks kardiometabolik yang menunjukkan diskriminasi bermakna ($p > 0,05$).
 
 ```{r}
 #| label: tbl-metabolik
 #| tbl-cap: "**Evaluasi Indeks Kardiometabolik Turunan terhadap Kerentanan Plak (HRP) dan Beban Kalsifikasi Koroner (CAC)**"
+#| warning: false
+#| message: false
 
+library(gtsummary)
 library(flextable)
+library(dplyr)
+library(tibble)
 
-# 1. Hitung median untuk TyHbA1c dan SUA/HDL sebagai cut-off
+# 1. Hitung median untuk TyHbA1c dan SUA/HDL
 med_ty <- median(df_clean$TyHbA1c_Index, na.rm = TRUE)
 med_sua <- median(df_clean$SUA_HDL_Ratio, na.rm = TRUE)
 
-# 2. Buat kategori indeks kardiometabolik turunan
 df_metab <- df_clean %>%
   mutate(
     Non_HDL_Kat = factor(ifelse(Non_HDL >= 130, "\u2265 130 mg/dL (Tinggi)", "< 130 mg/dL (Optimal)"), 
                          levels = c("< 130 mg/dL (Optimal)", "\u2265 130 mg/dL (Tinggi)")),
-    
     TG_HDL_Kat = factor(ifelse(TG_HDL_Ratio >= 3.0, "\u2265 3.0 (Tinggi)", "< 3.0 (Normal)"), 
                         levels = c("< 3.0 (Normal)", "\u2265 3.0 (Tinggi)")),
-    
     TyHbA1c_Kat = factor(ifelse(TyHbA1c_Index > med_ty, "> Median (Tinggi)", "\u2264 Median (Rendah)"), 
                          levels = c("\u2264 Median (Rendah)", "> Median (Tinggi)")),
-    
     SUA_HDL_Kat = factor(ifelse(SUA_HDL_Ratio > med_sua, "> Median (Tinggi)", "\u2264 Median (Rendah)"), 
                          levels = c("\u2264 Median (Rendah)", "> Median (Tinggi)"))
   ) %>%
-  select(HRP_Status, Global_CAC_score, Non_HDL_Kat, TG_HDL_Kat, TyHbA1c_Kat, SUA_HDL_Kat)
+  mutate(across(
+    c(Non_HDL_Kat, TG_HDL_Kat, TyHbA1c_Kat, SUA_HDL_Kat),
+    ~ {
+      fac <- as.factor(.x)
+      lvls <- levels(fac)
+      counts <- table(fac)
+      new_labels <- paste0(lvls, " (n=", as.numeric(counts[lvls]), ")")
+      factor(fac, levels = lvls, labels = new_labels)
+    }
+  )) %>%
+  select(HRP_Status, Global_CAC_score, 
+         Non_HDL_Kat, TG_HDL_Kat, TyHbA1c_Kat, SUA_HDL_Kat,
+         Non_HDL, TG_HDL_Ratio, TyHbA1c_Index, SUA_HDL_Ratio)
 
-# 3. Label variabel agar rapi
 label_metab <- list(
   Non_HDL_Kat ~ "Kolesterol Non-HDL",
   TG_HDL_Kat ~ "Rasio TG / HDL-C",
@@ -467,37 +538,74 @@ label_metab <- list(
   SUA_HDL_Kat ~ "Rasio Asam Urat / HDL-C"
 )
 
-# 4. Tabel Sisi Kiri: Efek terhadap HRP
+# 4. FUNGSI KUSTOM (Revisi: SPEARMAN CORRELATION)
+korelasi_indeks <- function(data, variable, ...) {
+  kamus_var <- c(
+    "Non_HDL_Kat" = "Non_HDL",
+    "TG_HDL_Kat" = "TG_HDL_Ratio",
+    "TyHbA1c_Kat" = "TyHbA1c_Index",
+    "SUA_HDL_Kat" = "SUA_HDL_Ratio"
+  )
+  
+  var_kontinu <- kamus_var[[variable]]
+  if (is.null(var_kontinu) || !var_kontinu %in% names(data)) {
+    return(tibble(cor_stat = NA_character_, is_sig = FALSE))
+  }
+  
+  data$log_CAC <- log(data$Global_CAC_score + 1)
+  valid <- !is.na(data[[var_kontinu]]) & !is.na(data$log_CAC)
+  if (sum(valid) < 3) return(tibble(cor_stat = NA_character_, is_sig = FALSE))
+  
+  # MENGGUNAKAN SPEARMAN
+  res <- suppressWarnings(cor.test(data[[var_kontinu]][valid], data$log_CAC[valid], 
+                                   method = "spearman", exact = FALSE))
+  
+  r_str <- format(round(res$estimate, 3), decimal.mark=",")
+  p_str <- ifelse(res$p.value < 0.001, "< 0,001", format(round(res$p.value, 3), decimal.mark=","))
+  sig_flag <- res$p.value < 0.05
+  stat_str <- paste0(r_str, " (p=", p_str, ")")
+  
+  tibble(cor_stat = stat_str, is_sig = sig_flag)
+}
+
+# 5. Tabel Sisi Kiri
 tbl_hrp_metab <- df_metab %>%
-  select(-Global_CAC_score) %>%
-  tbl_summary(
-    by = HRP_Status,
-    label = label_metab,
-    missing = "no"
-  ) %>%
+  select(HRP_Status, Non_HDL_Kat, TG_HDL_Kat, TyHbA1c_Kat, SUA_HDL_Kat) %>%
+  tbl_summary(by = HRP_Status, label = label_metab, missing = "no") %>%
   add_p() %>%
+  modify_header(p.value ~ "**Nilai p**") %>%
   bold_p(t = 0.05)
 
-# 5. Tabel Sisi Kanan: Efek terhadap CAC
+# 6. Tabel Sisi Kanan (Hibrida)
 tbl_cac_metab <- df_metab %>%
   select(-HRP_Status) %>%
   tbl_continuous(
     variable = Global_CAC_score,
+    include = c(Non_HDL_Kat, TG_HDL_Kat, TyHbA1c_Kat, SUA_HDL_Kat),
     statistic = ~ "{median} ({p25}, {p75})",
     label = label_metab
   ) %>%
   add_p() %>%
-  bold_p(t = 0.05) %>%
-  modify_header(stat_0 ~ "**Median Skor CAC**")
+  add_stat(fns = everything() ~ korelasi_indeks) %>%
+  modify_header(
+    stat_0 ~ "**Median (Q1–Q3)**",       
+    p.value ~ "**Nilai p**",             
+    cor_stat ~ "**Korelasi Spearman**\n*(rho, p-value)*" # Diubah ke Spearman
+  ) %>%
+  modify_table_styling(columns = cor_stat, rows = is_sig == TRUE, text_format = "bold") %>%
+  modify_column_hide(columns = any_of(c("add_stat_1", "addstat1", "is_sig"))) %>%
+  bold_p(t = 0.05)
 
-# 6. Gabungkan Kedua Tabel
+# 7. Gabungkan Kedua Tabel
 tbl_merge(
   tbls = list(tbl_hrp_metab, tbl_cac_metab),
-  tab_spanner = c("**Status Plak (HRP)**", "**Beban Kalsifikasi**")
+  tab_spanner = c("**Status Plak (HRP)**", "**Beban Kalsifikasi (CAC)**")
 ) %>% 
   modify_header(label = "**Indeks Kardiometabolik**") %>%
   bold_labels() %>%
-  as_flex_table()
+  as_flex_table() %>%
+  flextable::align(align = "center", part = "header") %>%
+  flextable::autofit()
 ```
 
 **Analisis Indeks Non-HDL dan Rasio TG/HDL**
@@ -508,13 +616,11 @@ Analisis terpisah pada Rasio TG/HDL (@tbl-tghdl) menunjukan hubungan dengan kont
 
 Untuk memverifikasi ketahanan (*robustness*) dari temuan ini, analisis lanjutan berupa evaluasi performa diagnostik (Kurva ROC) dan korelasi linear komprehensif turut dilakukan. Kurva ROC mengonfirmasi daya diskriminasi keempat indeks kardiometabolik yang lemah (AUC \< 0,70) terhadap HRP (@fig-supp-roc).
 
-Lebih lanjut, analisis korelasi terhadap skor CAC logaritmik (@fig-supp-scatter) justru menampilkan pola **korelasi negatif** yang signifikan secara statistik pada parameter lipid dan indeks turunannya, seperti Trigliserida ($R = `r cor_tg$r`, p`r cor_tg$p`$), Kolesterol Total ($R = `r cor_tc$r`, p`r cor_tc$p`$), Rasio TG/HDL ($R = `r cor_tghdl$r`, p`r cor_tghdl$p`$), dan Non-HDL ($R = `r cor_nhdl$r`, p`r cor_nhdl$p`$). Hal ini secara kuantitatif mendukung hipotesis *metabolic memory* yakni kalsifikasi yang semakin berat sejalan dengan intensitas kontrol lipid (efek statin kronis) saat ini, sehingga indeks metabolik sirkulasi menampilkan ilusi "berkorelasi terbalik" dan kehilangan relevansinya sebagai prediktor linier independen pada fase penyakit lanjut.
+Lebih lanjut, analisis korelasi Spearman terhadap skor CAC logaritmik (Gambar S3) justru menunjukan pola korelasi negatif yang tidak bermakna signifikan secara statistik pada parameter lipid dan indeks turunannya, seperti Trigliserida ($\rho$ = `r cor_tg$r`, $p$ `r cor_tg$p`), Kolesterol Total ($\rho$ = `r cor_tc$r`, $p$ `r cor_tc$p`), Rasio TG/HDL ($\rho$ = `r cor_tghdl$r`, $p$ `r cor_tghdl$p`), dan Non-HDL ($\rho$ = `r cor_nhdl$r`, $p$ `r cor_nhdl$p`). Hal ini secara kuantitatif mendukung hipotesis metabolic memory yakni kalsifikasi yang semakin berat sejalan dengan intensitas kontrol lipid (efek statin kronis) saat ini, sehingga indeks metabolik sirkulasi menampilkan ilusi "berkorelasi terbalik" dan kehilangan relevansinya sebagai prediktor linier independen pada fase penyakit lanjut.
 
 ```{r}
 #| label: tbl-nonhdl
 #| tbl-cap: "**Karakteristik Klinis dan Profil Pengobatan Berdasarkan Kategori Kolesterol Non-HDL**"
-
-library(flextable)
 
 df_nhdl <- df_cac %>%
   mutate(
@@ -574,8 +680,6 @@ Untuk mengevaluasi hubungan kolesterol Non-HDL dan Rasio TG/HDL terhadap kalsifi
 #| label: tbl-supp-regresi
 #| tbl-cap: "**Analisis Regresi Linear terhadap Log Kalsifikasi (Mengontrol Efek Perancu Usia)**"
 
-library(gtsummary)
-library(flextable)
 
 # Model 1: Non-HDL + Usia
 tbl_mod_nhdl <- tbl_regression(mod_nhdl, label = list(Non_HDL ~ "Kolesterol Non-HDL", Usia ~ "Usia (Tahun)")) %>%
@@ -600,7 +704,7 @@ tbl_stack(
 
 **Stratifikasi Berdasarkan Penggunaan Statin**
 
-Analisis stratifikasi eksploratif dilakukan untuk membandingkan korelasi indeks kardiometabolik terhadap kalsifikasi secara terpisah antara kelompok dengan terapi statin ($n = `r n_statin`$) dan tanpa statin ($n = `r n_total - n_statin`$). Analisis korelasi (@fig-supp-statin) parameter Rasio TG/HDL menunjukkan koefisien korelasi negatif yang sedikit lebih besar pada kelompok tanpa statin ($R = `r c_tg_sn$r`$) dibandingkan pengguna statin ($R =`r c_tg_sy$r`$). Kehilangan signifikansi statistik pada kelompok tanpa statin ($p `r c_tg_sn$p`$) lebih mencerminkan keterbatasan kekuatan sampel (*power*) akibat ukuran kohort yang kecil ($n =`r n_total - n_statin`$) daripada hilangnya arah asosiasi.Pada parameter kolesterol Non-HDL, di mana korelasi negatif yang bermakna tetap bertahan pada kelompok tanpa statin ($R =`r c_nhdl_sn$r`$, $p`r c_nhdl_sn$p`$). Meskipun temuan pada ukuran sampel yang sangat terbatas ini ($n =`r n_total - n_statin\`\$)
+Analisis stratifikasi eksploratif dilakukan untuk membandingkan korelasi indeks kardiometabolik terhadap kalsifikasi secara terpisah antara kelompok dengan terapi statin ($n=$ `r n_statin`) dan tanpa statin ($n=$ `r n_total - n_statin`). Analisis korelasi Spearman (@fig-supp-statin) parameter Rasio TG/HDL-C menunjukkan koefisien korelasi negatif yang lebih besar pada kelompok tanpa statin ($\rho=$ `r c_tg_sn$r`) dibandingkan pengguna statin ($\rho=$ `r c_tg_sy$r`). Kehilangan signifikansi statistik pada kelompok tanpa statin ($p$ `r c_tg_sn$p`) lebih mencerminkan keterbatasan kekuatan sampel (power) akibat ukuran kohort yang kecil ($n=$ `r n_total - n_statin`) daripada hilangnya arah asosiasi. Hal ini terbukti secara konsisten pada parameter kolesterol Non-HDL, di mana korelasi negatif yang bermakna secara statistik tetap bertahan secara tangguh pada kelompok tanpa statin ($\rho=$ `r c_nhdl_sn$r`, $p$ `r c_nhdl_sn$p`), sementara pada kelompok pengguna statin korelasi tersebut melemah dan menjadi tidak bermakna ($\rho=$ `r c_nhdl_sy$r`, $p$ `r c_nhdl_sy$p`). Meskipun temuan ini didapatkan pada ukuran sampel yang terbatas ($n=$ `r n_total - n_statin`), perbedaan mencolok ini semakin menguatkan indikasi adanya efek perancu farmakologis dari terapi statin kronis (statin paradox) terhadap parameter lipid sirkulasi pasien.
 
 ```{r}
 #| label: fig-supp-statin
@@ -636,18 +740,22 @@ df_strat <- df_clean %>%
   pivot_longer(cols = c(`Kolesterol Non-HDL`, `Rasio TG/HDL-C`), names_to = "Variable", values_to = "Value") %>%
   mutate(Variable = factor(Variable, levels = c("Kolesterol Non-HDL", "Rasio TG/HDL-C")))
 
-# 2. Menghitung statistik untuk text label
+# 2. Menghitung statistik untuk text label (DIREVISI KE SPEARMAN)
 df_strat_stats <- df_strat %>%
   filter(!is.na(Value) & !is.na(log_CAC)) %>%
   group_by(Variable, Statin) %>%
   summarise(
-    r = cor(Value, log_CAC, method = "pearson"),
-    p_val = cor.test(Value, log_CAC, method = "pearson")$p.value,
+    # Menggunakan Spearman dan meredam peringatan "ties" (angka kembar)
+    rho = suppressWarnings(cor(Value, log_CAC, method = "spearman")),
+    p_val = suppressWarnings(cor.test(Value, log_CAC, method = "spearman", exact = FALSE)$p.value),
     .groups = "drop"
   ) %>%
   mutate(
     p_text = ifelse(p_val < 0.001, "< 0.001", sprintf("= %.3f", p_val)),
-    label_text = sprintf("R = %.3f\np %s", r, p_text)
+    # Mengganti R menjadi rho
+    label_text = sprintf("rho = %.3f\np %s", rho, p_text),
+    # Menentukan style huruf: tebal untuk p < 0.05, biasa untuk p >= 0.05
+    font_style = ifelse(p_val < 0.05, "bold", "plain")
   )
 
 # 3. Membuat Plot Stratifikasi (Warna = Usia, Bentuk = Durasi DM)
@@ -664,8 +772,9 @@ p_strat <- ggplot(df_strat, aes(x = Value, y = log_CAC)) +
     name = "Durasi DM"
   ) +
   geom_smooth(method = "lm", se = TRUE, color = "#c0392b", fill = "#f5b7b1", linewidth = 1) +
-  geom_text(data = df_strat_stats, aes(x = Inf, y = Inf, label = label_text),
-            hjust = 1.1, vjust = 1.2, size = 3.5, fontface = "italic", color = "black", inherit.aes = FALSE) +
+  # Memasukkan font_style ke dalam aesthetic (aes)
+  geom_text(data = df_strat_stats, aes(x = Inf, y = Inf, label = label_text, fontface = font_style),
+            hjust = 1.1, vjust = 1.2, size = 3.5, color = "black", inherit.aes = FALSE) +
   facet_grid(Statin ~ Variable, scales = "free_x") +
   labs(
     x = "Nilai Parameter", 
@@ -685,6 +794,7 @@ p_strat <- ggplot(df_strat, aes(x = Value, y = log_CAC)) +
 p_strat
 ```
 
+
 ## Pembahasan
 
 Penelitian ini mengevaluasi faktor klinis serta laboratorium terhadap derjat aterosklerosis koroner. Faktor usia merupakan prediktor independen yang mendominasi kerentanan plak maupun kalsifikasi koroner, sementara indeks metabolik gagal menunjukkan efek independen.
@@ -695,9 +805,9 @@ Usia sebagai satu-satunya determinan klinis yang mencapai signifikansi statistik
 
 **Analisis Indeks Kardiometabolik**
 
-Di antara keempat kandidat indeks kardiometabolik, kolesterol Non-HDL konsisten menunjukan signifikansi korelasi linear negatif terhadap logaritma skor kalsifikasi ($R = `r cor_nhdl$r`, p`r cor_nhdl$p`$). Di sisi lain, indeks turunan yang diangkat untuk merepresentasikan resistensi insulin seperti TyHbA1c dan Rasio SUA/HDL tidak menunjukan hubungan bermakna. Nilai kolesterol non-HDL yang “optimal” justru memiliki skor CAC yang jauh lebih tinggi ($p = `r pval_nhdl_cac`$)ketika dievaluasi melalui analisis tabulasi silang menunjukan adanya efek statin dan durasi diagnosis DM ($p = `r pval_durasi_nhdl`$). Pasien dengan profil lipid yang "tampak optimal" di laboratorium ternyata adalah mereka yang telah mengidap DM dalam waktu yang sangat lama (`r pct_lama_opt`%). Hal ini merupakan manifestasi klinis klasik dari fenomena *metabolic memory* (memori metabolik) dan *legacy effect*. [@holman200810; @ceriello2009metabolic] Kerusakan vaskular dan deposisi kalsium telah berjalan selama bertahun-tahun akibat hiperglikemia kronis sebelumnya yang meninggalkan “jejak” kerusakan oksidatif persisten pada dinding endotel.[@ceriello2009metabolic] Walaupun pada saat prosedur CTCA profil lipid sirkulasi sudah ditekan hingga mencapai target (baik melalui perbaikan diet kronis, medikamentosa), kalsifikasi koroner sudah terbentuk sehingga menciptakan fenomena “paradoks lipid”. Analisis regresi multivariat lebih lanjut mengonfirmasi bahwa korelasi negatif parameter lipid ini tetap signifikan secara independen meskipun telah dikontrol terhadap faktor usia (Tabel 4).
+Di antara keempat kandidat indeks kardiometabolik, kolesterol Non-HDL konsisten menunjukan signifikansi korelasi negatif (Spearman's rank) terhadap logaritma skor kalsifikasi ($\rho$ = `r cor_nhdl$r`, $p$ `r cor_nhdl$p`). Di sisi lain, indeks turunan yang diangkat untuk merepresentasikan resistensi insulin seperti TyHbA1c dan Rasio SUA/HDL tidak menunjukan hubungan bermakna. Nilai kolesterol non-HDL yang “optimal” justru memiliki skor CAC yang jauh lebih tinggi ($p =$ `r pval_nhdl_cac`) ketika dievaluasi melalui analisis tabulasi silang yang menunjukan adanya efek durasi diagnosis DM ($p =$ `r pval_durasi_nhdl`). Pasien dengan profil lipid yang "tampak optimal" di laboratorium ternyata adalah mereka yang telah mengidap DM dalam waktu yang sangat lama (`r pct_lama_opt`%). Hal ini merupakan manifestasi klinis klasik dari fenomena metabolic memory (memori metabolik) dan legacy effect. Kerusakan vaskular dan deposisi kalsium telah berjalan selama bertahun-tahun akibat hiperglikemia kronis sebelumnya yang meninggalkan “jejak” kerusakan oksidatif persisten pada dinding endotel. Walaupun pada saat prosedur CTCA profil lipid sirkulasi sudah ditekan hingga mencapai target (baik melalui perbaikan diet kronis maupun medikamentosa), kalsifikasi koroner sudah terbentuk secara permanen sehingga menciptakan fenomena “paradoks lipid”. Analisis regresi linear parsial lebih lanjut mengonfirmasi bahwa korelasi negatif parameter lipid ini tetap signifikan secara independen meskipun telah dikontrol terhadap faktor usia (Tabel 4).
 
-Adanya hubungan antara Rasio TG/HDL yang normal dengan pencapaian kontrol glikemik (HbA1c) yang baik (`r pct_hba1c_tg_norm`% terkontrol, $p = `r pval_hba1c_tghdl`$) mendukung status resistensi insulin dan kontrol metabolik sesaat. Namun, ketiadaan asosiasi Rasio TG/HDL terhadap luaran HRP dan CAC kembali menunjukkan bahwa marker metabolik sirkulasi tidak mampu melampaui kekuatan faktor degeneratif (usia) dan waktu paparan (time-dependent) dalam memprediksi perubahan struktural vaskular permanen pada populasi DM.
+Adanya hubungan antara Rasio TG/HDL yang normal dengan pencapaian kontrol glikemik (HbA1c) yang baik (`r pct_hba1c_tg_norm`% terkontrol, $p =$ `r pval_hba1c_tghdl`) mendukung status resistensi insulin dan kontrol metabolik sesaat. Namun, ketiadaan asosiasi linear Rasio TG/HDL terhadap luaran HRP dan CAC kembali menunjukkan bahwa marker metabolik sirkulasi tidak mampu melampaui kekuatan faktor degeneratif (usia) dan waktu paparan (time-dependent) dalam memprediksi perubahan struktural vaskular permanen pada populasi DM.
 
 Indeks turunan berbasis resistensi insulin (seperti TyHbA1c dan Rasio TG/HDL) belum dapat mengungguli faktor usia pada studi ini tampak kontradiktif dengan beberapa literatur sebelumnya. Penelitian oleh Won et al. (2018) dan Jin et al. (2020) melaporkan hubungan positif yang kuat dan independen antara indeks kardiometabolik turunan dengan tingkat aterosklerosis koroner [@jin2020triglyceride; @won2018relationship].Diskrepansi hasil ini dapat dijelaskan melalui perbedaan mendasar pada profil intervensi medis dan fase kronisitas penyakit sampel. Studi-studi terdahulu mayoritas mengevaluasi populasi asimptomatik yang relatif “naif” terhadap terapi kardiovaskular, di mana kemungkinan resistensi insulin fase akut masih berkorelasi kuat dengan inisiasi awal plak. Sebaliknya, kohort dalam penelitian ini merepresentasikan kondisi rutin di Indonesia (real-world) berupa pasien rujukan kardiologi dengan durasi penyakit lanjut dan telah mendapatkan terapi statin. Pengaruh farmakologis dari statin menekan komponen lipid pembentuk indeks tersebut di sirkulasi darah (terutama trigliserida), sehingga secara artifisial “menumpulkan” nilai prediktifnya. Selain itu, keterbatasan desain potong lintang (cross-sectional) hanya mampu mencatat profil lipid sewaktu saat CTCA yang sebagian besar telah termodifikasi oleh terapi, dan gagal menangkap puncak resistensi insulin di masa lalu yang mungkin menjadi pemicu awal kalsifikasi sebelumnya. Oleh karena itu, uji kohort skala besar lebih lanjut yang mampu merekam fluktuasi lipid (lipid variability) dan pencatatan dosis akumulatif statin sangat disarankan untuk memvalidasi temuan ini.
 
@@ -714,9 +824,116 @@ Pada pasien DM yang menjalani CTCA, faktor degeneratif (usia) bertindak sebagai 
 
 ## Lampiran
 
+**Uji Normalitas Data Numerik**
+
+Panel histogram dan uji Shapiro-Wilk di atas menampilkan distribusi data pada variabel numerik. Sebagian besar variabel klinis dan indeks kardiometabolik tidak berdistribusi normal (p < 0,05). Secara khusus, panel grafik menunjukkan bahwa meskipun telah dilakukan transformasi logaritmik (ln[CAC+1]), kurva skor CAC tidak sepenuhnya normal akibat tingginya proporsi pasien dengan skor nol mutlak (zero-inflated data). 
+
+```{r}
+#| label: fig-supp-s1
+#| fig-cap: "**Supplementary S1. Panel Distribusi Histogram Data Numerik Kardiometabolik**"
+#| fig-width: 10
+#| fig-height: 8
+#| warning: false
+#| message: false
+
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(flextable)
+
+# 1. Menyiapkan Data & Merapikan Nama Variabel
+df_numerik <- df_clean %>%
+  mutate(
+    `Skor_CAC_Asli` = Global_CAC_score,
+    `Ln_CAC_Plus_1` = log(Global_CAC_score + 1)
+  ) %>%
+  select(where(is.numeric)) %>%
+  # Menambahkan Durasi_DM_Bulan ke dalam daftar pengecualian
+  select(-any_of(c(
+    "Global_CAC_score", "log_CAC",           
+    "No", "No. RM", "No_RM", "No__RM", "ID", 
+    "Tahun",                                 
+    "Alpha", "Kappa", "Sex_Mult",            
+    "CKD_Status", "CAC_100_plus",
+    "Durasi_DM_Bulan" 
+  ))) %>%
+  # Mengubah nama variabel (sistem ini sangat aman, hanya mengubah yang ada di data)
+  rename(any_of(c(
+    "Asam Urat" = "Asam-Urat",
+    "Durasi DM (Tahun)" = "Durasi_DM",
+    "Kolesterol HDL" = "HDL",
+    "Kolesterol LDL" = "LDL",
+    "Kolesterol Total" = "Kolesterol-Total",
+    "Indeks TyHbA1c" = "TyHbA1c_Index",
+    "Rasio SUA / HDL-C" = "SUA_HDL_Ratio",
+    "Rasio TG / HDL-C" = "TG_HDL_Ratio",
+    "Kolesterol Non-HDL" = "Non_HDL",
+    "Skor CAC (Agatston)" = "Skor_CAC_Asli",
+    "Skor CAC (ln[CAC+1])" = "Ln_CAC_Plus_1",
+    "HbA1c" = "HbA1C"
+  )))
+
+# 2. FUNGSI AMAN SHAPIRO-WILK
+uji_shapiro <- function(x) {
+  x <- na.omit(x)
+  if(length(x) >= 3 && length(x) <= 5000) {
+    return(shapiro.test(x)$p.value)
+  } else {
+    return(NA)
+  }
+}
+
+# 3. MEMBUAT TABEL NORMALITAS
+tabel_normalitas <- df_numerik %>%
+  summarise(across(everything(), uji_shapiro)) %>%
+  pivot_longer(everything(), names_to = "Variabel", values_to = "P_Value") %>%
+  mutate(
+    Distribusi = ifelse(P_Value < 0.05, "Tidak Normal", "Normal"),
+    P_Value_Format = ifelse(P_Value < 0.001, "< 0,001", format(round(P_Value, 3), decimal.mark=","))
+  ) %>%
+  select(Variabel, P_Value_Format, Distribusi) %>%
+  arrange(Variabel) %>%
+  flextable() %>%
+  set_header_labels(
+    Variabel = "Variabel Klinis / Indeks Metabolik", 
+    P_Value_Format = "Nilai p (Shapiro-Wilk)", 
+    Distribusi = "Distribusi"
+  ) %>%
+  bold(j = "Distribusi", i = ~ Distribusi == "Tidak Normal", bold = TRUE) %>%
+  align(align = "center", part = "all") %>%
+  autofit() %>%
+  set_caption(caption = "Tabel S1. Hasil Uji Normalitas Shapiro-Wilk pada Variabel Numerik Klinis")
+
+# 4. MEMBUAT PANEL HISTOGRAM
+panel_histogram <- df_numerik %>%
+  pivot_longer(everything(), names_to = "Variabel", values_to = "Nilai") %>%
+  filter(!is.na(Nilai)) %>% 
+  ggplot(aes(x = Nilai)) +
+  geom_histogram(aes(y = after_stat(density)), fill = "#4A81BF", color = "white", bins = 20) +
+  geom_density(color = "#D9534F", linewidth = 0.8) + 
+  facet_wrap(~ Variabel, scales = "free") +
+  theme_minimal(base_size = 12) +
+  labs(
+    x = "Nilai Distribusi",
+    y = "Kepadatan (Density)"
+  ) +
+  theme(
+    # Membuat judul di setiap grafik kecil lebih terbaca
+    strip.text = element_text(face = "bold", size = 11, color = "black"),
+    strip.background = element_rect(fill = "#F0F0F0", color = NA),
+    panel.grid.minor = element_blank(),
+    axis.text.y = element_blank(), 
+    axis.ticks.y = element_blank()
+  )
+
+# 5. MENAMPILKAN HASIL SECARA BERURUTAN
+tabel_normalitas
+panel_histogram
+```
+
 **Analisis Karakteristik Klinis Tambahan Terhadap Indeks Kardiometabolik Novel**
 
-Sebagai pelengkap analisis, evaluasi tabulasi silang juga dilakukan pada dua indeks kardiometabolik yakni Indeks TyHbA1c (**Tabel S1**) dan Rasio SUA/HDL-C (**Tabel S2**). Pada evaluasi Indeks TyHbA1c, variabel kontrol glikemik (HbA1c) sengaja dieksklusi dari model analisis untuk menghindari bias mengingat parameter tersebut merupakan komponen pembentuk rumus dasar indeks.
+Sebagai pelengkap analisis, evaluasi tabulasi silang juga dilakukan pada dua indeks kardiometabolik yakni Indeks TyHbA1c (@tbl-supp-tyhba1c) dan Rasio SUA/HDL-C (@tbl-supp-sua). Pada evaluasi Indeks TyHbA1c, variabel kontrol glikemik (HbA1c) sengaja dieksklusi dari model analisis untuk menghindari bias mengingat parameter tersebut merupakan komponen pembentuk rumus dasar indeks.
 
 ```{r}
 #| label: tbl-supp-tyhba1c
@@ -821,7 +1038,7 @@ legend("bottomright",
 
 **Korelasi Komprehensif Seluruh Parameter Klinis dan Laboratorium**
 
-Analisis korelasi linear dilakukan untuk mengevaluasi hubungan antara seluruh variabel kontinu (termasuk usia, IMT, parameter laboratorium standar, dan indeks kardiometabolik) terhadap nilai logaritmik absolut kalsifikasi koroner ($\ln[\text{CAC}+1]$). Hasil analisis menunjukan bahwa faktor usia merupakan satu-satunya variabel yang secara konsisten menunjukkan tren korelasi linear yang bermakna **positif** ($R = `r cor_usia$r`, p`r cor_usia$p`$). Sebaliknya, seluruh parameter lipid sirkulasi beserta indeks turunannya (termasuk Rasio TG/HDL dan Non-HDL) menunjukkan korelasi linear yang bermakna namun dengan arah **negatif** (@fig-supp-scatter).
+Analisis korelasi linear dilakukan untuk mengevaluasi hubungan antara seluruh variabel kontinu (termasuk usia, IMT, parameter laboratorium standar, dan indeks kardiometabolik) terhadap nilai logaritmik absolut kalsifikasi koroner ($\ln[\text{CAC}+1]$). Hasil analisis menunjukan bahwa faktor usia merupakan satu-satunya variabel yang secara konsisten menunjukkan tren korelasi linear yang bermakna **positif** ($R = `r cor_usia$r`, p`r cor_usia$p`$). Sebaliknya, seluruh parameter lipid sirkulasi beserta indeks turunannya (termasuk Rasio TG/HDL dan Non-HDL) menunjukkan korelasi linear negatif yang tidak bermakna  (@fig-supp-scatter).
 
 ```{r}
 #| label: fig-supp-scatter
@@ -860,25 +1077,30 @@ df_all_vars <- df_clean %>%
     "TyHbA1c Index", "TG / HDL-C Ratio", "Non-HDL Cholesterol", "SUA / HDL-C Ratio"
   )))
 
+# --- MENGHITUNG STATISTIK & MENENTUKAN FORMAT FONT ---
 df_stats_all <- df_all_vars %>%
   filter(!is.na(Value) & !is.na(log_CAC)) %>%
   group_by(Variable) %>%
   summarise(
-    r = cor(Value, log_CAC, method = "pearson"),
-    r2 = r^2,
-    p_val = cor.test(Value, log_CAC, method = "pearson")$p.value,
+    rho = suppressWarnings(cor(Value, log_CAC, method = "spearman")),
+    p_val = suppressWarnings(cor.test(Value, log_CAC, method = "spearman", exact = FALSE)$p.value),
     .groups = "drop"
   ) %>%
   mutate(
     p_text = ifelse(p_val < 0.001, "< 0.001", sprintf("= %.3f", p_val)),
-    label_text = sprintf("R = %.3f\nR\u00b2 = %.3f\np %s", r, r2, p_text)
+    # Mengganti simbol dengan kata "rho"
+    label_text = sprintf("rho = %.3f\np %s", rho, p_text),
+    # Menentukan style huruf: tebal untuk p < 0.05, biasa untuk p >= 0.05
+    font_style = ifelse(p_val < 0.05, "bold", "plain")
   )
+# ---------------------------------------------------
 
 p_comprehensive <- ggplot(df_all_vars, aes(x = Value, y = log_CAC)) +
   geom_point(size = 1.5, alpha = 0.5, color = "#2c3e50") +
   geom_smooth(method = "lm", se = TRUE, color = "#d35400", fill = "#edbb99", linewidth = 0.8) +
-  geom_text(data = df_stats_all, aes(x = Inf, y = Inf, label = label_text),
-            hjust = 1.1, vjust = 1.2, size = 3.2, fontface = "italic", color = "black", inherit.aes = FALSE) +
+  # Memasukkan font_style ke dalam aesthetic (aes) agar menyesuaikan per grafik
+  geom_text(data = df_stats_all, aes(x = Inf, y = Inf, label = label_text, fontface = font_style),
+            hjust = 1.1, vjust = 1.2, size = 3.5, color = "black", inherit.aes = FALSE) +
   facet_wrap(~ Variable, scales = "free_x", ncol = 2) + 
   labs(x = "Parameter Value", y = "ln(Global CAC Score + 1)") +
   theme_bw(base_size = 11) +
@@ -1089,7 +1311,6 @@ ggsave(filename = "Figure_5_STROBE_Flowchart.jpg",
        width = 7, height = 5, dpi = 300, device = "jpeg")
 ```
 
-
 ```{r}
 #| label: ekspor-data-spss
 #| include: false
@@ -1114,4 +1335,3 @@ df_csv <- df_clean %>%
 
 write.csv(df_csv, "Data_CTCA_Kardiometabolik.csv", row.names = FALSE)
 ```
-
