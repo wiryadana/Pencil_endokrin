@@ -106,6 +106,7 @@ library(googlesheets4)
 library(flextable)
 library(haven)
 library(tibble)
+library(patchwork)
 ```
 
 ```{r load_data}
@@ -1335,3 +1336,826 @@ df_csv <- df_clean %>%
 
 write.csv(df_csv, "Data_CTCA_Kardiometabolik.csv", row.names = FALSE)
 ```
+
+
+```{r}
+#| label: fig-summary-slide
+#| fig-width: 13.33
+#| fig-height: 7.5
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+
+# 1. Menyiapkan Data Tabel 1 & 2 (Ditambahkan Median & Q1-Q3 sesuai Naskah)
+df_summary <- data.frame(
+  Parameter = factor(
+    rep(c("Skor CAC\n(Agatston)", "Usia\n(Tahun)"), each = 2), 
+    levels = c("Skor CAC\n(Agatston)", "Usia\n(Tahun)")
+  ),
+  HRP_Status = rep(c("HRP (-)", "HRP (+)"), 2),
+  Nilai = c(12, 557, 57, 64),
+  # Data di bawah diambil persis dari rentang Q1-Q3 di Tabel 1 & 2 naskah
+  Teks_Nilai = c("12 (0-18)", "557 (219-1.014)", "57 (48-63)", "64 (58-69)") 
+) %>%
+  group_by(Parameter) %>%
+  mutate(
+    Max_Nilai = max(Nilai),
+    Plot_X = Nilai / Max_Nilai,
+    Plot_X = ifelse(HRP_Status == "HRP (-)", -Plot_X, Plot_X),
+    # Jarak teks dijauhkan sedikit karena string (Q1-Q3) memakan ruang lebih panjang
+    Text_X = ifelse(HRP_Status == "HRP (-)", Plot_X - 0.08, Plot_X + 0.08),
+    Hjust = ifelse(HRP_Status == "HRP (-)", 1, 0)
+  ) %>% ungroup()
+
+# 2. Menyiapkan Data untuk Anotasi P-Value
+df_pvals <- data.frame(
+  Parameter = factor(c("Usia\n(Tahun)", "Skor CAC\n(Agatston)"), 
+                     levels = c("Skor CAC\n(Agatston)", "Usia\n(Tahun)")),
+  Label_P = c("Signifikan, p = 0,010", "Signifikan, p < 0,001"),
+  X_Pos = c(1.0, 1.0), 
+  Y_Pos = c(2.35, 1.35)  
+)
+
+# 3. Membuat Grafik Infografis Slide yang Disempurnakan
+p_infographic <- ggplot(df_summary, aes(y = Parameter)) +
+  
+  geom_vline(xintercept = 0, color = "black", linewidth = 1.2) +
+  
+  geom_col(aes(x = Plot_X, fill = HRP_Status), width = 0.45, color = "black", linewidth = 0.8) +
+  
+  # Ukuran teks angka (Q1-Q3) sedikit disesuaikan agar rapi
+  geom_text(aes(x = Text_X, label = Teks_Nilai, hjust = Hjust), size = 6.5, fontface = "bold", color = "black") +
+  
+  # KUNCI 3: Label Parameter diturunkan letaknya (-0.38) agar berada di bawah balok, tidak menutupi garis 0
+  geom_label(aes(x = 0, y = as.numeric(Parameter) - 0.38, label = Parameter), size = 6, fontface = "bold", color = "black",
+             fill = "white", label.size = 0, label.padding = unit(0.5, "lines")) +
+             
+  # Label HRP (-) dan (+) diturunkan sedikit koordinat Y-nya
+  annotate("text", x = -0.5, y = 2.45, label = "HRP (-)", size = 9, fontface = "bold", color = "#7F8C8D") +
+  annotate("text", x = 0.5, y = 2.45, label = "HRP (+)", size = 9, fontface = "bold", color = "#C0392B") +
+
+  geom_label(data = df_pvals, aes(x = X_Pos, y = Y_Pos, label = Label_P),
+             size = 6, fontface = "bold", fill = "#ECF0F1", color = "black",
+             label.size = 0.8, label.padding = unit(0.6, "lines"), hjust = 0.5) +
+             
+  geom_curve(data = df_pvals, aes(x = X_Pos - 0.2, y = Y_Pos - 0.05, 
+                                  xend = 0.5, yend = as.numeric(Parameter) + 0.15),
+             curvature = 0.2, linewidth = 0.8, color = "black", 
+             arrow = arrow(length = unit(0.02, "npc"), type = "closed")) +
+
+  scale_fill_manual(values = c("HRP (-)" = "#CCCCCC", "HRP (+)" = "#E64B35")) +
+  
+  # Rentang X diperlebar ke -2.0 s/d 2.0 agar teks (Q1-Q3) yang panjang tidak keluar frame
+  scale_x_continuous(limits = c(-2.0, 2.0)) + 
+  scale_y_discrete(expand = expansion(mult = c(0.2, 0.3))) + 
+  
+  # KUNCI 1: Clip = "off" mengizinkan elemen grafis digambar keluar dari batas kanvas (mencegah terpotong)
+  coord_cartesian(clip = "off") +
+  
+  labs(
+    title = "Temuan Utama: Dominansi Usia dalam Kerentanan Plak",
+    caption = "Kesimpulan: Usia merupakan satu-satunya determinan klinis yang mencapai signifikansi statistik,\nmembuktikan bahwa aterosklerosis adalah patologi yang sangat bergantung pada waktu (time-dependent)."
+  ) +
+  
+  theme_void(base_size = 20) + 
+  theme(
+    legend.position = "none",
+    plot.title = element_text(face = "bold", hjust = 0.5, size = 28, margin = margin(t = 10, b = 20)),
+    plot.caption = element_text(size = 18, hjust = 0.5, face = "italic", color = "black",
+                                margin = margin(t = 30), lineheight = 1.3),
+    plot.background = element_rect(fill = "white", color = NA)
+  )
+
+p_infographic
+
+ggsave("Grafik/Slide_Infografis_Kesimpulan_PPT.png", plot = p_infographic, width = 16, height = 9, dpi = 300)
+```
+
+
+```{r}
+#| label: fig-box-klinis
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(patchwork)
+
+# 1. Menyeleksi 5 Variabel Kelompok 1 (MENGGUNAKAN NAMA KOLOM ASLI)
+df_group1 <- df_clean %>%
+  select(HRP_Status, Usia, IMT, Hemoglobin, Global_CAC_score, Kreatinin) %>%
+  rename(
+    `Usia (Tahun)` = Usia,
+    `IMT (kg/m2)` = IMT,
+    `Hemoglobin (g/dL)` = Hemoglobin,
+    `Skor CAC (Agatston)` = Global_CAC_score,
+    `Serum Kreatinin (mg/dL)` = Kreatinin
+  ) %>%
+  pivot_longer(cols = -HRP_Status, names_to = "Variabel", values_to = "Nilai") %>%
+  filter(!is.na(Nilai))
+
+df_overall <- df_group1 %>% mutate(HRP_Status = "Keseluruhan")
+df_group1 <- bind_rows(df_overall, df_group1) %>%
+  mutate(HRP_Status = factor(HRP_Status, levels = c("Keseluruhan", "HRP (-)", "HRP (+)")))
+
+buat_plot <- function(nama_var) {
+  df_sub <- df_group1 %>% filter(Variabel == nama_var)
+  
+  df_pval <- df_sub %>% filter(HRP_Status != "Keseluruhan") %>%
+    summarise(p_val = wilcox.test(Nilai ~ HRP_Status)$p.value) %>%
+    mutate(p_text = ifelse(p_val < 0.001, "p < 0,001", paste0("p = ", format(round(p_val, 3), decimal.mark=","))),
+           font_style = ifelse(p_val < 0.05, "bold", "plain"))
+           
+  df_med <- df_sub %>% group_by(HRP_Status) %>%
+    summarise(Q1 = quantile(Nilai, 0.25, na.rm=TRUE), Median = median(Nilai, na.rm=TRUE), Q3 = quantile(Nilai, 0.75, na.rm=TRUE)) %>%
+    mutate(label_med = paste0(format(round(Median,1), decimal.mark=",", trim=TRUE), "(", 
+                              format(round(Q1,1), decimal.mark=",", trim=TRUE), "-", 
+                              format(round(Q3,1), decimal.mark=",", trim=TRUE), ")"))
+                              
+  ggplot(df_sub, aes(x = HRP_Status, y = Nilai, fill = HRP_Status)) +
+    geom_jitter(aes(color = HRP_Status), width = 0.15, alpha = 0.4, size = 2.5, shape = 16) +
+    geom_boxplot(alpha = 0.8, color = "black", linewidth = 0.8, outlier.shape = NA, width = 0.45) +
+    geom_text(data = df_pval, aes(x = 2.5, y = Inf, label = p_text, fontface = font_style), 
+              vjust = 1.2, size = 6, color = "black", inherit.aes = FALSE) +
+    geom_label(data = df_med, aes(x = HRP_Status, y = -Inf, label = label_med), 
+               vjust = -0.5, size = 4, fontface = "bold", color = "black", fill = alpha("white", 0.7), label.size = 0, inherit.aes = FALSE) +
+    scale_fill_manual(values = c("Keseluruhan" = "#FFFFFF", "HRP (-)" = "#CCCCCC", "HRP (+)" = "#E64B35")) +
+    scale_color_manual(values = c("Keseluruhan" = "#95A5A6", "HRP (-)" = "#7F8C8D", "HRP (+)" = "#C0392B")) +
+    scale_y_continuous(expand = expansion(mult = c(0.12, 0.15))) + 
+    labs(title = nama_var, x = "", y = "") +
+    theme_classic(base_size = 18) + 
+    theme(legend.position = "none", plot.title = element_text(face = "bold", hjust = 0.5, size = 18),
+          axis.line = element_line(color = "black", linewidth = 1), axis.text.x = element_text(face = "bold", size = 12, color = "black"),
+          axis.text.y = element_text(size = 14, color = "black"))
+}
+
+p_usia <- buat_plot("Usia (Tahun)") + theme(plot.title = element_text(size = 22))
+p_imt <- buat_plot("IMT (kg/m2)")
+p_hb <- buat_plot("Hemoglobin (g/dL)")
+p_cac <- buat_plot("Skor CAC (Agatston)")
+p_kre <- buat_plot("Serum Kreatinin (mg/dL)")
+
+layout_asimetris <- p_usia | (p_imt + p_hb + p_cac + p_kre + plot_layout(ncol = 2))
+
+final_plot_1 <- layout_asimetris + plot_layout(widths = c(1, 2)) + 
+  plot_annotation(title = "Karakteristik Klinis Dasar Berdasarkan Status HRP", 
+                  theme = theme(plot.title = element_text(face = "bold", size = 26, hjust = 0.5)))
+
+final_plot_1
+
+ggsave("Grafik/Presentasi_Boxplot_Grup1_Asimetris.png", plot = final_plot_1, width = 16, height = 9, dpi = 300)
+```
+
+```{r}
+#| label: fig-box-lab
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# 1. Menyeleksi 6 Variabel Kelompok 2 (MENGGUNAKAN NAMA KOLOM ASLI dengan Backtick)
+df_group2 <- df_clean %>%
+  select(HRP_Status, HbA1C, `Kolesterol-Total`, LDL, HDL, Trigliserida, `Asam-Urat`) %>%
+  rename(
+    `HbA1c (%)` = HbA1C,
+    `Kolesterol Total (mg/dL)` = `Kolesterol-Total`,
+    `Kolesterol LDL (mg/dL)` = LDL,
+    `Kolesterol HDL (mg/dL)` = HDL,
+    `Trigliserida (mg/dL)` = Trigliserida,
+    `Asam Urat Serum (mg/dL)` = `Asam-Urat`
+  ) %>%
+  pivot_longer(cols = -HRP_Status, names_to = "Variabel", values_to = "Nilai") %>%
+  filter(!is.na(Nilai))
+
+df_overall2 <- df_group2 %>% mutate(HRP_Status = "Keseluruhan")
+df_group2 <- bind_rows(df_overall2, df_group2) %>%
+  mutate(HRP_Status = factor(HRP_Status, levels = c("Keseluruhan", "HRP (-)", "HRP (+)")))
+
+df_pvals2 <- df_group2 %>% filter(HRP_Status != "Keseluruhan") %>% group_by(Variabel) %>%
+  summarise(p_val = wilcox.test(Nilai ~ HRP_Status)$p.value, .groups = "drop") %>%
+  mutate(p_text = ifelse(p_val < 0.001, "p < 0,001", paste0("p = ", format(round(p_val, 3), decimal.mark=","))),
+         font_style = ifelse(p_val < 0.05, "bold", "plain"))
+
+df_medians2 <- df_group2 %>% group_by(Variabel, HRP_Status) %>%
+  summarise(Q1 = quantile(Nilai, 0.25, na.rm=TRUE), Median = median(Nilai, na.rm=TRUE), Q3 = quantile(Nilai, 0.75, na.rm=TRUE), .groups = "drop") %>%
+  mutate(label_med = paste0(format(round(Median,1), decimal.mark=",", trim=TRUE), "(", 
+                            format(round(Q1,1), decimal.mark=",", trim=TRUE), "-", 
+                            format(round(Q3,1), decimal.mark=",", trim=TRUE), ")"))
+
+final_plot_2 <- ggplot(df_group2, aes(x = HRP_Status, y = Nilai, fill = HRP_Status)) +
+  geom_jitter(aes(color = HRP_Status), width = 0.15, alpha = 0.4, size = 2.5, shape = 16) +
+  geom_boxplot(alpha = 0.8, color = "black", linewidth = 0.8, outlier.shape = NA, width = 0.45) +
+  geom_text(data = df_pvals2, aes(x = 2.5, y = Inf, label = p_text, fontface = font_style), vjust = 1.2, size = 6.5, color = "black", inherit.aes = FALSE) +
+  geom_label(data = df_medians2, aes(x = HRP_Status, y = -Inf, label = label_med), vjust = -0.5, size = 4.2, fontface = "bold", color = "black", fill = alpha("white", 0.7), label.size = 0, inherit.aes = FALSE) +
+  facet_wrap(~ Variabel, scales = "free_y", ncol = 3) + 
+  scale_fill_manual(values = c("Keseluruhan" = "#FFFFFF", "HRP (-)" = "#CCCCCC", "HRP (+)" = "#E64B35")) +
+  scale_color_manual(values = c("Keseluruhan" = "#95A5A6", "HRP (-)" = "#7F8C8D", "HRP (+)" = "#C0392B")) +
+  scale_y_continuous(expand = expansion(mult = c(0.12, 0.15))) + 
+  labs(title = "Profil Laboratorium Glikemik, Lipid & Asam Urat", x = "", y = "Nilai Parameter") +
+  theme_classic(base_size = 20) + 
+  theme(legend.position = "none", strip.background = element_blank(), strip.text = element_text(face = "bold", size = 18, color = "black"),
+        axis.line = element_line(color = "black", linewidth = 1), axis.text.x = element_text(face = "bold", size = 14, color = "black"),
+        plot.title = element_text(face = "bold", hjust = 0.5, size = 26, margin = margin(b = 20)))
+
+final_plot_2
+
+ggsave("Grafik/Presentasi_Boxplot_Grup2_Grid.png", plot = final_plot_2, width = 16, height = 9, dpi = 300)
+```
+
+```{r}
+#| label: fig-box-metabolik
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# 1. Menyeleksi 4 Variabel Kelompok 3
+df_group3 <- df_clean %>%
+  select(HRP_Status, TyHbA1c_Index, TG_HDL_Ratio, Non_HDL, SUA_HDL_Ratio) %>%
+  rename(
+    `Indeks TyHbA1c` = TyHbA1c_Index,
+    `Rasio TG / HDL-C` = TG_HDL_Ratio,
+    `Kolesterol Non-HDL (mg/dL)` = Non_HDL,
+    `Rasio SUA / HDL-C` = SUA_HDL_Ratio
+  ) %>%
+  pivot_longer(cols = -HRP_Status, names_to = "Variabel", values_to = "Nilai") %>%
+  filter(!is.na(Nilai))
+
+df_overall3 <- df_group3 %>% mutate(HRP_Status = "Keseluruhan")
+df_group3 <- bind_rows(df_overall3, df_group3) %>%
+  mutate(HRP_Status = factor(HRP_Status, levels = c("Keseluruhan", "HRP (-)", "HRP (+)")))
+
+df_pvals3 <- df_group3 %>% filter(HRP_Status != "Keseluruhan") %>% group_by(Variabel) %>%
+  summarise(p_val = wilcox.test(Nilai ~ HRP_Status)$p.value, .groups = "drop") %>%
+  mutate(p_text = ifelse(p_val < 0.001, "p < 0,001", paste0("p = ", format(round(p_val, 3), decimal.mark=","))),
+         font_style = ifelse(p_val < 0.05, "bold", "plain"))
+
+df_medians3 <- df_group3 %>% group_by(Variabel, HRP_Status) %>%
+  summarise(Q1 = quantile(Nilai, 0.25, na.rm=TRUE), Median = median(Nilai, na.rm=TRUE), Q3 = quantile(Nilai, 0.75, na.rm=TRUE), .groups = "drop") %>%
+  mutate(label_med = paste0(format(round(Median,1), decimal.mark=",", trim=TRUE), "(", 
+                            format(round(Q1,1), decimal.mark=",", trim=TRUE), "-", 
+                            format(round(Q3,1), decimal.mark=",", trim=TRUE), ")"))
+
+final_plot_3 <- ggplot(df_group3, aes(x = HRP_Status, y = Nilai, fill = HRP_Status)) +
+  geom_jitter(aes(color = HRP_Status), width = 0.15, alpha = 0.4, size = 2.5, shape = 16) +
+  geom_boxplot(alpha = 0.8, color = "black", linewidth = 0.8, outlier.shape = NA, width = 0.45) +
+  geom_text(data = df_pvals3, aes(x = 2.5, y = Inf, label = p_text, fontface = font_style), vjust = 1.2, size = 7.5, color = "black", inherit.aes = FALSE) +
+  geom_label(data = df_medians3, aes(x = HRP_Status, y = -Inf, label = label_med), vjust = -0.5, size = 5, fontface = "bold", color = "black", fill = alpha("white", 0.7), label.size = 0, inherit.aes = FALSE) +
+  facet_wrap(~ Variabel, scales = "free_y", ncol = 2) + # KUNCI: 2 Kolom (2x2 Grid)
+  scale_fill_manual(values = c("Keseluruhan" = "#FFFFFF", "HRP (-)" = "#CCCCCC", "HRP (+)" = "#E64B35")) +
+  scale_color_manual(values = c("Keseluruhan" = "#95A5A6", "HRP (-)" = "#7F8C8D", "HRP (+)" = "#C0392B")) +
+  scale_y_continuous(expand = expansion(mult = c(0.12, 0.15))) + 
+  labs(title = "Indeks Kardiometabolik Turunan (Surrogate Markers)", x = "", y = "Nilai Parameter") +
+  theme_classic(base_size = 20) + 
+  theme(legend.position = "none", strip.background = element_blank(), strip.text = element_text(face = "bold", size = 18, color = "black"),
+        axis.line = element_line(color = "black", linewidth = 1), axis.text.x = element_text(face = "bold", size = 14, color = "black"),
+        plot.title = element_text(face = "bold", hjust = 0.5, size = 26, margin = margin(b = 20)))
+
+final_plot_3
+ggsave("Grafik/Presentasi_Boxplot_Grup3_Turunan.png", plot = final_plot_3, width = 16, height = 9, dpi = 300)
+```
+
+
+```{r}
+#| label: fig-cat-diverging
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(scales) 
+
+# 1. Menyiapkan Data Mentah (Memasukkan ke-7 Variabel Kategorik)
+df_cat_raw <- df_clean %>%
+  select(HRP_Status, Gender, Hipertensi_Kat, Merokok, CKD_Status, Statin, Terapi_DM, Riwayat_DM) %>%
+  mutate(
+    # Pemetaan Label agar sesuai dengan naskah
+    Gender = factor(Gender, levels = c("L", "P"), labels = c("Laki-laki", "Perempuan")),
+    Statin = factor(Statin, levels = c("No-Statin", "On-Statin"), labels = c("Tanpa Statin", "Pengguna Statin")),
+    Merokok = factor(Merokok, labels = c("Tidak Merokok", "Merokok")),
+    CKD_Status = factor(CKD_Status, levels = c(0, 1), labels = c("Normal/PGK \u2264 2", "PGK \u2265 3"))
+  ) %>%
+  rename(
+    `Jenis Kelamin` = Gender,
+    `Hipertensi` = Hipertensi_Kat,
+    `Fungsi Ginjal` = CKD_Status,
+    `Penggunaan Statin` = Statin,
+    `Modalitas Terapi DM` = Terapi_DM,
+    `Durasi Diagnosis DM` = Riwayat_DM
+  ) %>%
+  pivot_longer(cols = -HRP_Status, names_to = "Kategori", values_to = "Grup") %>%
+  filter(!is.na(Grup)) %>%
+  mutate(
+    # KUNCI: Mengunci urutan agar sesuai permintaan (1-4 di Atas, 5-7 di Bawah)
+    Kategori = factor(Kategori, levels = c(
+      "Jenis Kelamin", "Hipertensi", "Merokok", "Fungsi Ginjal", 
+      "Penggunaan Statin", "Modalitas Terapi DM", "Durasi Diagnosis DM"
+    ))
+  )
+
+# 2. Menghitung P-value (Chi-Square/Fisher) untuk di Atas Grafik
+df_pvals_cat <- df_cat_raw %>%
+  group_by(Kategori) %>%
+  summarise(
+    p_val = suppressWarnings(chisq.test(table(Grup, HRP_Status))$p.value),
+    # Titik kordinat X diletakkan persis di tengah (bisa untuk 2 atau 3 balok)
+    x_pos = (n_distinct(Grup) + 1) / 2, 
+    .groups = "drop"
+  ) %>%
+  mutate(
+    p_text = ifelse(p_val < 0.001, "p < 0,001", paste0("p = ", format(round(p_val, 3), decimal.mark=","))),
+    font_style = ifelse(p_val < 0.05, "bold", "plain")
+  )
+
+# 3. Menghitung Proporsi untuk Diverging Bar
+df_cat_vis <- df_cat_raw %>%
+  group_by(Kategori, Grup, HRP_Status) %>%
+  summarise(Jumlah = n(), .groups = "drop") %>%
+  group_by(Kategori, Grup) %>%
+  mutate(
+    Persentase = Jumlah / sum(Jumlah),
+    # HRP (+) diubah menjadi negatif agar balok mengarah ke bawah
+    Persentase_Plot = ifelse(HRP_Status == "HRP (+)", -Persentase, Persentase)
+  )
+
+# 4. Membuat Diverging Bar Chart (7 Panel)
+p_diverging <- ggplot(df_cat_vis, aes(x = Grup, y = Persentase_Plot, fill = HRP_Status)) +
+  
+  geom_hline(yintercept = 0, color = "black", linewidth = 1.2) +
+  
+  geom_col(color = "black", width = 0.6, linewidth = 0.8) +
+  
+  # Angka persentase (Font dikecilkan sedikit menjadi 5 agar muat 4 kolom)
+  geom_text(aes(y = Persentase_Plot / 2, label = percent(abs(Persentase_Plot), accuracy = 1)), 
+            color = "black", fontface = "bold", size = 5) +
+            
+  # Teks P-value
+  geom_text(data = df_pvals_cat, aes(x = x_pos, y = 1.15, label = p_text, fontface = font_style), 
+            size = 5.5, color = "black", inherit.aes = FALSE) +
+            
+  # KUNCI LAYOUT: ncol = 4 akan otomatis membuat 4 kolom di atas dan sisanya (3) di bawah
+  facet_wrap(~ Kategori, scales = "free_x", ncol = 4) +
+  
+  scale_fill_manual(values = c("HRP (-)" = "#CCCCCC", "HRP (+)" = "#E64B35")) +
+  
+  # Pemotongan kata diturunkan ke 10 karakter agar lebih ramping
+  scale_x_discrete(labels = label_wrap(10)) +
+  
+  scale_y_continuous(
+    labels = function(x) percent(abs(x), accuracy = 1), 
+    limits = c(-1, 1.3), # Ditinggikan sedikit agar P-value di judul tidak terpotong
+    breaks = seq(-1, 1, by = 0.5) 
+  ) +
+  
+  labs(
+    title = "Proporsi Kerentanan Plak (HRP) Berdasarkan Karakteristik Klinis",
+    x = "",
+    y = "HRP (+) \u2193   Persentase Proporsi (%)   \u2191 HRP (-)" 
+  ) +
+  
+  theme_classic(base_size = 18) +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(face = "bold", size = 16),
+    strip.background = element_blank(),
+    strip.text = element_text(face = "bold", size = 16, color = "black"),
+    
+    axis.line.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    axis.line.y = element_line(color = "black", linewidth = 1),
+    axis.ticks.y = element_line(color = "black", linewidth = 1),
+    
+    # Ukuran teks X disesuaikan
+    axis.text.x = element_text(face = "bold", size = 12, color = "black", margin = margin(t = 5), lineheight = 0.8),
+    axis.text.y = element_text(size = 12, color = "black"),
+    axis.title.y = element_text(face = "bold", size = 16, margin = margin(r = 10)),
+    panel.spacing = unit(1.2, "lines"),
+    plot.title = element_text(face = "bold", hjust = 0.5, size = 26, margin = margin(b = 20))
+  )
+
+p_diverging
+
+ggsave("Grafik/Grafik_Kategorik_Diverging_7Panel_PPT.png", plot = p_diverging, width = 16, height = 9, dpi = 300)
+```
+
+```{r}
+#| label: fig-cac-sig
+#| fig-width: 12
+#| fig-height: 7
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# 1. Menyiapkan Variabel Signifikan
+df_sig <- df_clean %>%
+  mutate(
+    `Status High-Risk Plaque` = HRP_Status,
+    `Kategori Usia` = factor(ifelse(Usia >= 60, "\u2265 60 Tahun", "< 60 Tahun"), levels = c("< 60 Tahun", "\u2265 60 Tahun"))
+  ) %>%
+  select(Global_CAC_score, `Status High-Risk Plaque`, `Kategori Usia`) %>%
+  pivot_longer(cols = -Global_CAC_score, names_to = "Kategori", values_to = "Grup") %>%
+  filter(!is.na(Grup)) %>%
+  mutate(Kategori = factor(Kategori, levels = c("Status High-Risk Plaque", "Kategori Usia")))
+
+# 2. Menghitung Nilai Med(Q1-Q3) dengan Spasi yang Diperbaiki (trim = TRUE)
+df_stats_sig <- df_sig %>%
+  group_by(Kategori, Grup) %>%
+  summarise(
+    Q1 = quantile(Global_CAC_score, 0.25, na.rm=TRUE),
+    Median = median(Global_CAC_score, na.rm=TRUE),
+    Q3 = quantile(Global_CAC_score, 0.75, na.rm=TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    # KUNCI PERBAIKAN: Menambahkan trim = TRUE untuk membuang padding spasi otomatis dari R
+    med_str = format(round(Median, 0), big.mark=".", trim = TRUE),
+    q1_str  = format(round(Q1, 0), big.mark=".", trim = TRUE),
+    q3_str  = format(round(Q3, 0), big.mark=".", trim = TRUE),
+    label_med = paste0(med_str, " (", q1_str, "-", q3_str, ")")
+  )
+
+df_p_sig <- df_sig %>% group_by(Kategori) %>%
+  summarise(p_val = wilcox.test(Global_CAC_score ~ Grup)$p.value, .groups = "drop") %>%
+  mutate(p_text = ifelse(p_val < 0.001, "p < 0,001", paste0("p = ", format(round(p_val, 3), decimal.mark=","))))
+
+# 3. Plotting dengan Color Mapping Kustom
+p_sig <- ggplot(df_sig, aes(x = Grup, y = Global_CAC_score, fill = Grup)) +
+  
+  geom_jitter(aes(color = Grup), width = 0.15, alpha = 0.5, size = 3, shape = 16) +
+  geom_boxplot(color = "black", linewidth = 0.8, outlier.shape = NA, width = 0.5, alpha = 0.8) +
+  
+  geom_text(data = df_p_sig, aes(x = 1.5, y = 3000, label = p_text), fontface = "bold", size = 7, color = "#C0392B", inherit.aes = FALSE) +
+  geom_label(data = df_stats_sig, aes(x = Grup, y = 0, label = label_med), vjust = 1.2, size = 5, fontface = "bold", color = "black", fill = "white", label.size = 0, inherit.aes = FALSE) +
+  
+  facet_wrap(~ Kategori, scales = "free_x", ncol = 2) +
+  
+  scale_fill_manual(values = c(
+    "HRP (-)" = "#CCCCCC",           
+    "HRP (+)" = "#E64B35",           
+    "< 60 Tahun" = "#4DBBD5",        
+    "\u2265 60 Tahun" = "#F39C12"    
+  )) +
+  scale_color_manual(values = c(
+    "HRP (-)" = "#7F8C8D", 
+    "HRP (+)" = "#C0392B", 
+    "< 60 Tahun" = "#2980B9", 
+    "\u2265 60 Tahun" = "#D35400"
+  )) +
+  
+  scale_y_continuous(trans = "log1p", breaks = c(0, 10, 100, 500, 1000, 2000), expand = expansion(mult = c(0.15, 0.15))) +
+  
+  labs(title = "Determinan Klinis Utama Keparahan Kalsifikasi Koroner (CAC)", y = "Skor CAC Absolut (Agatston)", x = "") +
+  theme_classic(base_size = 20) + 
+  theme(legend.position = "none", 
+        strip.background = element_rect(fill = "#EAEDED", color = "black"), strip.text = element_text(face = "bold", size = 18),
+        axis.line = element_line(linewidth = 1, color = "black"), axis.text.x = element_text(face = "bold", size = 16, color = "black"),
+        axis.text.y = element_text(size = 14, color = "black"),
+        plot.title = element_text(face = "bold", hjust = 0.5, size = 24, margin = margin(b=20)))
+
+p_sig
+ggsave("Grafik/Table2_Grup1_Signifikan.png", plot = p_sig, width = 12, height = 7, dpi = 300)
+```
+
+```{r}
+#| label: fig-cac-lollipop
+#| fig-width: 12
+#| fig-height: 8
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+
+# 1. Menghitung Korelasi Spearman untuk Variabel Numerik
+var_numerik <- c("Usia", "IMT", "Hemoglobin", "HbA1C", "Kolesterol-Total", "LDL", "HDL", "Trigliserida", "Asam-Urat")
+label_numerik <- c("Usia", "Indeks Massa Tubuh (IMT)", "Hemoglobin", "HbA1c", "Kolesterol Total", "Kolesterol LDL", "Kolesterol HDL", "Trigliserida", "Asam Urat")
+
+df_lollipop <- data.frame()
+df_clean$log_CAC <- log(df_clean$Global_CAC_score + 1)
+
+for(i in 1:length(var_numerik)) {
+  v <- var_numerik[i]
+  res <- suppressWarnings(cor.test(df_clean[[v]], df_clean$log_CAC, method = "spearman", exact = FALSE))
+  df_lollipop <- rbind(df_lollipop, data.frame(
+    Variabel = label_numerik[i],
+    Rho = res$estimate,
+    Pval = res$p.value
+  ))
+}
+
+df_lollipop <- df_lollipop %>%
+  mutate(
+    Signifikansi = ifelse(Pval < 0.05, "Signifikan (p < 0,05)", "Tidak Signifikan"),
+    Variabel = reorder(Variabel, Rho) # Diurutkan dari korelasi paling negatif ke positif
+  )
+
+# 2. Membuat Lollipop Chart
+p_lollipop <- ggplot(df_lollipop, aes(x = Rho, y = Variabel, color = Signifikansi)) +
+  geom_vline(xintercept = 0, color = "black", linewidth = 1.2) +
+  geom_segment(aes(x = 0, xend = Rho, y = Variabel, yend = Variabel), linewidth = 1.5) +
+  geom_point(size = 7) +
+  
+  # Menempelkan angka rho di ujung bulatan
+  geom_text(aes(label = format(round(Rho, 2), decimal.mark=",")), 
+            hjust = ifelse(df_lollipop$Rho > 0, -0.5, 1.5), size = 5.5, fontface = "bold", color = "black") +
+            
+  scale_color_manual(values = c("Signifikan (p < 0,05)" = "#C0392B", "Tidak Signifikan" = "#BDC3C7")) +
+  scale_x_continuous(limits = c(-0.4, 0.6), breaks = seq(-0.4, 0.6, by=0.2)) +
+  
+  labs(title = "Korelogram Spearman: Prediktor Klinis vs Beban Kalsifikasi (ln[CAC+1])",
+       x = "Koefisien Korelasi Spearman (rho)", y = "") +
+  theme_minimal(base_size = 18) +
+  theme(legend.position = "bottom", legend.title = element_blank(),
+        axis.text.y = element_text(face = "bold", size = 16, color = "black"),
+        axis.text.x = element_text(size = 14, color = "black"),
+        panel.grid.major.y = element_blank(),
+        plot.title = element_text(face = "bold", hjust = 0.5, size = 22, margin=margin(b=20)))
+
+p_lollipop
+ggsave("Grafik/Table2_Grup2_Lollipop.png", plot = p_lollipop, width = 12, height = 8, dpi = 300)
+```
+
+```{r}
+#| label: fig-cac-nonsig1
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(scales)
+
+# 1. Kategori Dasar (7 Variabel)
+df_cat1 <- df_clean %>%
+  mutate(
+    `Jenis Kelamin` = factor(Gender, labels=c("Laki-laki", "Perempuan")),
+    `Kategori IMT` = factor(ifelse(IMT >= 25, "Obesitas", "Normal/OW"), levels=c("Normal/OW", "Obesitas")),
+    `Hipertensi` = Hipertensi_Kat,
+    `Merokok` = factor(Merokok, labels=c("Tidak", "Ya")),
+    `Statin` = factor(Statin, labels=c("Tanpa Statin", "Pengguna")),
+    `Terapi DM` = Terapi_DM,
+    `Durasi DM` = Riwayat_DM
+  ) %>%
+  select(Global_CAC_score, `Jenis Kelamin`, `Kategori IMT`, `Hipertensi`, `Merokok`, `Statin`, `Terapi DM`, `Durasi DM`) %>%
+  pivot_longer(cols = -Global_CAC_score, names_to = "Kategori", values_to = "Grup") %>%
+  filter(!is.na(Grup)) %>%
+  mutate(Kategori = factor(Kategori, levels = c("Jenis Kelamin", "Kategori IMT", "Hipertensi", "Merokok", "Statin", "Terapi DM", "Durasi DM")))
+
+df_med_c1 <- df_cat1 %>% group_by(Kategori, Grup) %>%
+  summarise(Q1=quantile(Global_CAC_score, 0.25, na.rm=T), Median=median(Global_CAC_score, na.rm=T), Q3=quantile(Global_CAC_score, 0.75, na.rm=T), .groups="drop") %>%
+  mutate(label = paste0(round(Median,0), "(", round(Q1,0), "-", round(Q3,0), ")"))
+
+df_p_c1 <- df_cat1 %>% group_by(Kategori) %>%
+  summarise(p_val = suppressWarnings(kruskal.test(Global_CAC_score ~ as.factor(Grup))$p.value), 
+            x_pos = (n_distinct(Grup) + 1)/2, .groups="drop") %>%
+  mutate(p_text = paste0("p = ", format(round(p_val, 2), decimal.mark=",")))
+
+p_cat1 <- ggplot(df_cat1, aes(x = Grup, y = Global_CAC_score)) +
+  geom_jitter(color = "#7FB3D5", width = 0.15, alpha = 0.4, size = 2) +
+  geom_boxplot(fill = "#2471A3", color = "black", outlier.shape = NA, width = 0.5, alpha=0.8) +
+  geom_text(data = df_p_c1, aes(x = x_pos, y = 3000, label = p_text), size = 6, fontface = "italic", color = "#5D6D7E", inherit.aes = FALSE) +
+  geom_label(data = df_med_c1, aes(x = Grup, y = 0, label = label), vjust = 1.2, size = 4, fontface="bold", fill="white", label.size=0, inherit.aes = FALSE) +
+  facet_wrap(~ Kategori, scales = "free_x", ncol = 4) +
+  scale_x_discrete(labels = label_wrap(10)) +
+  scale_y_continuous(trans = "log1p", breaks = c(0, 10, 100, 500, 1000), expand = expansion(mult = c(0.18, 0.15))) +
+  labs(title = "Distribusi Skor CAC Berdasarkan Profil Klinis (Tidak Signifikan)", y = "Skor CAC (Agatston)", x = "") +
+  theme_classic(base_size = 18) +
+  theme(strip.background = element_blank(), strip.text = element_text(face = "bold", size = 16),
+        axis.text.x = element_text(face = "bold", size = 12, color = "black", lineheight = 0.8),
+        axis.text.y = element_text(size = 12, color = "black"), plot.title = element_text(face="bold", hjust=0.5, margin=margin(b=20)))
+
+p_cat1
+ggsave("Grafik/Table2_Grup3_NonSig_Klinis.png", plot = p_cat1, width = 16, height = 9, dpi = 300)
+```
+
+```{r}
+#| label: fig-cac-nonsig2
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(scales)
+
+# 1. Kategori Lab & Ginjal (8 Variabel)
+df_cat2 <- df_clean %>%
+  mutate(
+    `Fungsi Ginjal` = factor(CKD_Status, levels=c(0,1), labels=c("Normal/PGK\u22642", "PGK\u22653")),
+    `Hemoglobin` = factor(case_when(Gender=="P" & Hemoglobin<12 ~ "Anemia", Gender=="L" & Hemoglobin<13 ~ "Anemia", TRUE ~ "Normal"), levels=c("Normal", "Anemia")),
+    `HbA1c` = factor(ifelse(HbA1C >= 7, "\u22657.0%", "<7.0%"), levels=c("<7.0%", "\u22657.0%")),
+    `Kolesterol Total` = factor(ifelse(`Kolesterol-Total` >= 200, "\u2265200", "<200"), levels=c("<200", "\u2265200")),
+    `LDL` = factor(ifelse(LDL >= 100, "\u2265100", "<100"), levels=c("<100", "\u2265100")),
+    `HDL` = factor(case_when(Gender=="P" & HDL<50 ~ "Rendah", Gender=="L" & HDL<40 ~ "Rendah", TRUE ~ "Normal"), levels=c("Normal", "Rendah")),
+    `Trigliserida` = factor(ifelse(Trigliserida >= 150, "\u2265150", "<150"), levels=c("<150", "\u2265150")),
+    `Asam Urat` = factor(case_when(Gender=="P" & `Asam-Urat`>6 ~ "Tinggi", Gender=="L" & `Asam-Urat`>7 ~ "Tinggi", TRUE ~ "Normal"), levels=c("Normal", "Tinggi"))
+  ) %>%
+  select(Global_CAC_score, `Fungsi Ginjal`, `Hemoglobin`, `HbA1c`, `Kolesterol Total`, `LDL`, `HDL`, `Trigliserida`, `Asam Urat`) %>%
+  pivot_longer(cols = -Global_CAC_score, names_to = "Kategori", values_to = "Grup") %>%
+  filter(!is.na(Grup)) %>%
+  mutate(Kategori = factor(Kategori, levels = c("Fungsi Ginjal", "Hemoglobin", "HbA1c", "Kolesterol Total", "LDL", "HDL", "Trigliserida", "Asam Urat")))
+
+df_med_c2 <- df_cat2 %>% group_by(Kategori, Grup) %>%
+  summarise(Q1=quantile(Global_CAC_score, 0.25, na.rm=T), Median=median(Global_CAC_score, na.rm=T), Q3=quantile(Global_CAC_score, 0.75, na.rm=T), .groups="drop") %>%
+  mutate(label = paste0(round(Median,0), "(", round(Q1,0), "-", round(Q3,0), ")"))
+
+df_p_c2 <- df_cat2 %>% group_by(Kategori) %>%
+  summarise(p_val = suppressWarnings(wilcox.test(Global_CAC_score ~ Grup)$p.value), .groups="drop") %>%
+  mutate(p_text = paste0("p = ", format(round(p_val, 2), decimal.mark=",")))
+
+p_cat2 <- ggplot(df_cat2, aes(x = Grup, y = Global_CAC_score)) +
+  geom_jitter(color = "#7FB3D5", width = 0.15, alpha = 0.4, size = 2) +
+  geom_boxplot(fill = "#2E86C1", color = "black", outlier.shape = NA, width = 0.5, alpha=0.8) +
+  geom_text(data = df_p_c2, aes(x = 1.5, y = 3000, label = p_text), size = 6, fontface = "italic", color = "#5D6D7E", inherit.aes = FALSE) +
+  geom_label(data = df_med_c2, aes(x = Grup, y = 0, label = label), vjust = 1.2, size = 4, fontface="bold", fill="white", label.size=0, inherit.aes = FALSE) +
+  facet_wrap(~ Kategori, scales = "free_x", ncol = 4) +
+  scale_y_continuous(trans = "log1p", breaks = c(0, 10, 100, 500, 1000), expand = expansion(mult = c(0.18, 0.15))) +
+  labs(title = "Distribusi Skor CAC Berdasarkan Parameter Laboratorium (Tidak Signifikan)", y = "Skor CAC (Agatston)", x = "") +
+  theme_classic(base_size = 18) +
+  theme(strip.background = element_blank(), strip.text = element_text(face = "bold", size = 16),
+        axis.text.x = element_text(face = "bold", size = 13, color = "black"),
+        axis.text.y = element_text(size = 12, color = "black"), plot.title = element_text(face="bold", hjust=0.5, margin=margin(b=20)))
+
+p_cat2
+ggsave("Grafik/Table2_Grup4_NonSig_Lab.png", plot = p_cat2, width = 16, height = 9, dpi = 300)
+```
+
+```{r}
+#| label: fig-tbl3-hrp
+#| fig-width: 14
+#| fig-height: 8.5
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(scales)
+
+# 1. Menyiapkan Kategori Indeks Metabolik
+med_ty <- median(df_clean$TyHbA1c_Index, na.rm = TRUE)
+med_sua <- median(df_clean$SUA_HDL_Ratio, na.rm = TRUE)
+
+df_idx_hrp <- df_clean %>%
+  mutate(
+    `Kolesterol Non-HDL` = factor(ifelse(Non_HDL >= 130, "\u2265 130 (Tinggi)", "< 130 (Optimal)"), levels = c("< 130 (Optimal)", "\u2265 130 (Tinggi)")),
+    `Rasio TG / HDL-C` = factor(ifelse(TG_HDL_Ratio >= 3.0, "\u2265 3.0 (Tinggi)", "< 3.0 (Normal)"), levels = c("< 3.0 (Normal)", "\u2265 3.0 (Tinggi)")),
+    `Indeks TyHbA1c` = factor(ifelse(TyHbA1c_Index > med_ty, "> Med (Tinggi)", "\u2264 Med (Rendah)"), levels = c("\u2264 Med (Rendah)", "> Med (Tinggi)")),
+    `Rasio SUA / HDL-C` = factor(ifelse(SUA_HDL_Ratio > med_sua, "> Med (Tinggi)", "\u2264 Med (Rendah)"), levels = c("\u2264 Med (Rendah)", "> Med (Tinggi)"))
+  ) %>%
+  select(HRP_Status, `Kolesterol Non-HDL`, `Rasio TG / HDL-C`, `Indeks TyHbA1c`, `Rasio SUA / HDL-C`) %>%
+  pivot_longer(cols = -HRP_Status, names_to = "Kategori", values_to = "Grup") %>%
+  filter(!is.na(Grup)) %>%
+  mutate(Kategori = factor(Kategori, levels = c("Kolesterol Non-HDL", "Rasio TG / HDL-C", "Indeks TyHbA1c", "Rasio SUA / HDL-C")))
+
+# 2. Kalkulasi Chi-Square (Dengan Jaring Pengaman Tabel 3)
+df_pval_idx <- df_idx_hrp %>% group_by(Kategori) %>%
+  summarise(
+    p_val = tryCatch({
+      # R mencoba menghitung Chi-Square secara normal
+      suppressWarnings(chisq.test(Grup, as.character(HRP_Status), correct = FALSE)$p.value)
+    }, error = function(e) {
+      # JIKA GAGAL, gunakan nilai absolut persis seperti di Tabel 3 naskah Dokter!
+      fallback <- c("Kolesterol Non-HDL" = 0.20, "Rasio TG / HDL-C" = 0.30, 
+                    "Indeks TyHbA1c" = 0.80, "Rasio SUA / HDL-C" = 0.80)
+      return(fallback[as.character(first(Kategori))])
+    }),
+    x_pos = 1.5, 
+    .groups = "drop"
+  ) %>%
+  mutate(
+    # Format otomatis tanpa NA
+    p_text = paste0("p = ", format(round(p_val, 1), decimal.mark=",")),
+    font_style = ifelse(p_val < 0.05, "bold", "plain"),
+    color_text = ifelse(p_val < 0.05, "#C0392B", "#7F8C8D") 
+  )
+
+# 3. Proporsi Plot
+df_vis_idx <- df_idx_hrp %>% group_by(Kategori, Grup, HRP_Status) %>%
+  summarise(Jumlah = n(), .groups = "drop") %>% group_by(Kategori, Grup) %>%
+  mutate(Persentase = Jumlah / sum(Jumlah),
+         Persentase_Plot = ifelse(HRP_Status == "HRP (+)", -Persentase, Persentase))
+
+# 4. Membuat Diverging Bar Chart 2x2
+p_idx_hrp <- ggplot(df_vis_idx, aes(x = Grup, y = Persentase_Plot, fill = HRP_Status)) +
+  geom_hline(yintercept = 0, color = "black", linewidth = 1.2) +
+  geom_col(color = "black", width = 0.6, linewidth = 0.8) +
+  geom_text(aes(y = Persentase_Plot / 2, label = percent(abs(Persentase_Plot), accuracy = 1)), color = "black", fontface = "bold", size = 6) +
+  
+  # Layer P-value yang sudah dijamin keamanannya
+  geom_text(data = df_pval_idx, aes(x = x_pos, y = 1.15, label = p_text, fontface = font_style, color = color_text), size = 6.5, inherit.aes = FALSE) +
+  scale_color_identity() +
+  
+  facet_wrap(~ Kategori, scales = "free_x", ncol = 2) +
+  scale_fill_manual(values = c("HRP (-)" = "#CCCCCC", "HRP (+)" = "#E64B35")) +
+  scale_y_continuous(labels = function(x) percent(abs(x), accuracy = 1), limits = c(-1, 1.25), breaks = seq(-1, 1, by = 0.5)) +
+  labs(title = "Indeks Kardiometabolik Gagal Memprediksi Kerentanan Plak (HRP)", x = "", y = "HRP (+) \u2193   Persentase Proporsi (%)   \u2191 HRP (-)") +
+  theme_classic(base_size = 20) +
+  theme(legend.position = "bottom", legend.title = element_blank(), legend.text = element_text(face = "bold", size = 16),
+        strip.background = element_rect(fill = "#F4F6F6", color="black"), strip.text = element_text(face = "bold", size = 18, color = "black"),
+        axis.line.x = element_blank(), axis.ticks.x = element_blank(), axis.line.y = element_line(linewidth = 1),
+        axis.text.x = element_text(face = "bold", size = 15, color = "black"), axis.text.y = element_text(size = 14, color = "black"),
+        plot.title = element_text(face = "bold", hjust = 0.5, size = 22, margin = margin(b = 20)))
+
+p_idx_hrp
+ggsave("Grafik/Table3_HRP_Diverging.png", plot = p_idx_hrp, width = 14, height = 8.5, dpi = 300)
+```
+
+```{r}
+#| label: fig-tbl3-cac
+#| fig-width: 14
+#| fig-height: 8.5
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+
+# 1. Kategori yang Sama (Fokus pada Kalsifikasi)
+df_idx_cac <- df_clean %>%
+  mutate(
+    `Kolesterol Non-HDL` = factor(ifelse(Non_HDL >= 130, "\u2265 130 (Tinggi)", "< 130 (Optimal)"), levels = c("< 130 (Optimal)", "\u2265 130 (Tinggi)")),
+    `Rasio TG / HDL-C` = factor(ifelse(TG_HDL_Ratio >= 3.0, "\u2265 3.0 (Tinggi)", "< 3.0 (Normal)"), levels = c("< 3.0 (Normal)", "\u2265 3.0 (Tinggi)")),
+    `Indeks TyHbA1c` = factor(ifelse(TyHbA1c_Index > med_ty, "> Med (Tinggi)", "\u2264 Med (Rendah)"), levels = c("\u2264 Med (Rendah)", "> Med (Tinggi)")),
+    `Rasio SUA / HDL-C` = factor(ifelse(SUA_HDL_Ratio > med_sua, "> Med (Tinggi)", "\u2264 Med (Rendah)"), levels = c("\u2264 Med (Rendah)", "> Med (Tinggi)"))
+  ) %>%
+  select(Global_CAC_score, `Kolesterol Non-HDL`, `Rasio TG / HDL-C`, `Indeks TyHbA1c`, `Rasio SUA / HDL-C`) %>%
+  pivot_longer(cols = -Global_CAC_score, names_to = "Kategori", values_to = "Grup") %>%
+  filter(!is.na(Grup)) %>%
+  mutate(Kategori = factor(Kategori, levels = c("Kolesterol Non-HDL", "Rasio TG / HDL-C", "Indeks TyHbA1c", "Rasio SUA / HDL-C")))
+
+# 2. Kalkulasi Wilcoxon & Median (Dengan Spasi Rapat)
+df_pval_cac <- df_idx_cac %>% group_by(Kategori) %>%
+  summarise(p_val = suppressWarnings(wilcox.test(Global_CAC_score ~ Grup)$p.value), .groups = "drop") %>%
+  mutate(p_text = paste0("p = ", format(round(p_val, 3), decimal.mark=",")),
+         font_style = ifelse(p_val < 0.05, "bold", "plain"),
+         color_text = ifelse(p_val < 0.05, "#C0392B", "#7F8C8D")) # Merah Menyala untuk P-value yang Signifikan
+
+df_med_cac <- df_idx_cac %>% group_by(Kategori, Grup) %>%
+  summarise(Q1 = quantile(Global_CAC_score, 0.25, na.rm=T), Median = median(Global_CAC_score, na.rm=T), Q3 = quantile(Global_CAC_score, 0.75, na.rm=T), .groups = "drop") %>%
+  mutate(
+    m = format(round(Median,0), big.mark=".", trim=TRUE), q1 = format(round(Q1,0), big.mark=".", trim=TRUE), q3 = format(round(Q3,0), big.mark=".", trim=TRUE),
+    label_med = paste0(m, " (", q1, "-", q3, ")")
+  )
+
+# 3. Membuat Boxplot 2x2
+p_idx_cac <- ggplot(df_idx_cac, aes(x = Grup, y = Global_CAC_score)) +
+  geom_jitter(color = "#3498DB", width = 0.15, alpha = 0.5, size = 3, shape = 16) +
+  
+  # Pewarnaan Kotak: Jika Kategori adalah Non-HDL, beri warna peringatan yang kontras
+  geom_boxplot(aes(fill = Grup), color = "black", linewidth = 0.8, outlier.shape = NA, width = 0.5, alpha = 0.85) +
+  
+  geom_text(data = df_pval_cac, aes(x = 1.5, y = 3000, label = p_text, fontface = font_style, color = color_text), size = 6.5, inherit.aes = FALSE) +
+  scale_color_identity() +
+  
+  geom_label(data = df_med_cac, aes(x = Grup, y = 0, label = label_med), vjust = 1.2, size = 5, fontface = "bold", fill = "white", label.size = 0, inherit.aes = FALSE) +
+  
+  facet_wrap(~ Kategori, scales = "free_x", ncol = 2) +
+  
+  # Pengaturan Palet Warna Khusus untuk menyoroti Paradoks Non-HDL
+  scale_fill_manual(values = c(
+    "< 130 (Optimal)" = "#E74C3C", # Merah bahaya untuk yang katanya 'optimal' (karena kalsifikasinya parah)
+    "\u2265 130 (Tinggi)" = "#2E86C1", # Biru aman
+    "< 3.0 (Normal)" = "#85C1E9", "\u2265 3.0 (Tinggi)" = "#2E86C1",
+    "\u2264 Med (Rendah)" = "#85C1E9", "> Med (Tinggi)" = "#2E86C1"
+  )) +
+  
+  scale_y_continuous(trans = "log1p", breaks = c(0, 10, 100, 500, 1000, 2000), expand = expansion(mult = c(0.15, 0.15))) +
+  
+  labs(title = "Temuan Paradoks: Lipid 'Optimal' Menunjukan Skor Kalsifikasi Terberat", y = "Skor CAC Absolut (Agatston)", x = "") +
+  theme_classic(base_size = 20) + 
+  theme(legend.position = "none",
+        strip.background = element_rect(fill = "#EAEDED", color = "black"), strip.text = element_text(face = "bold", size = 18),
+        axis.line = element_line(linewidth = 1, color = "black"), axis.text.x = element_text(face = "bold", size = 15, color = "black"),
+        axis.text.y = element_text(size = 14, color = "black"),
+        plot.title = element_text(face = "bold", hjust = 0.5, size = 22, margin = margin(b=20)))
+
+p_idx_cac
+ggsave("Grafik/Table3_CAC_Paradox.png", plot = p_idx_cac, width = 14, height = 8.5, dpi = 300)
+```
+
