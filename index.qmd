@@ -1337,6 +1337,284 @@ df_csv <- df_clean %>%
 write.csv(df_csv, "Data_CTCA_Kardiometabolik.csv", row.names = FALSE)
 ```
 
+======================
+
+```{r}
+#| label: fig-kerangka-konsep-final
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+
+p_konsep <- ggplot() +
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100)) +
+  
+  # ==========================================
+  # 1. KOTAK VARIABEL INDEPENDEN (KIRI)
+  # Border bawah ditarik ke y=34, teks digeser ke atas
+  # ==========================================
+  annotate("rect", xmin = 6, xmax = 36, ymin = 33, ymax = 84, fill = "#D4D6C8", alpha = 0.5) +
+  annotate("rect", xmin = 5, xmax = 35, ymin = 34, ymax = 85, fill = "#F9F9F6", color = "#52796F", linewidth = 1.5) +
+  annotate("rect", xmin = 5, xmax = 35, ymin = 73, ymax = 85, fill = "#52796F", color = "#52796F") +
+  annotate("text", x = 20, y = 79, label = "VARIABEL INDEPENDEN\n(Prediktor Kardiometabolik)", 
+           color = "white", fontface = "bold", size = 5.2, lineheight = 1.1) +
+  
+  # Teks dinaikkan agar padding bawah sangat lega
+  annotate("text", x = 6.5, y = 69, label = "Profil Lipid Konvensional:", fontface = "bold", color = "#2F3E46", hjust = 0, size = 5.5) +
+  annotate("text", x = 8, y = 63.5, label = "\u2022 Kolesterol Non-HDL", color = "#4F5D66", hjust = 0, size = 5.5) +
+  annotate("text", x = 6.5, y = 55.5, label = "Indeks Novel:", fontface = "bold", color = "#2F3E46", hjust = 0, size = 5.5) +
+  annotate("text", x = 8, y = 50, label = "\u2022 Rasio TG / HDL-C", color = "#4F5D66", hjust = 0, size = 5.5) +
+  annotate("text", x = 8, y = 45, label = "\u2022 Indeks TyHbA1c", color = "#4F5D66", hjust = 0, size = 5.5) +
+  annotate("text", x = 8, y = 40, label = "\u2022 Rasio SUA / HDL-C", color = "#4F5D66", hjust = 0, size = 5.5) +
+
+
+  # ==========================================
+  # 2. KOTAK VARIABEL DEPENDEN (KANAN)
+  # Border bawah ditarik ke y=39, teks digeser ke atas
+  # ==========================================
+  annotate("rect", xmin = 66, xmax = 96, ymin = 38, ymax = 79, fill = "#D4D6C8", alpha = 0.5) +
+  annotate("rect", xmin = 65, xmax = 95, ymin = 39, ymax = 80, fill = "#F9F9F6", color = "#C06E52", linewidth = 1.5) +
+  annotate("rect", xmin = 65, xmax = 95, ymin = 68, ymax = 80, fill = "#C06E52", color = "#C06E52") +
+  annotate("text", x = 80, y = 74, label = "VARIABEL DEPENDEN\n(Karakteristik Plak Koroner)", 
+           color = "white", fontface = "bold", size = 5.2, lineheight = 1.1) +
+  
+  annotate("text", x = 66.5, y = 64, label = "Beban Kalsifikasi:", fontface = "bold", color = "#2F3E46", hjust = 0, size = 5.5) +
+  annotate("text", x = 68, y = 58.5, label = "\u2022 Skor CAC", color = "#4F5D66", hjust = 0, size = 5.5) +
+  annotate("text", x = 66.5, y = 50.5, label = "Karakteristik Plak:", fontface = "bold", color = "#2F3E46", hjust = 0, size = 5.5) +
+  annotate("text", x = 68, y = 45, label = "\u2022 Status HRP (High-Risk Plaque)", color = "#4F5D66", hjust = 0, size = 5.5) +
+
+
+  # ==========================================
+  # 3. KOTAK VARIABEL PERANCU (BAWAH TENGAH)
+  # ==========================================
+  annotate("rect", xmin = 34, xmax = 66, ymin = 4, ymax = 31, fill = "#D4D6C8", alpha = 0.5) +
+  annotate("rect", xmin = 33, xmax = 65, ymin = 5, ymax = 32, fill = "#F9F9F6", color = "#5E8C94", linewidth = 1.5) +
+  annotate("rect", xmin = 33, xmax = 65, ymin = 23, ymax = 32, fill = "#5E8C94", color = "#5E8C94") +
+  annotate("text", x = 49, y = 27.5, label = "VARIABEL PERANCU (Kovariat)", 
+           color = "white", fontface = "bold", size = 5.2, lineheight = 1.1) +
+  
+  annotate("text", x = 36, y = 18, label = "\u2022 Usia & Jenis Kelamin", color = "#4F5D66", fontface = "bold", hjust = 0, size = 5.2) +
+  annotate("text", x = 36, y = 13, label = "\u2022 Durasi Diabetes Mellitus", color = "#4F5D66", fontface = "bold", hjust = 0, size = 5.2) +
+  annotate("text", x = 36, y = 8, label = "\u2022 Terapi Statin & Obat Antidiabetik", color = "#4F5D66", fontface = "bold", hjust = 0, size = 5.2) +
+
+
+  # ==========================================
+  # 4. PANAH PENGHUBUNG (ARROWS)
+  # Disesuaikan agar presisi di sumbu tengah kotak
+  # ==========================================
+  annotate("segment", x = 35.5, y = 59.5, xend = 64, yend = 59.5, 
+           linewidth = 1.5, color = "#2F3E46", arrow = arrow(type = "closed", length = unit(0.4, "cm"))) +
+  annotate("label", x = 50, y = 63.5, label = "Korelasi", fontface = "bold", size = 5.5, color = "#2F3E46", fill = "white", label.size = 0) +
+  
+  annotate("segment", x = 49, y = 32.5, xend = 49, yend = 58.5, 
+           linewidth = 1.5, linetype = "dashed", color = "#5E8C94", arrow = arrow(type = "closed", length = unit(0.3, "cm"))) +
+  annotate("label", x = 49, y = 45, label = "Kontrol\nMultivariat", fontface = "italic", size = 4.5, color = "#5E8C94", fill = "white", label.size = 0, lineheight = 1.1) +
+
+
+  # ==========================================
+  # 5. JUDUL & TEMA KANVAS
+  # ==========================================
+  labs(
+    title = "Kerangka Konsep Penelitian",
+    subtitle = "Memetakan hubungan parameter kardiometabolik novel terhadap luaran kalsifikasi dengan mengontrol variabel klinis."
+  ) +
+  
+  theme_void() +
+  theme(
+    plot.background = element_rect(fill = "#FFFFFF", color = NA),
+    plot.title = element_text(face = "bold", size = 28, color = "#2F3E46", hjust = 0.5, margin = margin(t = 20, b = 10)),
+    plot.subtitle = element_text(face = "italic", size = 18, color = "#6A7F62", hjust = 0.5, margin = margin(b = 20)),
+    plot.margin = margin(t = 10, r = 10, b = 10, l = 10)
+  )
+
+p_konsep
+
+ggsave("Grafik/Kerangka_Konsep_Penelitian_16x9.png", plot = p_konsep, width = 16, height = 9, dpi = 300)
+```
+
+
+```{r}
+#| label: fig-method-cutoff
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(patchwork)
+
+# 1. Menyiapkan Data TyHbA1c dan SUA/HDL
+df_cutoff <- df_clean %>%
+  mutate(
+    `Indeks TyHbA1c` = log(Trigliserida * HbA1C),
+    `Rasio SUA / HDL-C` = `Asam-Urat` / HDL
+  ) %>%
+  select(`Indeks TyHbA1c`, `Rasio SUA / HDL-C`) %>%
+  pivot_longer(cols = everything(), names_to = "Indeks", values_to = "Nilai") %>%
+  filter(!is.na(Nilai))
+
+# 2. Menghitung Nilai Median untuk Garis Cut-off
+df_median <- df_cutoff %>%
+  group_by(Indeks) %>%
+  summarise(Nilai_Median = median(Nilai, na.rm = TRUE), .groups = "drop")
+
+# 3. Membuat Density Plot dengan Garis Potong (Cut-off) Median
+p_cutoff <- ggplot(df_cutoff, aes(x = Nilai, fill = Indeks)) +
+  # Kurva Distribusi
+  geom_density(alpha = 0.6, color = "black", linewidth = 0.8) +
+  # Garis Median (Cut-off)
+  geom_vline(data = df_median, aes(xintercept = Nilai_Median), 
+             color = "#C0392B", linetype = "dashed", linewidth = 1.5) +
+  # Teks Label Median
+  geom_label(data = df_median, aes(x = Nilai_Median, y = 0, label = sprintf("Cut-off Median:\n%.2f", Nilai_Median)), 
+             vjust = -0.5, hjust = -0.1, fill = "#F9E79F", color = "black", fontface = "bold", size = 5) +
+  # Membagi menjadi 2 panel kiri-kanan
+  facet_wrap(~ Indeks, scales = "free") +
+  # Palet Warna Natural
+  scale_fill_manual(values = c("Indeks TyHbA1c" = "#5DADE2", "Rasio SUA / HDL-C" = "#48C9B0")) +
+  
+  labs(
+    title = "Justifikasi Penentuan Cut-Off Indeks Kardiometabolik Novel",
+    subtitle = "Karena belum ada konsensus baku, batas tinggi/rendah ditentukan menggunakan nilai median distribusi kohort pasien evaluasi.",
+    x = "Nilai Indeks Kardiometabolik",
+    y = "Kepadatan Distribusi (Density)"
+  ) +
+  
+  theme_classic(base_size = 18) +
+  theme(
+    legend.position = "none",
+    plot.title = element_text(face = "bold", size = 24, hjust = 0.5, margin = margin(b = 10)),
+    plot.subtitle = element_text(face = "italic", size = 16, color = "#5D6D7E", hjust = 0.5, margin = margin(b = 20)),
+    
+    strip.background = element_rect(fill = "#2C3E50", color = "black"),
+    strip.text = element_text(face = "bold", size = 16, color = "white"),
+    
+    axis.line = element_line(linewidth = 1.2),
+    axis.title.x = element_text(face = "bold", margin = margin(t = 15)),
+    axis.title.y = element_text(face = "bold", margin = margin(r = 15))
+  )
+
+p_cutoff
+
+ggsave("Grafik/Metode_Visualisasi_CutOff_16x9.png", plot = p_cutoff, width = 16, height = 9, dpi = 300)
+```
+
+
+```{r}
+#| label: fig-infografis-klinis-6panel
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(cowplot)
+library(patchwork)
+
+# =======================================================
+# 1. FUNGSI: DONUT TUNGGAL
+# =======================================================
+make_donut_single <- function(perc, color_main) {
+  df <- data.frame(
+    ymax = c(100, perc),
+    ymin = c(perc, 0),
+    category = c("Miss", "Hit")
+  )
+  
+  ggplot(df) +
+    geom_rect(aes(ymin = ymin, ymax = ymax, xmax = 4, xmin = 2.8, fill = category)) +
+    coord_polar(theta = "y", start = 0) +
+    scale_fill_manual(values = c("Hit" = color_main, "Miss" = "#E8E9E1")) +
+    annotate("text", x = 0.5, y = 0, label = paste0(gsub("\\.", ",", perc), "%"), 
+             size = 11, fontface = "bold", color = "#2F3E46") +
+    xlim(c(0, 4)) +
+    theme_void() +
+    theme(legend.position = "none")
+}
+
+# =======================================================
+# 2. FUNGSI: DONUT MULTI-KATEGORI (Untuk Terapi DM)
+# =======================================================
+make_donut_multi <- function(df_data, palette) {
+  df_data$ymax <- cumsum(df_data$perc)
+  df_data$ymin <- c(0, head(df_data$ymax, n = -1))
+  
+  ggplot(df_data) +
+    geom_rect(aes(ymin = ymin, ymax = ymax, xmax = 4, xmin = 2.8, fill = category), color = "white", linewidth = 0.8) +
+    coord_polar(theta = "y", start = 0) +
+    scale_fill_manual(values = palette) +
+    annotate("text", x = 0.5, y = 0, label = "Proporsi\nMerata", 
+             size = 6, fontface = "bold", color = "#2F3E46", lineheight = 1.1) +
+    xlim(c(0, 4)) +
+    theme_void() +
+    theme(legend.position = "none")
+}
+
+# =======================================================
+# 3. FUNGSI: PEMBUNGKUS KARTU (CARD WRAPPER)
+# =======================================================
+make_card <- function(plot_obj, title, desc1, desc2, color_desc1) {
+  ggdraw() +
+    annotate("rect", xmin = 0.02, xmax = 0.98, ymin = 0.03, ymax = 0.97, 
+             color = "#D4D6C8", fill = "#F9F9F6", linewidth = 1.2) +
+    draw_plot(plot_obj, x = 0.02, y = 0.05, width = 0.36, height = 0.9) +
+    draw_text(title, x = 0.42, y = 0.78, fontface = "bold", size = 18, hjust = 0, color = "#2F3E46") +
+    draw_text(desc1, x = 0.42, y = 0.55, fontface = "bold", size = 14, hjust = 0, color = color_desc1) +
+    draw_text(desc2, x = 0.42, y = 0.35, size = 13, hjust = 0, lineheight = 1.3, color = "#4F5D66") +
+    theme(plot.background = element_rect(fill = "#FFFFFF", color = NA))
+}
+
+# =======================================================
+# 4. MENYUSUN 6 KARTU (Alur: Siapa -> Berapa Lama -> Terapi -> Hasil Jantung)
+# =======================================================
+# 1. Jenis Kelamin
+card_gender <- make_card(make_donut_single(65, "#52796F"), "Jenis Kelamin", "Mayoritas Laki-laki.", "Mendominasi dari total 52\nsubjek evaluasi penelitian.", "#52796F")
+
+# 2. Kategori Usia (Baru) - Silakan ganti 61.5 dengan data asli proporsi Lansia Dokter
+card_age <- make_card(make_donut_single(61.5, "#D6A268"), "Kategori Usia", "Mayoritas Lansia.", "Sebagian besar pasien berusia\n\u2265 60 tahun (Median 63 Thn).", "#D6A268")
+
+# 3. Durasi Penyakit
+card_dur <- make_card(make_donut_single(69.2, "#84A59D"), "Durasi Penyakit", "DM Durasi Lama.", "Sisa 30,8% merupakan pasien\nyang baru terdiagnosis DM.", "#84A59D")
+
+# 4. Terapi DM
+df_tx <- data.frame(category = c("Oral", "Insulin", "None"), perc = c(32.7, 32.7, 34.6))
+pal_tx <- c("Oral" = "#E9C46A", "Insulin" = "#F4A261", "None" = "#C5C7C4")
+card_tx <- make_card(make_donut_multi(df_tx, pal_tx), "Sebaran Terapi DM", "Distribusi 3 Kelompok:", "OAD (32,7%), Insulin (32,7%), dan\nTanpa medikamentosa (34,6%).", "#8C7B65")
+
+# 5. Status Anatomi CTCA
+card_hrp <- make_card(make_donut_single(71.2, "#C06E52"), "Temuan CTCA", "Positif HRP.", "Plak berisiko tinggi sangat\nmendominasi kohort pasien.", "#C06E52")
+
+# 6. Intervensi Statin
+card_statin <- make_card(make_donut_single(71.2, "#5E8C94"), "Intervensi Statin", "Telah Menggunakan Statin.", "Mayoritas subjek telah memiliki\nriwayat cardiac events.", "#5E8C94")
+
+
+# =======================================================
+# 5. PENGGABUNGAN MATEMATIS (GRID 2x3 PENUH)
+# =======================================================
+row1 <- card_gender | card_age | card_dur
+row2 <- card_tx | card_hrp | card_statin
+
+final_infographic <- (row1 / row2) +
+  plot_annotation(
+    title = "Profil Kohort Klinis: Karakteristik 52 Pasien Sampel",
+    subtitle = "Ringkasan sebaran demografi, profil pengobatan antidiabetik, dan plak risiko tinggi (HRP).",
+    theme = theme(
+      plot.title = element_text(face = "bold", size = 26, color = "#2F3E46", hjust = 0.5, margin = margin(b = 8, t = 5)),
+      plot.subtitle = element_text(face = "italic", size = 16, color = "#6A7F62", hjust = 0.5, margin = margin(b = 25)),
+      plot.background = element_rect(fill = "#FFFFFF", color = NA)
+    )
+  )
+
+# Eksekusi plot
+final_infographic
+
+ggsave("Grafik/Gambar_Dashboard_Nature_6Panel_16x9.png", plot = final_infographic, width = 16, height = 9, dpi = 300)
+```
+
 
 ```{r}
 #| label: fig-summary-slide
@@ -2947,6 +3225,150 @@ ggsave("Grafik/Table5_Karakteristik_NonSig_Diverging_PPT.png", plot = p_divergin
 ```
 
 ```{r}
+#| label: fig-stratifikasi-sua-hdl
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(patchwork)
+library(scales)
+
+# ==============================================================================
+# 1. PERSIAPAN DATA UNTUK BAR PLOT (Sesuai persis dengan angka Tabel 9)
+# ==============================================================================
+# Data Kategori Usia (p = 0.044)
+df_bar_usia <- data.frame(
+  SUA_HDL = factor(rep(c("\u2264 Median\n(Rendah)", "> Median\n(Tinggi)"), each = 2), 
+                   levels = c("\u2264 Median\n(Rendah)", "> Median\n(Tinggi)")),
+  Kategori = factor(rep(c("\u2265 60 Tahun", "< 60 Tahun"), 2), 
+                    levels = c("\u2265 60 Tahun", "< 60 Tahun")),
+  Count = c(20, 6, 13, 13),
+  Prop = c(77, 23, 50, 50)
+)
+
+# Data Kategori IMT (p = 0.039)
+df_bar_imt <- data.frame(
+  SUA_HDL = factor(rep(c("\u2264 Median\n(Rendah)", "> Median\n(Tinggi)"), each = 2), 
+                   levels = c("\u2264 Median\n(Rendah)", "> Median\n(Tinggi)")),
+  Kategori = factor(rep(c("Normal/Overweight", "Obesitas"), 2), 
+                    levels = c("Normal/Overweight", "Obesitas")),
+  Count = c(12, 14, 5, 21),
+  Prop = c(46, 54, 19, 81)
+)
+
+# ==============================================================================
+# 2. PERSIAPAN DATA UNTUK BOXPLOT DARI DATASET ASLI (df_clean)
+# ==============================================================================
+# Memastikan variabel kategori tersedia untuk plotting sebaran CAC
+df_box <- df_clean %>%
+  mutate(
+    # Hitung Rasio SUA/HDL dan tentukan mediannya
+    SUA_HDL_Ratio = `Asam-Urat` / HDL,
+    SUA_HDL_Med = median(SUA_HDL_Ratio, na.rm = TRUE),
+    SUA_HDL_Kat = factor(ifelse(SUA_HDL_Ratio <= SUA_HDL_Med, 
+                                "\u2264 Median\n(Rendah)", "> Median\n(Tinggi)"),
+                         levels = c("\u2264 Median\n(Rendah)", "> Median\n(Tinggi)")),
+    
+    # Kategori Usia
+    Usia_Kat = factor(ifelse(Usia < 60, "< 60 Tahun", "\u2265 60 Tahun"),
+                      levels = c("\u2265 60 Tahun", "< 60 Tahun")),
+    
+    # Kategori IMT (Asumsi cutoff Obesitas Asia-Pasifik >= 25)
+    IMT_Kat = factor(ifelse(IMT >= 25, "Obesitas", "Normal/Overweight"),
+                     levels = c("Normal/Overweight", "Obesitas")),
+    
+    # Skor CAC untuk skala Log
+    CAC_Plot = Global_CAC_score + 1
+  ) %>% filter(!is.na(SUA_HDL_Kat))
+
+# ==============================================================================
+# 3. MEMBUAT GRAFIK INDIVIDUAL
+# ==============================================================================
+
+# Tema dasar agar konsisten
+custom_theme <- theme_classic(base_size = 12) +
+  theme(
+    plot.title = element_text(face = "bold", size = 13, hjust = 0.5),
+    axis.title = element_text(face = "bold"),
+    axis.text = element_text(color = "black", size = 11),
+    legend.position = "bottom",
+    legend.title = element_blank(),
+    legend.text = element_text(size = 11, face = "bold")
+  )
+
+# --- PANEL A: Bar Plot Usia ---
+p_bar_usia <- ggplot(df_bar_usia, aes(x = SUA_HDL, y = Prop, fill = Kategori)) +
+  geom_col(color = "black", width = 0.6, linewidth = 0.8) +
+  geom_text(aes(label = sprintf("%d Pasien\n(%d%%)", Count, Prop)), 
+            position = position_stack(vjust = 0.5), color = "white", fontface = "bold", size = 4) +
+  scale_fill_manual(values = c("\u2265 60 Tahun" = "#2C3E50", "< 60 Tahun" = "#3498DB")) +
+  scale_y_continuous(labels = function(x) paste0(x, "%")) +
+  annotate("label", x = 1.5, y = 105, label = "Signifikan, p = 0,044", 
+           color = "#2C3E50", fontface = "bold", fill = "#EAECEE", size = 4.5) +
+  labs(title = "A. Proporsi Kategori Usia Berdasarkan SUA/HDL-C", x = "Kategori Rasio SUA/HDL-C", y = "Proporsi Pasien (%)") +
+  coord_cartesian(ylim = c(0, 115)) +
+  custom_theme
+
+# --- PANEL B: Boxplot CAC Berdasarkan Usia ---
+p_box_usia <- ggplot(df_box, aes(x = SUA_HDL_Kat, y = CAC_Plot, fill = Usia_Kat)) +
+  geom_boxplot(alpha = 0.8, color = "black", linewidth = 0.7, outlier.shape = NA) +
+  geom_point(position = position_jitterdodge(jitter.width = 0.15), size = 1.5, alpha = 0.5) +
+  scale_fill_manual(values = c("\u2265 60 Tahun" = "#2C3E50", "< 60 Tahun" = "#3498DB")) +
+  scale_y_continuous(trans = "log10", breaks = c(1, 11, 101, 501, 1001, 2001), 
+                     labels = c("0", "10", "100", "500", "1000", "2000")) +
+  labs(title = "B. Sebaran Skor Kalsifikasi (Sub-grup Usia)", x = "Kategori Rasio SUA/HDL-C", y = "Skor CAC Absolut (Agatston)") +
+  custom_theme
+
+# --- PANEL C: Bar Plot IMT ---
+p_bar_imt <- ggplot(df_bar_imt, aes(x = SUA_HDL, y = Prop, fill = Kategori)) +
+  geom_col(color = "black", width = 0.6, linewidth = 0.8) +
+  geom_text(aes(label = sprintf("%d Pasien\n(%d%%)", Count, Prop)), 
+            position = position_stack(vjust = 0.5), color = "white", fontface = "bold", size = 4) +
+  scale_fill_manual(values = c("Normal/Overweight" = "#D68910", "Obesitas" = "#C0392B")) +
+  scale_y_continuous(labels = function(x) paste0(x, "%")) +
+  annotate("label", x = 1.5, y = 105, label = "Signifikan, p = 0,039", 
+           color = "#C0392B", fontface = "bold", fill = "#FADBD8", size = 4.5) +
+  labs(title = "C. Proporsi Kategori IMT Berdasarkan SUA/HDL-C", x = "Kategori Rasio SUA/HDL-C", y = "Proporsi Pasien (%)") +
+  coord_cartesian(ylim = c(0, 115)) +
+  custom_theme
+
+# --- PANEL D: Boxplot CAC Berdasarkan IMT ---
+p_box_imt <- ggplot(df_box, aes(x = SUA_HDL_Kat, y = CAC_Plot, fill = IMT_Kat)) +
+  geom_boxplot(alpha = 0.8, color = "black", linewidth = 0.7, outlier.shape = NA) +
+  geom_point(position = position_jitterdodge(jitter.width = 0.15), size = 1.5, alpha = 0.5) +
+  scale_fill_manual(values = c("Normal/Overweight" = "#D68910", "Obesitas" = "#C0392B")) +
+  scale_y_continuous(trans = "log10", breaks = c(1, 11, 101, 501, 1001, 2001), 
+                     labels = c("0", "10", "100", "500", "1000", "2000")) +
+  labs(title = "D. Sebaran Skor Kalsifikasi (Sub-grup IMT)", x = "Kategori Rasio SUA/HDL-C", y = "Skor CAC Absolut (Agatston)") +
+  custom_theme
+
+# ==============================================================================
+# 4. PENGGABUNGAN GRID (PATCHWORK 16:9)
+# ==============================================================================
+layout_final <- (p_bar_usia | p_box_usia) / (p_bar_imt | p_box_imt) +
+  plot_annotation(
+    title = "Analisis Stratifikasi Rasio SUA/HDL-C, Profil Klinis, dan Skor Kalsifikasi Koroner (Tabel 9)",
+    subtitle = "Peningkatan rasio SUA/HDL-C secara signifikan didominasi oleh pasien usia muda (< 60 Tahun) dan pasien obesitas.",
+    theme = theme(
+      plot.title = element_text(face = "bold", size = 20, hjust = 0.5, margin = margin(b = 5, t = 10)),
+      plot.subtitle = element_text(face = "italic", size = 15, color = "#5D6D7E", hjust = 0.5, margin = margin(b = 15)),
+      plot.background = element_rect(fill = "#FFFFFF", color = NA)
+    )
+  )
+
+# Tampilkan plot
+layout_final
+
+ggsave("Grafik/Gambar_Stratifikasi_SUA_HDL_16x9.png", plot = layout_final, width = 16, height = 10, dpi = 300)
+```
+
+
+
+```{r}
 #| label: fig-tbl6-forest
 #| fig-width: 14
 #| fig-height: 8
@@ -3445,5 +3867,441 @@ grid_layout <- wrap_plots(plots, ncol = 4) +
 grid_layout
 
 ggsave("Grafik/Gambar3_Korelasi_CustomGrid_16x9.png", plot = grid_layout, width = 16, height = 9, dpi = 300)
+```
+
+```{r}
+#| label: fig-statin-paradox-hrp
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+
+p_pembelaan <- ggplot() +
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100)) +
+  
+  # ==========================================
+  # 1. KARTU KIRI: LITERATUR LAMA (Ideal)
+  # Tema: Sage Green (Tenang, alamiah)
+  # ==========================================
+  # Bayangan & Latar Belakang Kartu
+  annotate("rect", xmin = 5, xmax = 48, ymin = 4, ymax = 79, fill = "#D4D6C8", alpha = 0.5) +
+  annotate("rect", xmin = 4, xmax = 47, ymin = 5, ymax = 80, fill = "#F9F9F6", color = "#84A59D", linewidth = 1.5) +
+  # Header Kartu Kiri
+  annotate("rect", xmin = 4, xmax = 47, ymin = 68, ymax = 80, fill = "#84A59D") +
+  annotate("text", x = 25.5, y = 74, label = "Kondisi Ideal (Literatur)\nStudi: Won (2018) & Jin (2020)", 
+           fontface = "bold", size = 6.5, color = "white", lineheight = 1.1) +
+  
+  # ==========================================
+  # 2. KARTU KANAN: STUDI SAAT INI (Real-World)
+  # Tema: Terracotta (Tingkat keparahan tinggi, intervensi)
+  # ==========================================
+  # Bayangan & Latar Belakang Kartu
+  annotate("rect", xmin = 55, xmax = 98, ymin = 4, ymax = 79, fill = "#D4D6C8", alpha = 0.5) +
+  annotate("rect", xmin = 54, xmax = 97, ymin = 5, ymax = 80, fill = "#F9F9F6", color = "#C06E52", linewidth = 1.5) +
+  # Header Kartu Kanan
+  annotate("rect", xmin = 54, xmax = 97, ymin = 68, ymax = 80, fill = "#C06E52") +
+  annotate("text", x = 75.5, y = 74, label = "Kondisi Real-World\nKohort Studi Saat Ini", 
+           fontface = "bold", size = 6.5, color = "white", lineheight = 1.1) +
+  
+  # ==========================================
+  # 3. LINGKARAN "VS" DI TENGAH
+  # ==========================================
+  annotate("point", x = 50.5, y = 42, size = 18, color = "white") +
+  annotate("point", x = 50.5, y = 42, size = 16, color = "#2F3E46") +
+  annotate("text", x = 50.5, y = 42, label = "VS", color = "white", fontface = "bold", size = 7) +
+
+  # ==========================================
+  # 4. KONTEN BARIS 1: PROFIL POPULASI
+  # ==========================================
+  annotate("text", x = 25.5, y = 63, label = "PROFIL POPULASI", fontface = "bold", color = "#84A59D", size = 5) +
+  annotate("text", x = 25.5, y = 57, label = "Individu Asimptomatik\n(Skrining Kesehatan Rutin)", fontface = "bold", color = "#2F3E46", size = 5.5, lineheight = 1.2) +
+  
+  annotate("text", x = 75.5, y = 63, label = "PROFIL POPULASI", fontface = "bold", color = "#C06E52", size = 5) +
+  annotate("text", x = 75.5, y = 57, label = "Pasien Rujukan Kardiologi\n(Kecurigaan Penyakit Jantung)", fontface = "bold", color = "#2F3E46", size = 5.5, lineheight = 1.2) +
+  
+  # Garis Pemisah Baris 1
+  annotate("segment", x = 6, y = 51, xend = 45, yend = 51, color = "#D4D6C8", linewidth = 1, linetype = "dashed") +
+  annotate("segment", x = 56, y = 51, xend = 95, yend = 51, color = "#D4D6C8", linewidth = 1, linetype = "dashed") +
+
+  # ==========================================
+  # 5. KONTEN BARIS 2: STATUS PENGGUNAAN OBAT (AKAR MASALAH)
+  # ==========================================
+  annotate("text", x = 25.5, y = 47, label = "STATUS MEDIKAMENTOSA", fontface = "bold", color = "#84A59D", size = 5) +
+  annotate("text", x = 25.5, y = 41, label = "Naif Statin (0%)", fontface = "bold", color = "#2F3E46", size = 6.5) +
+  
+  # Sorotan Khusus di Kanan (Highlight 71,2%)
+  annotate("rect", xmin = 57, xmax = 94, ymin = 38, ymax = 49, fill = "#FADBD8", color = "#C06E52", linewidth = 0.5) +
+  annotate("text", x = 75.5, y = 46, label = "STATUS MEDIKAMENTOSA", fontface = "bold", color = "#C06E52", size = 5) +
+  annotate("text", x = 75.5, y = 41, label = "Mayoritas Pengguna Statin (71,2%)", fontface = "bold", color = "#C0392B", size = 6) +
+  
+  # Garis Pemisah Baris 2
+  annotate("segment", x = 6, y = 35, xend = 45, yend = 35, color = "#D4D6C8", linewidth = 1, linetype = "dashed") +
+  annotate("segment", x = 56, y = 35, xend = 95, yend = 35, color = "#D4D6C8", linewidth = 1, linetype = "dashed") +
+
+  # ==========================================
+  # 6. KONTEN BARIS 3: PATOFISIOLOGI PLAK
+  # ==========================================
+  annotate("text", x = 25.5, y = 31, label = "PATOFISIOLOGI PLAK", fontface = "bold", color = "#84A59D", size = 5) +
+  annotate("text", x = 25.5, y = 25, label = "Berkembang secara alamiah\ntanpa intervensi farmakologis.", color = "#4F5D66", size = 5.5, lineheight = 1.2) +
+  
+  annotate("text", x = 75.5, y = 31, label = "PATOFISIOLOGI PLAK", fontface = "bold", color = "#C06E52", size = 5) +
+  annotate("text", x = 75.5, y = 25, label = "Mengalami stabilisasi & modifikasi\n(Efek pleiotropik Statin mengaburkan HRP).", color = "#4F5D66", size = 5.5, lineheight = 1.2) +
+
+  # Garis Pemisah Baris 3
+  annotate("segment", x = 6, y = 19, xend = 45, yend = 19, color = "#D4D6C8", linewidth = 1, linetype = "dashed") +
+  annotate("segment", x = 56, y = 19, xend = 95, yend = 19, color = "#D4D6C8", linewidth = 1, linetype = "dashed") +
+
+  # ==========================================
+  # 7. KONTEN BARIS 4: KESIMPULAN HASIL
+  # ==========================================
+  annotate("text", x = 25.5, y = 15, label = "KEMAMPUAN PREDIKSI HRP", fontface = "bold", color = "#84A59D", size = 5) +
+  annotate("text", x = 25.5, y = 10, label = "Signifikan & Kuat", fontface = "bold", color = "#27AE60", size = 6) +
+  
+  annotate("text", x = 75.5, y = 15, label = "KEMAMPUAN PREDIKSI HRP", fontface = "bold", color = "#C06E52", size = 5) +
+  annotate("text", x = 75.5, y = 10, label = "Gagal (Efek Prediksi Teredam)", fontface = "bold", color = "#C0392B", size = 6) +
+
+
+  # ==========================================
+  # 8. JUDUL & SUBJUDUL PRESENTASI (TEMA 16:9)
+  # ==========================================
+  labs(
+    title = "Diskrepansi Temuan HRP: Dampak Masifnya Penggunaan Statin",
+    subtitle = "Perbedaan profil kohort (Naif Statin vs. Real-World) menyebabkan gagalnya indeks novel dalam memprediksi status HRP."
+  ) +
+  
+  theme_void() +
+  theme(
+    plot.background = element_rect(fill = "#FFFFFF", color = NA),
+    plot.title = element_text(face = "bold", size = 26, color = "#2F3E46", hjust = 0.5, margin = margin(t = 15, b = 10)),
+    plot.subtitle = element_text(face = "italic", size = 16, color = "#6A7F62", hjust = 0.5, margin = margin(b = 20)),
+    plot.margin = margin(t = 10, r = 10, b = 10, l = 10)
+  )
+
+p_pembelaan
+
+ggsave("Grafik/Pembelaan_Argumen_HRP_16x9.png", plot = p_pembelaan, width = 16, height = 9, dpi = 300)
+```
+
+```{r}
+#| label: fig-komparasi-literatur-16x9
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+
+p_komparasi <- ggplot() +
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100)) +
+  
+  # ==========================================
+  # KARTU 1: WON (2018) - Kiri (Sage Green)
+  # ==========================================
+  annotate("rect", xmin = 2, xmax = 33, ymin = 5, ymax = 82, fill = "#F9F9F6", color = "#84A59D", linewidth = 1.5) +
+  annotate("rect", xmin = 2, xmax = 33, ymin = 68, ymax = 82, fill = "#84A59D") +
+  annotate("text", x = 17.5, y = 75, label = "Won et al. (2018)\n(Ideal / Asimptomatik)", fontface = "bold", size = 6, color = "white", lineheight = 1.1) +
+  
+  annotate("text", x = 17.5, y = 62, label = "POPULASI", fontface = "bold", color = "#84A59D", size = 4.5) +
+  annotate("text", x = 17.5, y = 56, label = "N = 2.560\nSubjek sehat berbasis komunitas\ntanpa riwayat CAD", fontface = "bold", color = "#2F3E46", size = 4.5, lineheight = 1.2) +
+  
+  annotate("text", x = 17.5, y = 46, label = "PENGGUNAAN STATIN", fontface = "bold", color = "#84A59D", size = 4.5) +
+  annotate("text", x = 17.5, y = 41, label = "Tidak Ada / Sangat Rendah\n(Populasi sehat skrining)", fontface = "bold", color = "#2F3E46", size = 4.5, lineheight = 1.2) +
+  
+  annotate("text", x = 17.5, y = 31, label = "FOKUS LUARAN (END-POINT)", fontface = "bold", color = "#84A59D", size = 4.5) +
+  annotate("text", x = 17.5, y = 26, label = "Kekakuan Arteri\n(Diukur melalui baPWV)", fontface = "bold", color = "#2F3E46", size = 4.5, lineheight = 1.2) +
+  
+  annotate("text", x = 17.5, y = 16, label = "HASIL PREDIKSI TyG", fontface = "bold", color = "#84A59D", size = 4.5) +
+  annotate("text", x = 17.5, y = 11, label = "Signifikan (p < 0,001)", fontface = "bold", color = "#27AE60", size = 6) +
+
+  # ==========================================
+  # KARTU 2: JIN (2018) - Tengah (Ocean Teal)
+  # ==========================================
+  annotate("rect", xmin = 34.5, xmax = 65.5, ymin = 5, ymax = 82, fill = "#F9F9F6", color = "#5E8C94", linewidth = 1.5) +
+  annotate("rect", xmin = 34.5, xmax = 65.5, ymin = 68, ymax = 82, fill = "#5E8C94") +
+  annotate("text", x = 50, y = 75, label = "Jin et al. (2018)\n(CAD Stabil / Kohort Masif)", fontface = "bold", size = 6, color = "white", lineheight = 1.1) +
+  
+  annotate("text", x = 50, y = 62, label = "POPULASI", fontface = "bold", color = "#5E8C94", size = 4.5) +
+  annotate("text", x = 50, y = 56, label = "N = 3.745\nPasien penyakit arteri koroner\n(CAD) stabil", fontface = "bold", color = "#2F3E46", size = 4.5, lineheight = 1.2) +
+  
+  annotate("text", x = 50, y = 46, label = "PENGGUNAAN STATIN", fontface = "bold", color = "#5E8C94", size = 4.5) +
+  annotate("text", x = 50, y = 41, label = "Tinggi (~74,7%)\nMenggunakan obat penurun lipid", fontface = "bold", color = "#2F3E46", size = 4.5, lineheight = 1.2) +
+  
+  annotate("text", x = 50, y = 31, label = "FOKUS LUARAN (END-POINT)", fontface = "bold", color = "#5E8C94", size = 4.5) +
+  annotate("text", x = 50, y = 26, label = "Kejadian Kardiovaskular Keras\n(Mortalitas, MI, Stroke)", fontface = "bold", color = "#2F3E46", size = 4.5, lineheight = 1.2) +
+  
+  annotate("text", x = 50, y = 16, label = "HASIL PREDIKSI TyG", fontface = "bold", color = "#5E8C94", size = 4.5) +
+  annotate("text", x = 50, y = 11, label = "Signifikan (p = 0,005)", fontface = "bold", color = "#27AE60", size = 6) +
+
+  # ==========================================
+  # KARTU 3: STUDI KITA - Kanan (Terracotta - Sorotan Utama)
+  # ==========================================
+  annotate("rect", xmin = 67, xmax = 98, ymin = 5, ymax = 82, fill = "#FDF2E9", color = "#C06E52", linewidth = 2) +
+  annotate("rect", xmin = 67, xmax = 98, ymin = 68, ymax = 82, fill = "#C06E52") +
+  annotate("text", x = 82.5, y = 75, label = "Kohort Saat Ini\n(Real-World / Anatomi HRP)", fontface = "bold", size = 6, color = "white", lineheight = 1.1) +
+  
+  annotate("text", x = 82.5, y = 62, label = "POPULASI", fontface = "bold", color = "#C06E52", size = 4.5) +
+  annotate("text", x = 82.5, y = 56, label = "N = 52\nPasien rujukan kardiologi\nberisiko tinggi", fontface = "bold", color = "#2F3E46", size = 4.5, lineheight = 1.2) +
+  
+  annotate("rect", xmin = 68, xmax = 97, ymin = 37, ymax = 48, fill = "#FADBD8", color = NA) +
+  annotate("text", x = 82.5, y = 46, label = "PENGGUNAAN STATIN", fontface = "bold", color = "#C06E52", size = 4.5) +
+  annotate("text", x = 82.5, y = 41, label = "Sangat Intensif (71,2%)\nMengaburkan patologi alamiah plak", fontface = "bold", color = "#C0392B", size = 4.5, lineheight = 1.2) +
+  
+  annotate("text", x = 82.5, y = 31, label = "FOKUS LUARAN (END-POINT)", fontface = "bold", color = "#C06E52", size = 4.5) +
+  annotate("text", x = 82.5, y = 26, label = "Morfologi Plak (Status HRP)\nPaling rentan dimodifikasi statin", fontface = "bold", color = "#2F3E46", size = 4.5, lineheight = 1.2) +
+  
+  annotate("text", x = 82.5, y = 16, label = "HASIL PREDIKSI", fontface = "bold", color = "#C06E52", size = 4.5) +
+  annotate("text", x = 82.5, y = 11, label = "Tidak Signifikan", fontface = "bold", color = "#C0392B", size = 6) +
+
+  # Garis Pemisah Horizontal Global
+  annotate("segment", x = 5, y = 50, xend = 95, yend = 50, color = "#D4D6C8", linewidth = 0.8, linetype = "dashed") +
+  annotate("segment", x = 5, y = 35, xend = 95, yend = 35, color = "#D4D6C8", linewidth = 0.8, linetype = "dashed") +
+  annotate("segment", x = 5, y = 20, xend = 95, yend = 20, color = "#D4D6C8", linewidth = 0.8, linetype = "dashed") +
+
+  # ==========================================
+  # JUDUL & TEMA
+  # ==========================================
+  labs(
+    title = "Diskrepansi Indeks Kardiometabolik: Perbedaan Karakteristik Kohort",
+    subtitle = "Modifikasi anatomi plak (HRP) akibat penggunaan statin pada sampel kecil mengaburkan signifikansi prediksi lipid awal."
+  ) +
+  
+  theme_void() +
+  theme(
+    plot.background = element_rect(fill = "#FFFFFF", color = NA),
+    plot.title = element_text(face = "bold", size = 26, color = "#2F3E46", hjust = 0.5, margin = margin(t = 20, b = 10)),
+    plot.subtitle = element_text(face = "italic", size = 16, color = "#6A7F62", hjust = 0.5, margin = margin(b = 25)),
+    plot.margin = margin(t = 5, r = 5, b = 5, l = 5)
+  )
+
+p_komparasi
+
+ggsave("Grafik/Komparasi_16x9.png", plot = p_komparasi, width = 16, height = 9, dpi = 300)
+```
+
+
+```{r}
+#| label: fig-ilustrasi-bias-farmakologis-final
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+library(dplyr)
+
+# ==============================================================================
+# 1. MEMBUAT DATA DUMMY KONSEPTUAL (Simulasi 10 Tahun)
+# ==============================================================================
+set.seed(123)
+waktu <- seq(-10, 0, by = 0.05) # Garis waktu dari 10 tahun lalu hingga saat ini (0)
+
+# A. Simulasi Fluktuasi Lipid & Efek Statin
+lipid <- 75 + 15 * sin(waktu * 1.5) + 10 * cos(waktu * 3.2) + 5 * rnorm(length(waktu))
+efek_statin <- ifelse(waktu > -1.5, (waktu + 1.5) * 40, 0)
+lipid <- lipid - efek_statin
+
+# B. Simulasi Fluktuasi Gula Darah & Efek OAD/Insulin
+gula <- 65 + 12 * cos(waktu * 1.1) + 12 * sin(waktu * 2.7) + 5 * rnorm(length(waktu))
+efek_dm <- ifelse(waktu > -1.5, (waktu + 1.5) * 30, 0)
+gula <- gula - efek_dm
+
+# C. Simulasi Progresi Kalsifikasi (CAC)
+cac <- 5 + 85 * ((waktu + 10) / 10)^3 
+
+df_konsep <- data.frame(waktu, lipid, gula, cac)
+
+# ==============================================================================
+# 2. MEMBANGUN GRAFIK KONSEPTUAL (STORYTELLING VISUAL)
+# ==============================================================================
+p_konsep <- ggplot(df_konsep, aes(x = waktu)) +
+  
+  # --- LATAR BELAKANG: AREA KALSIFIKASI ---
+  geom_area(aes(y = cac), fill = "#D4D6C8", alpha = 0.7) +
+  geom_line(aes(y = cac, color = "Beban Kalsifikasi Koroner (CAC)"), linewidth = 2) +
+  
+  # --- GARIS DEPAN: FLUKTUASI METABOLIK ---
+  geom_line(aes(y = lipid, color = "Profil Lipid (Kolesterol/TG)"), linewidth = 1.2, alpha = 0.85) +
+  geom_line(aes(y = gula, color = "Profil Glikemik (Gula Darah)"), linewidth = 1.2, alpha = 0.85) +
+  
+  # --- PENANDA TITIK INTERVENSI & EVALUASI ---
+  geom_vline(xintercept = -1.5, linetype = "dashed", color = "#C0392B", linewidth = 1.2) +
+  
+  # Tanda Silang (X) Raksasa di Titik CTCA (Waktu = 0)
+  annotate("point", x = 0, y = df_konsep$lipid[length(waktu)], shape = 4, size = 8, stroke = 3, color = "#5E8C94") +
+  annotate("point", x = 0, y = df_konsep$gula[length(waktu)], shape = 4, size = 8, stroke = 3, color = "#D68910") +
+  annotate("point", x = 0, y = df_konsep$cac[length(waktu)], shape = 4, size = 8, stroke = 3, color = "#C06E52") +
+
+  # ==============================================================================
+  # --- ANOTASI TEKS (DITARIK KE ATAS AGAR TIDAK NABRAK GARIS) ---
+  # ==============================================================================
+  # Zona Kiri (Y dinaikkan dari 105 ke 132)
+  annotate("text", x = -6, y = 132, label = "FASE PAPARAN TOKSIK ALAMIAH (BERTAHUN-TAHUN)", 
+           fontface = "bold", size = 5.5, color = "#2F3E46") +
+  annotate("text", x = -6, y = 124, label = "Fluktuasi lipid & glikemik yang liar perlahan merusak endotel,\nmemicu akumulasi kalsifikasi plak yang ireversibel.", 
+           fontface = "italic", size = 5, color = "#4F5D66", lineheight = 1.2) +
+  
+  # Zona Kanan Bias (Y dinaikkan ke 132)
+  annotate("text", x = -0.75, y = 132, label = "BIAS\nFARMAKOLOGIS", 
+           fontface = "bold", size = 5, color = "#C0392B", lineheight = 1.1) +
+  
+  # Label Tanda Silang CAC (Y dinaikkan ke 110)
+  annotate("label", x = -0.2, y = 110, label = "Skor CAC Aktual:\nTinggi & Menetap", 
+           fontface = "bold", size = 4.5, color = "#C06E52", fill = "white", hjust = 1) +
+  annotate("segment", x = -0.2, y = 110, xend = 0, yend = df_konsep$cac[length(waktu)] + 2, 
+           arrow = arrow(type = "closed", length = unit(0.2, "cm")), color = "#C06E52", linewidth = 1) +
+           
+  # Label Tanda Silang Lab (Sedikit digeser agar panahnya rapi)
+  annotate("label", x = -0.2, y = 20, label = "Nilai Lab Saat Ini:\nTampak 'Normal/Rendah'\nakibat intervensi Statin & OAD", 
+           fontface = "bold", size = 4.5, color = "#2F3E46", fill = "white", hjust = 1) +
+  annotate("segment", x = -0.2, y = 20, xend = 0, yend = df_konsep$lipid[length(waktu)] + 5, 
+           arrow = arrow(type = "closed", length = unit(0.2, "cm")), color = "#2F3E46", linewidth = 1) +
+
+  # --- SKALA & TEMA ---
+  scale_color_manual(values = c(
+    "Beban Kalsifikasi Koroner (CAC)" = "#C06E52", 
+    "Profil Lipid (Kolesterol/TG)" = "#5E8C94", 
+    "Profil Glikemik (Gula Darah)" = "#D68910"
+  )) +
+  scale_x_continuous(breaks = c(-10, -8, -6, -4, -2, -1.5, 0), 
+                     labels = c("-10 Thn", "-8 Thn", "-6 Thn", "-4 Thn", "-2 Thn", "Mulai Obat", "CTCA (Saat Ini)")) +
+  
+  # BAPAK/IBU, BATAS MAKSIMAL DITINGGIKAN DI SINI (Y limits 0 - 140)
+  scale_y_continuous(breaks = NULL, limits = c(0, 140)) + 
+  
+  labs(
+    title = "Ilustrasi Konseptual: Mengapa Indeks Darah 'Saat Ini' Gagal Memprediksi CAC",
+    subtitle = "Ketidaksesuaian (Discordance) antara nilai laboratorium yang tersamarkan oleh obat dengan beban kalsifikasi kronis yang telah terbentuk.",
+    x = "Garis Waktu (Timeline)",
+    y = "Intensitas & Keparahan Relatif",
+    color = "Parameter Evaluasi:"
+  ) +
+  
+  theme_classic(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold", size = 22, hjust = 0.5, color = "#2F3E46", margin = margin(b = 8, t = 10)),
+    plot.subtitle = element_text(face = "italic", size = 15, hjust = 0.5, color = "#6A7F62", margin = margin(b = 20)),
+    
+    axis.title.x = element_text(face = "bold", margin = margin(t = 15)),
+    axis.title.y = element_text(face = "bold", margin = margin(r = 15)),
+    axis.text.x = element_text(face = "bold", size = 12, color = "#2F3E46"),
+    axis.line = element_line(linewidth = 1.2),
+    
+    legend.position = "bottom",
+    legend.title = element_text(face = "bold"),
+    legend.text = element_text(size = 12, face = "bold"),
+    legend.key.width = unit(2, "cm"),
+    
+    plot.margin = margin(t = 10, r = 25, b = 10, l = 10)
+  )
+
+p_konsep
+ggsave("Grafik/Ilustrasi_Bias_Farmakologis_16x9.png", plot = p_konsep, width = 16, height = 9, dpi = 300)
+```
+
+```{r}
+#| label: fig-translasi-glagov
+#| fig-width: 16
+#| fig-height: 9
+#| warning: false
+#| message: false
+
+library(ggplot2)
+
+p_glagov <- ggplot() +
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100)) +
+
+  # ==========================================
+  # 1. KOTAK KIRI: PATOLOGI ANATOMI (Teori Seluler)
+  # ==========================================
+  # Bayangan (Shadow)
+  annotate("rect", xmin = 5, xmax = 47, ymin = 9, ymax = 74, fill = "#D4D6C8", alpha = 0.5) +
+  # Kotak Utama
+  annotate("rect", xmin = 4, xmax = 46, ymin = 10, ymax = 75, fill = "#F9F9F6", color = "#52796F", linewidth = 1.5) +
+  # Header Kotak Kiri
+  annotate("rect", xmin = 4, xmax = 46, ymin = 63, ymax = 75, fill = "#52796F") +
+  annotate("text", x = 25, y = 69, label = "TAHAP SELULER (Patogenesis DM)\nBerdasarkan Ilustrasi Literatur", 
+           fontface = "bold", size = 5.5, color = "white", lineheight = 1.1) +
+  
+  # Konten Teks Kiri
+  annotate("text", x = 6, y = 57, label = "1. Resistensi Insulin & Stres Oksidatif Kronis", 
+           fontface = "bold", size = 5, color = "#2F3E46", hjust = 0) +
+  annotate("text", x = 6, y = 51, label = "2. Aktivasi & Infiltrasi Makrofag secara berlebih", 
+           fontface = "bold", size = 5, color = "#2F3E46", hjust = 0) +
+  
+  # HIGHLIGHT KOTAK KUNING UNTUK FOKUS MMP
+  annotate("rect", xmin = 5, xmax = 45, ymin = 34, ymax = 46, fill = "#FCF3CF", color = "#F39C12", linewidth = 0.5) +
+  annotate("text", x = 6, y = 42, label = "3. SEKRESI MMP MASIF", 
+           fontface = "bold", size = 6, color = "#D68910", hjust = 0) +
+  annotate("text", x = 6, y = 37, label = "Matrix Metalloproteinases (MMP) secara agresif\nmendegradasi kolagen pada tunika media.", 
+           fontface = "italic", size = 4.5, color = "#4F5D66", hjust = 0, lineheight = 1.1) +
+  
+  annotate("text", x = 6, y = 25, label = "4. Dinding pembuluh darah melemah", 
+           fontface = "bold", size = 5, color = "#2F3E46", hjust = 0) +
+  annotate("text", x = 6, y = 20, label = "Terjadi kompensasi berupa pelebaran vaskular ke arah luar.", 
+           size = 4.5, color = "#4F5D66", hjust = 0) +
+
+
+  # ==========================================
+  # 2. PANAH PENGHUBUNG (Bridging Mechanism)
+  # ==========================================
+  # Panah ditarik persis sejajar dari kotak kuning MMP (Y = 40)
+  annotate("segment", x = 46, y = 40, xend = 53, yend = 40, 
+           arrow = arrow(type = "closed", length = unit(0.5, "cm")), 
+           color = "#C0392B", linewidth = 2.5) +
+  annotate("label", x = 50, y = 47, label = "Fenomena\nGlagov", 
+           fontface = "bold", size = 5, color = "#C0392B", fill = "white", label.size = 0, lineheight = 1.1) +
+
+
+  # ==========================================
+  # 3. KOTAK KANAN: MANIFESTASI KLINIS (Data Anda)
+  # ==========================================
+  # Bayangan (Shadow)
+  annotate("rect", xmin = 55, xmax = 97, ymin = 9, ymax = 74, fill = "#D4D6C8", alpha = 0.5) +
+  # Kotak Utama
+  annotate("rect", xmin = 54, xmax = 96, ymin = 10, ymax = 75, fill = "#FDF2E9", color = "#C06E52", linewidth = 1.5) +
+  # Header Kotak Kanan
+  annotate("rect", xmin = 54, xmax = 96, ymin = 63, ymax = 75, fill = "#C06E52") +
+  annotate("text", x = 75, y = 69, label = "MANIFESTASI RADIOLOGIS (CTCA)\nTemuan Aktual pada Kohort Studi", 
+           fontface = "bold", size = 5.5, color = "white", lineheight = 1.1) +
+  
+  # Konten Teks Kanan Atas
+  annotate("text", x = 75, y = 55, label = "Kompensasi pelebaran ke luar (Positive Remodeling)\nterdeteksi secara radiologis sebagai area plak rentan.", 
+           fontface = "bold", size = 5, color = "#2F3E46", hjust = 0.5, lineheight = 1.2) +
+  
+  # LINGKARAN DONUT UNTUK DATA HRP (Sejajar dengan Panah di Y = 40)
+  annotate("point", x = 75, y = 39, size = 43, color = "#FADBD8") +
+  annotate("point", x = 75, y = 39, size = 30, color = "white") +
+  annotate("text", x = 75, y = 42, label = "71,2%", 
+           fontface = "bold", size = 15, color = "#C0392B") +
+  annotate("text", x = 75, y = 33, label = "Subjek Positif HRP\n(High-Risk Plaque)", 
+           fontface = "bold", size = 5, color = "#C06E52", lineheight = 1.1, hjust = 0.5) +
+  
+  # Kesimpulan Argumen Kanan Bawah
+  annotate("rect", xmin = 57, xmax = 93, ymin = 14, ymax = 24, fill = "#FADBD8", color = NA) +
+  annotate("text", x = 75, y = 19, label = "Tingginya temuan HRP pada pasien membuktikan\nbahwa proses degradasi matriks oleh MMP sedang aktif terjadi.", 
+           fontface = "italic", size = 4.5, color = "#C0392B", hjust = 0.5, lineheight = 1.2) +
+
+
+  # ==========================================
+  # 4. JUDUL & SUBJUDUL PRESENTASI
+  # ==========================================
+  labs(
+    title = "Translasi Patofisiologi ke Temuan Radiologis: Fenomena Glagov",
+    subtitle = "Menghubungkan aktivitas patologi seluler (sekresi MMP) secara langsung dengan tingginya prevalensi High-Risk Plaque (HRP) di kohort."
+  ) +
+  
+  theme_void() +
+  theme(
+    plot.background = element_rect(fill = "#FFFFFF", color = NA),
+    plot.title = element_text(face = "bold", size = 26, color = "#2F3E46", hjust = 0.5, margin = margin(t = 20, b = 8)),
+    plot.subtitle = element_text(face = "italic", size = 16, color = "#6A7F62", hjust = 0.5, margin = margin(b = 20)),
+    plot.margin = margin(t = 5, r = 5, b = 5, l = 5)
+  )
+
+p_glagov
+
+ggsave("Grafik/Gambar_Translasi_Glagov_16x9.png", plot = p_glagov, width = 16, height = 9, dpi = 300)
 ```
 
